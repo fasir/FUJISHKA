@@ -719,7 +719,7 @@ h6 {
   line-height: 1;
   color: var(--black);
   text-transform: capitalize;
-  border-top: 1px solid var(--black);
+  border-top: 1px solid rgba(0, 0, 0, 0.145);
   display: flex;
   gap: 8px;
   justify-content: flex-start;
@@ -1257,7 +1257,7 @@ section {
   font-size: 100px;
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--lime-green);
   z-index: 20;
 }
 

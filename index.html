@@ -13,7 +13,7 @@
   <title>Fujishka | Cloud ERP &amp; Van Sales Software - Tech For Success</title>
 
   <!-- Fav Icon -->
-  <link rel="icon" type="image/x-icon" href="assets/imgs/image.png" />
+  <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png" />
 
   <!-- Dependencies CSS Files -->
   <link rel="stylesheet" href="assets/vandor/bootstrap/bootstrap.min.css" />
@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;600&family=Outfit:wght@400;500;600;700;600&display=swap"
     rel="stylesheet">
 
   <!-- Template Main CSS File -->
@@ -134,7 +134,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      color: #555 !important;
+      color: #fff !important;
       font-weight: 500;
       border-left: 1px solid rgba(62, 182, 73, 0.25);
       padding-left: 14px;
@@ -159,8 +159,10 @@
 
     /* ===================== NAVBAR ===================== */
     .fj-navbar {
-      position: sticky;
-      top: 0;
+      position: fixed;
+      top: 38px;
+      left: 0;
+      width: 100%;
       z-index: 1000;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px) saturate(180%);
@@ -172,9 +174,16 @@
     }
 
     .fj-navbar.scrolled {
+      top: 0;
       background: rgba(255, 255, 255, 0.98);
       border-bottom-color: rgba(62, 182, 73, 0.18);
       box-shadow: 0 4px 32px rgba(0, 0, 0, 0.10);
+    }
+
+    @media (max-width: 767px) {
+      .fj-navbar {
+        top: 0;
+      }
     }
 
     .fj-navbar .header-area-1__inner {
@@ -228,7 +237,7 @@
     .fj-logo-text .brand-name {
       font-family: 'Outfit', sans-serif;
       font-size: 24px;
-      font-weight: 800;
+      font-weight: 600;
       color: #1a1a2e;
       letter-spacing: -0.5px;
     }
@@ -592,7 +601,7 @@
     .fj-hero h1 {
       font-family: 'Outfit', sans-serif;
       font-size: clamp(36px, 5.5vw, 64px);
-      font-weight: 800;
+      font-weight: 600;
       color: #fff;
       line-height: 1.10;
       letter-spacing: -1.5px;
@@ -737,7 +746,7 @@
     .fj-hero .stat-chip .s-num {
       font-family: 'Outfit', sans-serif;
       font-size: 30px;
-      font-weight: 800;
+      font-weight: 600;
       color: #fff;
       line-height: 1;
     }
@@ -985,8 +994,8 @@
       border-radius: 50%;
       overflow: hidden;
       position: relative;
-      border: 4px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      border: 3px solid rgba(83, 183, 72, 0.2);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 60px rgba(83, 183, 72, 0.1);
       z-index: 2;
     }
 
@@ -999,45 +1008,133 @@
 
     .hero-circle-ring {
       position: absolute;
-      inset: 10px;
+      inset: -10px;
       border-radius: 50%;
-      border: 4px solid #53b748;
-      border-top-color: transparent;
-      border-left-color: transparent;
-      transform: rotate(-35deg);
+      border: 2px dashed rgba(83, 183, 72, 0.3);
       pointer-events: none;
       z-index: 1;
+      animation: hero-ring-spin 18s linear infinite;
+    }
+
+    @keyframes hero-ring-spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .hero-circle-ring::before {
       content: '';
       position: absolute;
-      width: 14px;
-      height: 14px;
+      width: 10px;
+      height: 10px;
       background: #53b748;
       border-radius: 50%;
-      bottom: 25px;
-      left: 20px;
+      box-shadow: 0 0 8px #53b748;
+      bottom: 28px;
+      left: 22px;
     }
 
     .hero-circle-ring::after {
       content: '';
       position: absolute;
-      width: 14px;
-      height: 14px;
+      width: 10px;
+      height: 10px;
       background: #53b748;
       border-radius: 50%;
-      top: 25px;
-      right: 20px;
+      box-shadow: 0 0 8px #53b748;
+      top: 28px;
+      right: 22px;
+    }
+
+    .hero-circle-glow {
+      position: absolute;
+      inset: -30px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(83, 183, 72, 0.1) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+      animation: hero-glow-pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes hero-glow-pulse {
+
+      0%,
+      100% {
+        opacity: 0.7;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+
+    .hero-ai-badge {
+      position: absolute;
+      background: rgba(10, 22, 40, 0.9);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(83, 183, 72, 0.25);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      z-index: 4;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      animation: float-card 3.5s ease-in-out infinite;
+    }
+
+    .hero-ai-badge .badge-icon-wrap {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(83, 183, 72, 0.2), rgba(83, 183, 72, 0.05));
+      border: 1px solid rgba(83, 183, 72, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #53b748;
+      flex-shrink: 0;
+    }
+
+    .hero-ai-badge .badge-text strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .hero-ai-badge .badge-text span {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .hero-ai-badge-1 {
+      bottom: 60px;
+      left: -30px;
+      animation-delay: 0s;
+    }
+
+    .hero-ai-badge-2 {
+      top: 55px;
+      right: -25px;
+      animation-delay: 1.8s;
     }
 
     .hero-grow-badge {
       position: absolute;
       bottom: 5px;
       left: -20px;
-      background: #53b748;
+      background: linear-gradient(135deg, #53b748, #3d9635);
       color: #fff;
-      font-weight: 800;
+      font-weight: 600;
       font-size: 18px;
       line-height: 1.25;
       padding: 24px;
@@ -1048,7 +1145,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      box-shadow: 0 12px 30px rgba(154, 217, 0, 0.35);
+      box-shadow: 0 12px 30px rgba(83, 183, 72, 0.4);
       z-index: 3;
       font-family: 'Outfit', sans-serif;
       animation: float-slow 4s ease-in-out infinite;
@@ -1078,91 +1175,191 @@
     }
 
     /* FujiBot AI Section Styles */
+    .fj-ai-section {
+      padding: 80px 0 !important;
+    }
+
     .fujibot-meet-badge {
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 700;
-      color: rgba(255, 255, 255, 0.45);
-      letter-spacing: 2px;
+      color: #53b748;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 8px;
-      display: block;
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(83, 183, 72, 0.08);
+      border: 1px solid rgba(83, 183, 72, 0.2);
+      border-radius: 30px;
+      padding: 5px 14px;
+    }
+
+    .fujibot-meet-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #53b748;
+      box-shadow: 0 0 8px #53b748;
+      animation: badge-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes badge-pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
     }
 
     .fujibot-title {
-      font-size: clamp(36px, 5vw, 64px);
-      font-weight: 800;
+      font-size: clamp(32px, 4.5vw, 58px);
+      font-weight: 600;
       color: #ffffff;
       line-height: 1.1;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       font-family: 'Outfit', sans-serif;
     }
 
     .fujibot-subtitle {
-      font-size: 20px;
+      font-size: 17px;
       font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 20px;
+      color: rgba(83, 183, 72, 0.9);
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
     }
 
     .fujibot-desc {
-      font-size: 15px;
+      font-size: 14.5px;
       line-height: 1.7;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 28px;
     }
 
     .fujibot-feature-list {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 14px;
     }
 
     .fujibot-feature-item {
       display: flex;
-      align-items: center;
-      gap: 16px;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .fujibot-feature-item:hover {
+      background: rgba(83, 183, 72, 0.06);
+      border-color: rgba(83, 183, 72, 0.2);
+      transform: translateX(4px);
     }
 
     .fujibot-feature-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(83, 183, 72, 0.12);
-      border: 1px solid rgba(83, 183, 72, 0.25);
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(83, 183, 72, 0.1);
+      border: 1px solid rgba(83, 183, 72, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 16px;
       color: #53b748;
       flex-shrink: 0;
     }
 
     .fujibot-feature-content h5 {
-      font-size: 15.5px;
+      font-size: 14.5px;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 2px;
     }
 
     .fujibot-feature-content p {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.5);
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.45);
       margin-bottom: 0;
       line-height: 1.4;
     }
 
+    /* Center Avatar Column */
     .fujibot-avatar-col {
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
+      padding: 0;
+    }
+
+    .fujibot-avatar-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fujibot-avatar-glow {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(83, 183, 72, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+      animation: glow-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes glow-pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: scale(1.15);
+        opacity: 1;
+      }
+    }
+
+    .fujibot-avatar-ring {
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(83, 183, 72, 0.3);
+      animation: ring-spin 12s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes ring-spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .fujibot-avatar-img {
-      max-width: 100%;
-      height: auto;
+      width: 220px;
+      height: 220px;
+      object-fit: contain;
       animation: float-bot 5s ease-in-out infinite;
-      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+      filter: drop-shadow(0 16px 40px rgba(83, 183, 72, 0.25)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+      position: relative;
+      z-index: 2;
     }
 
     @keyframes float-bot {
@@ -1173,127 +1370,149 @@
       }
 
       50% {
-        transform: translateY(-12px);
+        transform: translateY(-14px);
       }
     }
 
     /* Chat Mockup Styles */
     .fujibot-chat-mockup {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
+      background: rgba(10, 20, 40, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
       display: flex;
       flex-direction: column;
-      height: 480px;
-      max-width: 440px;
+      height: 420px;
+      max-width: 400px;
       margin: 0 auto;
     }
 
     .fujibot-chat-header {
-      background: linear-gradient(90deg, #0f2744 0%, #153c66 100%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 16px 20px;
+      background: linear-gradient(135deg, #0d2240 0%, #112d52 100%);
+      border-bottom: 1px solid rgba(83, 183, 72, 0.12);
+      padding: 14px 18px;
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-shrink: 0;
     }
 
     .fujibot-chat-header-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(83, 183, 72, 0.15);
-      border: 1.5px solid #53b748;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(83, 183, 72, 0.2), rgba(83, 183, 72, 0.05));
+      border: 1.5px solid rgba(83, 183, 72, 0.5);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 17px;
       color: #53b748;
+      box-shadow: 0 0 12px rgba(83, 183, 72, 0.2);
     }
 
     .fujibot-chat-header-info h4 {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .fujibot-chat-header-info span {
-      font-size: 11px;
-      color: rgba(255, 255, 255, 0.55);
-      display: block;
+      font-size: 10.5px;
+      color: rgba(255, 255, 255, 0.45);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .fujibot-chat-header-info span::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #53b748;
+      box-shadow: 0 0 6px #53b748;
+      flex-shrink: 0;
     }
 
     .fujibot-chat-body {
       flex: 1;
-      padding: 20px;
+      padding: 16px 18px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(83, 183, 72, 0.2) transparent;
     }
 
     .fujibot-msg-row {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       align-items: flex-start;
-      max-width: 85%;
+      max-width: 88%;
     }
 
     .fujibot-msg-row.msg-sent {
       align-self: flex-end;
       flex-direction: row-reverse;
-      max-width: 85%;
+      max-width: 88%;
     }
 
     .fujibot-msg-avatar {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
-      color: #ffffff;
+      font-size: 11px;
+      color: #53b748;
       flex-shrink: 0;
     }
 
     .fujibot-msg-bubble {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 4px 16px 16px 16px;
-      padding: 12px 16px;
-      font-size: 13.5px;
-      line-height: 1.5;
-      color: #e2e8f0;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 4px 14px 14px 14px;
+      padding: 10px 14px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: #d8e4f0;
     }
 
     .fujibot-msg-row.msg-sent .fujibot-msg-bubble {
-      background: #113459;
-      border-color: rgba(83, 183, 72, 0.25);
-      border-radius: 16px 4px 16px 16px;
+      background: linear-gradient(135deg, #0e2d4f, #153c66);
+      border-color: rgba(83, 183, 72, 0.2);
+      border-radius: 14px 4px 14px 14px;
       color: #ffffff;
     }
 
     .fujibot-chat-footer {
-      padding: 16px 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 12px 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
       background: rgba(255, 255, 255, 0.01);
+      flex-shrink: 0;
     }
 
     .fujibot-chat-input-wrap {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 30px;
-      padding: 4px 6px 4px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 28px;
+      padding: 4px 5px 4px 14px;
+      transition: border-color 0.3s;
+    }
+
+    .fujibot-chat-input-wrap:focus-within {
+      border-color: rgba(83, 183, 72, 0.3);
     }
 
     .fujibot-chat-input-wrap input {
@@ -1302,30 +1521,36 @@
       border: none;
       outline: none;
       color: #ffffff;
-      font-size: 13px;
-      padding: 8px 0;
+      font-size: 12.5px;
+      padding: 7px 0;
+    }
+
+    .fujibot-chat-input-wrap input::placeholder {
+      color: rgba(255, 255, 255, 0.3);
     }
 
     .fujibot-chat-input-wrap button {
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      background: #53b748;
+      background: linear-gradient(135deg, #53b748, #3d9635);
       border: none;
       outline: none;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #ffffff;
-      font-size: 14px;
+      font-size: 13px;
       cursor: pointer;
       transition: all 0.3s;
-      box-shadow: 0 4px 12px rgba(83, 183, 72, 0.3);
+      box-shadow: 0 4px 14px rgba(83, 183, 72, 0.35);
+      flex-shrink: 0;
     }
 
     .fujibot-chat-input-wrap button:hover {
-      background: #46a13b;
-      transform: scale(1.05);
+      background: linear-gradient(135deg, #46a13b, #2d7a27);
+      transform: scale(1.08);
+      box-shadow: 0 6px 18px rgba(83, 183, 72, 0.5);
     }
 
     /* Logo styling (alias) */
@@ -1343,7 +1568,7 @@
     .fj-logo-text .brand-name {
       font-family: 'Outfit', sans-serif;
       font-size: 28px;
-      font-weight: 800;
+      font-weight: 600;
       color: var(--fujishka-dark);
       letter-spacing: -0.5px;
     }
@@ -1443,7 +1668,7 @@
     .fj-logo-text .brand-name {
       font-family: 'Outfit', sans-serif;
       font-size: 28px;
-      font-weight: 800;
+      font-weight: 600;
       color: var(--fujishka-dark);
       letter-spacing: -0.5px;
     }
@@ -1536,7 +1761,7 @@
 
     .fj-hero h1 {
       font-size: clamp(32px, 5vw, 58px);
-      font-weight: 800;
+      font-weight: 600;
       color: #fff;
       line-height: 1.15;
       margin-bottom: 20px;
@@ -1566,7 +1791,7 @@
 
     .fj-hero .stat-item .num {
       font-size: 28px;
-      font-weight: 800;
+      font-weight: 600;
       color: #fff;
       font-family: 'Outfit', sans-serif;
     }
@@ -1728,7 +1953,7 @@
 
     .fj-products .section-title {
       font-size: clamp(26px, 4vw, 42px);
-      font-weight: 800;
+      font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 12px;
       line-height: 1.2;
@@ -1809,7 +2034,7 @@
 
     .fj-product-card h3 {
       font-size: 21px;
-      font-weight: 800;
+      font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 10px;
       line-height: 1.3;
@@ -1923,7 +2148,7 @@
 
     .fj-product-showcase h3 {
       font-size: clamp(22px, 3vw, 34px);
-      font-weight: 800;
+      font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 12px;
       line-height: 1.25;
@@ -2084,15 +2309,6 @@
       padding-left: 12px;
     }
 
-    @media (max-width: 575px) {
-      .header-area-1 .header__logo {
-        max-width: 140px !important;
-      }
-      .fj-location-card {
-        padding: 28px 20px 20px;
-      }
-    }
-
     /* ===================== GLOBAL PRESENCE SECTION ===================== */
     .fj-presence {
       padding: 80px 0;
@@ -2142,7 +2358,7 @@
 
     .fj-presence-header h2 {
       font-size: clamp(26px, 4vw, 42px);
-      font-weight: 800;
+      font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 12px;
       line-height: 1.2;
@@ -2218,7 +2434,7 @@
 
     .fj-location-card h3 {
       font-size: 22px;
-      font-weight: 800;
+      font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 6px;
       font-family: 'Outfit', sans-serif;
@@ -2366,7 +2582,7 @@
 
     .fj-capabilities-header h2 {
       font-size: clamp(26px, 4vw, 42px);
-      font-weight: 800;
+      font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 12px;
       line-height: 1.2;
@@ -2424,7 +2640,7 @@
 
     .fj-capability-card h3 {
       font-size: 19px;
-      font-weight: 800;
+      font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 14px;
       line-height: 1.3;
@@ -2552,18 +2768,41 @@
       background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233eb649' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
 
+    .fj-services .section-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
     .fj-services .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       color: var(--fujishka-green);
       background: rgba(62, 182, 73, 0.1);
-      border: 1px solid rgba(62, 182, 73, 0.2);
+      border: 1px solid rgba(62, 182, 73, 0.25);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 14px;
     }
 
     .fj-services .section-title {
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 700;
       color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.2;
     }
 
     .fj-services .section-desc {
       color: rgba(255, 255, 255, 0.6);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 620px;
+      margin: 0 auto;
     }
 
     .fj-service-card {
@@ -2623,7 +2862,7 @@
 
     .fj-stat-item .num {
       font-size: clamp(36px, 5vw, 52px);
-      font-weight: 800;
+      font-weight: 600;
       color: #fff;
       font-family: 'Outfit', sans-serif;
       display: block;
@@ -2705,7 +2944,7 @@
 
     .fj-why-card h4 {
       font-size: 18px;
-      font-weight: 800;
+      font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 8px;
       line-height: 1.3;
@@ -2760,7 +2999,7 @@
 
     .fj-why-metric-item .val {
       font-size: 28px;
-      font-weight: 800;
+      font-weight: 600;
       color: var(--fujishka-green);
       font-family: 'Outfit', sans-serif;
       line-height: 1.2;
@@ -2792,6 +3031,9 @@
       transition: all 0.3s;
       position: relative;
       overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .fj-testi-card::before {
@@ -2832,6 +3074,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      margin-top: auto;
     }
 
     .fj-testi-card .author .avatar {
@@ -2860,6 +3103,96 @@
       font-size: 12px;
       color: var(--fujishka-green);
       font-weight: 500;
+    }
+
+    /* Video Testimonial Card Styles */
+    .fj-testi-card.video-card {
+      padding: 0;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: none;
+    }
+
+    .fj-testi-card .video-thumbnail-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .fj-testi-card .video-thumbnail-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .fj-testi-card:hover .video-thumbnail-wrap img {
+      transform: scale(1.08);
+    }
+
+    .fj-testi-card .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%);
+      z-index: 2;
+    }
+
+    .fj-testi-card .video-play-btn {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--fujishka-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      z-index: 3;
+      box-shadow: 0 0 0 0 rgba(62, 182, 73, 0.5);
+      animation: pulse-play 2s infinite;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .fj-testi-card .video-play-btn i {
+      margin-left: 4px;
+    }
+
+    .fj-testi-card .video-play-btn:hover {
+      background: #fff;
+      color: var(--fujishka-green);
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 0 20px rgba(62, 182, 73, 0.4);
+    }
+
+    @keyframes pulse-play {
+      0% {
+        box-shadow: 0 0 0 0 rgba(62, 182, 73, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 15px rgba(62, 182, 73, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(62, 182, 73, 0);
+      }
+    }
+
+    .fj-testi-card .video-content-wrap {
+      position: relative;
+      z-index: 3;
+      padding: 30px 24px;
+      width: 100%;
     }
 
     /* FAQ Section */
@@ -2947,7 +3280,7 @@
     .fj-footer .footer-logo .brand-name {
       color: #fff;
       font-size: 26px;
-      font-weight: 800;
+      font-weight: 600;
       font-family: 'Outfit', sans-serif;
     }
 
@@ -3080,7 +3413,7 @@
 
     .fj-cta h2 {
       font-size: clamp(28px, 4vw, 44px);
-      font-weight: 800;
+      font-weight: 600;
       color: #fff;
       margin-bottom: 16px;
       position: relative;
@@ -3285,7 +3618,7 @@
 
     .fj-clients-header h2 {
       font-size: clamp(26px, 3.5vw, 40px);
-      font-weight: 800;
+      font-weight: 600;
       color: #1a1a2e;
       margin-bottom: 10px;
       font-family: 'Outfit', sans-serif;
@@ -3448,7 +3781,7 @@
 
     .cs-num {
       font-size: clamp(32px, 4vw, 48px);
-      font-weight: 800;
+      font-weight: 600;
       color: var(--fujishka-green);
       font-family: 'Outfit', sans-serif;
       line-height: 1;
@@ -3533,7 +3866,15 @@
         <div class="offset-widget offset-header">
           <div class="offset-logo">
             <a href="index.html">
-              <img src="assets/imgs/image.png" height="40px" alt="Fujishka" />
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span class="fj-logo-symbol">&</span>
+                <div class="fj-logo-text">
+                  <span class="brand-name"
+                    style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:#2d2d2d;">FUJISHKA</span>
+                  <span class="brand-tagline" style="font-size:10px;color:#3EB649;font-weight:600;">Tech For
+                    Success</span>
+                </div>
+              </div>
             </a>
           </div>
           <button id="side-info-close" class="side-info-close">
@@ -3571,6 +3912,75 @@
   </aside>
   <div class="offcanvas-overlay"></div>
 
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="fj-navbar header-area-1" id="fj-main-header">
+    <div class="container">
+      <div class="header-area-1__inner">
+
+        <!-- Logo -->
+        <div class="header__logo fj-logo-wrap">
+          <a href="index.html">
+            <img src="assets/imgs/image.png" alt="Fujishka – Tech For Success"
+              onerror="this.parentNode.innerHTML='<div class=fj-logo-fallback><span class=fj-logo-symbol>&amp;</span><div class=fj-logo-text><span class=brand-name>FUJISHKA</span><span class=brand-tagline>Tech For Success</span></div></div>';" />
+          </a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="header__nav d-none d-xl-block">
+          <nav class="main-menu">
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Products <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="#"><i class="fa-solid fa-cloud"
+                        style="color:#3EB649;margin-right:8px;"></i>FUJISKA-ERP</a></li>
+                  <li><a href="#"><i class="fa-solid fa-truck" style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van
+                      Sales</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Partner</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Countries <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="#"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>Saudi
+                      Arabia</a></li>
+                  <li><a href="#"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>India</a></li>
+                  <li><a href="#"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Header Right -->
+        <div class="header-right">
+
+          <a href="#demo" class="fj-nav-cta">
+            <i class="fa-solid fa-rocket"></i>
+            Request Demo
+            <i class="fa-solid fa-arrow-right btn-arrow"></i>
+          </a>
+          <!-- Mobile toggle -->
+          <div class="header__navicon d-xl-none">
+            <div class="side-toggle">
+              <a class="bar-icon" href="javascript:void(0)">
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
   <div class="has-smooth" id="has_smooth"></div>
   <div id="smooth-wrapper">
     <div id="smooth-content">
@@ -3589,84 +3999,12 @@
             <div class="topbar-right">
               <!-- <a href="#demo" class="fj-demo-btn"><i class="fa-solid fa-calendar-check"
                   style="margin-right:6px;"></i>Request Demo</a> -->
-              <a href="ar-index.html" class="lang-btn">عربي <i class="fa-solid fa-globe"></i></a>
+              <a href="index.html" class="lang-btn">عربي <i class="fa-solid fa-globe"></i></a>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- ===== HEADER / NAVBAR ===== -->
-      <header class="fj-navbar header-area-1" id="fj-main-header">
-        <div class="container">
-          <div class="header-area-1__inner">
-
-            <!-- Logo -->
-            <div class="header__logo fj-logo-wrap">
-              <a href="index.html">
-                <img src="assets/imgs/image.png" alt="Fujishka – Tech For Success"
-                  onerror="this.parentNode.innerHTML='<div class=fj-logo-fallback><span class=fj-logo-symbol>&amp;</span><div class=fj-logo-text><span class=brand-name>FUJISHKA</span><span class=brand-tagline>Tech For Success</span></div></div>';" />
-              </a>
-            </div>
-
-            <!-- Desktop Nav -->
-            <div class="header__nav d-none d-xl-block">
-              <nav class="main-menu">
-                <ul>
-                  <li><a href="index.html" class="active">Home</a></li>
-                  <li><a href="about-us.html">About Us</a></li>
-                  <li class="menu-item-has-children">
-                    <a href="#">Products <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
-                    <ul class="dp-menu">
-                      <li><a href="bquick.html"><i class="fa-solid fa-cloud"
-                            style="color:#3EB649;margin-right:8px;"></i>FUJISKA-ERP</a></li>
-                      <li><a href="fujeeka.html"><i class="fa-solid fa-truck"
-                            style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="partner.html">Partner</a></li>
-                  <li class="menu-item-has-children">
-                    <a href="#">Countries <i class="fa-solid fa-chevron-down"
-                        style="font-size:10px;opacity:.6;"></i></a>
-                    <ul class="dp-menu">
-                      <li><a href="best-cloud-erp-software-in-saudi-arabia.html"><i class="fa-solid fa-flag"
-                            style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
-                      <li><a href="india.html"><i class="fa-solid fa-flag"
-                            style="color:#3EB649;margin-right:8px;"></i>India</a></li>
-                      <li><a href="uae.html"><i class="fa-solid fa-flag"
-                            style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="blogs.html">Blogs</a></li>
-                  <li><a href="contact-us.html">Contact</a></li>
-                </ul>
-              </nav>
-            </div>
-
-            <!-- Header Right -->
-            <div class="header-right">
-
-              <a href="#demo" class="fj-nav-cta">
-                <i class="fa-solid fa-rocket"></i>
-                Request Demo
-                <i class="fa-solid fa-arrow-right btn-arrow"></i>
-              </a>
-              <!-- Mobile toggle -->
-              <div class="header__navicon d-xl-none">
-                <div class="side-toggle">
-                  <a class="bar-icon" href="javascript:void(0)">
-                    <span></span>
-                    <span></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </header>
-
-      <main>
+      <main class="pt-5">
 
         <!-- ===== HERO SECTION ===== -->
         <section class="fj-hero" data-aos="fade-up">
@@ -3694,7 +4032,7 @@
 
                   <!-- Heading -->
                   <h1
-                    style="font-size: clamp(34px, 4.5vw, 54px); font-weight: 800; color: #ffffff; line-height: 1.15; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">
+                    style="font-size: clamp(34px, 4.5vw, 54px); font-weight: 600; color: #ffffff; line-height: 1.15; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">
                     Smarter Cloud ERP <br>&amp; Van Sales Software
                   </h1>
 
@@ -3737,15 +4075,18 @@
                 </div>
 
                 <!-- ── RIGHT COLUMN ── -->
-                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="800">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="600">
                   <div class="hero-circle-container">
 
-                    <!-- Partial border ring -->
+                    <!-- Glow backdrop -->
+                    <div class="hero-circle-glow"></div>
+
+                    <!-- Spinning dashed ring -->
                     <div class="hero-circle-ring"></div>
 
                     <!-- Circular masked image -->
                     <div class="hero-circle-mask">
-                      <img src="assets/imgs/hero.png" alt="Fujishka ERP Visual Representation" />
+                      <img src="assets/imgs/hero.png" alt="Fujishka AI Business ERP Visual" />
                     </div>
 
                     <!-- Handdrawn white arrow -->
@@ -3764,6 +4105,24 @@
                       Help You To<br>Grow Your<br>Business
                     </div>
 
+                    <!-- AI floating badge 1 -->
+                    <!-- <div class="hero-ai-badge hero-ai-badge-1">
+                      <div class="badge-icon-wrap"><i class="fa-solid fa-robot"></i></div>
+                      <div class="badge-text">
+                        <strong>FujiBot AI</strong>
+                        <span>Always Online</span>
+                      </div>
+                    </div> -->
+
+                    <!-- AI floating badge 2 -->
+                    <div class="hero-ai-badge hero-ai-badge-2">
+                      <div class="badge-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+                      <div class="badge-text">
+                        <strong>Live Analytics</strong>
+                        <span>Real-time insights</span>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
 
@@ -3778,28 +4137,6 @@
           </div>
         </section>
 
-        <!-- ===== TRUSTED BY ===== -->
-        <!-- <section class="fj-trusted" data-aos="fade-up" data-aos-duration="600">
-          <div class="container">
-            <p class="title">Trusted by businesses across</p>
-            <div class="logos-row">
-              <div class="logo-item"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:6px;"></i> India
-              </div>
-              <div class="logo-item"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:6px;"></i> Saudi
-                Arabia</div>
-              <div class="logo-item"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:6px;"></i> UAE</div>
-              <div class="logo-item"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:6px;"></i> Kuwait
-              </div>
-              <div class="logo-item"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:6px;"></i> Oman</div>
-              <div class="logo-item"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:6px;"></i> Bahrain
-              </div>
-              <div class="logo-item"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:6px;"></i> Qatar
-              </div>
-            </div>
-          </div>
-        </section> -->
-
-        <!-- ===== CLIENTS CAROUSEL ===== -->
 
 
         <!-- ===== PRODUCTS ===== -->
@@ -3868,8 +4205,7 @@
                           </div>
                         </div>
                       </div>
-                      <a href="bquick.html" class="btn-fj">Explore FUJISKA-ERP <i
-                          class="fa-solid fa-arrow-right"></i></a>
+                      <a href="#" class="btn-fj">Explore FUJISKA-ERP <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="col-lg-6">
                       <div class="fj-showcase-img-wrap">
@@ -3958,14 +4294,150 @@
             </div>
         </section>
 
-        <!-- ===== IMPORTANT MODULES ===== -->
+        <!-- ===== AI FEATURES (FujiBot) ===== -->
+        <section class="fj-ai-section" id="ai-features"
+          style="background: linear-gradient(135deg, #050f1f 0%, #071626 50%, #0b1a2f 100%); position: relative; overflow: hidden; border-bottom: 1px solid rgba(83, 183, 72, 0.12);">
+          <!-- Ambient Orbs -->
+          <div
+            style="position: absolute; width: 350px; height: 350px; background: radial-gradient(circle, rgba(83,183,72,0.12) 0%, transparent 70%); top: -80px; right: 5%; pointer-events: none;">
+          </div>
+          <div
+            style="position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(83,183,72,0.08) 0%, transparent 70%); bottom: -60px; left: 3%; pointer-events: none;">
+          </div>
+          <div
+            style="position: absolute; width: 200px; height: 200px; background: radial-gradient(circle, rgba(15,80,150,0.15) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none;">
+          </div>
+
+          <div class="container">
+            <div class="row g-4 align-items-end">
+
+              <!-- Left Column: Meet & Features -->
+              <div class="col-lg-5" data-aos="fade-right" data-aos-duration="600">
+                <span class="fujibot-meet-badge">Meet FujiBot</span>
+                <h2 class="fujibot-title">Your AI Business<br><span style="color:#53b748;">Assistant.</span></h2>
+                <div class="fujibot-subtitle">Intelligent. Instant. Always On.</div>
+                <p class="fujibot-desc">
+                  Never let manual tasks or complex reports slow you down. FujiBot provides real-time insights,
+                  automated reports, and conversational support — 24/7.
+                </p>
+
+                <!-- Features list -->
+                <div class="fujibot-feature-list">
+                  <div class="fujibot-feature-item">
+                    <div class="fujibot-feature-icon">
+                      <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div class="fujibot-feature-content">
+                      <h5>24/7 Availability</h5>
+                      <p>Get answers and generate business reports any time, day or night.</p>
+                    </div>
+                  </div>
+
+                  <div class="fujibot-feature-item">
+                    <div class="fujibot-feature-icon">
+                      <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <div class="fujibot-feature-content">
+                      <h5>Instant Responses</h5>
+                      <p>No waiting time — get instant data insights and answer queries.</p>
+                    </div>
+                  </div>
+
+                  <div class="fujibot-feature-item">
+                    <div class="fujibot-feature-icon">
+                      <i class="fa-regular fa-comments"></i>
+                    </div>
+                    <div class="fujibot-feature-content">
+                      <h5>Clear Explanations</h5>
+                      <p>Simple conversational breakdowns of sales, stocks, and financials.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Center Column: AI Robot Image -->
+              <div class="col-lg-3 fujibot-avatar-col" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="fujibot-avatar-wrap">
+                  <div class="fujibot-avatar-glow"></div>
+                  <div class="fujibot-avatar-ring"></div>
+                  <img src="assets/imgs/ai-robot.png" alt="FujiBot AI Chat Robot" class="fujibot-avatar-img" />
+                </div>
+              </div>
+
+              <!-- Right Column: Interactive Chat UI -->
+              <div class="col-lg-4" data-aos="fade-left" data-aos-duration="600">
+                <div class="fujibot-chat-mockup">
+
+                  <!-- Chat Header -->
+                  <div class="fujibot-chat-header">
+                    <div class="fujibot-chat-header-avatar">
+                      <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="fujibot-chat-header-info">
+                      <h4>FujiBot</h4>
+                      <span>Always online, ready to help</span>
+                    </div>
+                  </div>
+
+                  <!-- Chat Body -->
+                  <div class="fujibot-chat-body">
+                    <!-- Msg 1 (Bot) -->
+                    <div class="fujibot-msg-row">
+                      <div class="fujibot-msg-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                      </div>
+                      <div class="fujibot-msg-bubble">
+                        Hi! 👋 I'm FujiBot. Ask me any report or sales query — I'm here to help!
+                      </div>
+                    </div>
+
+                    <!-- Msg 2 (User) -->
+                    <div class="fujibot-msg-row msg-sent">
+                      <div class="fujibot-msg-avatar" style="background:rgba(83,183,72,0.15); color:#53b748;">
+                        <i class="fa-solid fa-user"></i>
+                      </div>
+                      <div class="fujibot-msg-bubble">
+                        What is the total sales of Kakkanchery branch today?
+                      </div>
+                    </div>
+
+                    <!-- Msg 3 (Bot) -->
+                    <div class="fujibot-msg-row">
+                      <div class="fujibot-msg-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                      </div>
+                      <div class="fujibot-msg-bubble">
+                        Branch Kakkanchery: Today's sales = <strong style="color:#53b748;">₹2,45,630</strong><br>
+                        📈 Up 12% compared to yesterday!
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Chat Footer / Input -->
+                  <div class="fujibot-chat-footer">
+                    <div class="fujibot-chat-input-wrap">
+                      <input type="text" placeholder="Ask a question..." disabled />
+                      <button type="button" aria-label="Send message">
+                        <i class="fa-solid fa-paper-plane"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== CAPABILITIES ===== -->
         <section class="fj-capabilities" id="capabilities">
           <div class="container">
             <div class="fj-capabilities-header" data-aos="fade-up" data-aos-duration="600">
               <span class="section-label"><i class="fa-solid fa-star"></i> Important Modules</span>
               <h2>Powerful ERP Solutions for<br /> Every Business</h2>
-              <p>Fujishka ERP delivers intelligent, cloud-based modules designed to streamline operations, improve
-                productivity, and accelerate growth across various industries.</p>
+              <!-- <p>Fujishka ERP delivers intelligent, cloud-based modules designed to streamline operations, improve
+                productivity, and accelerate growth across various industries.</p> -->
             </div>
             <div class="fj-capabilities-swiper-container" data-aos="fade-up" data-aos-duration="700">
               <div class="swiper capabilities-swiper">
@@ -4169,136 +4641,271 @@
             </div>
         </section>
 
-        <!-- ===== AI SECTION ===== -->
-        <section class="fj-ai-section" id="ai-features"
-          style="padding: 100px 0; background: linear-gradient(135deg, #050f1f 0%, #0b1a2f 100%); position: relative; overflow: hidden; border-bottom: 1px solid rgba(83, 183, 72, 0.15);">
-          <!-- Ambient Orbs -->
-          <div class="orb"
-            style="position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(83, 183, 72, 0.15) 0%, transparent 70%); top: -50px; right: -50px; pointer-events: none;">
-          </div>
-          <div class="orb"
-            style="position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(83, 183, 72, 0.1) 0%, transparent 70%); bottom: -100px; left: -100px; pointer-events: none;">
-          </div>
-
+        <!-- ===== SERVICES ===== -->
+        <section class="fj-services" id="services">
           <div class="container">
-            <div class="row g-5 align-items-center">
 
-              <!-- Left Column: Meet & Features -->
-              <div class="col-lg-5" data-aos="fade-right" data-aos-duration="800">
-                <span class="fujibot-meet-badge">Meet</span>
-                <h2 class="fujibot-title">FujiBot<span style="color:#53b748;">.</span></h2>
-                <div class="fujibot-subtitle">The AI Business Assistant Bot</div>
-                <p class="fujibot-desc">
-                  Never let manual tasks or complex reports slow you down. Our advanced AI-powered assistant provides
-                  real-time information, reports, and automated chat support whenever you need it.
-                </p>
-
-                <!-- Features list -->
-                <div class="fujibot-feature-list">
-                  <div class="fujibot-feature-item">
-                    <div class="fujibot-feature-icon">
-                      <i class="fa-regular fa-clock"></i>
-                    </div>
-                    <div class="fujibot-feature-content">
-                      <h5>24/7 Availability</h5>
-                      <p>Get answers and generate business reports any time, day or night.</p>
-                    </div>
-                  </div>
-
-                  <div class="fujibot-feature-item">
-                    <div class="fujibot-feature-icon">
-                      <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <div class="fujibot-feature-content">
-                      <h5>Instant Responses</h5>
-                      <p>No waiting time, get instant data conversions and answer queries.</p>
-                    </div>
-                  </div>
-
-                  <div class="fujibot-feature-item">
-                    <div class="fujibot-feature-icon">
-                      <i class="fa-regular fa-comments"></i>
-                    </div>
-                    <div class="fujibot-feature-content">
-                      <h5>Clear Explanations</h5>
-                      <p>Simple conversational breakdowns of sales, stocks, and financial stats.</p>
-                    </div>
-                  </div>
+            <!-- Section Header — centered -->
+            <div class="section-header" data-aos="fade-up" data-aos-duration="600">
+              <span class="section-label"><i class="fa-solid fa-screwdriver-wrench"></i> Our Services</span>
+              <h2 class="section-title">Comprehensive Tech Services<br>for Your Business</h2>
+              <p class="section-desc">From ERP implementation to ongoing support, Fujishka provides end-to-end
+                technology services tailored to your industry needs.</p>
+            </div>
+            <div class="row g-4">
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="500">
+                <div class="fj-service-card">
+                  <i class="fa-solid fa-cloud-arrow-up icon"></i>
+                  <h3>Cloud ERP Implementation</h3>
+                  <p>Full-cycle ERP deployment, data migration, configuration, and go-live support for your business
+                    operations.</p>
+                  <span class="fj-service-num">Service _ 01</span>
                 </div>
               </div>
-
-              <!-- Center Column: 3D Robot Image -->
-              <div class="col-lg-3 fujibot-avatar-col" data-aos="zoom-in" data-aos-duration="1000">
-                <img src="assets/imgs/fujishka/fujibot_3d.png" alt="FujiBot 3D Robot Avatar"
-                  class="fujibot-avatar-img" />
-              </div>
-
-              <!-- Right Column: Interactive Chat UI -->
-              <div class="col-lg-4" data-aos="fade-left" data-aos-duration="800">
-                <div class="fujibot-chat-mockup">
-
-                  <!-- Chat Header -->
-                  <div class="fujibot-chat-header">
-                    <div class="fujibot-chat-header-avatar">
-                      <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <div class="fujibot-chat-header-info">
-                      <h4>FujiBot</h4>
-                      <span>Always online, ready to help</span>
-                    </div>
-                  </div>
-
-                  <!-- Chat Body -->
-                  <div class="fujibot-chat-body">
-                    <!-- Msg 1 (Bot) -->
-                    <div class="fujibot-msg-row">
-                      <div class="fujibot-msg-avatar">
-                        <i class="fa-solid fa-robot"></i>
-                      </div>
-                      <div class="fujibot-msg-bubble">
-                        Hi! 🖐 I'm FujiBot. Ask me any report or sales query — I'm here to help!
-                      </div>
-                    </div>
-
-                    <!-- Msg 2 (User) -->
-                    <div class="fujibot-msg-row msg-sent">
-                      <div class="fujibot-msg-avatar" style="background:#53b748;">
-                        <i class="fa-solid fa-user"></i>
-                      </div>
-                      <div class="fujibot-msg-bubble">
-                        What is the total sales of Kakkanchery branch today?
-                      </div>
-                    </div>
-
-                    <!-- Msg 3 (Bot) -->
-                    <div class="fujibot-msg-row">
-                      <div class="fujibot-msg-avatar">
-                        <i class="fa-solid fa-robot"></i>
-                      </div>
-                      <div class="fujibot-msg-bubble">
-                        Branch Kakkanchery: Today's sales = ₹2,45,630.<br>
-                        🟢 An increase of 12% compared to yesterday.
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Chat Footer / Input -->
-                  <div class="fujibot-chat-footer">
-                    <div class="fujibot-chat-input-wrap">
-                      <input type="text" placeholder="Ask a question..." disabled />
-                      <button type="button" aria-label="Send message">
-                        <i class="fa-solid fa-paper-plane"></i>
-                      </button>
-                    </div>
-                  </div>
-
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="600">
+                <div class="fj-service-card">
+                  <i class="fa-solid fa-mobile-screen icon"></i>
+                  <h3>Van Sales App Deployment</h3>
+                  <p>Complete setup and training for Fujeeka Van Sales app including GPS routing, offline mode, and
+                    integration with ERP.</p>
+                  <span class="fj-service-num">Service _ 02</span>
                 </div>
               </div>
-
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="700">
+                <div class="fj-service-card">
+                  <i class="fa-solid fa-gears icon"></i>
+                  <h3>ERP Customization</h3>
+                  <p>Custom module development, workflow automation, and integrations tailored to your specific business
+                    requirements.</p>
+                  <span class="fj-service-num">Service _ 03</span>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="600">
+                <div class="fj-service-card">
+                  <i class="fa-solid fa-headset icon"></i>
+                  <h3>24/7 Technical Support</h3>
+                  <p>Dedicated customer support team available round the clock to ensure your system runs smoothly
+                    without interruptions.</p>
+                  <span class="fj-service-num">Service _ 04</span>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="900">
+                <div class="fj-service-card">
+                  <i class="fa-solid fa-chart-bar icon"></i>
+                  <h3>Business Analytics & Reports</h3>
+                  <p>Advanced dashboards, KPI reporting, and data analytics tools to help you make informed business
+                    decisions.</p>
+                  <span class="fj-service-num">Service _ 05</span>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="fj-service-card">
+                  <i class="fa-solid fa-handshake icon"></i>
+                  <h3>Partnership Program</h3>
+                  <p>Become a Fujishka partner and expand your business by reselling and implementing our ERP solutions
+                    in your region.</p>
+                  <span class="fj-service-num">Service _ 06</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
+        <!-- ===== WHY CHOOSE US ===== -->
+        <section class="fj-why" id="why-choose-us">
+          <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
+              <span class="section-label"
+                style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">What
+                Sets Us Apart</span>
+              <h2 class="section-title"
+                style="font-size:clamp(28px,4vw,44px);font-weight:600;color:#2d2d2d;margin-bottom:0;">What Sets Us Apart
+              </h2>
+            </div>
+
+
+            <!-- About Team Highlights -->
+            <div class="row mt-5 align-items-center g-5">
+              <div class="col-lg-5" data-aos="fade-right" data-aos-duration="600">
+                <div class="fj-why-about-img-wrap">
+                  <img src="assets/imgs/fujishka/team.png" alt="Fujishka Team" style="width:100%; display:block;" />
+                </div>
+              </div>
+              <div class="col-lg-7" data-aos="fade-left" data-aos-duration="600">
+                <span class="section-label"
+                  style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">ABOUT
+                  FUJISHKA</span>
+                <h2
+                  style="font-size:clamp(24px,3vw,36px);font-weight:600;color:#1a1a2e;margin-bottom:16px;line-height:1.25;">
+                  Built on Experience. Driven by Innovation.</h2>
+                <p style="color:#666;font-size:15.5px;line-height:1.75;margin-bottom:28px;">Founded in 2010,
+                  <strong>Fujishka Solutions</strong> has been empowering businesses with intelligent ERP solutions that
+                  simplify operations and accelerate growth. With over 15 years of industry expertise, 1,000+ successful
+                  implementations, and a strong presence across India and the GCC, we deliver technology that connects
+                  every aspect of your business—enabling smarter decisions, greater efficiency, and sustainable success.
+                </p>
+
+                <div class="fj-why-metric-grid" data-aos="fade-up" data-aos-delay="100">
+                  <div class="fj-why-metric-item">
+                    <div class="val">15+ Years</div>
+                    <div class="lbl">Industry Experience</div>
+                  </div>
+                  <div class="fj-why-metric-item">
+                    <div class="val">1,000+</div>
+                    <div class="lbl">Clients Trusted Businesses</div>
+                  </div>
+                  <div class="fj-why-metric-item">
+                    <div class="val">7 Regions</div>
+                    <div class="lbl">India &amp; GCC Presence</div>
+                  </div>
+                </div>
+
+                <a href="#" class="btn-fj">Learn About Us <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== INTEGRATIONS ===== -->
+        <section class="fj-integrations" id="integrations"
+          style="padding: 100px 0; background: #ffffff; border-bottom: 1px solid #eef6f0;">
+          <div class="container">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-5" data-aos="fade-right" data-aos-duration="600">
+                <span class="section-label"
+                  style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">Connect.
+                  Communicate. Grow.</span>
+                <h2
+                  style="font-size:clamp(28px,3.5vw,40px);font-weight:600;color:#1a1a2e;margin-bottom:16px;line-height:1.2;">
+                  Seamless Integrations</h2>
+                <p style="color:#666;font-size:15.5px;line-height:1.75;margin-bottom:28px;">Fujishka ERP seamlessly
+                  integrates with the platforms your business relies on, making communication faster, operations
+                  smoother, and customer interactions more efficient.</p>
+                <div class="integration-brand-logos" style="display: flex; gap: 20px; align-items: center;">
+                  <div
+                    style="width: 54px; height: 54px; border-radius: 50%; background: #eaeaea; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #25D366; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </div>
+                  <div
+                    style="width: 54px; height: 54px; border-radius: 50%; background: #eaeaea; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #2ea93f; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </div>
+                  <div
+                    style="width: 54px; height: 54px; border-radius: 50%; background: #eaeaea; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #555; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                    API</div>
+                </div>
+              </div>
+              <div class="col-lg-7" data-aos="fade-left" data-aos-duration="600">
+                <div class="row g-4">
+                  <!-- Integration 1: WhatsApp -->
+                  <div class="col-md-12">
+                    <div class="integration-card"
+                      style="background:#fcfdfd; border: 1.5px solid #eef6f0; border-radius: 20px; padding: 30px; display: flex; gap: 20px; transition: all 0.3s ease;">
+                      <div
+                        style="width: 50px; height: 50px; border-radius: 12px; background: rgba(37, 211, 102, 0.1); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #25D366; flex-shrink: 0;">
+                        <i class="fa-brands fa-whatsapp"></i>
+                      </div>
+                      <div>
+                        <h4 style="font-size: 18px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px;">WhatsApp
+                          Integration</h4>
+                        <p style="color:#666; font-size: 14px; line-height: 1.6; margin-bottom: 0;">Share invoices,
+                          quotations, payment reminders, and order updates directly through WhatsApp with just one
+                          click.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Integration 2: Google Maps -->
+                  <div class="col-md-12">
+                    <div class="integration-card"
+                      style="background:#fcfdfd; border: 1.5px solid #eef6f0; border-radius: 20px; padding: 30px; display: flex; gap: 20px; transition: all 0.3s ease;">
+                      <div
+                        style="width: 50px; height: 50px; border-radius: 12px; background: rgba(66, 133, 244, 0.1); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #2ea93f; flex-shrink: 0;">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                      </div>
+                      <div>
+                        <h4 style="font-size: 18px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px;">Google Maps
+                          Integration</h4>
+                        <p style="color:#666; font-size: 14px; line-height: 1.6; margin-bottom: 0;">Optimize deliveries
+                          and field sales with real-time location tracking and route navigation.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="fj-testimonials" data-aos="fade-up" data-aos-duration="700">
+          <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
+              <span class="section-label"
+                style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">Testimonials</span>
+              <h2 class="section-title"
+                style="font-size:clamp(28px,4vw,44px);font-weight:600;color:#ffffff;margin-bottom:0;">What Our Clients
+                Say About Fujishka</h2>
+            </div>
+            <div class="row g-4">
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="500">
+                <div class="fj-testi-card">
+                  <div class="stars">★★★★★</div>
+                  <p>"FUJISKA-ERP transformed our distribution business. We now have complete visibility over our 8
+                    branches in Saudi Arabia. The support team is exceptional!"</p>
+                  <div class="author">
+                    <div class="avatar">AM</div>
+                    <div class="info">
+                      <h5>Ahmed Al-Mansouri</h5>
+                      <span>General Manager, KSA Distribution Co.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="600">
+                <div class="fj-testi-card video-card">
+                  <div class="video-thumbnail-wrap">
+                    <img src="assets/imgs/fujishka/testimonial_video_thumb.png" alt="Watch Customer Success Story" />
+                    <div class="video-overlay"></div>
+                  </div>
+
+                  <a href="https://www.youtube.com/watch?v=Get7rqYmSKE" class="video-play-btn popup-video"
+                    aria-label="Play video testimonial">
+                    <i class="fa-solid fa-play"></i>
+                  </a>
+
+                  <div class="video-content-wrap">
+                    <div class="stars">★★★★★</div>
+                    <p
+                      style="font-size: 14.5px; line-height: 1.6; margin-bottom: 20px; font-weight: 500; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+                      "Watch how we boosted delivery efficiency by 40% with Fujeeka Van Sales!"</p>
+                    <div class="author">
+                      <div class="avatar">RK</div>
+                      <div class="info">
+                        <h5>Rajesh Kumar</h5>
+                        <span>Operations Head, FMCG Distributor</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="700">
+                <div class="fj-testi-card">
+                  <div class="stars">★★★★★</div>
+                  <p>"Fujishka's ERP implementation was smooth and fast. Within 2 weeks we were fully operational. Their
+                    team understood our business needs perfectly."</p>
+                  <div class="author">
+                    <div class="avatar">SA</div>
+                    <div class="info">
+                      <h5>Sultan Al-Rashidi</h5>
+                      <span>CEO, Al-Rashidi Trading, UAE</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ===== CLIENTS / LOGOS ===== -->
         <section class="fj-clients-section" id="clients">
 
           <!-- Infinite scroll ticker — no container cap so logos bleed edge-to-edge -->
@@ -4719,260 +5326,7 @@
             </div><!-- /.fj-clients-ticker -->
           </div><!-- /.fj-clients-ticker-wrap -->
         </section>
-        <!-- ===== SERVICES ===== -->
-        <section class="fj-services" id="services">
-          <div class="container">
-            <div class="row align-items-center mb-5">
-              <div class="col-lg-6" data-aos="fade-right" data-aos-duration="700">
-                <span class="section-label">Our Services</span>
-                <h2 class="section-title">Comprehensive Tech Services for Your Business</h2>
-                <p class="section-desc">From ERP implementation to ongoing support, Fujishka provides end-to-end
-                  technology services tailored to your industry needs.</p>
-              </div>
-            </div>
-            <div class="row g-4">
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="500">
-                <div class="fj-service-card">
-                  <i class="fa-solid fa-cloud-arrow-up icon"></i>
-                  <h3>Cloud ERP Implementation</h3>
-                  <p>Full-cycle ERP deployment, data migration, configuration, and go-live support for your business
-                    operations.</p>
-                  <span class="fj-service-num">Service _ 01</span>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="600">
-                <div class="fj-service-card">
-                  <i class="fa-solid fa-mobile-screen icon"></i>
-                  <h3>Van Sales App Deployment</h3>
-                  <p>Complete setup and training for Fujeeka Van Sales app including GPS routing, offline mode, and
-                    integration with ERP.</p>
-                  <span class="fj-service-num">Service _ 02</span>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="700">
-                <div class="fj-service-card">
-                  <i class="fa-solid fa-gears icon"></i>
-                  <h3>ERP Customization</h3>
-                  <p>Custom module development, workflow automation, and integrations tailored to your specific business
-                    requirements.</p>
-                  <span class="fj-service-num">Service _ 03</span>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800">
-                <div class="fj-service-card">
-                  <i class="fa-solid fa-headset icon"></i>
-                  <h3>24/7 Technical Support</h3>
-                  <p>Dedicated customer support team available round the clock to ensure your system runs smoothly
-                    without interruptions.</p>
-                  <span class="fj-service-num">Service _ 04</span>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="900">
-                <div class="fj-service-card">
-                  <i class="fa-solid fa-chart-bar icon"></i>
-                  <h3>Business Analytics & Reports</h3>
-                  <p>Advanced dashboards, KPI reporting, and data analytics tools to help you make informed business
-                    decisions.</p>
-                  <span class="fj-service-num">Service _ 05</span>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000">
-                <div class="fj-service-card">
-                  <i class="fa-solid fa-handshake icon"></i>
-                  <h3>Partnership Program</h3>
-                  <p>Become a Fujishka partner and expand your business by reselling and implementing our ERP solutions
-                    in your region.</p>
-                  <span class="fj-service-num">Service _ 06</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ===== WHY CHOOSE US ===== -->
-        <!-- ===== WHAT SETS US APART ===== -->
-        <section class="fj-why" id="why-choose-us">
-          <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
-              <span class="section-label"
-                style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">What
-                Sets Us Apart</span>
-              <h2 class="section-title"
-                style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#2d2d2d;margin-bottom:0;">What Sets Us Apart
-              </h2>
-            </div>
-
-
-            <!-- About Team Highlights -->
-            <div class="row mt-5 align-items-center g-5">
-              <div class="col-lg-5" data-aos="fade-right" data-aos-duration="800">
-                <div class="fj-why-about-img-wrap">
-                  <img src="assets/imgs/fujishka/team.png" alt="Fujishka Team" style="width:100%; display:block;" />
-                </div>
-              </div>
-              <div class="col-lg-7" data-aos="fade-left" data-aos-duration="800">
-                <span class="section-label"
-                  style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">ABOUT
-                  FUJISHKA</span>
-                <h2
-                  style="font-size:clamp(24px,3vw,36px);font-weight:800;color:#1a1a2e;margin-bottom:16px;line-height:1.25;">
-                  Built on Experience. Driven by Innovation.</h2>
-                <p style="color:#666;font-size:15.5px;line-height:1.75;margin-bottom:28px;">Founded in 2010,
-                  <strong>Fujishka Solutions</strong> has been empowering businesses with intelligent ERP solutions that
-                  simplify operations and accelerate growth. With over 15 years of industry expertise, 1,000+ successful
-                  implementations, and a strong presence across India and the GCC, we deliver technology that connects
-                  every aspect of your business—enabling smarter decisions, greater efficiency, and sustainable success.
-                </p>
-
-                <div class="fj-why-metric-grid" data-aos="fade-up" data-aos-delay="100">
-                  <div class="fj-why-metric-item">
-                    <div class="val">15+ Years</div>
-                    <div class="lbl">Industry Experience</div>
-                  </div>
-                  <div class="fj-why-metric-item">
-                    <div class="val">1,000+</div>
-                    <div class="lbl">Clients Trusted Businesses</div>
-                  </div>
-                  <div class="fj-why-metric-item">
-                    <div class="val">7 Regions</div>
-                    <div class="lbl">India &amp; GCC Presence</div>
-                  </div>
-                </div>
-
-                <a href="about-us.html" class="btn-fj">Learn About Us <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ===== INTEGRATIONS SECTION ===== -->
-        <section class="fj-integrations" id="integrations"
-          style="padding: 100px 0; background: #ffffff; border-bottom: 1px solid #eef6f0;">
-          <div class="container">
-            <div class="row align-items-center g-5">
-              <div class="col-lg-5" data-aos="fade-right" data-aos-duration="800">
-                <span class="section-label"
-                  style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">Connect.
-                  Communicate. Grow.</span>
-                <h2
-                  style="font-size:clamp(28px,3.5vw,40px);font-weight:800;color:#1a1a2e;margin-bottom:16px;line-height:1.2;">
-                  Seamless Integrations</h2>
-                <p style="color:#666;font-size:15.5px;line-height:1.75;margin-bottom:28px;">Fujishka ERP seamlessly
-                  integrates with the platforms your business relies on, making communication faster, operations
-                  smoother, and customer interactions more efficient.</p>
-                <div class="integration-brand-logos" style="display: flex; gap: 20px; align-items: center;">
-                  <div
-                    style="width: 54px; height: 54px; border-radius: 50%; background: #eaeaea; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #25D366; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                    <i class="fa-brands fa-whatsapp"></i>
-                  </div>
-                  <div
-                    style="width: 54px; height: 54px; border-radius: 50%; background: #eaeaea; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #2ea93f; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                    <i class="fa-solid fa-map-location-dot"></i>
-                  </div>
-                  <div
-                    style="width: 54px; height: 54px; border-radius: 50%; background: #eaeaea; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #555; font-weight: 700; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                    API</div>
-                </div>
-              </div>
-              <div class="col-lg-7" data-aos="fade-left" data-aos-duration="800">
-                <div class="row g-4">
-                  <!-- Integration 1: WhatsApp -->
-                  <div class="col-md-12">
-                    <div class="integration-card"
-                      style="background:#fcfdfd; border: 1.5px solid #eef6f0; border-radius: 20px; padding: 30px; display: flex; gap: 20px; transition: all 0.3s ease;">
-                      <div
-                        style="width: 50px; height: 50px; border-radius: 12px; background: rgba(37, 211, 102, 0.1); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #25D366; flex-shrink: 0;">
-                        <i class="fa-brands fa-whatsapp"></i>
-                      </div>
-                      <div>
-                        <h4 style="font-size: 18px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px;">WhatsApp
-                          Integration</h4>
-                        <p style="color:#666; font-size: 14px; line-height: 1.6; margin-bottom: 0;">Share invoices,
-                          quotations, payment reminders, and order updates directly through WhatsApp with just one
-                          click.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Integration 2: Google Maps -->
-                  <div class="col-md-12">
-                    <div class="integration-card"
-                      style="background:#fcfdfd; border: 1.5px solid #eef6f0; border-radius: 20px; padding: 30px; display: flex; gap: 20px; transition: all 0.3s ease;">
-                      <div
-                        style="width: 50px; height: 50px; border-radius: 12px; background: rgba(66, 133, 244, 0.1); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #2ea93f; flex-shrink: 0;">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                      </div>
-                      <div>
-                        <h4 style="font-size: 18px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px;">Google Maps
-                          Integration</h4>
-                        <p style="color:#666; font-size: 14px; line-height: 1.6; margin-bottom: 0;">Optimize deliveries
-                          and field sales with real-time location tracking and route navigation.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ===== TESTIMONIALS ===== -->
-        <section class="fj-testimonials" data-aos="fade-up" data-aos-duration="700">
-          <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
-              <span class="section-label"
-                style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">Testimonials</span>
-              <h2 class="section-title"
-                style="font-size:clamp(28px,4vw,44px);font-weight:800;color:#ffffff;margin-bottom:0;">What Our Clients
-                Say About Fujishka</h2>
-            </div>
-            <div class="row g-4">
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="500">
-                <div class="fj-testi-card">
-                  <div class="stars">★★★★★</div>
-                  <p>"FUJISKA-ERP transformed our distribution business. We now have complete visibility over our 8
-                    branches in Saudi Arabia. The support team is exceptional!"</p>
-                  <div class="author">
-                    <div class="avatar">AM</div>
-                    <div class="info">
-                      <h5>Ahmed Al-Mansouri</h5>
-                      <span>General Manager, KSA Distribution Co.</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="600">
-                <div class="fj-testi-card">
-                  <div class="stars">★★★★★</div>
-                  <p>"Fujeeka Van Sales app helped us increase our daily delivery efficiency by 40%. Our salesmen love
-                    the offline feature — no more lost orders in poor network areas!"</p>
-                  <div class="author">
-                    <div class="avatar">RK</div>
-                    <div class="info">
-                      <h5>Rajesh Kumar</h5>
-                      <span>Operations Head, FMCG Distributor, India</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="700">
-                <div class="fj-testi-card">
-                  <div class="stars">★★★★★</div>
-                  <p>"Fujishka's ERP implementation was smooth and fast. Within 2 weeks we were fully operational. Their
-                    team understood our business needs perfectly."</p>
-                  <div class="author">
-                    <div class="avatar">SA</div>
-                    <div class="info">
-                      <h5>Sultan Al-Rashidi</h5>
-                      <span>CEO, Al-Rashidi Trading, UAE</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ===== GLOBAL PRESENCE / OFFICES ===== -->
+        <!-- ===== PRESENCE ===== -->
         <section class="fj-presence" id="presence">
           <div class="container">
             <div class="fj-presence-header" data-aos="fade-up" data-aos-duration="600">
@@ -5041,7 +5395,7 @@
               </div>
 
               <!-- Location 3: UAE -->
-              <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800">
+              <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600">
                 <div class="fj-location-card">
                   <div>
                     <div class="loc-flag-icon">🇦🇪</div>
@@ -5099,6 +5453,7 @@
             </div>
           </div>
         </section>
+
         <!-- ===== FAQ ===== -->
         <section class="fj-faq">
           <div class="container">
@@ -5107,7 +5462,7 @@
                 <span class="section-label"
                   style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">FAQ</span>
                 <h2 class="section-title"
-                  style="font-size:clamp(28px,4vw,40px);font-weight:800;color:#1a1a2e;line-height:1.2;margin-bottom:16px;">
+                  style="font-size:clamp(28px,4vw,40px);font-weight:600;color:#1a1a2e;line-height:1.2;margin-bottom:16px;">
                   Got Questions?<br>We've Got Answers</h2>
                 <p style="color:#666;font-size:15px;line-height:1.8;margin-bottom:28px;">Find answers to common
                   questions about Fujishka ERP and Van Sales solutions. Can't find what you are looking for?</p>
@@ -5116,7 +5471,7 @@
                 <div
                   style="background:#ffffff; border:1px solid #eef5ef; border-radius:18px; padding:24px; margin-bottom:28px; box-shadow:0 4px 15px rgba(0,0,0,0.01);">
                   <h4
-                    style="font-size:16px; font-weight:800; color:#1a1a2e; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+                    style="font-size:16px; font-weight:600; color:#1a1a2e; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
                     <i class="fa-solid fa-headset" style="color:var(--fujishka-green);"></i> Need Custom Assistance?
                   </h4>
                   <ul
@@ -5131,7 +5486,7 @@
                   </ul>
                 </div>
 
-                <a href="contact-us.html" class="btn-fj">Contact Us <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#" class="btn-fj">Contact Us <i class="fa-solid fa-arrow-right"></i></a>
               </div>
               <div class="col-lg-7" data-aos="fade-left" data-aos-duration="700">
                 <div class="accordion" id="faqAccordion">
@@ -5219,37 +5574,6 @@
           </div>
         </section>
 
-        <!-- ===== CTA ===== -->
-        <section class="fj-cta" id="demo">
-          <div class="container" style="position:relative;">
-            <div data-aos="fade-up" data-aos-duration="700">
-              <span
-                style="display:inline-block;background:rgba(62,182,73,0.15);border:1px solid rgba(62,182,73,0.3);color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:20px;">Your
-                Growth Story Starts Here</span>
-              <h2>Your Growth Story Starts Here.</h2>
-              <p>Experience the power of one intelligent ERP platform that connects your people, processes, and
-                performance.</p>
-              <div class="btn-group-cta">
-                <a href="contact-us.html" class="btn-fj"><i class="fa-solid fa-play-circle"></i> Book a Free Demo
-                  Today</a>
-                <a href="tel:+917907773636" class="btn-fj-outline"><i class="fa-solid fa-phone"></i> Call Us Now</a>
-              </div>
-              <div style="margin-top:30px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap;">
-                <a href="https://wa.me/917907773636" target="_blank"
-                  style="color:rgba(255,255,255,0.6);font-size:14px;text-decoration:none;display:flex;align-items:center;gap:8px;"><i
-                    class="fa-brands fa-whatsapp" style="color:#25D366;font-size:18px;"></i> WhatsApp: +91 79077
-                  73636</a>
-                <a href="mailto:sales@fujishka.com"
-                  style="color:rgba(255,255,255,0.6);font-size:14px;text-decoration:none;display:flex;align-items:center;gap:8px;"><i
-                    class="fa-solid fa-envelope" style="color:#3EB649;font-size:16px;"></i> sales@fujishka.com</a>
-                <a href="https://www.fujishka.com" target="_blank"
-                  style="color:rgba(255,255,255,0.6);font-size:14px;text-decoration:none;display:flex;align-items:center;gap:8px;"><i
-                    class="fa-solid fa-globe" style="color:#3EB649;font-size:16px;"></i> www.fujishka.com</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
       </main>
 
       <!-- ===== FOOTER ===== -->
@@ -5281,15 +5605,15 @@
             <div class="col-sm-6 col-lg-2">
               <h5>Products</h5>
               <ul>
-                <li><a href="bquick.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> B-QUICK
+                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> B-QUICK
                     ERP</a></li>
-                <li><a href="fujeeka.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Fujeeka Van
+                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Fujeeka Van
                     Sales</a></li>
-                <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i>
+                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i>
                     Services</a></li>
-                <li><a href="partner.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Partner
+                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Partner
                     Program</a></li>
-                <li><a href="careers.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Careers</a>
+                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Careers</a>
                 </li>
               </ul>
             </div>
@@ -5297,16 +5621,16 @@
             <div class="col-sm-6 col-lg-2">
               <h5>Company</h5>
               <ul>
-                <li><a href="about-us.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> About
+                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> About
                     Us</a></li>
-                <li><a href="blogs.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Blogs</a>
+                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Blogs</a>
                 </li>
-                <li><a href="contact-us.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Contact
+                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Contact
                     Us</a></li>
-                <li><a href="ar-index.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> عربي
+                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> عربي
                     (Arabic)</a></li>
-                <li><a href="best-cloud-erp-software-in-saudi-arabia.html"><i class="fa-solid fa-chevron-right"
-                      style="font-size:10px;"></i> Saudi Arabia ERP</a></li>
+                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Saudi Arabia ERP</a>
+                </li>
               </ul>
             </div>
             <!-- Contact -->
@@ -5335,12 +5659,11 @@
             </div>
           </div>
           <div class="footer-bottom">
-            <p>&copy; 2025 <a href="index.html">Fujishka Technologies Pvt. Ltd.</a> All Rights Reserved.</p>
+            <p>&copy; 2026 <a href="index.html">Fujishka Technologies Pvt. Ltd.</a> All Rights Reserved.</p>
             <div style="display:flex;gap:16px;flex-wrap:wrap;">
               <a href="#" style="color:rgba(255,255,255,0.4);font-size:13px;text-decoration:none;">Privacy Policy</a>
               <a href="#" style="color:rgba(255,255,255,0.4);font-size:13px;text-decoration:none;">Terms of Service</a>
-              <a href="sitemap.html"
-                style="color:rgba(255,255,255,0.4);font-size:13px;text-decoration:none;">Sitemap</a>
+              <a href="#" style="color:rgba(255,255,255,0.4);font-size:13px;text-decoration:none;">Sitemap</a>
             </div>
           </div>
         </div>
