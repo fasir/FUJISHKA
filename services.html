@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Fujishka Technology Services | Cloud ERP Implementation, Van Sales App Deployment, Custom Software Development, Mobile Apps, Web Solutions, and 24/7 Technical Support." />
+  <meta name="keywords"
+    content="Fujishka Services, ERP Implementation, Van Sales Deployment, Custom ERP Development, Web Development Calicut, Mobile App Development India, ZATCA e-Invoicing Integration" />
+
+  <title>Services | Fujishka – Tech For Success</title>
+
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png" />
+
+  <!-- Dependencies CSS Files -->
+  <link rel="stylesheet" href="assets/vandor/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vandor/fontawesome/fontawesome-pro.min.css" />
+  <link rel="stylesheet" href="assets/vandor/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/vandor/menu/meanmenu.min.css" />
+  <link rel="stylesheet" href="assets/vandor/popup/magnific-popup.css" />
+  <link rel="stylesheet" href="assets/vandor/nice-select/nice-select.css" />
+  <link rel="stylesheet" href="assets/vandor/odometer/odometer-theme-default.css">
+  <link rel="stylesheet" href="assets/vandor/animation/aos.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    :root {
+      --fj-green: #3EB649;
+      --fj-green-dark: #2a9e38;
+      --fj-dark: #111827;
+      --fj-navy: #050f1f;
+      --fj-light-green: #e8f7ea;
+      --fj-gradient: linear-gradient(135deg, #3EB649 0%, #27a33a 100%);
+      --fj-gradient-2: linear-gradient(135deg, #3EB649 0%, #00b894 100%);
+    }
+
+    body { font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
+
+    /* Topbar & Navbar */
+    .fj-topbar { background: linear-gradient(90deg, #f0faf1 0%, #e8f7ea 100%); color: #3a3a3a; padding: 8px 0; font-size: 12.5px; font-weight: 500; border-bottom: 1px solid rgba(62, 182, 73, 0.2); position: relative; z-index: 1001; }
+    .fj-topbar a { color: #444; text-decoration: none; transition: color 0.2s; }
+    .fj-topbar a:hover { color: var(--fj-green); }
+    .fj-topbar .fj-topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .fj-topbar .contact-links { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
+    .fj-topbar .contact-links a { display: flex; align-items: center; gap: 7px; }
+    .fj-topbar .contact-links a i { color: var(--fj-green); font-size: 11px; }
+
+    .fj-navbar { position: fixed; top: 38px; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(62, 182, 73, 0.12); transition: all 0.4s ease; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+    .fj-navbar.scrolled { top: 0; background: rgba(255, 255, 255, 0.98); box-shadow: 0 4px 32px rgba(0,0,0,0.10); }
+    @media (max-width: 767px) { .fj-navbar { top: 0; } }
+
+    .fj-logo-wrap img { height: 40px; width: auto; }
+    .fj-navbar .main-menu > ul { display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
+    .fj-navbar .main-menu > ul > li > a { color: #333; text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 13px; border-radius: 8px; transition: all 0.2s; position: relative; }
+    .fj-navbar .main-menu > ul > li:hover > a, .fj-navbar .main-menu > ul > li > a.active { color: var(--fj-green); }
+    .fj-navbar .dp-menu { position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid rgba(62,182,73,0.15); border-radius: 14px; padding: 10px; list-style: none; min-width: 210px; box-shadow: 0 20px 60px rgba(0,0,0,0.12); opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 999; }
+    .fj-navbar .menu-item-has-children { position: relative; }
+    .fj-navbar .menu-item-has-children:hover .dp-menu { opacity: 1; visibility: visible; }
+    .fj-navbar .dp-menu li a { display: block; padding: 9px 14px; color: #444; text-decoration: none; font-size: 13.5px; font-weight: 500; border-radius: 8px; }
+    .fj-navbar .dp-menu li a:hover { background: rgba(62,182,73,0.08); color: var(--fj-green); }
+
+    .fj-nav-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--fj-gradient); color: #fff !important; padding: 10px 22px; border-radius: 50px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 18px rgba(62,182,73,0.3); }
+    .fj-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(62,182,73,0.5); }
+
+    /* Page Hero */
+    .fj-page-hero { position: relative; min-height: 400px; display: flex; align-items: center; padding: 140px 0 80px; overflow: hidden; background: var(--fj-navy); }
+    .fj-page-hero .hero-bg { position: absolute; inset: 0; background: url('assets/imgs/fujishka/hero-bg.png') center/cover no-repeat; opacity: 0.4; }
+    .fj-page-hero .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,15,31,0.5) 0%, rgba(5,15,31,0.92) 100%); }
+    .fj-page-hero .hero-inner { position: relative; z-index: 2; text-align: center; }
+    .fj-page-hero h1 { font-size: clamp(38px, 5vw, 64px); font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .fj-page-hero h1 .hl { background: linear-gradient(135deg, #3EB649 0%, #00e676 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .fj-page-hero p { color: rgba(255,255,255,0.7); font-size: 16.5px; max-width: 600px; margin: 0 auto 28px; line-height: 1.7; }
+    .fj-page-hero .breadcrumb-row { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13.5px; color: rgba(255,255,255,0.45); }
+    .fj-page-hero .breadcrumb-row a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .fj-page-hero .breadcrumb-row .current { color: var(--fj-green); font-weight: 600; }
+
+    /* Services Grid Section */
+    .fj-services-page { padding: 90px 0 100px; background: #fff; }
+    .section-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(62,182,73,0.1); border: 1px solid rgba(62,182,73,0.25); color: var(--fj-green); font-size: 11.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 14px; }
+    .section-title { font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; color: #1a1a2e; margin-bottom: 16px; line-height: 1.2; }
+
+    .service-big-card { background: #ffffff; border: 1px solid #e8f4eb; border-radius: 24px; padding: 40px 36px; height: 100%; transition: all 0.4s cubic-bezier(0.165,0.84,0.44,1); position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .service-big-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--fj-gradient); opacity: 0; transition: opacity 0.35s ease; }
+    .service-big-card:hover { border-color: rgba(62,182,73,0.4); box-shadow: 0 20px 50px rgba(62,182,73,0.12); transform: translateY(-8px); }
+    .service-big-card:hover::before { opacity: 1; }
+
+    .service-big-card .svc-icon-box { width: 68px; height: 68px; background: var(--fj-light-green); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--fj-green); margin-bottom: 24px; transition: all 0.35s; }
+    .service-big-card:hover .svc-icon-box { background: var(--fj-gradient); color: #fff; box-shadow: 0 10px 26px rgba(62,182,73,0.35); transform: scale(1.08); }
+
+    .service-big-card h3 { font-size: 21px; font-weight: 700; color: #1a1a2e; margin-bottom: 12px; }
+    .service-big-card p { color: #667085; font-size: 14.5px; line-height: 1.75; margin-bottom: 22px; }
+    .service-big-card .svc-features { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 10px; }
+    .service-big-card .svc-features li { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #444; font-weight: 500; }
+    .service-big-card .svc-features li i { color: var(--fj-green); font-size: 12px; }
+
+    /* CTA Band */
+    .fj-cta-band { padding: 80px 0; background: linear-gradient(135deg, #3EB649 0%, #27a33a 50%, #00b894 100%); color: #fff; text-align: center; }
+    .fj-cta-band h2 { font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; margin-bottom: 14px; }
+    .fj-cta-band p { font-size: 16.5px; color: rgba(255,255,255,0.85); max-width: 540px; margin: 0 auto 30px; }
+    .fj-btn-white { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--fj-green) !important; padding: 14px 34px; border-radius: 50px; font-weight: 700; font-size: 15px; text-decoration: none; box-shadow: 0 6px 24px rgba(0,0,0,0.15); transition: all 0.3s; }
+    .fj-btn-white:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.2); }
+
+    /* Footer */
+    .fj-footer { background: linear-gradient(180deg, #050f1f 0%, #020913 100%); padding: 80px 0 0; color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.7; }
+    .fj-footer h5 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 20px; }
+    .fj-footer ul { list-style: none; padding: 0; margin: 0; }
+    .fj-footer ul li { margin-bottom: 10px; }
+    .fj-footer ul li a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .fj-footer ul li a:hover { color: var(--fj-green); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 0; margin-top: 60px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="fj-topbar">
+    <div class="container">
+      <div class="fj-topbar-inner">
+        <div class="contact-links">
+          <a href="tel:+917907773636"><i class="fa-solid fa-phone"></i> (IND) +91 79077 73636</a>
+          <a href="tel:+9660556647610"><i class="fa-solid fa-phone"></i> (KSA) +966 0556647610 &nbsp;<span
+              style="opacity:.5;font-size:11px;">ERP</span></a>
+          <a href="tel:+966509857933"><i class="fa-solid fa-phone"></i> (KSA) +966 509857933 &nbsp;<span
+              style="opacity:.5;font-size:11px;">Accessories</span></a>
+        </div>
+        <div class="topbar-right">
+          <a href="index.html" class="lang-btn">عربي <i class="fa-solid fa-globe"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="fj-navbar header-area-1" id="fj-main-header">
+    <div class="container">
+      <div class="header-area-1__inner">
+
+        <!-- Logo -->
+        <div class="header__logo fj-logo-wrap">
+          <a href="index.html">
+            <img src="assets/imgs/image.png" alt="Fujishka – Tech For Success"
+              onerror="this.parentNode.innerHTML='<div class=fj-logo-fallback><span class=fj-logo-symbol>&amp;</span><div class=fj-logo-text><span class=brand-name>FUJISHKA</span><span class=brand-tagline>Tech For Success</span></div></div>';" />
+          </a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="header__nav d-none d-xl-block">
+          <nav class="main-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Products <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="b-quick-erp.html"><i class="fa-solid fa-cloud" style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
+                  <li><a href="van-sales.html"><i class="fa-solid fa-truck" style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
+                </ul>
+              </li>
+              <li><a href="services.html" class="active">Services</a></li>
+              <li><a href="partner.html">Partner</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Countries <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>India</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
+                </ul>
+              </li>
+              <li><a href="blogs.html">Blogs</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Header Right -->
+        <div class="header-right">
+          <a href="index.html#demo" class="fj-nav-cta">
+            <i class="fa-solid fa-rocket"></i>
+            Request Demo
+            <i class="fa-solid fa-arrow-right btn-arrow"></i>
+          </a>
+          <!-- Mobile toggle -->
+          <div class="header__navicon d-xl-none">
+            <div class="side-toggle">
+              <a class="bar-icon" href="javascript:void(0)">
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="fj-page-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-inner" data-aos="fade-up" data-aos-duration="700">
+        <span class="section-label" style="background:rgba(62,182,73,0.15);color:#6ee77f;border-color:rgba(62,182,73,0.3);">End-to-End Technology</span>
+        <h1>Fujishka <span class="hl">Services</span></h1>
+        <p>From cloud ERP deployment to custom mobile app engineering and 24/7 technical support — we help businesses transition into digital leaders.</p>
+        <div class="breadcrumb-row">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span class="current">Services</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <main class="fj-services-page">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="section-label"><i class="fa-solid fa-screwdriver-wrench"></i> What We Offer</span>
+        <h2 class="section-title">Comprehensive Tech Services for Your Growth</h2>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-big-card">
+            <div class="svc-icon-box"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+            <h3>Cloud ERP Implementation</h3>
+            <p>Full-cycle ERP setup, multi-branch data migration, chart of accounts configuration, and go-live training for your team.</p>
+            <ul class="svc-features">
+              <li><i class="fa-solid fa-check-circle"></i> Data migration &amp; cleanup</li>
+              <li><i class="fa-solid fa-check-circle"></i> Custom workflow configuration</li>
+              <li><i class="fa-solid fa-check-circle"></i> On-site &amp; virtual staff training</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-big-card">
+            <div class="svc-icon-box"><i class="fa-solid fa-truck"></i></div>
+            <h3>Van Sales App Deployment</h3>
+            <p>Complete rollout of Fujeeka Van Sales app with GPS route setup, bluetooth printer pairing, and offline sync verification.</p>
+            <ul class="svc-features">
+              <li><i class="fa-solid fa-check-circle"></i> Handheld device setup</li>
+              <li><i class="fa-solid fa-check-circle"></i> Driver &amp; salesman onboarding</li>
+              <li><i class="fa-solid fa-check-circle"></i> Live route tracking setup</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-big-card">
+            <div class="svc-icon-box"><i class="fa-solid fa-gears"></i></div>
+            <h3>ERP Customization &amp; Integration</h3>
+            <p>Custom module development, third-party API integrations, ZATCA e-invoicing Phase 2 integration, and automated reporting.</p>
+            <ul class="svc-features">
+              <li><i class="fa-solid fa-check-circle"></i> ZATCA e-Invoicing compliance</li>
+              <li><i class="fa-solid fa-check-circle"></i> Payment gateway integration</li>
+              <li><i class="fa-solid fa-check-circle"></i> Custom report generation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-big-card">
+            <div class="svc-icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>Mobile App Development</h3>
+            <p>Native iOS and Android mobile app development engineered for business operations, field sales, and customer engagement.</p>
+            <ul class="svc-features">
+              <li><i class="fa-solid fa-check-circle"></i> Cross-platform Flutter / React Native</li>
+              <li><i class="fa-solid fa-check-circle"></i> Offline-first database architecture</li>
+              <li><i class="fa-solid fa-check-circle"></i> App Store &amp; Play Store publishing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-big-card">
+            <div class="svc-icon-box"><i class="fa-solid fa-code"></i></div>
+            <h3>Web Design &amp; Portal Development</h3>
+            <p>High-performance modern websites, customer portals, B2B e-commerce platforms, and cloud portal dashboards.</p>
+            <ul class="svc-features">
+              <li><i class="fa-solid fa-check-circle"></i> Responsive modern design</li>
+              <li><i class="fa-solid fa-check-circle"></i> SEO &amp; speed optimization</li>
+              <li><i class="fa-solid fa-check-circle"></i> Secure customer portals</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-big-card">
+            <div class="svc-icon-box"><i class="fa-solid fa-headset"></i></div>
+            <h3>24/7 Technical Support &amp; Maintenance</h3>
+            <p>Dedicated customer support team available round-the-clock with guaranteed response SLAs, server monitoring, and backups.</p>
+            <ul class="svc-features">
+              <li><i class="fa-solid fa-check-circle"></i> 24/7 Helpdesk &amp; WhatsApp support</li>
+              <li><i class="fa-solid fa-check-circle"></i> Daily automated cloud backups</li>
+              <li><i class="fa-solid fa-check-circle"></i> Regular feature updates</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- CTA Band -->
+  <section class="fj-cta-band">
+    <div class="container">
+      <h2>Need a Custom Solution for Your Business?</h2>
+      <p>Talk with our technology consultants today to discuss your project requirements and receive a detailed roadmap.</p>
+      <a href="contact.html" class="fj-btn-white"><i class="fa-solid fa-paper-plane"></i> Contact Our Experts</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="fj-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <img src="assets/imgs/image.png" height="40" alt="Fujishka" style="margin-bottom:20px;" />
+          <p>Fujishka delivers powerful Cloud ERP and Van Sales software solutions to businesses across India, Saudi Arabia, UAE, and the GCC region.</p>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="partner.html">Partner Program</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Products</h5>
+          <ul>
+            <li><a href="b-quick-erp.html">B-QUICK ERP</a></li>
+            <li><a href="van-sales.html">Fujeeka Van Sales</a></li>
+            <li><a href="saudi-arabia-erp.html">Saudi Arabia ERP</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5>Contact</h5>
+          <p><i class="fa-solid fa-phone" style="color:#3EB649;"></i> (IND) +91 79077 73636</p>
+          <p><i class="fa-solid fa-phone" style="color:#3EB649;"></i> (KSA) +966 0556647610</p>
+          <p><i class="fa-solid fa-envelope" style="color:#3EB649;"></i> sales@fujishka.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Fujishka Technologies Pvt. Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/vandor/jquery/jquery.js"></script>
+  <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vandor/animation/aos.js"></script>
+  <script>if (typeof AOS !== 'undefined') { AOS.init({ duration: 700, once: true }); }</script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Best Cloud ERP & ZATCA e-Invoicing Software in Saudi Arabia | Fujishka ERP Jeddah - Phase 2 compliant ERP for accounting, inventory, van sales, and Arabic/English VAT billing." />
+  <meta name="keywords"
+    content="Saudi Arabia ERP, ZATCA e-Invoicing Phase 2, ERP Jeddah, Cloud ERP KSA, Arabic ERP Software, Fujeeka Van Sales Saudi" />
+
+  <title>Saudi Arabia Cloud ERP & ZATCA | Fujishka – Tech For Success</title>
+
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png" />
+
+  <!-- Dependencies CSS Files -->
+  <link rel="stylesheet" href="assets/vandor/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vandor/fontawesome/fontawesome-pro.min.css" />
+  <link rel="stylesheet" href="assets/vandor/animation/aos.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    :root {
+      --fj-green: #3EB649;
+      --fj-navy: #050f1f;
+      --fj-light-green: #e8f7ea;
+      --fj-gradient: linear-gradient(135deg, #3EB649 0%, #27a33a 100%);
+    }
+
+    body { font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
+
+    .fj-topbar { background: linear-gradient(90deg, #f0faf1 0%, #e8f7ea 100%); padding: 8px 0; font-size: 12.5px; border-bottom: 1px solid rgba(62, 182, 73, 0.2); }
+    .fj-topbar a { color: #444; text-decoration: none; }
+    .fj-navbar { position: fixed; top: 38px; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(62, 182, 73, 0.12); box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+    @media (max-width: 767px) { .fj-navbar { top: 0; } }
+
+    .fj-navbar .main-menu > ul { display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
+    .fj-navbar .main-menu > ul > li > a { color: #333; text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 13px; border-radius: 8px; }
+    .fj-navbar .main-menu > ul > li:hover > a, .fj-navbar .main-menu > ul > li > a.active { color: var(--fj-green); }
+    .fj-navbar .dp-menu { position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid rgba(62,182,73,0.15); border-radius: 14px; padding: 10px; list-style: none; min-width: 210px; box-shadow: 0 20px 60px rgba(0,0,0,0.12); opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 999; }
+    .fj-navbar .menu-item-has-children:hover .dp-menu { opacity: 1; visibility: visible; }
+    .fj-navbar .dp-menu li a { display: block; padding: 9px 14px; color: #444; text-decoration: none; font-size: 13.5px; font-weight: 500; border-radius: 8px; }
+    .fj-navbar .dp-menu li a:hover { background: rgba(62,182,73,0.08); color: var(--fj-green); }
+    .fj-nav-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--fj-gradient); color: #fff !important; padding: 10px 22px; border-radius: 50px; font-weight: 600; font-size: 14px; text-decoration: none; }
+
+    /* Page Hero */
+    .fj-page-hero { position: relative; min-height: 400px; display: flex; align-items: center; padding: 140px 0 80px; overflow: hidden; background: var(--fj-navy); }
+    .fj-page-hero .hero-bg { position: absolute; inset: 0; background: url('assets/imgs/fujishka/hero-bg.png') center/cover no-repeat; opacity: 0.4; }
+    .fj-page-hero .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,15,31,0.5) 0%, rgba(5,15,31,0.92) 100%); }
+    .fj-page-hero .hero-inner { position: relative; z-index: 2; text-align: center; }
+    .fj-page-hero h1 { font-size: clamp(36px, 5vw, 60px); font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .fj-page-hero h1 .hl { background: linear-gradient(135deg, #3EB649 0%, #00e676 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .fj-page-hero p { color: rgba(255,255,255,0.7); font-size: 16.5px; max-width: 620px; margin: 0 auto 28px; line-height: 1.7; }
+
+    /* Feature Card */
+    .ksa-sec { padding: 90px 0; background: #fff; }
+    .ksa-card { background: #ffffff; border: 1px solid #e8f4eb; border-radius: 20px; padding: 36px 30px; transition: all 0.35s; height: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .ksa-card:hover { border-color: rgba(62,182,73,0.4); box-shadow: 0 16px 40px rgba(62,182,73,0.12); transform: translateY(-6px); }
+    .ksa-card .k-icon { width: 58px; height: 58px; background: var(--fj-light-green); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 26px; color: var(--fj-green); margin-bottom: 22px; }
+    .ksa-card:hover .k-icon { background: var(--fj-gradient); color: #fff; }
+    .ksa-card h3 { font-size: 20px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+    .ksa-card p { color: #667085; font-size: 14.5px; line-height: 1.7; margin: 0; }
+
+    /* Footer */
+    .fj-footer { background: linear-gradient(180deg, #050f1f 0%, #020913 100%); padding: 80px 0 0; color: rgba(255,255,255,0.6); font-size: 14px; }
+    .fj-footer h5 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 20px; }
+    .fj-footer ul { list-style: none; padding: 0; margin: 0; }
+    .fj-footer ul li { margin-bottom: 10px; }
+    .fj-footer ul li a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .fj-footer ul li a:hover { color: var(--fj-green); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 0; margin-top: 60px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="fj-topbar">
+    <div class="container">
+      <div class="fj-topbar-inner">
+        <div class="contact-links">
+          <a href="tel:+917907773636"><i class="fa-solid fa-phone"></i> (IND) +91 79077 73636</a>
+          <a href="tel:+9660556647610"><i class="fa-solid fa-phone"></i> (KSA) +966 0556647610 &nbsp;<span
+              style="opacity:.5;font-size:11px;">ERP</span></a>
+          <a href="tel:+966509857933"><i class="fa-solid fa-phone"></i> (KSA) +966 509857933 &nbsp;<span
+              style="opacity:.5;font-size:11px;">Accessories</span></a>
+        </div>
+        <div class="topbar-right">
+          <a href="index.html" class="lang-btn">عربي <i class="fa-solid fa-globe"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="fj-navbar header-area-1" id="fj-main-header">
+    <div class="container">
+      <div class="header-area-1__inner">
+
+        <!-- Logo -->
+        <div class="header__logo fj-logo-wrap">
+          <a href="index.html">
+            <img src="assets/imgs/image.png" alt="Fujishka – Tech For Success"
+              onerror="this.parentNode.innerHTML='<div class=fj-logo-fallback><span class=fj-logo-symbol>&amp;</span><div class=fj-logo-text><span class=brand-name>FUJISHKA</span><span class=brand-tagline>Tech For Success</span></div></div>';" />
+          </a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="header__nav d-none d-xl-block">
+          <nav class="main-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Products <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="b-quick-erp.html"><i class="fa-solid fa-cloud" style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
+                  <li><a href="van-sales.html"><i class="fa-solid fa-truck" style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
+                </ul>
+              </li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="partner.html">Partner</a></li>
+              <li class="menu-item-has-children">
+                <a href="#" class="active">Countries <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="saudi-arabia-erp.html" class="active"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>India</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
+                </ul>
+              </li>
+              <li><a href="blogs.html">Blogs</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Header Right -->
+        <div class="header-right">
+          <a href="index.html#demo" class="fj-nav-cta">
+            <i class="fa-solid fa-rocket"></i>
+            Request Demo
+            <i class="fa-solid fa-arrow-right btn-arrow"></i>
+          </a>
+          <!-- Mobile toggle -->
+          <div class="header__navicon d-xl-none">
+            <div class="side-toggle">
+              <a class="bar-icon" href="javascript:void(0)">
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="fj-page-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-inner" data-aos="fade-up">
+        <span style="background:rgba(62,182,73,0.15);color:#6ee77f;border:1px solid rgba(62,182,73,0.3);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:5px 14px;border-radius:20px;display:inline-block;margin-bottom:16px;">🇸🇦 Kingdom of Saudi Arabia</span>
+        <h1>ZATCA Compliant <span class="hl">Cloud ERP</span> in KSA</h1>
+        <p>Complete Cloud ERP &amp; Mobile Van Sales solution tailored for Saudi business regulations, ZATCA Phase 1 &amp; Phase 2 e-Invoicing integration, and Arabic/English bilingual billing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KSA Features Section -->
+  <section class="ksa-sec">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span style="background:rgba(62,182,73,0.1);color:#3EB649;font-size:11.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:20px;display:inline-block;margin-bottom:12px;">Local Saudi Compliance</span>
+        <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:700;color:#1a1a2e;">Engineered for Business Success in KSA</h2>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+          <div class="ksa-card">
+            <div class="k-icon"><i class="fa-solid fa-qrcode"></i></div>
+            <h3>ZATCA Phase 2 E-Invoicing</h3>
+            <p>Direct integration with ZATCA (Fatoora) portal for XML generation, cryptographic stamp, UUID, and B2B / B2C e-invoicing compliance.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="ksa-card">
+            <div class="k-icon"><i class="fa-solid fa-language"></i></div>
+            <h3>Bilingual Arabic &amp; English</h3>
+            <p>Seamless toggle between Arabic and English UI, bilingual invoice templates, and localized VAT tax reporting.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="ksa-card">
+            <div class="k-icon"><i class="fa-solid fa-building-flag"></i></div>
+            <h3>Local Office in Jeddah</h3>
+            <p>On-ground support and consultation team located at Al Aziziya, Jeddah to provide immediate training and technical assistance.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+          <div class="ksa-card">
+            <div class="k-icon"><i class="fa-solid fa-truck"></i></div>
+            <h3>KSA Van Sales &amp; Distribution</h3>
+            <p>Handheld mobile van billing for wholesale distributors operating across Western Region, Riyadh, Dammam, and Jeddah.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="ksa-card">
+            <div class="k-icon"><i class="fa-solid fa-percent"></i></div>
+            <h3>15% VAT Auto Computation</h3>
+            <p>Automatic 15% Saudi VAT calculation, tax invoice printing, zero-rated exports, and quarterly ZATCA tax return summaries.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="ksa-card">
+            <div class="k-icon"><i class="fa-solid fa-users"></i></div>
+            <h3>GOSI &amp; Qiwa Payroll Support</h3>
+            <p>Employee salary processing tailored for KSA Labor Law, Saudization tracking, end-of-service benefits (EOSB), and WPS output.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Office Location Band -->
+  <section style="padding:80px 0;background:linear-gradient(135deg,#050f1f 0%,#0d2040 100%);color:#fff;">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span style="color:#3EB649;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:12px;">Visit KSA Office</span>
+          <h2 style="font-size:36px;font-weight:700;margin:10px 0 20px;">Jeddah Branch</h2>
+          <p style="color:rgba(255,255,255,0.7);font-size:16px;line-height:1.75;">Al Amir Muhammed Bin Abdul Azeez St., Al Aziziya, Jeddah, Kingdom of Saudi Arabia.</p>
+          <div style="margin-top:24px;">
+            <p><i class="fa-solid fa-phone" style="color:#3EB649;"></i> <strong>ERP Support:</strong> +966 0556647610</p>
+            <p><i class="fa-solid fa-phone" style="color:#3EB649;"></i> <strong>Accessories:</strong> +966 509857933</p>
+            <p><i class="fa-solid fa-envelope" style="color:#3EB649;"></i> <strong>Email:</strong> info@equibilitysa.com</p>
+          </div>
+        </div>
+        <div class="col-lg-6 text-lg-end">
+          <a href="contact.html" class="fj-nav-cta" style="padding:14px 34px;font-size:15px;"><i class="fa-solid fa-paper-plane"></i> Request KSA Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="fj-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <img src="assets/imgs/image.png" height="40" alt="Fujishka" style="margin-bottom:20px;" />
+          <p>Fujishka delivers powerful Cloud ERP and Van Sales software solutions to businesses across India, Saudi Arabia, UAE, and the GCC region.</p>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="partner.html">Partner Program</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Products</h5>
+          <ul>
+            <li><a href="b-quick-erp.html">B-QUICK ERP</a></li>
+            <li><a href="van-sales.html">Fujeeka Van Sales</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5>KSA Contact</h5>
+          <p><i class="fa-solid fa-phone" style="color:#3EB649;"></i> +966 0556647610</p>
+          <p><i class="fa-solid fa-envelope" style="color:#3EB649;"></i> info@equibilitysa.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p>&copy; 2026 Fujishka Technologies Pvt. Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/vandor/jquery/jquery.js"></script>
+  <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vandor/animation/aos.js"></script>
+  <script>if (typeof AOS !== 'undefined') { AOS.init({ duration: 700, once: true }); }</script>
+</body>
+</html>

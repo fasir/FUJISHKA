@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Contact Fujishka | Cloud ERP & Van Sales Solutions - Reach out to our offices in India (Calicut), Saudi Arabia (Jeddah), UAE (Dubai), and China (Guangzhou) for sales, support, or ERP demo requests." />
+  <meta name="keywords"
+    content="Fujishka Contact, Fujishka Calicut Office, Fujishka Jeddah Office, Fujishka Dubai Office, ERP Support Phone Number, Request Demo Fujishka" />
+
+  <title>Contact Us | Fujishka – Tech For Success</title>
+
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png" />
+
+  <!-- Dependencies CSS Files -->
+  <link rel="stylesheet" href="assets/vandor/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vandor/fontawesome/fontawesome-pro.min.css" />
+  <link rel="stylesheet" href="assets/vandor/animation/aos.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    :root {
+      --fj-green: #3EB649;
+      --fj-navy: #050f1f;
+      --fj-light-green: #e8f7ea;
+      --fj-gradient: linear-gradient(135deg, #3EB649 0%, #27a33a 100%);
+    }
+
+    body { font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
+
+    .fj-topbar { background: linear-gradient(90deg, #f0faf1 0%, #e8f7ea 100%); padding: 8px 0; font-size: 12.5px; border-bottom: 1px solid rgba(62, 182, 73, 0.2); }
+    .fj-topbar a { color: #444; text-decoration: none; }
+    .fj-navbar { position: fixed; top: 38px; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(62, 182, 73, 0.12); box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+    @media (max-width: 767px) { .fj-navbar { top: 0; } }
+
+    .fj-navbar .main-menu > ul { display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
+    .fj-navbar .main-menu > ul > li > a { color: #333; text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 13px; border-radius: 8px; }
+    .fj-navbar .main-menu > ul > li:hover > a, .fj-navbar .main-menu > ul > li > a.active { color: var(--fj-green); }
+    .fj-navbar .dp-menu { position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid rgba(62,182,73,0.15); border-radius: 14px; padding: 10px; list-style: none; min-width: 210px; box-shadow: 0 20px 60px rgba(0,0,0,0.12); opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 999; }
+    .fj-navbar .menu-item-has-children:hover .dp-menu { opacity: 1; visibility: visible; }
+    .fj-navbar .dp-menu li a { display: block; padding: 9px 14px; color: #444; text-decoration: none; font-size: 13.5px; font-weight: 500; border-radius: 8px; }
+    .fj-navbar .dp-menu li a:hover { background: rgba(62,182,73,0.08); color: var(--fj-green); }
+    .fj-nav-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--fj-gradient); color: #fff !important; padding: 10px 22px; border-radius: 50px; font-weight: 600; font-size: 14px; text-decoration: none; }
+
+    /* Page Hero */
+    .fj-page-hero { position: relative; min-height: 380px; display: flex; align-items: center; padding: 140px 0 70px; overflow: hidden; background: var(--fj-navy); }
+    .fj-page-hero .hero-bg { position: absolute; inset: 0; background: url('assets/imgs/fujishka/hero-bg.png') center/cover no-repeat; opacity: 0.4; }
+    .fj-page-hero .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,15,31,0.5) 0%, rgba(5,15,31,0.92) 100%); }
+    .fj-page-hero .hero-inner { position: relative; z-index: 2; text-align: center; }
+    .fj-page-hero h1 { font-size: clamp(36px, 5vw, 60px); font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .fj-page-hero h1 .hl { background: linear-gradient(135deg, #3EB649 0%, #00e676 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .fj-page-hero p { color: rgba(255,255,255,0.7); font-size: 16.5px; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+    /* Contact Section */
+    .contact-sec { padding: 90px 0; background: #fff; }
+    .c-info-card { background: #ffffff; border: 1px solid #e8f4eb; border-radius: 20px; padding: 32px 28px; height: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .c-info-card h4 { font-size: 20px; font-weight: 700; color: #1a1a2e; margin-bottom: 16px; }
+    .c-info-card ul { list-style: none; padding: 0; margin: 0; }
+    .c-info-card ul li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; font-size: 14px; color: #555; line-height: 1.6; }
+    .c-info-card ul li i { color: var(--fj-green); font-size: 14px; margin-top: 3px; }
+
+    .c-form-box { background: linear-gradient(135deg, #f0faf1 0%, #e8f7ea 100%); border: 1px solid rgba(62,182,73,0.2); border-radius: 24px; padding: 40px; }
+    .c-form-box h3 { font-size: 24px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; }
+    .c-form-box p { color: #666; font-size: 14.5px; margin-bottom: 24px; }
+
+    .form-control-fj { width: 100%; background: #fff; border: 1px solid rgba(62,182,73,0.25); border-radius: 12px; padding: 12px 16px; font-size: 14px; outline: none; margin-bottom: 16px; transition: border-color 0.2s; }
+    .form-control-fj:focus { border-color: var(--fj-green); box-shadow: 0 0 0 3px rgba(62,182,73,0.15); }
+
+    /* Footer */
+    .fj-footer { background: linear-gradient(180deg, #050f1f 0%, #020913 100%); padding: 80px 0 0; color: rgba(255,255,255,0.6); font-size: 14px; }
+    .fj-footer h5 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 20px; }
+    .fj-footer ul { list-style: none; padding: 0; margin: 0; }
+    .fj-footer ul li { margin-bottom: 10px; }
+    .fj-footer ul li a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .fj-footer ul li a:hover { color: var(--fj-green); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 0; margin-top: 60px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="fj-topbar">
+    <div class="container">
+      <div class="fj-topbar-inner">
+        <div class="contact-links">
+          <a href="tel:+917907773636"><i class="fa-solid fa-phone"></i> (IND) +91 79077 73636</a>
+          <a href="tel:+9660556647610"><i class="fa-solid fa-phone"></i> (KSA) +966 0556647610 &nbsp;<span
+              style="opacity:.5;font-size:11px;">ERP</span></a>
+          <a href="tel:+966509857933"><i class="fa-solid fa-phone"></i> (KSA) +966 509857933 &nbsp;<span
+              style="opacity:.5;font-size:11px;">Accessories</span></a>
+        </div>
+        <div class="topbar-right">
+          <a href="index.html" class="lang-btn">عربي <i class="fa-solid fa-globe"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="fj-navbar header-area-1" id="fj-main-header">
+    <div class="container">
+      <div class="header-area-1__inner">
+
+        <!-- Logo -->
+        <div class="header__logo fj-logo-wrap">
+          <a href="index.html">
+            <img src="assets/imgs/image.png" alt="Fujishka – Tech For Success"
+              onerror="this.parentNode.innerHTML='<div class=fj-logo-fallback><span class=fj-logo-symbol>&amp;</span><div class=fj-logo-text><span class=brand-name>FUJISHKA</span><span class=brand-tagline>Tech For Success</span></div></div>';" />
+          </a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="header__nav d-none d-xl-block">
+          <nav class="main-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Products <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="b-quick-erp.html"><i class="fa-solid fa-cloud" style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
+                  <li><a href="van-sales.html"><i class="fa-solid fa-truck" style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
+                </ul>
+              </li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="partner.html">Partner</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Countries <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>India</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
+                </ul>
+              </li>
+              <li><a href="blogs.html">Blogs</a></li>
+              <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Header Right -->
+        <div class="header-right">
+          <a href="index.html#demo" class="fj-nav-cta">
+            <i class="fa-solid fa-rocket"></i>
+            Request Demo
+            <i class="fa-solid fa-arrow-right btn-arrow"></i>
+          </a>
+          <!-- Mobile toggle -->
+          <div class="header__navicon d-xl-none">
+            <div class="side-toggle">
+              <a class="bar-icon" href="javascript:void(0)">
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="fj-page-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-inner" data-aos="fade-up">
+        <span style="background:rgba(62,182,73,0.15);color:#6ee77f;border:1px solid rgba(62,182,73,0.3);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:5px 14px;border-radius:20px;display:inline-block;margin-bottom:16px;">We are here to help</span>
+        <h1>Get in Touch with <span class="hl">Fujishka</span></h1>
+        <p>Whether you need a live ERP demo, pricing quotation, customer support, or partner inquiry — our team across India, Saudi Arabia, UAE and China is ready to connect.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Locations Section -->
+  <section class="contact-sec">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- Form Column -->
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="c-form-box">
+            <h3>Send Us a Message</h3>
+            <p>Fill in your details below and our solution architect will get back to you within 24 hours.</p>
+            <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been received. Our team will contact you shortly.');">
+              <input type="text" class="form-control-fj" placeholder="Your Full Name *" required />
+              <input type="email" class="form-control-fj" placeholder="Business Email Address *" required />
+              <input type="tel" class="form-control-fj" placeholder="Phone Number *" required />
+              <input type="text" class="form-control-fj" placeholder="Company Name" />
+              <select class="form-control-fj">
+                <option value="">Select Interested Product / Service</option>
+                <option value="erp">B-QUICK Cloud ERP</option>
+                <option value="vansales">Fujeeka Van Sales App</option>
+                <option value="zatca">Saudi ZATCA e-Invoicing</option>
+                <option value="partner">Partner Program</option>
+                <option value="other">Other Inquiries</option>
+              </select>
+              <textarea class="form-control-fj" rows="4" placeholder="Your Message or Specific Requirements..."></textarea>
+              <button type="submit" class="fj-nav-cta" style="width:100%;justify-content:center;padding:14px;border:none;font-size:15px;cursor:pointer;">
+                <i class="fa-solid fa-paper-plane"></i> Submit Request
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Global Locations Column -->
+        <div class="col-lg-6" data-aos="fade-left">
+          <h3 style="font-size:26px;font-weight:700;margin-bottom:24px;color:#1a1a2e;">Global Contact Offices</h3>
+
+          <div class="row g-4">
+
+            <!-- India HQ -->
+            <div class="col-sm-6">
+              <div class="c-info-card">
+                <h4>🇮🇳 India (HQ)</h4>
+                <ul>
+                  <li><i class="fa-solid fa-location-dot"></i> 2nd Floor, Neospace Bldg, KINFRA Techno Industrial Park, Calicut</li>
+                  <li><i class="fa-solid fa-phone"></i> +91 79077 73636<br>+91 99957 96818</li>
+                  <li><i class="fa-solid fa-envelope"></i> sales@fujishka.com</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Saudi Arabia -->
+            <div class="col-sm-6">
+              <div class="c-info-card">
+                <h4>🇸🇦 Saudi Arabia</h4>
+                <ul>
+                  <li><i class="fa-solid fa-location-dot"></i> Al Amir Muhammed Bin Abdul Azeez St., Al Aziziya, Jeddah</li>
+                  <li><i class="fa-solid fa-phone"></i> +966 0556647610<br>+966 509857933</li>
+                  <li><i class="fa-solid fa-envelope"></i> info@equibilitysa.com</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- UAE -->
+            <div class="col-sm-6">
+              <div class="c-info-card">
+                <h4>🇦🇪 UAE</h4>
+                <ul>
+                  <li><i class="fa-solid fa-location-dot"></i> Al Souq Al Kabeer, Bur Dubai, Dubai, UAE</li>
+                  <li><i class="fa-solid fa-phone"></i> +971 0526617172</li>
+                  <li><i class="fa-solid fa-envelope"></i> sales@fujishka.com</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- China -->
+            <div class="col-sm-6">
+              <div class="c-info-card">
+                <h4>🇨🇳 China</h4>
+                <ul>
+                  <li><i class="fa-solid fa-location-dot"></i> 908-910, F9 KB Bldg, No.8 Shipai West Rd, Tianhe, Guangzhou</li>
+                  <li><i class="fa-solid fa-phone"></i> 0086 13539934747</li>
+                  <li><i class="fa-solid fa-envelope"></i> sales@fujishka.com</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="fj-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <img src="assets/imgs/image.png" height="40" alt="Fujishka" style="margin-bottom:20px;" />
+          <p>Fujishka delivers powerful Cloud ERP and Van Sales software solutions to businesses across India, Saudi Arabia, UAE, and the GCC region.</p>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="partner.html">Partner Program</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Products</h5>
+          <ul>
+            <li><a href="b-quick-erp.html">B-QUICK ERP</a></li>
+            <li><a href="van-sales.html">Fujeeka Van Sales</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5>Direct Phone</h5>
+          <p><i class="fa-solid fa-phone" style="color:#3EB649;"></i> (IND) +91 79077 73636</p>
+          <p><i class="fa-solid fa-phone" style="color:#3EB649;"></i> (KSA) +966 0556647610</p>
+          <p><i class="fa-solid fa-envelope" style="color:#3EB649;"></i> sales@fujishka.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p>&copy; 2026 Fujishka Technologies Pvt. Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/vandor/jquery/jquery.js"></script>
+  <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vandor/animation/aos.js"></script>
+  <script>if (typeof AOS !== 'undefined') { AOS.init({ duration: 700, once: true }); }</script>
+</body>
+</html>

@@ -2237,19 +2237,52 @@
       border: 1.5px solid rgba(62, 182, 73, 0.2);
     }
 
-    /* Tab switcher for showcase */
+    /* Tab switcher for showcase — Horizontal Scroll Layout */
+    .fj-showcase-tabs-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto 36px;
+      display: flex;
+      align-items: center;
+    }
+
     .fj-showcase-tabs-container {
-      text-align: center;
-      margin-bottom: 36px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      padding: 8px 12px 14px;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+      cursor: grab;
+    }
+
+    .fj-showcase-tabs-container.active-drag {
+      cursor: grabbing;
+      scroll-behavior: auto;
+    }
+
+    .fj-showcase-tabs-container::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
     }
 
     .fj-showcase-tabs {
       display: inline-flex;
+      align-items: center;
+      flex-wrap: nowrap;
       background: rgba(62, 182, 73, 0.08);
-      border: 1px solid rgba(62, 182, 73, 0.15);
+      border: 1px solid rgba(62, 182, 73, 0.18);
       padding: 6px;
       border-radius: 30px;
-      gap: 6px;
+      gap: 8px;
+      min-width: max-content;
+      margin: 0 auto;
+      box-shadow: 0 4px 20px rgba(62, 182, 73, 0.06);
     }
 
     .fj-showcase-tab {
@@ -2258,24 +2291,27 @@
       color: #555;
       font-size: 13.5px;
       font-weight: 700;
-      padding: 8px 24px;
+      padding: 9px 24px;
       border-radius: 20px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      user-select: none;
     }
 
     .fj-showcase-tab:hover {
       color: var(--fujishka-green);
-      background: rgba(62, 182, 73, 0.04);
+      background: rgba(62, 182, 73, 0.08);
     }
 
     .fj-showcase-tab.active {
-      background: var(--fujishka-green);
+      background: var(--fujishka-gradient);
       color: #fff !important;
-      box-shadow: 0 4px 15px rgba(62, 182, 73, 0.3);
+      box-shadow: 0 4px 18px rgba(62, 182, 73, 0.35);
     }
 
     .fj-showcase-pane {
@@ -2553,15 +2589,40 @@
 
     /* ===================== CORE CAPABILITIES SECTION ===================== */
     .fj-capabilities {
-      padding: 80px 0;
-      background: #ffffff;
+      padding: 90px 0 100px;
+      background: linear-gradient(180deg, #f7fdf9 0%, #ffffff 60%, #f0faf2 100%);
       position: relative;
-      border-bottom: 1px solid #eef6f0;
+      border-bottom: 1px solid #e4f0e6;
+      overflow: hidden;
+    }
+
+    .fj-capabilities::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -150px;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(62, 182, 73, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .fj-capabilities::after {
+      content: '';
+      position: absolute;
+      bottom: -120px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(62, 182, 73, 0.04) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
     .fj-capabilities-header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 56px;
     }
 
     .fj-capabilities-header .section-label {
@@ -2581,11 +2642,11 @@
     }
 
     .fj-capabilities-header h2 {
-      font-size: clamp(26px, 4vw, 42px);
-      font-weight: 600;
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 700;
       color: #1a1a2e;
       margin-bottom: 12px;
-      line-height: 1.2;
+      line-height: 1.15;
     }
 
     .fj-capabilities-header p {
@@ -2596,70 +2657,162 @@
       margin: 0 auto;
     }
 
+    /* ── New premium card layout ── */
     .fj-capability-card {
       background: #ffffff;
-      border: 1px solid #eaeaea;
-      border-radius: 20px;
-      padding: 40px 36px 36px;
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: 1px solid #e8f0ea;
+      border-radius: 22px;
+      overflow: hidden;
+      transition: all 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
       height: 100%;
       display: flex;
       flex-direction: column;
-      box-shadow: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
       position: relative;
     }
 
-    .fj-capability-card:hover,
+    .fj-capability-card:hover {
+      border-color: rgba(62, 182, 73, 0.5);
+      box-shadow: 0 24px 60px rgba(62, 182, 73, 0.14), 0 6px 20px rgba(0, 0, 0, 0.06);
+      transform: translateY(-8px);
+    }
+
     .fj-capability-card.highlight-card {
-      border: 2px solid var(--fujishka-green);
-      padding: 39px 35px 35px;
-      /* offset border change */
+      border-color: var(--fujishka-green);
+      box-shadow: 0 20px 50px rgba(62, 182, 73, 0.18), 0 4px 16px rgba(0, 0, 0, 0.05);
     }
 
-    .fj-capability-card .cap-icon-box {
-      width: 58px;
-      height: 58px;
-      background: #123015;
-      /* Dark green icon container by default */
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: #ffffff;
-      margin-bottom: 24px;
-      transition: all 0.3s ease;
+    /* Full-width image banner */
+    .cap-img-banner {
+      width: 100%;
+      height: 185px;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
     }
 
-    .fj-capability-card:hover .cap-icon-box,
-    .fj-capability-card.highlight-card .cap-icon-box {
-      background: #8de396;
-      /* Light green on active/hover */
+    .cap-img-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .fj-capability-card:hover .cap-img-banner img {
+      transform: scale(1.07);
+    }
+
+    /* Green shimmer line at bottom of image */
+    .cap-img-banner::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--fujishka-gradient);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .fj-capability-card:hover .cap-img-banner::after,
+    .fj-capability-card.highlight-card .cap-img-banner::after {
+      opacity: 1;
+    }
+
+    /* Module badge on image */
+    .cap-img-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(5, 15, 31, 0.75);
+      backdrop-filter: blur(10px);
       color: var(--fujishka-green);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      border-radius: 20px;
+      border: 1px solid rgba(62, 182, 73, 0.35);
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Card body below image */
+    .cap-card-body {
+      padding: 28px 28px 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .fj-capability-card h3 {
-      font-size: 19px;
-      font-weight: 600;
+      font-size: 18.5px;
+      font-weight: 700;
       color: #1a1a2e;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
       line-height: 1.3;
     }
 
     .fj-capability-card p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.7;
-      margin-bottom: 30px;
+      font-size: 13.5px;
+      color: #667085;
+      line-height: 1.72;
+      margin-bottom: 20px;
+    }
+
+    /* Feature list — clean pills */
+    .cap-feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
       flex: 1;
     }
 
+    .cap-feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: #444;
+      font-weight: 500;
+      background: linear-gradient(135deg, #f0faf1 0%, #e8f7ea 100%);
+      border: 1px solid rgba(62, 182, 73, 0.15);
+      border-radius: 10px;
+      padding: 9px 14px;
+      transition: all 0.25s ease;
+    }
+
+    .cap-feature-list li:hover {
+      background: linear-gradient(135deg, #e2f5e4 0%, #d4eed6 100%);
+      border-color: rgba(62, 182, 73, 0.3);
+      transform: translateX(3px);
+    }
+
+    .cap-feature-list li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      min-width: 7px;
+      background: var(--fujishka-gradient);
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(62, 182, 73, 0.5);
+    }
+
     .fj-capability-card .cap-footer {
-      font-size: 12.5px;
+      font-size: 11.5px;
       font-weight: 700;
-      color: #888;
+      color: rgba(62, 182, 73, 0.55);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
       margin-top: auto;
-      text-transform: capitalize;
+      padding-top: 18px;
+      border-top: 1px solid #edf4ee;
+      font-family: 'Outfit', sans-serif;
     }
 
     /* Custom Swiper Controls */
@@ -3930,30 +4083,26 @@
           <nav class="main-menu">
             <ul>
               <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="#">About Us</a></li>
+              <li><a href="about-us.html">About Us</a></li>
               <li class="menu-item-has-children">
                 <a href="#">Products <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
                 <ul class="dp-menu">
-                  <li><a href="#"><i class="fa-solid fa-cloud"
-                        style="color:#3EB649;margin-right:8px;"></i>FUJISKA-ERP</a></li>
-                  <li><a href="#"><i class="fa-solid fa-truck" style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van
-                      Sales</a></li>
+                  <li><a href="b-quick-erp.html"><i class="fa-solid fa-cloud" style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
+                  <li><a href="van-sales.html"><i class="fa-solid fa-truck" style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
                 </ul>
               </li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Partner</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="partner.html">Partner</a></li>
               <li class="menu-item-has-children">
                 <a href="#">Countries <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
                 <ul class="dp-menu">
-                  <li><a href="#"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>Saudi
-                      Arabia</a></li>
-                  <li><a href="#"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>India</a></li>
-                  <li><a href="#"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a>
-                  </li>
+                  <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>India</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
                 </ul>
               </li>
-              <li><a href="#">Blogs</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="blogs.html">Blogs</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -4152,15 +4301,26 @@
 
 
 
-              <!-- Interactive Showcase Switcher Tabs -->
-              <div class="fj-showcase-tabs-container" data-aos="fade-up" data-aos-duration="600">
-                <div class="fj-showcase-tabs">
-                  <button class="fj-showcase-tab active" data-showcase="erp">
-                    <i class="fa-solid fa-cloud"></i> FUJISKA-ERP
-                  </button>
-                  <button class="fj-showcase-tab" data-showcase="vansales">
-                    <i class="fa-solid fa-mobile-screen-button"></i> Fujishka Mobile App
-                  </button>
+              <!-- Interactive Showcase Switcher Tabs — Horizontal Scrollable -->
+              <div class="fj-showcase-tabs-wrapper" data-aos="fade-up" data-aos-duration="600">
+                <div class="fj-showcase-tabs-container">
+                  <div class="fj-showcase-tabs">
+                    <button class="fj-showcase-tab active" data-showcase="erp">
+                      <i class="fa-solid fa-cloud"></i> FUJISKA-ERP
+                    </button>
+                    <button class="fj-showcase-tab" data-showcase="vansales">
+                      <i class="fa-solid fa-mobile-screen-button"></i> Fujishka Mobile App
+                    </button>
+                    <button class="fj-showcase-tab" data-showcase="fujeeka">
+                      <i class="fa-solid fa-truck-moving"></i> Fujeeka Van Sales
+                    </button>
+                    <button class="fj-showcase-tab" data-showcase="pos">
+                      <i class="fa-solid fa-utensils"></i> POS &amp; Restaurant ERP
+                    </button>
+                    <button class="fj-showcase-tab" data-showcase="inventory">
+                      <i class="fa-solid fa-boxes-stacked"></i> Inventory &amp; Finance
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -4205,7 +4365,7 @@
                           </div>
                         </div>
                       </div>
-                      <a href="#" class="btn-fj">Explore FUJISKA-ERP <i class="fa-solid fa-arrow-right"></i></a>
+                      <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Explore FUJISKA-ERP <i class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
                     </div>
                     <div class="col-lg-6">
                       <div class="fj-showcase-img-wrap">
@@ -4262,22 +4422,11 @@
                             <span>Transfer inventory seamlessly between branches with real-time tracking.</span>
                           </div>
                         </div>
-                        <div class="fj-showcase-item" style="grid-column: span 2;">
-                          <div class="si-icon">
-                            <i class="fa-solid fa-truck-moving"></i>
-                          </div>
-                          <div>
-                            <strong>External &amp; Van Stock Transfers</strong>
-                            <span>Monitor and manage stock movement to external locations and van sales
-                              effortlessly.</span>
-                          </div>
-                        </div>
                       </div>
                       <p class="showcase-quote">
                         <i class="fa-solid fa-quote-left"
                           style="color: var(--fujishka-green); margin-right: 6px; font-size: 13px;"></i>Your office is
-                        no longer a
-                        place—it's wherever you are.
+                        no longer a place—it's wherever you are.
                       </p>
                     </div>
                     <div class="col-lg-6">
@@ -4288,13 +4437,156 @@
                   </div>
                 </div>
 
+                <!-- PANE 3: Fujeeka Van Sales -->
+                <div class="fj-showcase-pane" id="showcase-fujeeka">
+                  <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                      <span class="showcase-label"><i class="fa-solid fa-truck-moving"></i> Fujeeka Van Sales</span>
+                      <h3>Smart Mobile Billing for Field Operations</h3>
+                      <h5 class="showcase-subtitle">Empower your van salesmen on the move.</h5>
+                      <p class="showcase-desc">Fujeeka Van Sales automates direct store delivery, route planning, stock tracking, and instant bluetooth receipt printing in offline and online modes.</p>
+                      <div class="fj-showcase-grid">
+                        <div class="fj-showcase-item">
+                          <div class="si-icon"><i class="fa-solid fa-print"></i></div>
+                          <div>
+                            <strong>Instant Billing</strong>
+                            <span>Bluetooth thermal printing</span>
+                          </div>
+                        </div>
+                        <div class="fj-showcase-item">
+                          <div class="si-icon"><i class="fa-solid fa-location-dot"></i></div>
+                          <div>
+                            <strong>GPS Route Tracking</strong>
+                            <span>Optimized delivery routes</span>
+                          </div>
+                        </div>
+                        <div class="fj-showcase-item">
+                          <div class="si-icon"><i class="fa-solid fa-wifi"></i></div>
+                          <div>
+                            <strong>Offline Sync</strong>
+                            <span>Work without internet</span>
+                          </div>
+                        </div>
+                        <div class="fj-showcase-item"><div class="si-icon"><i class="fa-solid fa-cash-register"></i></div>
+                          <div>
+                            <strong>Cash &amp; Credit Collection</strong>
+                            <span>Instant customer ledger update</span>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Get Van Sales Demo <i class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="fj-showcase-img-wrap">
+                        <img src="assets/imgs/fujishka/van-sales.png" alt="Fujeeka Van Sales" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PANE 4: POS & Restaurant -->
+                <div class="fj-showcase-pane" id="showcase-pos">
+                  <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                      <span class="showcase-label"><i class="fa-solid fa-utensils"></i> POS &amp; Restaurant ERP</span>
+                      <h3>High-Speed Billing &amp; Kitchen Control</h3>
+                      <h5 class="showcase-subtitle">Designed for fast-paced dining and retail stores.</h5>
+                      <p class="showcase-desc">Streamline table orders, kitchen display systems (KDS), recipe costing, inventory alerts, and customer loyalty rewards seamlessly.</p>
+                      <div class="fj-showcase-grid">
+                        <div class="fj-showcase-item">
+                          <div class="si-icon"><i class="fa-solid fa-bell"></i></div>
+                          <div>
+                            <strong>KDS Integration</strong>
+                            <span>Direct kitchen order display</span>
+                          </div>
+                        </div>
+                        <div class="fj-showcase-item">
+                          <div class="si-icon"><i class="fa-solid fa-chair"></i></div>
+                          <div>
+                            <strong>Table Management</strong>
+                            <span>Visual floor plan layout</span>
+                          </div>
+                        </div>
+                        <div class="fj-showcase-item">
+                          <div class="si-icon"><i class="fa-solid fa-receipt"></i></div>
+                          <div>
+                            <strong>Quick Touch POS</strong>
+                            <span>1-click order checkout</span>
+                          </div>
+                        </div>
+                        <div class="fj-showcase-item">
+                          <div class="si-icon"><i class="fa-solid fa-pie-chart"></i></div>
+                          <div>
+                            <strong>Recipe Costing</strong>
+                            <span>Raw material auto-deduction</span>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Request POS Demo <i class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="fj-showcase-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="POS & Restaurant ERP" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PANE 5: Inventory & Finance -->
+                <div class="fj-showcase-pane" id="showcase-inventory">
+                  <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                      <span class="showcase-label"><i class="fa-solid fa-boxes-stacked"></i> Inventory &amp; Finance</span>
+                      <h3>Real-time Stock &amp; Accounting Precision</h3>
+                      <h5 class="showcase-subtitle">Complete visibility over stock and ledger.</h5>
+                      <p class="showcase-desc">Manage multi-warehouse stock levels, batch/expiry tracking, auto tax compliance, trial balance, and profit &amp; loss statements effortlessly.</p>
+                      <div class="fj-showcase-grid">
+                        <div class="fj-showcase-item">
+                          <div class="si-icon"><i class="fa-solid fa-warehouse"></i></div>
+                          <div>
+                            <strong>Multi-Warehouse</strong>
+                            <span>Inter-branch stock transfer</span>
+                          </div>
+                        </div>
+                        <div class="fj-showcase-item">
+                          <div class="si-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                          <div>
+                            <strong>Tax &amp; VAT Ready</strong>
+                            <span>ZATCA &amp; GST compliance</span>
+                          </div>
+                        </div>
+                        <div class="fj-showcase-item">
+                          <div class="si-icon"><i class="fa-solid fa-barcode"></i></div>
+                          <div>
+                            <strong>Batch &amp; Expiry</strong>
+                            <span>FIFO stock rotation</span>
+                          </div>
+                        </div>
+                        <div class="fj-showcase-item">
+                          <div class="si-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                          <div>
+                            <strong>Financial Reports</strong>
+                            <span>Instant P&amp;L and Balance Sheet</span>
+                          </div>
+                        </div>
+                      </div>
+                      <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Learn More <i class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="fj-showcase-img-wrap">
+                        <img src="assets/imgs/fujishka/cap-real-accounts.png" alt="Inventory & Finance" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
               </div>
 
 
             </div>
         </section>
-
-
 
         <!-- ===== CAPABILITIES ===== -->
         <section class="fj-capabilities" id="capabilities">
@@ -4311,186 +4603,120 @@
                   <!-- Module 1: Accounts & Finance -->
                   <div class="swiper-slide">
                     <div class="fj-capability-card highlight-card">
-                      <div class="cap-icon-box">
-                        <i class="fa-solid fa-coins"></i>
+                      <div class="cap-img-banner">
+                        <img src="assets/imgs/fujishka/cap-real-accounts.png" alt="Accounts & Finance" />
+                        <span class="cap-img-badge">Module 01</span>
                       </div>
-                      <h3>Accounts &amp; Finance</h3>
-                      <p>No more manual accounting or delayed financial reports.</p>
-                      <ul style="list-style: none; padding-left: 0; margin-top: 12px; margin-bottom: 20px;">
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Real-time accounting &amp; financial reporting</span>
-                        </li>
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Multi-payment, tax &amp; expense management</span>
-                        </li>
-                        <li style="font-size: 13.5px; color: #555; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Accurate insights for smarter decisions</span>
-                        </li>
-                      </ul>
-                      <div class="cap-footer">Module _ 01</div>
+                      <div class="cap-card-body">
+                        <h3>Accounts &amp; Finance</h3>
+                        <p>No more manual accounting or delayed financial reports. Get real-time clarity over every rupee.</p>
+                        <ul class="cap-feature-list">
+                          <li>Real-time accounting &amp; financial reporting</li>
+                          <li>Multi-payment, tax &amp; expense management</li>
+                          <li>Accurate insights for smarter decisions</li>
+                        </ul>
+                        <div class="cap-footer">Module _ 01</div>
+                      </div>
                     </div>
                   </div>
 
                   <!-- Module 2: HR & Payroll -->
                   <div class="swiper-slide">
                     <div class="fj-capability-card">
-                      <div class="cap-icon-box">
-                        <i class="fa-solid fa-id-card"></i>
+                      <div class="cap-img-banner">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="HR & Payroll" />
+                        <span class="cap-img-badge">Module 02</span>
                       </div>
-                      <h3>HR &amp; Payroll</h3>
-                      <p>Simplify workforce management from hire to payroll.</p>
-                      <ul style="list-style: none; padding-left: 0; margin-top: 12px; margin-bottom: 20px;">
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Employee records, attendance &amp; leave tracking</span>
-                        </li>
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Automated payroll with compliance support</span>
-                        </li>
-                        <li style="font-size: 13.5px; color: #555; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Performance and workforce insights</span>
-                        </li>
-                      </ul>
-                      <div class="cap-footer">Module _ 02</div>
+                      <div class="cap-card-body">
+                        <h3>HR &amp; Payroll</h3>
+                        <p>Simplify workforce management from hire to payroll with full compliance support.</p>
+                        <ul class="cap-feature-list">
+                          <li>Employee records, attendance &amp; leave tracking</li>
+                          <li>Automated payroll with compliance support</li>
+                          <li>Performance and workforce insights</li>
+                        </ul>
+                        <div class="cap-footer">Module _ 02</div>
+                      </div>
                     </div>
                   </div>
 
                   <!-- Module 3: Van Sales Management -->
                   <div class="swiper-slide">
                     <div class="fj-capability-card">
-                      <div class="cap-icon-box">
-                        <i class="fa-solid fa-truck-moving"></i>
+                      <div class="cap-img-banner">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Van Sales Management" />
+                        <span class="cap-img-badge">Module 03</span>
                       </div>
-                      <h3>Van Sales Management</h3>
-                      <p>Keep your field sales team connected wherever they go.</p>
-                      <ul style="list-style: none; padding-left: 0; margin-top: 12px; margin-bottom: 20px;">
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Offline mobile billing with instant sync</span>
-                        </li>
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Route, customer &amp; collection management</span>
-                        </li>
-                        <li style="font-size: 13.5px; color: #555; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>GPS-enabled sales tracking and reporting</span>
-                        </li>
-                      </ul>
-                      <div class="cap-footer">Module _ 03</div>
+                      <div class="cap-card-body">
+                        <h3>Van Sales Management</h3>
+                        <p>Keep your field sales team connected and productive wherever they go.</p>
+                        <ul class="cap-feature-list">
+                          <li>Offline mobile billing with instant sync</li>
+                          <li>Route, customer &amp; collection management</li>
+                          <li>GPS-enabled sales tracking and reporting</li>
+                        </ul>
+                        <div class="cap-footer">Module _ 03</div>
+                      </div>
                     </div>
                   </div>
 
                   <!-- Module 4: Inventory Management -->
                   <div class="swiper-slide">
                     <div class="fj-capability-card">
-                      <div class="cap-icon-box">
-                        <i class="fa-solid fa-boxes-stacked"></i>
+                      <div class="cap-img-banner">
+                        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80" alt="Inventory Management" />
+                        <span class="cap-img-badge">Module 04</span>
                       </div>
-                      <h3>Inventory Management</h3>
-                      <p>Keep every product under complete control.</p>
-                      <ul style="list-style: none; padding-left: 0; margin-top: 12px; margin-bottom: 20px;">
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Live stock visibility across all locations</span>
-                        </li>
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Batch, expiry &amp; warehouse management</span>
-                        </li>
-                        <li style="font-size: 13.5px; color: #555; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Automated stock transfers and alerts</span>
-                        </li>
-                      </ul>
-                      <div class="cap-footer">Module _ 04</div>
+                      <div class="cap-card-body">
+                        <h3>Inventory Management</h3>
+                        <p>Keep every product, batch and location under complete real-time control.</p>
+                        <ul class="cap-feature-list">
+                          <li>Live stock visibility across all locations</li>
+                          <li>Batch, expiry &amp; warehouse management</li>
+                          <li>Automated stock transfers and alerts</li>
+                        </ul>
+                        <div class="cap-footer">Module _ 04</div>
+                      </div>
                     </div>
                   </div>
 
                   <!-- Module 5: Production Management -->
                   <div class="swiper-slide">
                     <div class="fj-capability-card">
-                      <div class="cap-icon-box">
-                        <i class="fa-solid fa-industry"></i>
+                      <div class="cap-img-banner">
+                        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80" alt="Production Management" />
+                        <span class="cap-img-badge">Module 05</span>
                       </div>
-                      <h3>Production Management</h3>
-                      <p>Transform manufacturing into a smarter process.</p>
-                      <ul style="list-style: none; padding-left: 0; margin-top: 12px; margin-bottom: 20px;">
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Production planning and formula management</span>
-                        </li>
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Raw material and finished goods tracking</span>
-                        </li>
-                        <li style="font-size: 13.5px; color: #555; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Cost control with real-time production insights</span>
-                        </li>
-                      </ul>
-                      <div class="cap-footer">Module _ 05</div>
+                      <div class="cap-card-body">
+                        <h3>Production Management</h3>
+                        <p>Transform manufacturing into a smarter, leaner and more profitable process.</p>
+                        <ul class="cap-feature-list">
+                          <li>Production planning and formula management</li>
+                          <li>Raw material and finished goods tracking</li>
+                          <li>Cost control with real-time production insights</li>
+                        </ul>
+                        <div class="cap-footer">Module _ 05</div>
+                      </div>
                     </div>
                   </div>
 
                   <!-- Module 6: Restaurant Management -->
                   <div class="swiper-slide">
                     <div class="fj-capability-card">
-                      <div class="cap-icon-box">
-                        <i class="fa-solid fa-utensils"></i>
+                      <div class="cap-img-banner">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Restaurant Management" />
+                        <span class="cap-img-badge">Module 06</span>
                       </div>
-                      <h3>Restaurant Management</h3>
-                      <p>Everything your restaurant needs to serve smarter.</p>
-                      <ul style="list-style: none; padding-left: 0; margin-top: 12px; margin-bottom: 20px;">
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Fast POS with table &amp; order management</span>
-                        </li>
-                        <li
-                          style="font-size: 13.5px; color: #555; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Kitchen, inventory &amp; recipe control</span>
-                        </li>
-                        <li style="font-size: 13.5px; color: #555; display: flex; align-items: flex-start; gap: 8px;">
-                          <i class="fa-solid fa-circle-check"
-                            style="color: var(--fujishka-green); margin-top: 4px; font-size: 11px;"></i>
-                          <span>Billing, reporting &amp; customer management</span>
-                        </li>
-                      </ul>
-                      <div class="cap-footer">Module _ 06</div>
+                      <div class="cap-card-body">
+                        <h3>Restaurant Management</h3>
+                        <p>Everything your restaurant needs to serve faster, smarter and more profitably.</p>
+                        <ul class="cap-feature-list">
+                          <li>Fast POS with table &amp; order management</li>
+                          <li>Kitchen, inventory &amp; recipe control</li>
+                          <li>Billing, reporting &amp; customer management</li>
+                        </ul>
+                        <div class="cap-footer">Module _ 06</div>
+                      </div>
                     </div>
                   </div>
 
@@ -5740,9 +5966,11 @@
       });
       bg.style.transition = 'transform 0.6s cubic-bezier(.25,.46,.45,.94)';
     })();
-    // Showcase Tabs Switcher
+    // Showcase Tabs Switcher & Horizontal Scroll Drag
     (function () {
       var tabs = document.querySelectorAll('.fj-showcase-tab');
+      var container = document.querySelector('.fj-showcase-tabs-container');
+
       tabs.forEach(function (tab) {
         tab.addEventListener('click', function () {
           var targetShowcase = this.getAttribute('data-showcase');
@@ -5750,6 +5978,17 @@
           // Reset tabs active class
           tabs.forEach(function (t) { t.classList.remove('active'); });
           this.classList.add('active');
+
+          // Scroll active tab smoothly into center view
+          if (container) {
+            var tabLeft = this.offsetLeft;
+            var tabWidth = this.offsetWidth;
+            var containerWidth = container.offsetWidth;
+            container.scrollTo({
+              left: tabLeft - (containerWidth / 2) + (tabWidth / 2),
+              behavior: 'smooth'
+            });
+          }
 
           // Reset panes active class
           var panes = document.querySelectorAll('.fj-showcase-pane');
@@ -5763,6 +6002,37 @@
           }
         });
       });
+
+      // Mouse drag scroll support for horizontal tabs container
+      if (container) {
+        var isDown = false;
+        var startX, scrollLeft;
+
+        container.addEventListener('mousedown', function (e) {
+          isDown = true;
+          container.classList.add('active-drag');
+          startX = e.pageX - container.offsetLeft;
+          scrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener('mouseleave', function () {
+          isDown = false;
+          container.classList.remove('active-drag');
+        });
+
+        container.addEventListener('mouseup', function () {
+          isDown = false;
+          container.classList.remove('active-drag');
+        });
+
+        container.addEventListener('mousemove', function (e) {
+          if (!isDown) return;
+          e.preventDefault();
+          var x = e.pageX - container.offsetLeft;
+          var walk = (x - startX) * 2;
+          container.scrollLeft = scrollLeft - walk;
+        });
+      }
     })();
 
     // Capabilities Swiper Slider
