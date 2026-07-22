@@ -765,7 +765,7 @@
       letter-spacing: 0.8px;
     }
 
-    /* ===== RIGHT SIDE — Hero Visual ===== */
+    /* ===== RIGHT SIDE â€” Hero Visual ===== */
     .fj-hero .hero-visual {
       position: relative;
       animation: hero-h1 1.1s cubic-bezier(.4, 0, .2, 1) 0.2s both;
@@ -1924,15 +1924,16 @@
       transform: translateY(-2px);
     }
 
-    /* ===================== PRODUCTS SECTION ===================== */
+    /* ===================== PRODUCTS SECTION â€” HORIZONTAL SCROLL ===================== */
     .fj-products {
-      padding: 80px 0;
+      position: relative;
       background: linear-gradient(180deg, #f8fbff 0%, #fff 60%);
     }
 
     .fj-products .section-header {
       text-align: center;
-      margin-bottom: 52px;
+      margin-bottom: 0;
+      padding: 80px 0 40px;
     }
 
     .fj-products .section-label {
@@ -1967,7 +1968,392 @@
       margin: 0 auto;
     }
 
-    /* === Product Cards === */
+    /* Horizontal scroll outer — pinned by GSAP ScrollTrigger */
+    .fj-hscroll-outer {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    @media (max-width: 991px) {
+      .fj-hscroll-outer {
+        width: 100%;
+        overflow: visible;
+      }
+    }
+
+    /* Sticky viewport that stays pinned during horizontal scroll */
+    .fj-hscroll-sticky {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 75px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+    }
+
+    @media (max-width: 991px) {
+      .fj-hscroll-sticky {
+        height: auto !important;
+        overflow: visible !important;
+      }
+    }
+
+    .fj-hscroll-tabs-bar {
+      flex-shrink: 0;
+      z-index: 10;
+    }
+
+    /* Progress bar strip */
+    .fj-hscroll-progress {
+      height: 4px;
+      background: rgba(62, 182, 73, 0.12);
+      width: 100%;
+    }
+
+    .fj-hscroll-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--fujishka-gradient);
+    }
+
+    /* Product name label bar (replaces tab pills) */
+    .fj-hscroll-name-bar {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 32px;
+      background: rgba(248, 251, 255, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(62, 182, 73, 0.1);
+      min-height: 44px;
+    }
+
+    .fj-hscroll-name-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--fujishka-green);
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.3s ease;
+    }
+
+    .fj-hscroll-name-counter {
+      font-size: 12px;
+      font-weight: 600;
+      color: #aaa;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Hide old tab pill elements */
+    .fj-showcase-tabs-wrapper,
+    .fj-showcase-tabs-container,
+    .fj-showcase-tabs,
+    .fj-showcase-tab {
+      display: none !important;
+    }
+
+    /* Horizontal track of panels */
+    .fj-hscroll-track {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      will-change: transform;
+      width: max-content;
+    }
+
+    @media (max-width: 991px) {
+      .fj-hscroll-track {
+        width: 100% !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 10px 15px 25px;
+        gap: 16px;
+        transform: none !important;
+      }
+    }
+
+    /* Each panel = 100vw wide */
+    .fj-hscroll-panel {
+      flex: 0 0 100vw;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 20px;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 991px) {
+      .fj-hscroll-panel {
+        flex: 0 0 88vw;
+        width: 88vw;
+        scroll-snap-align: center;
+        padding: 0;
+      }
+    }
+
+    @media (max-height: 800px) and (min-width: 992px) {
+      .fj-product-showcase {
+        padding: 24px 28px;
+      }
+      .fj-product-showcase h3 {
+        font-size: 22px;
+        margin-bottom: 6px;
+      }
+      .fj-product-showcase .showcase-desc {
+        font-size: 13.5px;
+        line-height: 1.6;
+        margin-bottom: 14px;
+      }
+      .fj-showcase-grid {
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+      .fj-showcase-item {
+        padding: 8px 10px;
+      }
+    }
+
+    /* Product showcase box inside each panel */
+    .fj-product-showcase {
+      background: linear-gradient(135deg, #f0faf1 0%, #e8f7ea 100%);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid rgba(62, 182, 73, 0.15);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .fj-product-showcase::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(62, 182, 73, 0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .fj-product-showcase .showcase-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(62, 182, 73, 0.12);
+      border: 1px solid rgba(62, 182, 73, 0.25);
+      color: var(--fujishka-green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .fj-product-showcase h3 {
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .fj-product-showcase .showcase-desc {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .fj-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .fj-showcase-item {
+      background: #fff;
+      border: 1px solid rgba(62, 182, 73, 0.18);
+      border-radius: 14px;
+      padding: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: all 0.3s;
+    }
+
+    .fj-showcase-item:hover {
+      border-color: var(--fujishka-green);
+      box-shadow: 0 6px 20px rgba(62, 182, 73, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .fj-showcase-item .si-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--fujishka-light-green);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      color: var(--fujishka-green);
+      flex-shrink: 0;
+      transition: all 0.3s;
+    }
+
+    .fj-showcase-item:hover .si-icon {
+      background: var(--fujishka-gradient);
+      color: #fff;
+    }
+
+    .fj-showcase-item strong {
+      font-size: 13px;
+      color: #1a1a2e;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .fj-showcase-item span {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .fj-showcase-img-wrap {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .fj-showcase-img-wrap img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+    }
+
+    .fj-showcase-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      border: 1.5px solid rgba(62, 182, 73, 0.2);
+    }
+
+    .fj-product-showcase .showcase-subtitle {
+      color: var(--fujishka-green);
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .fj-product-showcase .showcase-quote {
+      font-style: italic;
+      color: #444;
+      font-weight: 600;
+      margin-top: 20px;
+      font-size: 14px;
+      border-left: 3px solid var(--fujishka-green);
+      padding-left: 12px;
+    }
+
+    /* Panel counter / indicator */
+    .fj-hscroll-indicator {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .fj-hscroll-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(62, 182, 73, 0.2);
+      transition: all 0.35s ease;
+      cursor: pointer;
+    }
+
+    .fj-hscroll-dot.is-active {
+      background: var(--fujishka-green);
+      width: 28px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(62, 182, 73, 0.4);
+    }
+
+    /* Scroll hint arrow */
+    .fj-hscroll-hint {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(62, 182, 73, 0.5);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      animation: hscrollHintPulse 2s ease-in-out infinite;
+      z-index: 10;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .fj-hscroll-hint.is-hidden {
+      opacity: 0;
+    }
+
+    .fj-hscroll-hint i {
+      font-size: 18px;
+      animation: hscrollHintBounce 2s ease-in-out infinite;
+    }
+
+    @keyframes hscrollHintPulse {
+
+      0%,
+      100% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes hscrollHintBounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(6px);
+      }
+    }
+
+    /* === Product Cards (kept for legacy if needed) === */
     .fj-product-card {
       background: #fff;
       border: 1px solid #e2f0e4;
@@ -2108,241 +2494,47 @@
       color: var(--fujishka-green);
     }
 
-    /* === Product Showcase (ERP Detail) === */
-    .fj-product-showcase {
-      background: linear-gradient(135deg, #f0faf1 0%, #e8f7ea 100%);
-      border-radius: 24px;
-      padding: 48px;
-      margin-top: 48px;
-      border: 1px solid rgba(62, 182, 73, 0.15);
-      position: relative;
-      overflow: hidden;
-    }
+    /* Mobile: disable horizontal scroll hijack */
+    @media (max-width: 991px) {
+      .fj-hscroll-outer {
+        height: auto !important;
+      }
 
-    .fj-product-showcase::before {
-      content: '';
-      position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(62, 182, 73, 0.12) 0%, transparent 70%);
-      border-radius: 50%;
-    }
+      .fj-hscroll-sticky {
+        position: relative !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
 
-    .fj-product-showcase .showcase-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(62, 182, 73, 0.12);
-      border: 1px solid rgba(62, 182, 73, 0.25);
-      color: var(--fujishka-green);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 14px;
-    }
+      .fj-hscroll-track {
+        flex-direction: column;
+        transform: none !important;
+      }
 
-    .fj-product-showcase h3 {
-      font-size: clamp(22px, 3vw, 34px);
-      font-weight: 600;
-      color: #1a1a2e;
-      margin-bottom: 12px;
-      line-height: 1.25;
-    }
+      .fj-hscroll-panel {
+        flex: 0 0 auto;
+        width: 100%;
+        opacity: 1;
+        transform: scale(1);
+        padding: 20px 0;
+      }
 
-    .fj-product-showcase .showcase-desc {
-      color: #555;
-      font-size: 15.5px;
-      line-height: 1.75;
-      margin-bottom: 28px;
-    }
+      .fj-product-showcase {
+        padding: 28px 20px;
+      }
 
-    .fj-showcase-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-bottom: 28px;
-    }
+      .fj-showcase-grid {
+        grid-template-columns: 1fr;
+      }
 
-    .fj-showcase-item {
-      background: #fff;
-      border: 1px solid rgba(62, 182, 73, 0.18);
-      border-radius: 14px;
-      padding: 16px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      transition: all 0.3s;
-    }
+      .fj-hscroll-indicator,
+      .fj-hscroll-hint {
+        display: none;
+      }
 
-    .fj-showcase-item:hover {
-      border-color: var(--fujishka-green);
-      box-shadow: 0 6px 20px rgba(62, 182, 73, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .fj-showcase-item .si-icon {
-      width: 40px;
-      height: 40px;
-      background: var(--fujishka-light-green);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      color: var(--fujishka-green);
-      flex-shrink: 0;
-      transition: all 0.3s;
-    }
-
-    .fj-showcase-item:hover .si-icon {
-      background: var(--fujishka-gradient);
-      color: #fff;
-    }
-
-    .fj-showcase-item strong {
-      font-size: 13.5px;
-      color: #1a1a2e;
-      font-weight: 700;
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    .fj-showcase-item span {
-      font-size: 12.5px;
-      color: #777;
-    }
-
-    .fj-showcase-img-wrap {
-      position: relative;
-      border-radius: 18px;
-      overflow: hidden;
-    }
-
-    .fj-showcase-img-wrap img {
-      width: 100%;
-      border-radius: 18px;
-      display: block;
-    }
-
-    .fj-showcase-img-wrap::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 18px;
-      border: 1.5px solid rgba(62, 182, 73, 0.2);
-    }
-
-    /* Tab switcher for showcase — Horizontal Scroll Layout */
-    .fj-showcase-tabs-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto 36px;
-      display: flex;
-      align-items: center;
-    }
-
-    .fj-showcase-tabs-container {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      padding: 8px 12px 14px;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none; /* IE/Edge */
-      cursor: grab;
-    }
-
-    .fj-showcase-tabs-container.active-drag {
-      cursor: grabbing;
-      scroll-behavior: auto;
-    }
-
-    .fj-showcase-tabs-container::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera */
-    }
-
-    .fj-showcase-tabs {
-      display: inline-flex;
-      align-items: center;
-      flex-wrap: nowrap;
-      background: rgba(62, 182, 73, 0.08);
-      border: 1px solid rgba(62, 182, 73, 0.18);
-      padding: 6px;
-      border-radius: 30px;
-      gap: 8px;
-      min-width: max-content;
-      margin: 0 auto;
-      box-shadow: 0 4px 20px rgba(62, 182, 73, 0.06);
-    }
-
-    .fj-showcase-tab {
-      background: transparent;
-      border: none;
-      color: #555;
-      font-size: 13.5px;
-      font-weight: 700;
-      padding: 9px 24px;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      user-select: none;
-    }
-
-    .fj-showcase-tab:hover {
-      color: var(--fujishka-green);
-      background: rgba(62, 182, 73, 0.08);
-    }
-
-    .fj-showcase-tab.active {
-      background: var(--fujishka-gradient);
-      color: #fff !important;
-      box-shadow: 0 4px 18px rgba(62, 182, 73, 0.35);
-    }
-
-    .fj-showcase-pane {
-      display: none;
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-
-    .fj-showcase-pane.active {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .fj-product-showcase .showcase-subtitle {
-      color: var(--fujishka-green);
-      font-weight: 600;
-      margin-bottom: 20px;
-      font-size: 16px;
-      letter-spacing: 0.5px;
-    }
-
-    .fj-product-showcase .showcase-quote {
-      font-style: italic;
-      color: #444;
-      font-weight: 600;
-      margin-top: 24px;
-      font-size: 15px;
-      border-left: 3px solid var(--fujishka-green);
-      padding-left: 12px;
+      .fj-hscroll-progress {
+        display: none;
+      }
     }
 
     /* ===================== GLOBAL PRESENCE SECTION ===================== */
@@ -2657,7 +2849,7 @@
       margin: 0 auto;
     }
 
-    /* ── New premium card layout ── */
+    /* â”€â”€ New premium card layout â”€â”€ */
     .fj-capability-card {
       background: #ffffff;
       border: 1px solid #e8f0ea;
@@ -2762,7 +2954,7 @@
       margin-bottom: 20px;
     }
 
-    /* Feature list — clean pills */
+    /* Feature list â€” clean pills */
     .cap-feature-list {
       list-style: none;
       padding: 0;
@@ -3785,7 +3977,7 @@
       line-height: 1.7;
     }
 
-    /* ── Ticker wrapper: full-width with edge fade ── */
+    /* â”€â”€ Ticker wrapper: full-width with edge fade â”€â”€ */
     .fj-clients-ticker-wrap {
       position: relative;
       width: 100%;
@@ -3819,7 +4011,7 @@
       padding: 20px 0;
     }
 
-    /* ── Scrolling tracks ── */
+    /* â”€â”€ Scrolling tracks â”€â”€ */
     @keyframes ticker-scroll-ltr {
       0% {
         transform: translateX(-50%);
@@ -3859,7 +4051,7 @@
       animation-play-state: paused;
     }
 
-    /* ── Individual client card ── */
+    /* â”€â”€ Individual client card â”€â”€ */
     .fj-client-logo-card {
       display: flex;
       align-items: center;
@@ -3907,7 +4099,7 @@
       color: var(--fujishka-green);
     }
 
-    /* ── Stats bar below ticker ── */
+    /* â”€â”€ Stats bar below ticker â”€â”€ */
     .fj-clients-stats {
       display: flex;
       align-items: center;
@@ -4073,7 +4265,7 @@
         <!-- Logo -->
         <div class="header__logo fj-logo-wrap">
           <a href="index.html">
-            <img src="assets/imgs/image.png" alt="Fujishka – Tech For Success"
+            <img src="assets/imgs/image.png" alt="Fujishka â€“ Tech For Success"
               onerror="this.parentNode.innerHTML='<div class=fj-logo-fallback><span class=fj-logo-symbol>&amp;</span><div class=fj-logo-text><span class=brand-name>FUJISHKA</span><span class=brand-tagline>Tech For Success</span></div></div>';" />
           </a>
         </div>
@@ -4087,8 +4279,10 @@
               <li class="menu-item-has-children">
                 <a href="#">Products <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
                 <ul class="dp-menu">
-                  <li><a href="b-quick-erp.html"><i class="fa-solid fa-cloud" style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
-                  <li><a href="van-sales.html"><i class="fa-solid fa-truck" style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
+                  <li><a href="b-quick-erp.html"><i class="fa-solid fa-cloud"
+                        style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
+                  <li><a href="van-sales.html"><i class="fa-solid fa-truck"
+                        style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
                 </ul>
               </li>
               <li><a href="services.html">Services</a></li>
@@ -4096,9 +4290,12 @@
               <li class="menu-item-has-children">
                 <a href="#">Countries <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
                 <ul class="dp-menu">
-                  <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
-                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>India</a></li>
-                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
+                  <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>India</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
                 </ul>
               </li>
               <li><a href="blogs.html">Blogs</a></li>
@@ -4148,7 +4345,7 @@
             <div class="topbar-right">
               <!-- <a href="#demo" class="fj-demo-btn"><i class="fa-solid fa-calendar-check"
                   style="margin-right:6px;"></i>Request Demo</a> -->
-              <a href="index.html" class="lang-btn">عربي <i class="fa-solid fa-globe"></i></a>
+              <a href="index.html" class="lang-btn">Ø¹Ø±Ø¨ÙŠ <i class="fa-solid fa-globe"></i></a>
             </div>
           </div>
         </div>
@@ -4170,7 +4367,7 @@
             <div class="container">
               <div class="row align-items-center g-5">
 
-                <!-- ── LEFT COLUMN ── -->
+                <!-- â”€â”€ LEFT COLUMN â”€â”€ -->
                 <div class="col-lg-6">
 
                   <!-- Badge -->
@@ -4223,7 +4420,7 @@
 
                 </div>
 
-                <!-- ── RIGHT COLUMN ── -->
+                <!-- â”€â”€ RIGHT COLUMN â”€â”€ -->
                 <div class="col-lg-6" data-aos="fade-left" data-aos-duration="600">
                   <div class="hero-circle-container">
 
@@ -4288,305 +4485,335 @@
 
 
 
-        <!-- ===== PRODUCTS ===== -->
+        <!-- ===== PRODUCTS â€” Horizontal Scroll Section ===== -->
         <section class="fj-products" id="products">
           <div class="container">
-
-            <!-- Section Header — centered -->
+            <!-- Section Header â€” centered -->
             <div class="section-header" data-aos="fade-up" data-aos-duration="600">
               <span class="section-label"><i class="fa-solid fa-cube"></i> Our Products</span>
               <h2 class="section-title">Smart Software for Smart Business</h2>
-
-
-
-
-
-              <!-- Interactive Showcase Switcher Tabs — Horizontal Scrollable -->
-              <div class="fj-showcase-tabs-wrapper" data-aos="fade-up" data-aos-duration="600">
-                <div class="fj-showcase-tabs-container">
-                  <div class="fj-showcase-tabs">
-                    <button class="fj-showcase-tab active" data-showcase="erp">
-                      <i class="fa-solid fa-cloud"></i> FUJISKA-ERP
-                    </button>
-                    <button class="fj-showcase-tab" data-showcase="vansales">
-                      <i class="fa-solid fa-mobile-screen-button"></i> Fujishka Mobile App
-                    </button>
-                    <button class="fj-showcase-tab" data-showcase="fujeeka">
-                      <i class="fa-solid fa-truck-moving"></i> Fujeeka Van Sales
-                    </button>
-                    <button class="fj-showcase-tab" data-showcase="pos">
-                      <i class="fa-solid fa-utensils"></i> POS &amp; Restaurant ERP
-                    </button>
-                    <button class="fj-showcase-tab" data-showcase="inventory">
-                      <i class="fa-solid fa-boxes-stacked"></i> Inventory &amp; Finance
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Product Showcase Box -->
-              <div class="fj-product-showcase" data-aos="fade-up" data-aos-duration="700">
-
-                <!-- PANE 1: FUJISKA-ERP -->
-                <div class="fj-showcase-pane active" id="showcase-erp">
-                  <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
-                      <span class="showcase-label"><i class="fa-solid fa-cloud"></i> FUJISKA-ERP — Deep Dive</span>
-                      <h3>Complete Business Control, Anywhere</h3>
-                      <p class="showcase-desc">FUJISKA-ERP gives you a 360° view of your business — from procurement to
-                        sales, warehouse to accounts — all in one cloud platform accessible on any device.</p>
-                      <div class="fj-showcase-grid">
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-                          <div>
-                            <strong>Inventory Control</strong>
-                            <span>Real-time stock tracking</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                          <div>
-                            <strong>Analytics</strong>
-                            <span>Data-driven decisions</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-coins"></i></div>
-                          <div>
-                            <strong>Accounting</strong>
-                            <span>Auto-reconciliation</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-globe"></i></div>
-                          <div>
-                            <strong>Multi-Branch</strong>
-                            <span>Centralized management</span>
-                          </div>
-                        </div>
-                      </div>
-                      <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Explore FUJISKA-ERP <i class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="fj-showcase-img-wrap">
-                        <img src="assets/imgs/fujishka/product_erp_ai.png" alt="Fujishka ERP Features" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- PANE 2: Fujishka Mobile App -->
-                <div class="fj-showcase-pane" id="showcase-vansales">
-                  <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
-                      <span class="showcase-label"><i class="fa-solid fa-mobile-screen-button"></i> Fujishka Mobile
-                        App</span>
-                      <h3>Take Your Business Everywhere</h3>
-                      <h5 class="showcase-subtitle">Stay connected. Stay productive. Stay ahead.</h5>
-                      <p class="showcase-desc">The Fujishka Mobile App keeps your operations running smoothly by giving
-                        your team secure access to essential ERP functions anytime, anywhere.</p>
-                      <div class="fj-showcase-grid">
-                        <div class="fj-showcase-item">
-                          <div class="si-icon">
-                            <i class="fa-solid fa-file-invoice"></i>
-                          </div>
-                          <div>
-                            <strong>Sales &amp; Purchases</strong>
-                            <span>Create and manage quotations, invoices, purchases, and sales orders with ease.</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon">
-                            <i class="fa-solid fa-arrows-rotate"></i>
-                          </div>
-                          <div>
-                            <strong>Smart Document Conversion</strong>
-                            <span>Convert quotations and sales orders into invoices in a single tap.</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon">
-                            <i class="fa-solid fa-credit-card"></i>
-                          </div>
-                          <div>
-                            <strong>Receipt &amp; Payments</strong>
-                            <span>Record customer receipts and vendor payments instantly with complete accuracy.</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon">
-                            <i class="fa-solid fa-square-arrow-up-right"></i>
-                          </div>
-                          <div>
-                            <strong>Branch Stock Transfers</strong>
-                            <span>Transfer inventory seamlessly between branches with real-time tracking.</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p class="showcase-quote">
-                        <i class="fa-solid fa-quote-left"
-                          style="color: var(--fujishka-green); margin-right: 6px; font-size: 13px;"></i>Your office is
-                        no longer a place—it's wherever you are.
-                      </p>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="fj-showcase-img-wrap">
-                        <img src="assets/imgs/fujishka/van-sales.png" alt="Fujishka Mobile App Features" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- PANE 3: Fujeeka Van Sales -->
-                <div class="fj-showcase-pane" id="showcase-fujeeka">
-                  <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
-                      <span class="showcase-label"><i class="fa-solid fa-truck-moving"></i> Fujeeka Van Sales</span>
-                      <h3>Smart Mobile Billing for Field Operations</h3>
-                      <h5 class="showcase-subtitle">Empower your van salesmen on the move.</h5>
-                      <p class="showcase-desc">Fujeeka Van Sales automates direct store delivery, route planning, stock tracking, and instant bluetooth receipt printing in offline and online modes.</p>
-                      <div class="fj-showcase-grid">
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-print"></i></div>
-                          <div>
-                            <strong>Instant Billing</strong>
-                            <span>Bluetooth thermal printing</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-location-dot"></i></div>
-                          <div>
-                            <strong>GPS Route Tracking</strong>
-                            <span>Optimized delivery routes</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-wifi"></i></div>
-                          <div>
-                            <strong>Offline Sync</strong>
-                            <span>Work without internet</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item"><div class="si-icon"><i class="fa-solid fa-cash-register"></i></div>
-                          <div>
-                            <strong>Cash &amp; Credit Collection</strong>
-                            <span>Instant customer ledger update</span>
-                          </div>
-                        </div>
-                      </div>
-                      <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Get Van Sales Demo <i class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="fj-showcase-img-wrap">
-                        <img src="assets/imgs/fujishka/van-sales.png" alt="Fujeeka Van Sales" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- PANE 4: POS & Restaurant -->
-                <div class="fj-showcase-pane" id="showcase-pos">
-                  <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
-                      <span class="showcase-label"><i class="fa-solid fa-utensils"></i> POS &amp; Restaurant ERP</span>
-                      <h3>High-Speed Billing &amp; Kitchen Control</h3>
-                      <h5 class="showcase-subtitle">Designed for fast-paced dining and retail stores.</h5>
-                      <p class="showcase-desc">Streamline table orders, kitchen display systems (KDS), recipe costing, inventory alerts, and customer loyalty rewards seamlessly.</p>
-                      <div class="fj-showcase-grid">
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-bell"></i></div>
-                          <div>
-                            <strong>KDS Integration</strong>
-                            <span>Direct kitchen order display</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-chair"></i></div>
-                          <div>
-                            <strong>Table Management</strong>
-                            <span>Visual floor plan layout</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-receipt"></i></div>
-                          <div>
-                            <strong>Quick Touch POS</strong>
-                            <span>1-click order checkout</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-pie-chart"></i></div>
-                          <div>
-                            <strong>Recipe Costing</strong>
-                            <span>Raw material auto-deduction</span>
-                          </div>
-                        </div>
-                      </div>
-                      <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Request POS Demo <i class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="fj-showcase-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="POS & Restaurant ERP" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- PANE 5: Inventory & Finance -->
-                <div class="fj-showcase-pane" id="showcase-inventory">
-                  <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
-                      <span class="showcase-label"><i class="fa-solid fa-boxes-stacked"></i> Inventory &amp; Finance</span>
-                      <h3>Real-time Stock &amp; Accounting Precision</h3>
-                      <h5 class="showcase-subtitle">Complete visibility over stock and ledger.</h5>
-                      <p class="showcase-desc">Manage multi-warehouse stock levels, batch/expiry tracking, auto tax compliance, trial balance, and profit &amp; loss statements effortlessly.</p>
-                      <div class="fj-showcase-grid">
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-warehouse"></i></div>
-                          <div>
-                            <strong>Multi-Warehouse</strong>
-                            <span>Inter-branch stock transfer</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-                          <div>
-                            <strong>Tax &amp; VAT Ready</strong>
-                            <span>ZATCA &amp; GST compliance</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-barcode"></i></div>
-                          <div>
-                            <strong>Batch &amp; Expiry</strong>
-                            <span>FIFO stock rotation</span>
-                          </div>
-                        </div>
-                        <div class="fj-showcase-item">
-                          <div class="si-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-                          <div>
-                            <strong>Financial Reports</strong>
-                            <span>Instant P&amp;L and Balance Sheet</span>
-                          </div>
-                        </div>
-                      </div>
-                      <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Learn More <i class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="fj-showcase-img-wrap">
-                        <img src="assets/imgs/fujishka/cap-real-accounts.png" alt="Inventory & Finance" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              </div>
-
-
             </div>
+          </div>
+
+          <!-- Horizontal Scroll Outer (height set by JS) -->
+          <div class="fj-hscroll-outer" id="fj-hscroll-outer">
+
+            <!-- Sticky Viewport -->
+            <div class="fj-hscroll-sticky">
+
+              <!-- Name Bar (replaces tab pills) -->
+              <div class="fj-hscroll-tabs-bar">
+                <!-- Progress bar strip at very top -->
+                <div class="fj-hscroll-progress">
+                  <div class="fj-hscroll-progress-fill" id="fj-hscroll-progress-fill"></div>
+                </div>
+                <!-- Current product name label -->
+                <div class="fj-hscroll-name-bar">
+                  <span class="fj-hscroll-name-label" id="fj-hscroll-name-label">
+                    <i class="fa-solid fa-cloud" id="fj-hscroll-name-icon"></i>
+                    <span id="fj-hscroll-name-text">FUJISKA-ERP</span>
+                  </span>
+                  <span class="fj-hscroll-name-counter" id="fj-hscroll-name-counter">1 / 5</span>
+                </div>
+              </div>
+
+
+              <!-- Horizontal Track -->
+              <div class="fj-hscroll-track" id="fj-hscroll-track">
+
+                <!-- PANEL 1: FUJISKA-ERP -->
+                <div class="fj-hscroll-panel is-active">
+                  <div class="fj-product-showcase">
+                    <div class="row g-4 align-items-center">
+                      <div class="col-lg-6">
+                        <span class="showcase-label"><i class="fa-solid fa-cloud"></i> FUJISKA-ERP â€” Deep Dive</span>
+                        <h3>Complete Business Control, Anywhere</h3>
+                        <p class="showcase-desc">FUJISKA-ERP gives you a 360Â° view of your business â€” from
+                          procurement to
+                          sales, warehouse to accounts â€” all in one cloud platform accessible on any device.</p>
+                        <div class="fj-showcase-grid">
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                            <div>
+                              <strong>Inventory Control</strong>
+                              <span>Real-time stock tracking</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                            <div>
+                              <strong>Analytics</strong>
+                              <span>Data-driven decisions</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-coins"></i></div>
+                            <div>
+                              <strong>Accounting</strong>
+                              <span>Auto-reconciliation</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-globe"></i></div>
+                            <div>
+                              <strong>Multi-Branch</strong>
+                              <span>Centralized management</span>
+                            </div>
+                          </div>
+                        </div>
+                        <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Explore FUJISKA-ERP <i
+                            class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="fj-showcase-img-wrap">
+                          <img src="assets/imgs/fujishka/product_erp_ai.png" alt="Fujishka ERP Features" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PANEL 2: Fujishka Mobile App -->
+                <div class="fj-hscroll-panel">
+                  <div class="fj-product-showcase">
+                    <div class="row g-4 align-items-center">
+                      <div class="col-lg-6">
+                        <span class="showcase-label"><i class="fa-solid fa-mobile-screen-button"></i> Fujishka Mobile
+                          App</span>
+                        <h3>Take Your Business Everywhere</h3>
+                        <h5 class="showcase-subtitle">Stay connected. Stay productive. Stay ahead.</h5>
+                        <p class="showcase-desc">The Fujishka Mobile App keeps your operations running smoothly by
+                          giving
+                          your team secure access to essential ERP functions anytime, anywhere.</p>
+                        <div class="fj-showcase-grid">
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                            <div>
+                              <strong>Sales &amp; Purchases</strong>
+                              <span>Create and manage quotations, invoices, purchases, and sales orders with
+                                ease.</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                            <div>
+                              <strong>Smart Document Conversion</strong>
+                              <span>Convert quotations and sales orders into invoices in a single tap.</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-credit-card"></i></div>
+                            <div>
+                              <strong>Receipt &amp; Payments</strong>
+                              <span>Record customer receipts and vendor payments instantly with complete
+                                accuracy.</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-square-arrow-up-right"></i></div>
+                            <div>
+                              <strong>Branch Stock Transfers</strong>
+                              <span>Transfer inventory seamlessly between branches with real-time tracking.</span>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="showcase-quote">
+                          <i class="fa-solid fa-quote-left"
+                            style="color: var(--fujishka-green); margin-right: 6px; font-size: 13px;"></i>Your office is
+                          no longer a placeâ€”it's wherever you are.
+                        </p>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="fj-showcase-img-wrap">
+                          <img src="assets/imgs/fujishka/van-sales.png" alt="Fujishka Mobile App Features" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PANEL 3: Fujeeka Van Sales -->
+                <div class="fj-hscroll-panel">
+                  <div class="fj-product-showcase">
+                    <div class="row g-4 align-items-center">
+                      <div class="col-lg-6">
+                        <span class="showcase-label"><i class="fa-solid fa-truck-moving"></i> Fujeeka Van Sales</span>
+                        <h3>Smart Mobile Billing for Field Operations</h3>
+                        <h5 class="showcase-subtitle">Empower your van salesmen on the move.</h5>
+                        <p class="showcase-desc">Fujeeka Van Sales automates direct store delivery, route planning,
+                          stock tracking, and instant bluetooth receipt printing in offline and online modes.</p>
+                        <div class="fj-showcase-grid">
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-print"></i></div>
+                            <div>
+                              <strong>Instant Billing</strong>
+                              <span>Bluetooth thermal printing</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                              <strong>GPS Route Tracking</strong>
+                              <span>Optimized delivery routes</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-wifi"></i></div>
+                            <div>
+                              <strong>Offline Sync</strong>
+                              <span>Work without internet</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-cash-register"></i></div>
+                            <div>
+                              <strong>Cash &amp; Credit Collection</strong>
+                              <span>Instant customer ledger update</span>
+                            </div>
+                          </div>
+                        </div>
+                        <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Get Van Sales Demo <i
+                            class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="fj-showcase-img-wrap">
+                          <img src="assets/imgs/fujishka/van-sales.png" alt="Fujeeka Van Sales" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PANEL 4: POS & Restaurant ERP -->
+                <div class="fj-hscroll-panel">
+                  <div class="fj-product-showcase">
+                    <div class="row g-4 align-items-center">
+                      <div class="col-lg-6">
+                        <span class="showcase-label"><i class="fa-solid fa-utensils"></i> POS &amp; Restaurant
+                          ERP</span>
+                        <h3>High-Speed Billing &amp; Kitchen Control</h3>
+                        <h5 class="showcase-subtitle">Designed for fast-paced dining and retail stores.</h5>
+                        <p class="showcase-desc">Streamline table orders, kitchen display systems (KDS), recipe costing,
+                          inventory alerts, and customer loyalty rewards seamlessly.</p>
+                        <div class="fj-showcase-grid">
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-bell"></i></div>
+                            <div>
+                              <strong>KDS Integration</strong>
+                              <span>Direct kitchen order display</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-chair"></i></div>
+                            <div>
+                              <strong>Table Management</strong>
+                              <span>Visual floor plan layout</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-receipt"></i></div>
+                            <div>
+                              <strong>Quick Touch POS</strong>
+                              <span>1-click order checkout</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-pie-chart"></i></div>
+                            <div>
+                              <strong>Recipe Costing</strong>
+                              <span>Raw material auto-deduction</span>
+                            </div>
+                          </div>
+                        </div>
+                        <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Request POS Demo <i
+                            class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="fj-showcase-img-wrap">
+                          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+                            alt="POS & Restaurant ERP" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PANEL 5: Inventory & Finance -->
+                <div class="fj-hscroll-panel">
+                  <div class="fj-product-showcase">
+                    <div class="row g-4 align-items-center">
+                      <div class="col-lg-6">
+                        <span class="showcase-label"><i class="fa-solid fa-boxes-stacked"></i> Inventory &amp;
+                          Finance</span>
+                        <h3>Real-time Stock &amp; Accounting Precision</h3>
+                        <h5 class="showcase-subtitle">Complete visibility over stock and ledger.</h5>
+                        <p class="showcase-desc">Manage multi-warehouse stock levels, batch/expiry tracking, auto tax
+                          compliance, trial balance, and profit &amp; loss statements effortlessly.</p>
+                        <div class="fj-showcase-grid">
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-warehouse"></i></div>
+                            <div>
+                              <strong>Multi-Warehouse</strong>
+                              <span>Inter-branch stock transfer</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                            <div>
+                              <strong>Tax &amp; VAT Ready</strong>
+                              <span>ZATCA &amp; GST compliance</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-barcode"></i></div>
+                            <div>
+                              <strong>Batch &amp; Expiry</strong>
+                              <span>FIFO stock rotation</span>
+                            </div>
+                          </div>
+                          <div class="fj-showcase-item">
+                            <div class="si-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                            <div>
+                              <strong>Financial Reports</strong>
+                              <span>Instant P&amp;L and Balance Sheet</span>
+                            </div>
+                          </div>
+                        </div>
+                        <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Learn More <i
+                            class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="fj-showcase-img-wrap">
+                          <img src="assets/imgs/fujishka/cap-real-accounts.png" alt="Inventory & Finance" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- /fj-hscroll-track -->
+
+              <!-- Scroll Hint -->
+              <div class="fj-hscroll-hint" id="fj-hscroll-hint">
+                <span>Scroll to explore</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+
+              <!-- Dot Indicators -->
+              <div class="fj-hscroll-indicator" id="fj-hscroll-indicator">
+                <div class="fj-hscroll-dot is-active" data-panel="0"></div>
+                <div class="fj-hscroll-dot" data-panel="1"></div>
+                <div class="fj-hscroll-dot" data-panel="2"></div>
+                <div class="fj-hscroll-dot" data-panel="3"></div>
+                <div class="fj-hscroll-dot" data-panel="4"></div>
+              </div>
+
+            </div><!-- /fj-hscroll-sticky -->
+
+          </div><!-- /fj-hscroll-outer -->
         </section>
+
+
 
         <!-- ===== CAPABILITIES ===== -->
         <section class="fj-capabilities" id="capabilities">
@@ -4609,7 +4836,8 @@
                       </div>
                       <div class="cap-card-body">
                         <h3>Accounts &amp; Finance</h3>
-                        <p>No more manual accounting or delayed financial reports. Get real-time clarity over every rupee.</p>
+                        <p>No more manual accounting or delayed financial reports. Get real-time clarity over every
+                          rupee.</p>
                         <ul class="cap-feature-list">
                           <li>Real-time accounting &amp; financial reporting</li>
                           <li>Multi-payment, tax &amp; expense management</li>
@@ -4624,7 +4852,8 @@
                   <div class="swiper-slide">
                     <div class="fj-capability-card">
                       <div class="cap-img-banner">
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="HR & Payroll" />
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                          alt="HR & Payroll" />
                         <span class="cap-img-badge">Module 02</span>
                       </div>
                       <div class="cap-card-body">
@@ -4644,7 +4873,8 @@
                   <div class="swiper-slide">
                     <div class="fj-capability-card">
                       <div class="cap-img-banner">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Van Sales Management" />
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+                          alt="Van Sales Management" />
                         <span class="cap-img-badge">Module 03</span>
                       </div>
                       <div class="cap-card-body">
@@ -4664,7 +4894,8 @@
                   <div class="swiper-slide">
                     <div class="fj-capability-card">
                       <div class="cap-img-banner">
-                        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80" alt="Inventory Management" />
+                        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80"
+                          alt="Inventory Management" />
                         <span class="cap-img-badge">Module 04</span>
                       </div>
                       <div class="cap-card-body">
@@ -4684,7 +4915,8 @@
                   <div class="swiper-slide">
                     <div class="fj-capability-card">
                       <div class="cap-img-banner">
-                        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80" alt="Production Management" />
+                        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80"
+                          alt="Production Management" />
                         <span class="cap-img-badge">Module 05</span>
                       </div>
                       <div class="cap-card-body">
@@ -4704,7 +4936,8 @@
                   <div class="swiper-slide">
                     <div class="fj-capability-card">
                       <div class="cap-img-banner">
-                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Restaurant Management" />
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+                          alt="Restaurant Management" />
                         <span class="cap-img-badge">Module 06</span>
                       </div>
                       <div class="cap-card-body">
@@ -4737,7 +4970,7 @@
         <section class="fj-services" id="services">
           <div class="container">
 
-            <!-- Section Header — centered -->
+            <!-- Section Header â€” centered -->
             <div class="section-header" data-aos="fade-up" data-aos-duration="600">
               <span class="section-label"><i class="fa-solid fa-screwdriver-wrench"></i> Our Services</span>
               <h2 class="section-title">Comprehensive Tech Services<br>for Your Business</h2>
@@ -4834,7 +5067,8 @@
                   <strong>Fujishka Solutions</strong> has been empowering businesses with intelligent ERP solutions that
                   simplify operations and accelerate growth. With over 15 years of industry expertise, 1,000+ successful
                   implementations, and a strong presence across India and the GCC, we deliver technology that connects
-                  every aspect of your business—enabling smarter decisions, greater efficiency, and sustainable success.
+                  every aspect of your businessâ€”enabling smarter decisions, greater efficiency, and sustainable
+                  success.
                 </p>
 
                 <div class="fj-why-metric-grid" data-aos="fade-up" data-aos-delay="100">
@@ -4952,7 +5186,7 @@
                 <div class="fujibot-subtitle">Intelligent. Instant. Always On.</div>
                 <p class="fujibot-desc">
                   Never let manual tasks or complex reports slow you down. FujiBot provides real-time insights,
-                  automated reports, and conversational support — 24/7.
+                  automated reports, and conversational support â€” 24/7.
                 </p>
 
                 <!-- Features list -->
@@ -4973,7 +5207,7 @@
                     </div>
                     <div class="fujibot-feature-content">
                       <h5>Instant Responses</h5>
-                      <p>No waiting time — get instant data insights and answer queries.</p>
+                      <p>No waiting time â€” get instant data insights and answer queries.</p>
                     </div>
                   </div>
 
@@ -5021,7 +5255,7 @@
                         <i class="fa-solid fa-robot"></i>
                       </div>
                       <div class="fujibot-msg-bubble">
-                        Hi! 👋 I'm FujiBot. Ask me any report or sales query — I'm here to help!
+                        Hi! ðŸ‘‹ I'm FujiBot. Ask me any report or sales query â€” I'm here to help!
                       </div>
                     </div>
 
@@ -5041,8 +5275,8 @@
                         <i class="fa-solid fa-robot"></i>
                       </div>
                       <div class="fujibot-msg-bubble">
-                        Branch Kakkanchery: Today's sales = <strong style="color:#53b748;">₹2,45,630</strong><br>
-                        📈 Up 12% compared to yesterday!
+                        Branch Kakkanchery: Today's sales = <strong style="color:#53b748;">â‚¹2,45,630</strong><br>
+                        ðŸ“ˆ Up 12% compared to yesterday!
                       </div>
                     </div>
                   </div>
@@ -5066,7 +5300,7 @@
         <!-- ===== CLIENTS / LOGOS ===== -->
         <section class="fj-clients-section" id="clients">
 
-          <!-- Infinite scroll ticker — no container cap so logos bleed edge-to-edge -->
+          <!-- Infinite scroll ticker â€” no container cap so logos bleed edge-to-edge -->
           <div class="fj-clients-ticker-wrap" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
 
             <!-- Row 1: Left to Right -->
@@ -5497,7 +5731,7 @@
             <div class="row g-4">
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="500">
                 <div class="fj-testi-card">
-                  <div class="stars">★★★★★</div>
+                  <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
                   <p>"FUJISKA-ERP transformed our distribution business. We now have complete visibility over our 8
                     branches in Saudi Arabia. The support team is exceptional!"</p>
                   <div class="author">
@@ -5522,7 +5756,7 @@
                   </a>
 
                   <div class="video-content-wrap">
-                    <div class="stars">★★★★★</div>
+                    <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
                     <p
                       style="font-size: 14.5px; line-height: 1.6; margin-bottom: 20px; font-weight: 500; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
                       "Watch how we boosted delivery efficiency by 40% with Fujeeka Van Sales!"</p>
@@ -5538,7 +5772,7 @@
               </div>
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="700">
                 <div class="fj-testi-card">
-                  <div class="stars">★★★★★</div>
+                  <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
                   <p>"Fujishka's ERP implementation was smooth and fast. Within 2 weeks we were fully operational. Their
                     team understood our business needs perfectly."</p>
                   <div class="author">
@@ -5568,7 +5802,7 @@
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600">
                 <div class="fj-location-card">
                   <div>
-                    <div class="loc-flag-icon">🇮🇳</div>
+                    <div class="loc-flag-icon">ðŸ‡®ðŸ‡³</div>
                     <h3>India</h3>
                     <span class="loc-tag"><span class="loc-status-dot"></span> Headquarters</span>
                     <ul class="loc-details">
@@ -5597,7 +5831,7 @@
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700">
                 <div class="fj-location-card">
                   <div>
-                    <div class="loc-flag-icon">🇸🇦</div>
+                    <div class="loc-flag-icon">ðŸ‡¸ðŸ‡¦</div>
                     <h3>Saudi Arabia</h3>
                     <span class="loc-tag"><span class="loc-status-dot"></span> Jeddah Branch</span>
                     <ul class="loc-details">
@@ -5626,7 +5860,7 @@
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600">
                 <div class="fj-location-card">
                   <div>
-                    <div class="loc-flag-icon">🇦🇪</div>
+                    <div class="loc-flag-icon">ðŸ‡¦ðŸ‡ª</div>
                     <h3>UAE</h3>
                     <span class="loc-tag"><span class="loc-status-dot"></span> Dubai Office</span>
                     <ul class="loc-details">
@@ -5655,7 +5889,7 @@
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="900">
                 <div class="fj-location-card">
                   <div>
-                    <div class="loc-flag-icon">🇨🇳</div>
+                    <div class="loc-flag-icon">ðŸ‡¨ðŸ‡³</div>
                     <h3>China</h3>
                     <span class="loc-tag"><span class="loc-status-dot"></span> Guangzhou Office</span>
                     <ul class="loc-details">
@@ -5745,7 +5979,7 @@
                     </h2>
                     <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                       <div class="accordion-body">Fujeeka is a mobile Van Sales application that enables field salesmen
-                        to take orders, manage van inventory, collect payments, and plan routes — all from their
+                        to take orders, manage van inventory, collect payments, and plan routes â€” all from their
                         smartphones. It works both online and offline, syncing data automatically when internet is
                         available.</div>
                     </div>
@@ -5855,7 +6089,7 @@
                 </li>
                 <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Contact
                     Us</a></li>
-                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> عربي
+                <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Ø¹Ø±Ø¨ÙŠ
                     (Arabic)</a></li>
                 <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Saudi Arabia ERP</a>
                 </li>
@@ -5966,74 +6200,128 @@
       });
       bg.style.transition = 'transform 0.6s cubic-bezier(.25,.46,.45,.94)';
     })();
-    // Showcase Tabs Switcher & Horizontal Scroll Drag
+    // ===== Horizontal Scroll Products Section — GSAP ScrollTrigger Pinning =====
     (function () {
-      var tabs = document.querySelectorAll('.fj-showcase-tab');
-      var container = document.querySelector('.fj-showcase-tabs-container');
+      var outer        = document.getElementById('fj-hscroll-outer');
+      var track        = document.getElementById('fj-hscroll-track');
+      var progressFill = document.getElementById('fj-hscroll-progress-fill');
+      var hint         = document.getElementById('fj-hscroll-hint');
+      var panels       = document.querySelectorAll('.fj-hscroll-panel');
+      var dots         = document.querySelectorAll('.fj-hscroll-dot');
+      var nameIcon     = document.getElementById('fj-hscroll-name-icon');
+      var nameText     = document.getElementById('fj-hscroll-name-text');
+      var nameCounter  = document.getElementById('fj-hscroll-name-counter');
 
-      tabs.forEach(function (tab) {
-        tab.addEventListener('click', function () {
-          var targetShowcase = this.getAttribute('data-showcase');
+      if (!outer || !track || panels.length === 0) return;
 
-          // Reset tabs active class
-          tabs.forEach(function (t) { t.classList.remove('active'); });
-          this.classList.add('active');
+      var panelCount   = panels.length;
+      var currentActiveIndex = 0;
 
-          // Scroll active tab smoothly into center view
-          if (container) {
-            var tabLeft = this.offsetLeft;
-            var tabWidth = this.offsetWidth;
-            var containerWidth = container.offsetWidth;
-            container.scrollTo({
-              left: tabLeft - (containerWidth / 2) + (tabWidth / 2),
-              behavior: 'smooth'
-            });
+      var panelMeta = [
+        { icon: 'fa-solid fa-cloud',                name: 'FUJISKA-ERP' },
+        { icon: 'fa-solid fa-mobile-screen-button', name: 'Fujishka Mobile App' },
+        { icon: 'fa-solid fa-truck-moving',         name: 'Fujeeka Van Sales' },
+        { icon: 'fa-solid fa-utensils',             name: 'POS & Restaurant ERP' },
+        { icon: 'fa-solid fa-boxes-stacked',        name: 'Inventory & Finance' }
+      ];
+
+      function updateActiveUI(index) {
+        panels.forEach(function (p, i) { p.classList.toggle('is-active', i === index); });
+        dots.forEach(function (d, i)   { d.classList.toggle('is-active', i === index); });
+
+        var meta = panelMeta[index];
+        if (meta) {
+          if (nameIcon)    nameIcon.className      = meta.icon;
+          if (nameText)    nameText.textContent    = meta.name;
+          if (nameCounter) nameCounter.textContent = (index + 1) + ' / ' + panelCount;
+        }
+
+        if (hint) {
+          hint.classList.toggle('is-hidden', index > 0);
+        }
+      }
+
+      function initScrollTrigger() {
+        if (window.innerWidth >= 992 && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
+
+          function getScrollAmount() {
+            return track.scrollWidth - window.innerWidth;
           }
 
-          // Reset panes active class
-          var panes = document.querySelectorAll('.fj-showcase-pane');
-          panes.forEach(function (pane) {
-            pane.classList.remove('active');
+          var tween = gsap.to(track, {
+            x: function () { return -getScrollAmount(); },
+            ease: "none",
+            scrollTrigger: {
+              trigger: outer,
+              pin: true,
+              scrub: 1,
+              start: "top 70px",
+              end: function () { return "+=" + getScrollAmount(); },
+              invalidateOnRefresh: true,
+              onUpdate: function (self) {
+                var progress = self.progress; // 0 to 1
+                if (progressFill) {
+                  progressFill.style.width = (progress * 100) + '%';
+                }
+                var index = Math.round(progress * (panelCount - 1));
+                index = Math.max(0, Math.min(panelCount - 1, index));
+                if (index !== currentActiveIndex) {
+                  currentActiveIndex = index;
+                  updateActiveUI(index);
+                }
+              }
+            }
           });
 
-          var targetPane = document.getElementById('showcase-' + targetShowcase);
-          if (targetPane) {
-            targetPane.classList.add('active');
-          }
-        });
-      });
+          dots.forEach(function (dot) {
+            dot.addEventListener('click', function () {
+              var idx = parseInt(this.getAttribute('data-panel'), 10);
+              if (!isNaN(idx)) {
+                var targetProgress = idx / (panelCount - 1);
+                var st = tween.scrollTrigger;
+                if (st) {
+                  var targetScroll = st.start + targetProgress * (st.end - st.start);
+                  window.scrollTo({
+                    top: targetScroll,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+            });
+          });
 
-      // Mouse drag scroll support for horizontal tabs container
-      if (container) {
-        var isDown = false;
-        var startX, scrollLeft;
+          window.addEventListener('load', function () {
+            ScrollTrigger.refresh();
+          });
+        } else {
+          // Mobile fallback
+          track.addEventListener('scroll', function () {
+            var scrollLeft = track.scrollLeft;
+            var panelWidth = panels[0].offsetWidth + 16;
+            var index = Math.round(scrollLeft / panelWidth);
+            index = Math.max(0, Math.min(panelCount - 1, index));
+            if (index !== currentActiveIndex) {
+              currentActiveIndex = index;
+              updateActiveUI(index);
+            }
+          }, { passive: true });
 
-        container.addEventListener('mousedown', function (e) {
-          isDown = true;
-          container.classList.add('active-drag');
-          startX = e.pageX - container.offsetLeft;
-          scrollLeft = container.scrollLeft;
-        });
-
-        container.addEventListener('mouseleave', function () {
-          isDown = false;
-          container.classList.remove('active-drag');
-        });
-
-        container.addEventListener('mouseup', function () {
-          isDown = false;
-          container.classList.remove('active-drag');
-        });
-
-        container.addEventListener('mousemove', function (e) {
-          if (!isDown) return;
-          e.preventDefault();
-          var x = e.pageX - container.offsetLeft;
-          var walk = (x - startX) * 2;
-          container.scrollLeft = scrollLeft - walk;
-        });
+          dots.forEach(function (dot) {
+            dot.addEventListener('click', function () {
+              var idx = parseInt(this.getAttribute('data-panel'), 10);
+              if (!isNaN(idx) && panels[idx]) {
+                panels[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+              }
+            });
+          });
+        }
       }
+
+      initScrollTrigger();
+      updateActiveUI(0);
     })();
+
 
     // Capabilities Swiper Slider
     (function () {
