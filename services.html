@@ -32,94 +32,7 @@
 
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="assets/css/style.css" />
-
-  <style>
-    :root {
-      --fj-green: #3EB649;
-      --fj-green-dark: #2a9e38;
-      --fj-dark: #111827;
-      --fj-navy: #050f1f;
-      --fj-light-green: #e8f7ea;
-      --fj-gradient: linear-gradient(135deg, #3EB649 0%, #27a33a 100%);
-      --fj-gradient-2: linear-gradient(135deg, #3EB649 0%, #00b894 100%);
-    }
-
-    body { font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
-    h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
-
-    /* Topbar & Navbar */
-    .fj-topbar { background: linear-gradient(90deg, #f0faf1 0%, #e8f7ea 100%); color: #3a3a3a; padding: 8px 0; font-size: 12.5px; font-weight: 500; border-bottom: 1px solid rgba(62, 182, 73, 0.2); position: relative; z-index: 1001; }
-    .fj-topbar a { color: #444; text-decoration: none; transition: color 0.2s; }
-    .fj-topbar a:hover { color: var(--fj-green); }
-    .fj-topbar .fj-topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-    .fj-topbar .contact-links { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
-    .fj-topbar .contact-links a { display: flex; align-items: center; gap: 7px; }
-    .fj-topbar .contact-links a i { color: var(--fj-green); font-size: 11px; }
-
-    .fj-navbar { position: fixed; top: 38px; left: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(62, 182, 73, 0.12); transition: all 0.4s ease; box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
-    .fj-navbar.scrolled { top: 0; background: rgba(255, 255, 255, 0.98); box-shadow: 0 4px 32px rgba(0,0,0,0.10); }
-    @media (max-width: 767px) { .fj-navbar { top: 0; } }
-
-    .fj-logo-wrap img { height: 40px; width: auto; }
-    .fj-navbar .main-menu > ul { display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
-    .fj-navbar .main-menu > ul > li > a { color: #333; text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 13px; border-radius: 8px; transition: all 0.2s; position: relative; }
-    .fj-navbar .main-menu > ul > li:hover > a, .fj-navbar .main-menu > ul > li > a.active { color: var(--fj-green); }
-    .fj-navbar .dp-menu { position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid rgba(62,182,73,0.15); border-radius: 14px; padding: 10px; list-style: none; min-width: 210px; box-shadow: 0 20px 60px rgba(0,0,0,0.12); opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 999; }
-    .fj-navbar .menu-item-has-children { position: relative; }
-    .fj-navbar .menu-item-has-children:hover .dp-menu { opacity: 1; visibility: visible; }
-    .fj-navbar .dp-menu li a { display: block; padding: 9px 14px; color: #444; text-decoration: none; font-size: 13.5px; font-weight: 500; border-radius: 8px; }
-    .fj-navbar .dp-menu li a:hover { background: rgba(62,182,73,0.08); color: var(--fj-green); }
-
-    .fj-nav-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--fj-gradient); color: #fff !important; padding: 10px 22px; border-radius: 50px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 18px rgba(62,182,73,0.3); }
-    .fj-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(62,182,73,0.5); }
-
-    /* Page Hero */
-    .fj-page-hero { position: relative; min-height: 400px; display: flex; align-items: center; padding: 140px 0 80px; overflow: hidden; background: var(--fj-navy); }
-    .fj-page-hero .hero-bg { position: absolute; inset: 0; background: url('assets/imgs/fujishka/hero-bg.png') center/cover no-repeat; opacity: 0.4; }
-    .fj-page-hero .hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,15,31,0.5) 0%, rgba(5,15,31,0.92) 100%); }
-    .fj-page-hero .hero-inner { position: relative; z-index: 2; text-align: center; }
-    .fj-page-hero h1 { font-size: clamp(38px, 5vw, 64px); font-weight: 700; color: #fff; margin-bottom: 16px; }
-    .fj-page-hero h1 .hl { background: linear-gradient(135deg, #3EB649 0%, #00e676 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .fj-page-hero p { color: rgba(255,255,255,0.7); font-size: 16.5px; max-width: 600px; margin: 0 auto 28px; line-height: 1.7; }
-    .fj-page-hero .breadcrumb-row { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13.5px; color: rgba(255,255,255,0.45); }
-    .fj-page-hero .breadcrumb-row a { color: rgba(255,255,255,0.6); text-decoration: none; }
-    .fj-page-hero .breadcrumb-row .current { color: var(--fj-green); font-weight: 600; }
-
-    /* Services Grid Section */
-    .fj-services-page { padding: 90px 0 100px; background: #fff; }
-    .section-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(62,182,73,0.1); border: 1px solid rgba(62,182,73,0.25); color: var(--fj-green); font-size: 11.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 14px; }
-    .section-title { font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; color: #1a1a2e; margin-bottom: 16px; line-height: 1.2; }
-
-    .service-big-card { background: #ffffff; border: 1px solid #e8f4eb; border-radius: 24px; padding: 40px 36px; height: 100%; transition: all 0.4s cubic-bezier(0.165,0.84,0.44,1); position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
-    .service-big-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--fj-gradient); opacity: 0; transition: opacity 0.35s ease; }
-    .service-big-card:hover { border-color: rgba(62,182,73,0.4); box-shadow: 0 20px 50px rgba(62,182,73,0.12); transform: translateY(-8px); }
-    .service-big-card:hover::before { opacity: 1; }
-
-    .service-big-card .svc-icon-box { width: 68px; height: 68px; background: var(--fj-light-green); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 30px; color: var(--fj-green); margin-bottom: 24px; transition: all 0.35s; }
-    .service-big-card:hover .svc-icon-box { background: var(--fj-gradient); color: #fff; box-shadow: 0 10px 26px rgba(62,182,73,0.35); transform: scale(1.08); }
-
-    .service-big-card h3 { font-size: 21px; font-weight: 700; color: #1a1a2e; margin-bottom: 12px; }
-    .service-big-card p { color: #667085; font-size: 14.5px; line-height: 1.75; margin-bottom: 22px; }
-    .service-big-card .svc-features { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 10px; }
-    .service-big-card .svc-features li { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: #444; font-weight: 500; }
-    .service-big-card .svc-features li i { color: var(--fj-green); font-size: 12px; }
-
-    /* CTA Band */
-    .fj-cta-band { padding: 80px 0; background: linear-gradient(135deg, #3EB649 0%, #27a33a 50%, #00b894 100%); color: #fff; text-align: center; }
-    .fj-cta-band h2 { font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; margin-bottom: 14px; }
-    .fj-cta-band p { font-size: 16.5px; color: rgba(255,255,255,0.85); max-width: 540px; margin: 0 auto 30px; }
-    .fj-btn-white { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--fj-green) !important; padding: 14px 34px; border-radius: 50px; font-weight: 700; font-size: 15px; text-decoration: none; box-shadow: 0 6px 24px rgba(0,0,0,0.15); transition: all 0.3s; }
-    .fj-btn-white:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.2); }
-
-    /* Footer */
-    .fj-footer { background: linear-gradient(180deg, #050f1f 0%, #020913 100%); padding: 80px 0 0; color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.7; }
-    .fj-footer h5 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 20px; }
-    .fj-footer ul { list-style: none; padding: 0; margin: 0; }
-    .fj-footer ul li { margin-bottom: 10px; }
-    .fj-footer ul li a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
-    .fj-footer ul li a:hover { color: var(--fj-green); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 0; margin-top: 60px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
-  </style>
+  <link rel="stylesheet" href="assets/css/fujishka-custom.css" />
 </head>
 
 <body>
@@ -203,8 +116,6 @@
         </div>
 
       </div>
-    </div>
-  </header>
     </div>
   </header>
 
@@ -370,5 +281,42 @@
   <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="assets/vandor/animation/aos.js"></script>
   <script>if (typeof AOS !== 'undefined') { AOS.init({ duration: 700, once: true }); }</script>
+
+  <!-- ===== FLOATING STICKY ACTION BUTTON (PLUS / SPEED DIAL) ===== -->
+  <div class="fj-fab-container" id="fjFabContainer">
+    <div class="fj-fab-options" id="fjFabOptions">
+      <!-- Download Brochure -->
+      <a href="assets/imgs/fujishka/brochure.pdf" download="Fujishka-ERP-Brochure.pdf" class="fj-fab-option fj-fab-brochure" title="Download Brochure">
+        <span class="fj-fab-label">Download Brochure</span>
+        <div class="fj-fab-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
+      </a>
+      <!-- Chat on WhatsApp -->
+      <a href="https://wa.me/917907773636?text=Hi%20Fujishka%2C%20I%20would%20like%20to%20know%20more%20about%20your%20ERP%20%26%20Van%20Sales%20solutions." target="_blank" rel="noopener noreferrer" class="fj-fab-option fj-fab-whatsapp" title="Chat on WhatsApp">
+        <span class="fj-fab-label">Chat on WhatsApp</span>
+        <div class="fj-fab-icon"><i class="fa-brands fa-whatsapp"></i></div>
+      </a>
+    </div>
+    <button type="button" class="fj-fab-main-btn" id="fjFabMainBtn" aria-label="Toggle Quick Actions">
+      <i class="fa-solid fa-plus fj-fab-plus-icon"></i>
+    </button>
+  </div>
+
+  <script>
+    (function () {
+      var fabContainer = document.getElementById('fjFabContainer');
+      var fabMainBtn = document.getElementById('fjFabMainBtn');
+      if (fabContainer && fabMainBtn) {
+        fabMainBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          fabContainer.classList.toggle('is-open');
+        });
+        document.addEventListener('click', function (e) {
+          if (!fabContainer.contains(e.target)) {
+            fabContainer.classList.remove('is-open');
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

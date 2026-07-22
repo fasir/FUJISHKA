@@ -2398,6 +2398,7 @@ section {
   pointer-events: none;
   z-index: 10;
   transition: all 0.5s;
+  top: 30px;
 }
 
 .main-menu ul.dp-menu.column-2 {

@@ -28,228 +28,13 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="assets/css/style.css" />
-
-  <style>
-    /* ===== FUJISHKA BRAND VARIABLES ===== */
-    :root {
-      --fj-green: #3EB649;
-      --fj-green-dark: #2a9e38;
-      --fj-green-glow: rgba(62, 182, 73, 0.35);
-      --fj-dark: #111827;
-      --fj-navy: #050f1f;
-      --fj-light-green: #e8f7ea;
-      --fj-gradient: linear-gradient(135deg, #3EB649 0%, #27a33a 100%);
-      --fj-gradient-2: linear-gradient(135deg, #3EB649 0%, #00b894 100%);
-      --fujishka-green: #3EB649;
-      --fujishka-dark: #111827;
-      --fujishka-light-green: #e8f7ea;
-      --fujishka-gradient: linear-gradient(135deg, #3EB649 0%, #27a33a 100%);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    body { font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
-    h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
-
-    /* ===================== TOP BAR ===================== */
-    .fj-topbar {
-      background: linear-gradient(90deg, #f0faf1 0%, #e8f7ea 100%);
-      color: #3a3a3a; padding: 8px 0; font-size: 12.5px; font-weight: 500;
-      border-bottom: 1px solid rgba(62, 182, 73, 0.2);
-      position: relative; z-index: 1001;
-    }
-    .fj-topbar a { color: #444; text-decoration: none; transition: color 0.2s; }
-    .fj-topbar a:hover { color: var(--fj-green); }
-    .fj-topbar .fj-topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-    .fj-topbar .contact-links { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
-    .fj-topbar .contact-links a { display: flex; align-items: center; gap: 7px; padding: 2px 0; }
-    .fj-topbar .contact-links a i { color: var(--fj-green); font-size: 11px; }
-    .fj-topbar .topbar-right { display: flex; align-items: center; gap: 14px; }
-    .fj-demo-btn {
-      background: var(--fj-gradient); color: #fff !important; padding: 5px 18px;
-      border-radius: 20px; font-weight: 600; font-size: 12px; transition: all 0.3s;
-      letter-spacing: 0.3px; box-shadow: 0 2px 10px rgba(62, 182, 73, 0.25);
-    }
-    .fj-demo-btn:hover { box-shadow: 0 4px 18px rgba(62, 182, 73, 0.45); transform: translateY(-1px); }
-
-    /* ===================== NAVBAR ===================== */
-    .fj-navbar {
-      position: fixed; top: 38px; left: 0; width: 100%; z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      border-bottom: 1px solid rgba(62, 182, 73, 0.12);
-      transition: all 0.4s ease; padding: 0;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-    }
-    .fj-navbar.scrolled { top: 0; background: rgba(255, 255, 255, 0.98); border-bottom-color: rgba(62, 182, 73, 0.18); box-shadow: 0 4px 32px rgba(0, 0, 0, 0.10); }
-    @media (max-width: 767px) { .fj-navbar { top: 0; } }
-    .fj-navbar .header-area-1__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0; }
-    .fj-logo-wrap { flex-shrink: 0; }
-    .fj-logo-wrap a { text-decoration: none; display: flex; align-items: center; gap: 10px; }
-    .fj-logo-wrap img { height: 40px; width: auto; }
-    .fj-logo-fallback { display: flex; align-items: center; gap: 8px; }
-    .fj-logo-symbol { font-size: 38px; font-weight: 900; background: var(--fj-gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-family: 'Outfit', sans-serif; line-height: 1; }
-    .fj-logo-text { display: flex; flex-direction: column; line-height: 1; }
-    .fj-logo-text .brand-name { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 600; color: #1a1a2e; letter-spacing: -0.5px; }
-    .fj-logo-text .brand-tagline { font-size: 10.5px; font-weight: 600; color: var(--fj-green); letter-spacing: 0.5px; margin-top: 1px; }
-    .fj-navbar .main-menu > ul { display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
-    .fj-navbar .main-menu > ul > li > a { display: flex; align-items: center; gap: 4px; color: #333; text-decoration: none; font-size: 14px; font-weight: 600; padding: 8px 13px; border-radius: 8px; transition: all 0.2s; white-space: nowrap; position: relative; }
-    .fj-navbar .main-menu > ul > li > a::after { content: ''; position: absolute; bottom: 4px; left: 13px; right: 13px; height: 2px; background: var(--fj-green); border-radius: 2px; transform: scaleX(0); transform-origin: left; transition: transform 0.3s cubic-bezier(.4,0,.2,1); }
-    .fj-navbar .main-menu > ul > li:hover > a, .fj-navbar .main-menu > ul > li > a.active { color: var(--fj-green); }
-    .fj-navbar .main-menu > ul > li:hover > a::after, .fj-navbar .main-menu > ul > li > a.active::after { transform: scaleX(1); }
-    .fj-navbar .dp-menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; backdrop-filter: blur(20px); border: 1px solid rgba(62,182,73,0.15); border-radius: 14px; padding: 10px; list-style: none; min-width: 210px; box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(62,182,73,0.08); opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.3s cubic-bezier(.4,0,.2,1); transform: translateX(-50%) translateY(8px); z-index: 999; }
-    .fj-navbar .menu-item-has-children { position: relative; }
-    .fj-navbar .menu-item-has-children:hover .dp-menu { opacity: 1; visibility: visible; pointer-events: all; transform: translateX(-50%) translateY(0); }
-    .fj-navbar .dp-menu li a { display: block; padding: 9px 14px; color: #444; text-decoration: none; font-size: 13.5px; font-weight: 500; border-radius: 8px; transition: all 0.2s; }
-    .fj-navbar .dp-menu li a:hover { background: rgba(62,182,73,0.08); color: var(--fj-green); padding-left: 18px; }
-    .fj-navbar .header-right { display: flex; align-items: center; gap: 12px; }
-    .fj-nav-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--fj-gradient); color: #fff !important; padding: 10px 22px; border-radius: 50px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s; white-space: nowrap; box-shadow: 0 4px 18px rgba(62,182,73,0.3); border: none; }
-    .fj-nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(62,182,73,0.5); }
-    .fj-nav-cta .btn-arrow { transition: transform 0.3s; }
-    .fj-nav-cta:hover .btn-arrow { transform: translateX(3px); }
-    .bar-icon { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
-    .bar-icon span { display: block; width: 26px; height: 2px; background: #333; border-radius: 2px; transition: all 0.3s; }
-
-    /* ===================== PAGE HERO ===================== */
-    .fj-page-hero {
-      position: relative; min-height: 420px; display: flex; align-items: center;
-      padding: 140px 0 80px; overflow: hidden;
-      background: var(--fj-navy);
-    }
-    .fj-page-hero .hero-bg { position: absolute; inset: 0; background: url('assets/imgs/fujishka/hero-bg.png') center/cover no-repeat; opacity: 0.4; z-index: 0; }
-    .fj-page-hero .hero-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 80% 40%, rgba(62,182,73,0.10) 0%, transparent 70%), radial-gradient(ellipse 60% 80% at 10% 70%, rgba(0,80,40,0.15) 0%, transparent 60%), linear-gradient(180deg, rgba(5,15,31,0.4) 0%, rgba(5,15,31,0.9) 100%); z-index: 1; }
-    .fj-page-hero .hero-grid { position: absolute; inset: 0; z-index: 1; background-image: linear-gradient(rgba(62,182,73,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(62,182,73,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 80%); animation: grid-slide 20s linear infinite; }
-    @keyframes grid-slide { 0% { background-position: 0 0; } 100% { background-position: 60px 60px; } }
-    .fj-page-hero .orb { position: absolute; border-radius: 50%; filter: blur(80px); z-index: 1; }
-    .fj-page-hero .orb-1 { width: 400px; height: 400px; background: rgba(62,182,73,0.07); top: -100px; right: -60px; animation: orb-drift 12s ease-in-out infinite alternate; }
-    .fj-page-hero .orb-2 { width: 300px; height: 300px; background: rgba(0,120,60,0.08); bottom: -60px; left: 5%; animation: orb-drift 15s ease-in-out infinite alternate-reverse; }
-    @keyframes orb-drift { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(40px,-40px) scale(1.1); } }
-    .fj-page-hero .hero-inner { position: relative; z-index: 2; text-align: center; }
-    .fj-page-hero .page-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(62,182,73,0.12); border: 1px solid rgba(62,182,73,0.3); color: #6ee77f; padding: 6px 18px 6px 10px; border-radius: 50px; font-size: 12.5px; font-weight: 600; margin-bottom: 24px; backdrop-filter: blur(10px); }
-    .fj-page-hero .page-badge .pulse-dot { width: 7px; height: 7px; background: var(--fj-green); border-radius: 50%; box-shadow: 0 0 0 0 rgba(62,182,73,0.6); animation: ping 1.8s cubic-bezier(0,0,0.2,1) infinite; }
-    @keyframes ping { 0%, 100% { box-shadow: 0 0 0 0 rgba(62,182,73,0.6); } 70% { box-shadow: 0 0 0 8px rgba(62,182,73,0); } }
-    .fj-page-hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(40px, 5.5vw, 68px); font-weight: 700; color: #fff; line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 20px; }
-    .fj-page-hero h1 .hl { background: linear-gradient(135deg, #3EB649 0%, #00e676 60%, #3EB649 100%); background-size: 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 4s linear infinite; }
-    @keyframes shimmer { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
-    .fj-page-hero .page-desc { color: rgba(255,255,255,0.65); font-size: 17px; line-height: 1.75; max-width: 580px; margin: 0 auto 32px; }
-    .fj-page-hero .breadcrumb-row { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13.5px; color: rgba(255,255,255,0.45); }
-    .fj-page-hero .breadcrumb-row a { color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
-    .fj-page-hero .breadcrumb-row a:hover { color: var(--fj-green); }
-    .fj-page-hero .breadcrumb-row .sep { color: rgba(255,255,255,0.25); }
-    .fj-page-hero .breadcrumb-row .current { color: var(--fj-green); font-weight: 600; }
-
-    /* ===================== SECTION COMMONS ===================== */
-    .section-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(62,182,73,0.1); border: 1px solid rgba(62,182,73,0.25); color: var(--fj-green); font-size: 11.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 14px; }
-    .section-title { font-family: 'Outfit', sans-serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; color: #1a1a2e; line-height: 1.2; margin-bottom: 16px; }
-    .section-title .hl { background: var(--fj-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .section-desc { color: #667085; font-size: 16px; line-height: 1.75; max-width: 620px; }
-
-    /* ===================== WHO WE ARE ===================== */
-    .fj-who-we-are { padding: 100px 0 80px; background: #fff; position: relative; overflow: hidden; }
-    .fj-who-we-are::before { content: ''; position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(62,182,73,0.05) 0%, transparent 70%); border-radius: 50%; }
-    .fj-who-visual-inner { background: linear-gradient(135deg, #050f1f 0%, #0d2040 100%); border-radius: 20px; padding: 48px 40px; text-align: center; border: 1px solid rgba(62,182,73,0.15); position: relative; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.2); }
-    .fj-who-visual-inner::before { content: ''; position: absolute; top: -50px; left: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(62,182,73,0.15) 0%, transparent 70%); border-radius: 50%; }
-    .fj-who-visual-inner .big-icon { font-size: 80px; background: var(--fj-gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 24px; display: block; filter: drop-shadow(0 0 20px rgba(62,182,73,0.4)); }
-    .fj-who-visual-inner h3 { color: #fff; font-size: 22px; font-weight: 700; margin-bottom: 12px; }
-    .fj-who-visual-inner p { color: rgba(255,255,255,0.55); font-size: 14px; line-height: 1.7; margin: 0; }
-    .fj-stat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 28px; }
-    .fj-stat-box { background: rgba(255,255,255,0.07); border: 1px solid rgba(62,182,73,0.2); border-radius: 14px; padding: 20px; text-align: center; transition: all 0.3s; }
-    .fj-stat-box:hover { background: rgba(62,182,73,0.1); border-color: rgba(62,182,73,0.4); transform: translateY(-2px); }
-    .fj-stat-box .stat-num { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 700; color: var(--fj-green); line-height: 1; }
-    .fj-stat-box .stat-lbl { font-size: 11.5px; color: rgba(255,255,255,0.5); font-weight: 500; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.7px; }
-    .fj-who-list { list-style: none; padding: 0; margin: 28px 0 0; }
-    .fj-who-list li { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid rgba(62,182,73,0.1); font-size: 15px; color: #444; line-height: 1.65; }
-    .fj-who-list li:last-child { border-bottom: none; }
-    .fj-who-list li .li-icon { width: 28px; height: 28px; min-width: 28px; background: var(--fj-light-green); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--fj-green); font-size: 12px; margin-top: 1px; }
-
-    /* ===================== WHAT WE DO ===================== */
-    .fj-what-we-do { padding: 90px 0; background: #f8fffe; position: relative; }
-    .fj-service-card { background: #fff; border: 1px solid #e4f4e6; border-radius: 20px; padding: 34px 28px; height: 100%; transition: all 0.35s cubic-bezier(.4,0,.2,1); position: relative; overflow: hidden; }
-    .fj-service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--fj-gradient); transform: scaleX(0); transition: transform 0.35s ease; }
-    .fj-service-card:hover { box-shadow: 0 20px 50px rgba(62,182,73,0.12); transform: translateY(-6px); border-color: rgba(62,182,73,0.25); }
-    .fj-service-card:hover::before { transform: scaleX(1); }
-    .fj-service-card .svc-icon { width: 64px; height: 64px; background: var(--fj-light-green); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: var(--fj-green); margin-bottom: 22px; transition: all 0.35s; }
-    .fj-service-card:hover .svc-icon { background: var(--fj-gradient); color: #fff; box-shadow: 0 8px 24px rgba(62,182,73,0.35); transform: scale(1.08); }
-    .fj-service-card h3 { font-size: 18px; font-weight: 700; color: #1a1a2e; margin-bottom: 12px; }
-    .fj-service-card p { color: #667085; font-size: 14.5px; line-height: 1.7; margin: 0; }
-
-    /* ===================== VISION / GOALS ===================== */
-    .fj-vision-goals { padding: 100px 0; background: #fff; position: relative; }
-    .fj-vg-card { background: linear-gradient(135deg, var(--fj-navy) 0%, #0d2040 100%); border: 1px solid rgba(62,182,73,0.15); border-radius: 28px; padding: 50px 44px; height: 100%; position: relative; overflow: hidden; transition: all 0.35s; }
-    .fj-vg-card::before { content: ''; position: absolute; top: -80px; right: -80px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(62,182,73,0.12) 0%, transparent 70%); border-radius: 50%; }
-    .fj-vg-card:hover { box-shadow: 0 30px 70px rgba(0,0,0,0.25); border-color: rgba(62,182,73,0.3); transform: translateY(-4px); }
-    .fj-vg-card .vg-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(62,182,73,0.12); border: 1px solid rgba(62,182,73,0.25); color: var(--fj-green); font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; }
-    .fj-vg-card .vg-icon { font-size: 52px; margin-bottom: 24px; display: block; line-height: 1; background: var(--fj-gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 14px rgba(62,182,73,0.35)); }
-    .fj-vg-card h3 { font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; color: #fff; margin-bottom: 20px; line-height: 1.3; }
-    .fj-vg-card .vg-points { list-style: none; padding: 0; margin: 0; }
-    .fj-vg-card .vg-points li { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; color: rgba(255,255,255,0.72); font-size: 14.5px; line-height: 1.65; border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .fj-vg-card .vg-points li:last-child { border-bottom: none; }
-    .fj-vg-card .vg-points li .pt-dot { width: 6px; height: 6px; min-width: 6px; background: var(--fj-green); border-radius: 50%; margin-top: 8px; box-shadow: 0 0 8px rgba(62,182,73,0.5); }
-
-    /* ===================== LOCATIONS ===================== */
-    .fj-locations { padding: 90px 0; background: linear-gradient(135deg, #050f1f 0%, #0d2040 100%); position: relative; overflow: hidden; }
-    .fj-locations::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(62,182,73,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(62,182,73,0.04) 1px, transparent 1px); background-size: 60px 60px; }
-    .fj-loc-card { background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 36px 30px; height: 100%; transition: all 0.35s; position: relative; overflow: hidden; }
-    .fj-loc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--fj-gradient); transform: scaleX(0); transition: transform 0.35s ease; }
-    .fj-loc-card:hover { background: rgba(62,182,73,0.06); border-color: rgba(62,182,73,0.25); box-shadow: 0 20px 50px rgba(0,0,0,0.3); transform: translateY(-4px); }
-    .fj-loc-card:hover::before { transform: scaleX(1); }
-    .fj-loc-card .loc-flag { font-size: 42px; margin-bottom: 16px; display: block; line-height: 1; }
-    .fj-loc-card .loc-country { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-    .fj-loc-card .loc-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(62,182,73,0.12); border: 1px solid rgba(62,182,73,0.2); color: var(--fj-green); font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 12px; margin-bottom: 20px; }
-    .fj-loc-card .loc-info { list-style: none; padding: 0; margin: 0; }
-    .fj-loc-card .loc-info li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13.5px; color: rgba(255,255,255,0.65); line-height: 1.55; }
-    .fj-loc-card .loc-info li:last-child { border-bottom: none; }
-    .fj-loc-card .loc-info li i { color: var(--fj-green); font-size: 12px; width: 14px; flex-shrink: 0; margin-top: 3px; }
-    .fj-loc-card .loc-info a { color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; }
-    .fj-loc-card .loc-info a:hover { color: var(--fj-green); }
-
-    /* ===================== CTA BAND ===================== */
-    .fj-cta-band { padding: 80px 0; background: linear-gradient(135deg, #3EB649 0%, #27a33a 50%, #00b894 100%); position: relative; overflow: hidden; }
-    .fj-cta-band::before { content: ''; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: rgba(255,255,255,0.06); border-radius: 50%; }
-    .fj-cta-band::after { content: ''; position: absolute; bottom: -50%; left: -5%; width: 350px; height: 350px; background: rgba(255,255,255,0.04); border-radius: 50%; }
-    .fj-cta-band h2 { font-family: 'Outfit', sans-serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; color: #fff; margin-bottom: 14px; line-height: 1.2; }
-    .fj-cta-band p { color: rgba(255,255,255,0.82); font-size: 16.5px; line-height: 1.7; margin: 0; max-width: 500px; }
-    .fj-btn-cta-white { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--fj-green) !important; padding: 14px 32px; border-radius: 50px; font-weight: 700; font-size: 15px; text-decoration: none; transition: all 0.3s; box-shadow: 0 6px 24px rgba(0,0,0,0.15); }
-    .fj-btn-cta-white:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.2); }
-    .fj-btn-cta-ghost { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #fff !important; padding: 13px 32px; border-radius: 50px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.3s; border: 2px solid rgba(255,255,255,0.5); }
-    .fj-btn-cta-ghost:hover { background: rgba(255,255,255,0.12); border-color: #fff; transform: translateY(-2px); }
-
-    /* ===================== FOOTER ===================== */
-    .fj-footer { background: linear-gradient(180deg, #050f1f 0%, #020913 100%); padding: 80px 0 0; color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.7; }
-    .fj-footer h5 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 20px; letter-spacing: 0.3px; }
-    .fj-footer ul { list-style: none; padding: 0; margin: 0; }
-    .fj-footer ul li { margin-bottom: 10px; }
-    .fj-footer ul li a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
-    .fj-footer ul li a:hover { color: var(--fj-green); padding-left: 4px; }
-    .fj-footer ul li a i { font-size: 9px; }
-    .fj-footer .social-links { display: flex; gap: 12px; flex-wrap: wrap; }
-    .fj-footer .social-links a { width: 38px; height: 38px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.55); font-size: 14px; transition: all 0.3s; text-decoration: none; }
-    .fj-footer .social-links a:hover { background: var(--fj-gradient); color: #fff; border-color: transparent; transform: translateY(-3px); box-shadow: 0 6px 18px rgba(62,182,73,0.35); }
-    .fj-footer p { color: rgba(255,255,255,0.5); font-size: 14.5px; margin-bottom: 12px; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 0; margin-top: 60px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
-    .footer-bottom p { margin: 0; font-size: 13.5px; color: rgba(255,255,255,0.35); }
-    .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
-    .footer-bottom a:hover { color: var(--fj-green); }
-
-    /* ===================== RESPONSIVE ===================== */
-    @media (max-width: 991px) {
-      .fj-page-hero { min-height: 340px; padding: 120px 0 60px; }
-      .fj-vg-card { padding: 36px 28px; }
-    }
-    @media (max-width: 767px) {
-      .fj-topbar { display: none; }
-      .fj-navbar { top: 0; }
-      .fj-page-hero { padding: 100px 0 50px; }
-      .fj-who-visual-inner { padding: 32px 24px; margin-top: 24px; }
-      .fj-vg-card { padding: 28px 22px; }
-      .footer-bottom { justify-content: center; text-align: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/fujishka-custom.css" />
 </head>
 
 <body>
@@ -271,8 +56,10 @@
               <div style="display:flex;align-items:center;gap:6px;">
                 <span class="fj-logo-symbol">&</span>
                 <div class="fj-logo-text">
-                  <span class="brand-name" style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:#2d2d2d;">FUJISHKA</span>
-                  <span class="brand-tagline" style="font-size:10px;color:#3EB649;font-weight:600;">Tech For Success</span>
+                  <span class="brand-name"
+                    style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:#2d2d2d;">FUJISHKA</span>
+                  <span class="brand-tagline" style="font-size:10px;color:#3EB649;font-weight:600;">Tech For
+                    Success</span>
                 </div>
               </div>
             </a>
@@ -350,8 +137,10 @@
               <li class="menu-item-has-children">
                 <a href="#">Products <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
                 <ul class="dp-menu">
-                  <li><a href="b-quick-erp.html"><i class="fa-solid fa-cloud" style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
-                  <li><a href="van-sales.html"><i class="fa-solid fa-truck" style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
+                  <li><a href="b-quick-erp.html"><i class="fa-solid fa-cloud"
+                        style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
+                  <li><a href="van-sales.html"><i class="fa-solid fa-truck"
+                        style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
                 </ul>
               </li>
               <li><a href="services.html">Services</a></li>
@@ -359,9 +148,12 @@
               <li class="menu-item-has-children">
                 <a href="#">Countries <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
                 <ul class="dp-menu">
-                  <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
-                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>India</a></li>
-                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
+                  <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>India</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
                 </ul>
               </li>
               <li><a href="blogs.html">Blogs</a></li>
@@ -407,7 +199,8 @@
           Fujishka Technologies
         </div>
         <h1>About <span class="hl">Fujishka</span></h1>
-        <p class="page-desc">We are a passionate technology company dedicated to empowering businesses with smart ERP and Van Sales solutions across India, Saudi Arabia, UAE and beyond.</p>
+        <p class="page-desc">We are a passionate technology company dedicated to empowering businesses with smart ERP
+          and Van Sales solutions across India, Saudi Arabia, UAE and beyond.</p>
         <div class="breadcrumb-row">
           <a href="index.html"><i class="fa-solid fa-house" style="font-size:11px;"></i> Home</a>
           <span class="sep"><i class="fa-solid fa-chevron-right" style="font-size:9px;"></i></span>
@@ -429,10 +222,14 @@
             <span class="section-label"><i class="fa-solid fa-building"></i> Who We Are</span>
             <h2 class="section-title">Trusted Technology Partner for <span class="hl">Businesses</span> Worldwide</h2>
             <p style="color:#555;font-size:15.5px;line-height:1.8;margin-bottom:16px;">
-              We are Fujishka Solutions — a technology-first company with a singular aim: to develop, maintain and optimize profitable software solutions for our clients, exceeding their expectations in product quality, value, support and customer service.
+              We are Fujishka Solutions — a technology-first company with a singular aim: to develop, maintain and
+              optimize profitable software solutions for our clients, exceeding their expectations in product quality,
+              value, support and customer service.
             </p>
             <p style="color:#667085;font-size:15px;line-height:1.8;margin-bottom:0;">
-              During the past years, we have carved our identity as a trustworthy web and mobile app developer by expanding our scope while retaining quality. We have developed and integrated our Fujishka Inventory System for well-established domestic and international organizations.
+              Over the years, we have carved our identity as a trustworthy web and mobile app developer by expanding our
+              scope while retaining quality. We have developed and integrated our Fujishka Inventory &amp; Cloud ERP
+              Systems for well-established domestic and international organizations.
             </p>
 
             <ul class="fj-who-list">
@@ -442,15 +239,18 @@
               </li>
               <li>
                 <span class="li-icon"><i class="fa-solid fa-check"></i></span>
-                <span>We have developed and integrated our Fujishka Inventory System for well-established domestic and international organizations.</span>
+                <span>We have developed and integrated our Fujishka Inventory System for well-established domestic and
+                  international organizations.</span>
               </li>
               <li>
                 <span class="li-icon"><i class="fa-solid fa-check"></i></span>
-                <span>Based in the South Indian city of Calicut (Kozhikode), established since 2010 and continuously growing.</span>
+                <span>Based in the South Indian city of Calicut (Kozhikode), established since 2010 and continuously
+                  growing.</span>
               </li>
               <li>
                 <span class="li-icon"><i class="fa-solid fa-check"></i></span>
-                <span>Serving clients across India, Saudi Arabia, UAE, and GCC with localized, compliant solutions.</span>
+                <span>Serving clients across India, Saudi Arabia, UAE, and GCC with localized, ZATCA-compliant
+                  solutions.</span>
               </li>
             </ul>
           </div>
@@ -460,7 +260,8 @@
             <div class="fj-who-visual-inner">
               <i class="fa-solid fa-microchip big-icon"></i>
               <h3>Tech For Success</h3>
-              <p>From cloud ERP to mobile van sales — we deliver technology that drives real results for businesses of every scale.</p>
+              <p>From cloud ERP to mobile van sales — we deliver technology that drives real results for businesses of
+                every scale.</p>
               <div class="fj-stat-grid">
                 <div class="fj-stat-box">
                   <div class="stat-num">15+</div>
@@ -486,13 +287,66 @@
       </div>
     </section>
 
+    <!-- ===== CORE VALUES ===== -->
+    <section class="fj-values-sec" id="core-values">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="600">
+          <span class="section-label"><i class="fa-solid fa-heart"></i> Our Foundation</span>
+          <h2 class="section-title">Driven by Our <span class="hl">Core Values</span></h2>
+          <p class="section-desc mx-auto">The principles that guide our product engineering, customer relationship
+            management, and strategic decisions every single day.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
+            <div class="fj-value-card">
+              <div class="v-icon"><i class="fa-solid fa-lightbulb"></i></div>
+              <h3>Continuous Innovation</h3>
+              <p>Constantly upgrading our cloud ERP and mobile platforms with latest technologies, AI automation, and
+                seamless user experiences.</p>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            <div class="fj-value-card">
+              <div class="v-icon"><i class="fa-solid fa-users"></i></div>
+              <h3>Customer First</h3>
+              <p>We listen closely to our clients' daily operational pain points and build tailored, intuitive software
+                that directly solves them.</p>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+            <div class="fj-value-card">
+              <div class="v-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3>Unmatched Integrity</h3>
+              <p>Building long-term transparent partnerships with data security, compliance, and honest support across
+                all our client engagements.</p>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+            <div class="fj-value-card">
+              <div class="v-icon"><i class="fa-solid fa-globe"></i></div>
+              <h3>Global Quality</h3>
+              <p>Delivering enterprise-grade reliability and regional tax compliance (such as ZATCA e-Invoicing) across
+                international markets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== WHAT WE DO ===== -->
     <section class="fj-what-we-do" id="what-we-do">
       <div class="container">
         <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="600">
           <span class="section-label"><i class="fa-solid fa-gear"></i> What We Do</span>
-          <h2 class="section-title mx-auto" style="max-width:600px;">We Do Things We <span class="hl">Love to Do</span></h2>
-          <p class="section-desc mx-auto">Our team is always passionate about developing and executing products that meet the requirements of our valuable clients who seek a technological transition in their conventional business models.</p>
+          <h2 class="section-title mx-auto" style="max-width:600px;">We Do Things We <span class="hl">Love to Do</span>
+          </h2>
+          <p class="section-desc mx-auto">Our team is always passionate about developing and executing products that
+            meet the requirements of our valuable clients who seek a technological transition in their conventional
+            business models.</p>
         </div>
 
         <div class="row g-4">
@@ -501,7 +355,8 @@
             <div class="fj-service-card">
               <div class="svc-icon"><i class="fa-solid fa-cloud"></i></div>
               <h3>Cloud ERP Software</h3>
-              <p>Comprehensive cloud-based ERP system (FUJISKA-ERP) that manages sales, purchase, inventory, accounts and reporting from a unified platform accessible from anywhere.</p>
+              <p>Comprehensive cloud-based ERP system (FUJISKA-ERP) that manages sales, purchase, inventory, accounts
+                and reporting from a unified platform accessible from anywhere.</p>
             </div>
           </div>
 
@@ -509,7 +364,8 @@
             <div class="fj-service-card">
               <div class="svc-icon"><i class="fa-solid fa-truck"></i></div>
               <h3>Van Sales App (Fujeeka)</h3>
-              <p>Mobile Van Sales application that enables field salesmen to take orders, manage van inventory, collect payments and plan routes — all from their smartphones, online or offline.</p>
+              <p>Mobile Van Sales application that enables field salesmen to take orders, manage van inventory, collect
+                payments and plan routes — all from their smartphones, online or offline.</p>
             </div>
           </div>
 
@@ -517,7 +373,8 @@
             <div class="fj-service-card">
               <div class="svc-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
               <h3>Inventory Management</h3>
-              <p>Advanced inventory system integrated with our ERP for real-time stock tracking, warehouse management and multi-location control tailored for distributors and traders.</p>
+              <p>Advanced inventory system integrated with our ERP for real-time stock tracking, warehouse management
+                and multi-location control tailored for distributors and traders.</p>
             </div>
           </div>
 
@@ -525,7 +382,8 @@
             <div class="fj-service-card">
               <div class="svc-icon"><i class="fa-solid fa-laptop-code"></i></div>
               <h3>Web Design & Development</h3>
-              <p>Professional website design and development for businesses of all sizes, from small start-ups to well-known brands, spanning Asia and the Middle East.</p>
+              <p>Professional website design and development for businesses of all sizes, from small start-ups to
+                well-known brands, spanning Asia and the Middle East.</p>
             </div>
           </div>
 
@@ -533,7 +391,8 @@
             <div class="fj-service-card">
               <div class="svc-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
               <h3>App Development</h3>
-              <p>Custom mobile application development for iOS and Android platforms, designed to meet the specific operational needs of modern businesses seeking digital transformation.</p>
+              <p>Custom mobile application development for iOS and Android platforms, designed to meet the specific
+                operational needs of modern businesses seeking digital transformation.</p>
             </div>
           </div>
 
@@ -541,10 +400,75 @@
             <div class="fj-service-card">
               <div class="svc-icon"><i class="fa-solid fa-chart-line"></i></div>
               <h3>Digital Marketing & Branding</h3>
-              <p>Strategic digital marketing and branding solutions to help businesses grow their online presence, reach their target audience and build a strong, recognizable brand identity.</p>
+              <p>Strategic digital marketing and branding solutions to help businesses grow their online presence, reach
+                their target audience and build a strong, recognizable brand identity.</p>
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMPANY TIMELINE & JOURNEY ===== -->
+    <section class="fj-timeline-sec" id="our-story">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="600">
+          <span class="section-label"><i class="fa-solid fa-timeline"></i> Our Evolution</span>
+          <h2 class="section-title">The Story of <span class="hl">Fujishka</span></h2>
+          <p class="section-desc mx-auto">From a small software development team in Calicut to a global cloud ERP & Van
+            Sales provider trusted by 1000+ businesses.</p>
+        </div>
+
+        <div class="fj-timeline-wrap">
+          <div class="fj-timeline-item" data-aos="fade-right" data-aos-duration="600">
+            <div class="fj-timeline-dot"></div>
+            <div class="fj-timeline-content">
+              <span class="fj-timeline-year">2010</span>
+              <h4>Company Foundation</h4>
+              <p>Fujishka was established in Calicut (Kozhikode), India, with a core mission to provide custom web and
+                business application solutions for local enterprises.</p>
+            </div>
+          </div>
+
+          <div class="fj-timeline-item" data-aos="fade-left" data-aos-duration="600">
+            <div class="fj-timeline-dot"></div>
+            <div class="fj-timeline-content">
+              <span class="fj-timeline-year">2015</span>
+              <h4>Launch of Fujishka Inventory System</h4>
+              <p>Expanded product scope by introducing dedicated inventory and billing software for wholesale
+                distributors and retail businesses.</p>
+            </div>
+          </div>
+
+          <div class="fj-timeline-item" data-aos="fade-right" data-aos-duration="600">
+            <div class="fj-timeline-dot"></div>
+            <div class="fj-timeline-content">
+              <span class="fj-timeline-year">2018</span>
+              <h4>GCC Market Expansion</h4>
+              <p>Opened regional operations in Saudi Arabia and UAE to serve growing demand for localized ERP, VAT
+                compliance, and Arabic-first business software.</p>
+            </div>
+          </div>
+
+          <div class="fj-timeline-item" data-aos="fade-left" data-aos-duration="600">
+            <div class="fj-timeline-dot"></div>
+            <div class="fj-timeline-content">
+              <span class="fj-timeline-year">2022</span>
+              <h4>Fujeeka Van Sales & ZATCA Integration</h4>
+              <p>Launched Fujeeka Van Sales App and integrated full Phase-2 ZATCA e-Invoicing compliance into
+                FUJISKA-ERP for Saudi businesses.</p>
+            </div>
+          </div>
+
+          <div class="fj-timeline-item" data-aos="fade-right" data-aos-duration="600">
+            <div class="fj-timeline-dot"></div>
+            <div class="fj-timeline-content">
+              <span class="fj-timeline-year">2026 &amp; Beyond</span>
+              <h4>FujiBot AI & Global Leadership</h4>
+              <p>Pioneered FujiBot AI assistant inside FUJISKA-ERP for automated inventory forecasting, smart reporting,
+                and voice/chat queries.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -555,7 +479,8 @@
         <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="600">
           <span class="section-label"><i class="fa-solid fa-eye"></i> Our Direction</span>
           <h2 class="section-title">Vision &amp; <span class="hl">Goals</span></h2>
-          <p class="section-desc mx-auto">Guided by a clear mission and driven by innovation — here's what we stand for and where we're headed.</p>
+          <p class="section-desc mx-auto">Guided by a clear mission and driven by innovation — here's what we stand for
+            and where we're headed.</p>
         </div>
 
         <div class="row g-4">
@@ -569,15 +494,18 @@
               <ul class="vg-points">
                 <li>
                   <span class="pt-dot"></span>
-                  <span>To help millions bring their creative projects to life and simplify their day-to-day activities through technology.</span>
+                  <span>To help millions bring their creative projects to life and simplify their day-to-day activities
+                    through technology.</span>
                 </li>
                 <li>
                   <span class="pt-dot"></span>
-                  <span>Whether you are a small start-up, medium or a large enterprise, we understand your requirements and provide quality solutions with a high level of support at both pre-sales and post-sales.</span>
+                  <span>Whether you are a small start-up, medium or a large enterprise, we understand your requirements
+                    and provide quality solutions with a high level of support at both pre-sales and post-sales.</span>
                 </li>
                 <li>
                   <span class="pt-dot"></span>
-                  <span>We aim to develop advanced and future-oriented solutions that assure growth for our clients in a rapidly evolving digital landscape.</span>
+                  <span>We aim to develop advanced and future-oriented solutions that assure growth for our clients in a
+                    rapidly evolving digital landscape.</span>
                 </li>
               </ul>
             </div>
@@ -592,15 +520,20 @@
               <ul class="vg-points">
                 <li>
                   <span class="pt-dot"></span>
-                  <span>Create a new standard of customer service by simplifying and automating client tasks. Our motto: <em style="color:var(--fj-green);font-style:normal;font-weight:600;">"Make Ideas Happen"</em>.</span>
+                  <span>Create a new standard of customer service by simplifying and automating client tasks. Our motto:
+                    <em style="color:var(--fj-green);font-style:normal;font-weight:600;">"Make Ideas
+                      Happen"</em>.</span>
                 </li>
                 <li>
                   <span class="pt-dot"></span>
-                  <span>We aspire to bring in the best results by choosing the right strategies for product design and creation that eventually exceed our clients' expectations.</span>
+                  <span>We aspire to bring in the best results by choosing the right strategies for product design and
+                    creation that eventually exceed our clients' expectations.</span>
                 </li>
                 <li>
                   <span class="pt-dot"></span>
-                  <span>We are committed to deliver all our projects within dedicated timelines. Our team of professionals strives to contribute the best of their skills on the mission of making Fujishka a trusted, reliable technology leader.</span>
+                  <span>We are committed to deliver all our projects within dedicated timelines. Our team of
+                    professionals strives to contribute the best of their skills on the mission of making Fujishka a
+                    trusted, reliable technology leader.</span>
                 </li>
               </ul>
             </div>
@@ -617,8 +550,11 @@
           <span class="section-label" style="background:rgba(62,182,73,0.15);border-color:rgba(62,182,73,0.3);">
             <i class="fa-solid fa-location-dot"></i> Our Presence
           </span>
-          <h2 class="section-title" style="color:#fff;">Connect With <span style="background:var(--fj-gradient-2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Us</span></h2>
-          <p class="section-desc mx-auto" style="color:rgba(255,255,255,0.55);">We have a global presence with offices and partners across multiple countries — ready to support your business wherever you are.</p>
+          <h2 class="section-title" style="color:#fff;">Connect With <span
+              style="background:var(--fj-gradient-2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Us</span>
+          </h2>
+          <p class="section-desc mx-auto" style="color:rgba(255,255,255,0.55);">We have a global presence with offices
+            and partners across multiple countries — ready to support your business wherever you are.</p>
         </div>
 
         <div class="row g-4">
@@ -728,9 +664,11 @@
         <div class="row align-items-center g-4">
           <div class="col-lg-7" data-aos="fade-right" data-aos-duration="700">
             <h2>Ready to Transform Your Business?</h2>
-            <p>Get a free personalized demo of FUJISKA-ERP or Fujeeka Van Sales and see how Fujishka can help your business grow smarter and faster.</p>
+            <p>Get a free personalized demo of FUJISKA-ERP or Fujeeka Van Sales and see how Fujishka can help your
+              business grow smarter and faster.</p>
           </div>
-          <div class="col-lg-5 d-flex gap-3 flex-wrap justify-content-lg-end" data-aos="fade-left" data-aos-duration="700">
+          <div class="col-lg-5 d-flex gap-3 flex-wrap justify-content-lg-end" data-aos="fade-left"
+            data-aos-duration="700">
             <a href="index.html#demo" class="fj-btn-cta-white">
               <i class="fa-solid fa-rocket"></i>
               Request Free Demo
@@ -755,13 +693,19 @@
           <div class="footer-logo" style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
             <img src="assets/imgs/image.png" height="40px" alt="Fujishka" />
           </div>
-          <p>Fujishka delivers powerful Cloud ERP and Van Sales software solutions to businesses across India, Saudi Arabia, UAE, and the GCC region.</p>
+          <p>Fujishka delivers powerful Cloud ERP and Van Sales software solutions to businesses across India, Saudi
+            Arabia, UAE, and the GCC region.</p>
           <div class="social-links mt-4">
-            <a href="https://www.facebook.com/fujishka" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/fujishka" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/fujishka" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com/@fujishka" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://wa.me/917907773636" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/fujishka" target="_blank" title="Facebook"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/fujishka" target="_blank" title="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/fujishka" target="_blank" title="LinkedIn"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@fujishka" target="_blank" title="YouTube"><i
+                class="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/917907773636" target="_blank" title="WhatsApp"><i
+                class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
         <!-- Products -->
@@ -779,7 +723,8 @@
         <div class="col-sm-6 col-lg-2">
           <h5>Company</h5>
           <ul>
-            <li><a href="about-us.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> About Us</a></li>
+            <li><a href="about-us.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> About Us</a>
+            </li>
             <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Blogs</a></li>
             <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Contact Us</a></li>
             <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> عربي (Arabic)</a></li>
@@ -790,14 +735,19 @@
         <div class="col-lg-4">
           <h5>Contact Information</h5>
           <ul class="contact-info">
-            <li><a href="tel:+917907773636"><i class="fa-solid fa-phone" style="color:#3EB649;width:16px;"></i> &nbsp;(IND) +91 79077 73636</a></li>
-            <li><a href="tel:+9660556647610"><i class="fa-solid fa-phone" style="color:#3EB649;width:16px;"></i> &nbsp;(KSA) +966 0556647610 (ERP)</a></li>
-            <li><a href="tel:+966509857933"><i class="fa-solid fa-phone" style="color:#3EB649;width:16px;"></i> &nbsp;(KSA) +966 509857933 (Accessories)</a></li>
-            <li><a href="mailto:sales@fujishka.com"><i class="fa-solid fa-envelope" style="color:#3EB649;width:16px;"></i> &nbsp;sales@fujishka.com</a></li>
+            <li><a href="tel:+917907773636"><i class="fa-solid fa-phone" style="color:#3EB649;width:16px;"></i>
+                &nbsp;(IND) +91 79077 73636</a></li>
+            <li><a href="tel:+9660556647610"><i class="fa-solid fa-phone" style="color:#3EB649;width:16px;"></i>
+                &nbsp;(KSA) +966 0556647610 (ERP)</a></li>
+            <li><a href="tel:+966509857933"><i class="fa-solid fa-phone" style="color:#3EB649;width:16px;"></i>
+                &nbsp;(KSA) +966 509857933 (Accessories)</a></li>
+            <li><a href="mailto:sales@fujishka.com"><i class="fa-solid fa-envelope"
+                  style="color:#3EB649;width:16px;"></i> &nbsp;sales@fujishka.com</a></li>
           </ul>
           <div style="margin-top:20px;">
             <h5 style="font-size:14px;margin-bottom:12px;">Subscribe to Newsletter</h5>
-            <div style="display:flex;gap:0;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:50px;overflow:hidden;padding:4px;">
+            <div
+              style="display:flex;gap:0;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:50px;overflow:hidden;padding:4px;">
               <input type="email" placeholder="Your email address"
                 style="flex:1;background:transparent;border:none;outline:none;color:#fff;font-size:13px;padding:8px 14px;" />
               <button
@@ -853,7 +803,43 @@
     if (typeof AOS !== 'undefined') {
       AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
     }
+
+    // ===== Floating Sticky Action Button (FAB) Init =====
+    (function () {
+      var fabContainer = document.getElementById('fjFabContainer');
+      var fabMainBtn = document.getElementById('fjFabMainBtn');
+      if (fabContainer && fabMainBtn) {
+        fabMainBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          fabContainer.classList.toggle('is-open');
+        });
+        document.addEventListener('click', function (e) {
+          if (!fabContainer.contains(e.target)) {
+            fabContainer.classList.remove('is-open');
+          }
+        });
+      }
+    })();
   </script>
 
+  <!-- ===== FLOATING STICKY ACTION BUTTON (PLUS / SPEED DIAL) ===== -->
+  <div class="fj-fab-container" id="fjFabContainer">
+    <div class="fj-fab-options" id="fjFabOptions">
+      <!-- Download Brochure -->
+      <a href="assets/imgs/fujishka/brochure.pdf" download="Fujishka-ERP-Brochure.pdf" class="fj-fab-option fj-fab-brochure" title="Download Brochure">
+        <span class="fj-fab-label">Download Brochure</span>
+        <div class="fj-fab-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
+      </a>
+      <!-- Chat on WhatsApp -->
+      <a href="https://wa.me/917907773636?text=Hi%20Fujishka%2C%20I%20would%20like%20to%20know%20more%20about%20your%20ERP%20%26%20Van%20Sales%20solutions." target="_blank" rel="noopener noreferrer" class="fj-fab-option fj-fab-whatsapp" title="Chat on WhatsApp">
+        <span class="fj-fab-label">Chat on WhatsApp</span>
+        <div class="fj-fab-icon"><i class="fa-brands fa-whatsapp"></i></div>
+      </a>
+    </div>
+    <button type="button" class="fj-fab-main-btn" id="fjFabMainBtn" aria-label="Toggle Quick Actions">
+      <i class="fa-solid fa-plus fj-fab-plus-icon"></i>
+    </button>
+  </div>
 </body>
+
 </html>
