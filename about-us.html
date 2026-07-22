@@ -164,7 +164,7 @@
 
         <!-- Header Right -->
         <div class="header-right">
-          <a href="index.html#demo" class="fj-nav-cta">
+          <a href="#demo" data-bs-toggle="modal" data-bs-target="#fjDemoModal" onclick="openDemoModal(event)" class="fj-nav-cta">
             <i class="fa-solid fa-rocket"></i>
             Request Demo
             <i class="fa-solid fa-arrow-right btn-arrow"></i>
@@ -411,64 +411,125 @@
 
     <!-- ===== COMPANY TIMELINE & JOURNEY ===== -->
     <section class="fj-timeline-sec" id="our-story">
-      <div class="container">
+      <!-- Ambient background glows -->
+      <div class="timeline-glow-1"></div>
+      <div class="timeline-glow-2"></div>
+
+      <div class="container" style="position: relative; z-index: 2;">
         <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="600">
-          <span class="section-label"><i class="fa-solid fa-timeline"></i> Our Evolution</span>
-          <h2 class="section-title">The Story of <span class="hl">Fujishka</span></h2>
-          <p class="section-desc mx-auto">From a small software development team in Calicut to a global cloud ERP & Van
-            Sales provider trusted by 1000+ businesses.</p>
+          <span class="section-label"
+            style="background:rgba(62,182,73,0.15);border-color:rgba(62,182,73,0.3);color:#3EB649;">
+            <i class="fa-solid fa-timeline"></i> Our Evolution
+          </span>
+          <h2 class="section-title" style="color: #ffffff;">The Story &amp; Growth of <span class="hl">Fujishka</span>
+          </h2>
+          <p class="section-desc mx-auto" style="color: rgba(255,255,255,0.7);">From a pioneering software team in 2010
+            to a global cloud ERP &amp; mobile van sales enterprise trusted by 1,000+ businesses.</p>
         </div>
 
         <div class="fj-timeline-wrap">
+          <div class="fj-timeline-line"></div>
+
+          <!-- Milestone 1: 2010 -->
           <div class="fj-timeline-item" data-aos="fade-right" data-aos-duration="600">
-            <div class="fj-timeline-dot"></div>
+            <div class="fj-timeline-dot">
+              <i class="fa-solid fa-flag"></i>
+            </div>
             <div class="fj-timeline-content">
-              <span class="fj-timeline-year">2010</span>
+              <div class="fj-timeline-header">
+                <span class="fj-timeline-year"><i class="fa-solid fa-calendar-days"></i> 2010</span>
+                <span class="fj-timeline-tag">Foundation</span>
+              </div>
               <h4>Company Foundation</h4>
-              <p>Fujishka was established in Calicut (Kozhikode), India, with a core mission to provide custom web and
-                business application solutions for local enterprises.</p>
+              <p>Fujishka was established in Calicut (Kozhikode), India, with a core mission to engineer reliable web
+                and custom enterprise application solutions.</p>
+              <div class="fj-timeline-footer">
+                <span><i class="fa-solid fa-location-dot"></i> Calicut, India</span>
+                <span><i class="fa-solid fa-code"></i> Enterprise Web Tech</span>
+              </div>
             </div>
           </div>
 
+          <!-- Milestone 2: 2015 -->
           <div class="fj-timeline-item" data-aos="fade-left" data-aos-duration="600">
-            <div class="fj-timeline-dot"></div>
+            <div class="fj-timeline-dot">
+              <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
             <div class="fj-timeline-content">
-              <span class="fj-timeline-year">2015</span>
-              <h4>Launch of Fujishka Inventory System</h4>
-              <p>Expanded product scope by introducing dedicated inventory and billing software for wholesale
-                distributors and retail businesses.</p>
+              <div class="fj-timeline-header">
+                <span class="fj-timeline-year"><i class="fa-solid fa-calendar-days"></i> 2015</span>
+                <span class="fj-timeline-tag">Product Launch</span>
+              </div>
+              <h4>Fujishka Inventory &amp; Billing Launch</h4>
+              <p>Expanded product scope by introducing dedicated inventory control and automated billing software for
+                wholesale distributors and retail operations.</p>
+              <div class="fj-timeline-footer">
+                <span><i class="fa-solid fa-cube"></i> ERP V1.0</span>
+                <span><i class="fa-solid fa-chart-line"></i> Wholesale &amp; Retail</span>
+              </div>
             </div>
           </div>
 
+          <!-- Milestone 3: 2018 -->
           <div class="fj-timeline-item" data-aos="fade-right" data-aos-duration="600">
-            <div class="fj-timeline-dot"></div>
+            <div class="fj-timeline-dot">
+              <i class="fa-solid fa-globe"></i>
+            </div>
             <div class="fj-timeline-content">
-              <span class="fj-timeline-year">2018</span>
-              <h4>GCC Market Expansion</h4>
-              <p>Opened regional operations in Saudi Arabia and UAE to serve growing demand for localized ERP, VAT
+              <div class="fj-timeline-header">
+                <span class="fj-timeline-year"><i class="fa-solid fa-calendar-days"></i> 2018</span>
+                <span class="fj-timeline-tag">Expansion</span>
+              </div>
+              <h4>GCC &amp; Middle East Market Expansion</h4>
+              <p>Established regional hubs in Saudi Arabia and UAE to serve the surging demand for localized ERP, VAT
                 compliance, and Arabic-first business software.</p>
+              <div class="fj-timeline-footer">
+                <span><i class="fa-solid fa-flag"></i> KSA &amp; UAE Hubs</span>
+                <span><i class="fa-solid fa-language"></i> Arabic &amp; English</span>
+              </div>
             </div>
           </div>
 
+          <!-- Milestone 4: 2022 -->
           <div class="fj-timeline-item" data-aos="fade-left" data-aos-duration="600">
-            <div class="fj-timeline-dot"></div>
+            <div class="fj-timeline-dot">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
             <div class="fj-timeline-content">
-              <span class="fj-timeline-year">2022</span>
-              <h4>Fujeeka Van Sales & ZATCA Integration</h4>
-              <p>Launched Fujeeka Van Sales App and integrated full Phase-2 ZATCA e-Invoicing compliance into
-                FUJISKA-ERP for Saudi businesses.</p>
+              <div class="fj-timeline-header">
+                <span class="fj-timeline-year"><i class="fa-solid fa-calendar-days"></i> 2022</span>
+                <span class="fj-timeline-tag">Innovation</span>
+              </div>
+              <h4>Fujeeka Van Sales &amp; ZATCA Phase-2</h4>
+              <p>Launched Fujeeka Mobile Van Sales App with offline sync and integrated full Phase-2 ZATCA e-Invoicing
+                compliance for Saudi enterprises.</p>
+              <div class="fj-timeline-footer">
+                <span><i class="fa-solid fa-mobile-screen"></i> Fujeeka Mobile</span>
+                <span><i class="fa-solid fa-file-shield"></i> ZATCA Phase-2</span>
+              </div>
             </div>
           </div>
 
+          <!-- Milestone 5: 2026 & Beyond -->
           <div class="fj-timeline-item" data-aos="fade-right" data-aos-duration="600">
-            <div class="fj-timeline-dot"></div>
+            <div class="fj-timeline-dot">
+              <i class="fa-solid fa-robot"></i>
+            </div>
             <div class="fj-timeline-content">
-              <span class="fj-timeline-year">2026 &amp; Beyond</span>
-              <h4>FujiBot AI & Global Leadership</h4>
-              <p>Pioneered FujiBot AI assistant inside FUJISKA-ERP for automated inventory forecasting, smart reporting,
-                and voice/chat queries.</p>
+              <div class="fj-timeline-header">
+                <span class="fj-timeline-year"><i class="fa-solid fa-sparkles"></i> 2026 &amp; Beyond</span>
+                <span class="fj-timeline-tag highlight-tag">AI Leadership</span>
+              </div>
+              <h4>FujiBot AI &amp; Next-Gen Cloud Platform</h4>
+              <p>Pioneered FujiBot AI assistant inside FUJISKA-ERP for automated inventory forecasting, smart analytics,
+                voice/chat queries, and global leadership.</p>
+              <div class="fj-timeline-footer">
+                <span><i class="fa-solid fa-brain"></i> FujiBot AI Engine</span>
+                <span><i class="fa-solid fa-cloud"></i> Unified Ecosystem</span>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -477,65 +538,72 @@
     <section class="fj-vision-goals" id="vision-goals">
       <div class="container">
         <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="600">
-          <span class="section-label"><i class="fa-solid fa-eye"></i> Our Direction</span>
-          <h2 class="section-title">Vision &amp; <span class="hl">Goals</span></h2>
-          <p class="section-desc mx-auto">Guided by a clear mission and driven by innovation — here's what we stand for
-            and where we're headed.</p>
+          <span class="section-label"><i class="fa-solid fa-compass"></i> Our Direction</span>
+          <h2 class="section-title">Vision &amp; <span class="hl">Strategic Goals</span></h2>
+          <p class="section-desc mx-auto">Guided by a clear mission and driven by relentless innovation — here's what we stand for and where we are heading.</p>
         </div>
 
         <div class="row g-4">
 
           <!-- Vision Card -->
           <div class="col-lg-6" data-aos="fade-right" data-aos-duration="700">
-            <div class="fj-vg-card">
-              <span class="vg-badge"><i class="fa-solid fa-eye"></i> Our Vision</span>
-              <i class="fa-solid fa-rocket vg-icon"></i>
-              <h3>To Empower Millions to Bring Their Creative Projects to Life</h3>
+            <div class="fj-vg-card vision-card">
+              <i class="fa-solid fa-rocket vg-watermark"></i>
+              <div class="vg-card-header">
+                <span class="vg-badge"><i class="fa-solid fa-eye"></i> Our Vision</span>
+                <div class="vg-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+              </div>
+              <h3>Empowering Enterprises to Thrive Through Intelligent Tech</h3>
               <ul class="vg-points">
                 <li>
-                  <span class="pt-dot"></span>
-                  <span>To help millions bring their creative projects to life and simplify their day-to-day activities
-                    through technology.</span>
+                  <div class="vg-pt-icon"><i class="fa-solid fa-check"></i></div>
+                  <span><strong>Digital Transformation:</strong> Empowering businesses across India and GCC to simplify operations and scale seamlessly through cloud ERP.</span>
                 </li>
                 <li>
-                  <span class="pt-dot"></span>
-                  <span>Whether you are a small start-up, medium or a large enterprise, we understand your requirements
-                    and provide quality solutions with a high level of support at both pre-sales and post-sales.</span>
+                  <div class="vg-pt-icon"><i class="fa-solid fa-check"></i></div>
+                  <span><strong>Client-Centric Support:</strong> Providing tailored enterprise solutions backed by high-level pre-sales and post-sales technical support.</span>
                 </li>
                 <li>
-                  <span class="pt-dot"></span>
-                  <span>We aim to develop advanced and future-oriented solutions that assure growth for our clients in a
-                    rapidly evolving digital landscape.</span>
+                  <div class="vg-pt-icon"><i class="fa-solid fa-check"></i></div>
+                  <span><strong>Future-Proof Engineering:</strong> Developing advanced, AI-driven tools that assure long-term profitability in a rapidly evolving market.</span>
                 </li>
               </ul>
+              <div class="vg-card-footer">
+                <span class="vg-tag"><i class="fa-solid fa-sparkles"></i> AI Innovation</span>
+                <span class="vg-tag"><i class="fa-solid fa-cloud"></i> Unified Cloud</span>
+                <span class="vg-tag"><i class="fa-solid fa-shield-halved"></i> GCC Leadership</span>
+              </div>
             </div>
           </div>
 
           <!-- Goals Card -->
           <div class="col-lg-6" data-aos="fade-left" data-aos-duration="700">
-            <div class="fj-vg-card">
-              <span class="vg-badge"><i class="fa-solid fa-bullseye"></i> Our Goals</span>
-              <i class="fa-solid fa-flag-checkered vg-icon"></i>
+            <div class="fj-vg-card goals-card">
+              <i class="fa-solid fa-flag-checkered vg-watermark"></i>
+              <div class="vg-card-header">
+                <span class="vg-badge goals-badge"><i class="fa-solid fa-bullseye"></i> Our Goals</span>
+                <div class="vg-icon-box goals-icon-box"><i class="fa-solid fa-trophy"></i></div>
+              </div>
               <h3>Make Ideas Happen — Exceeding Expectations at Every Step</h3>
               <ul class="vg-points">
                 <li>
-                  <span class="pt-dot"></span>
-                  <span>Create a new standard of customer service by simplifying and automating client tasks. Our motto:
-                    <em style="color:var(--fj-green);font-style:normal;font-weight:600;">"Make Ideas
-                      Happen"</em>.</span>
+                  <div class="vg-pt-icon"><i class="fa-solid fa-check"></i></div>
+                  <span><strong>Service Excellence:</strong> Setting a new benchmark in customer success by simplifying complex workflows under our motto: <strong style="color:#3EB649;">"Make Ideas Happen"</strong>.</span>
                 </li>
                 <li>
-                  <span class="pt-dot"></span>
-                  <span>We aspire to bring in the best results by choosing the right strategies for product design and
-                    creation that eventually exceed our clients' expectations.</span>
+                  <div class="vg-pt-icon"><i class="fa-solid fa-check"></i></div>
+                  <span><strong>Strategic Execution:</strong> Employing cutting-edge design methodologies and robust architectures that consistently exceed expectations.</span>
                 </li>
                 <li>
-                  <span class="pt-dot"></span>
-                  <span>We are committed to deliver all our projects within dedicated timelines. Our team of
-                    professionals strives to contribute the best of their skills on the mission of making Fujishka a
-                    trusted, reliable technology leader.</span>
+                  <div class="vg-pt-icon"><i class="fa-solid fa-check"></i></div>
+                  <span><strong>100% Timely Delivery:</strong> Committed to delivering all ERP integrations within strict timelines with zero compromise on quality and reliability.</span>
                 </li>
               </ul>
+              <div class="vg-card-footer">
+                <span class="vg-tag"><i class="fa-solid fa-rocket"></i> Make Ideas Happen</span>
+                <span class="vg-tag"><i class="fa-solid fa-clock"></i> On-Time Delivery</span>
+                <span class="vg-tag"><i class="fa-solid fa-award"></i> Total Quality</span>
+              </div>
             </div>
           </div>
 
@@ -562,7 +630,7 @@
           <!-- India -->
           <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0">
             <div class="fj-loc-card">
-              <span class="loc-flag">🇮🇳</span>
+
               <div class="loc-country">India</div>
               <span class="loc-badge"><i class="fa-solid fa-star" style="font-size:8px;"></i> Headquarters</span>
               <ul class="loc-info">
@@ -588,7 +656,7 @@
           <!-- Saudi Arabia -->
           <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
             <div class="fj-loc-card">
-              <span class="loc-flag">🇸🇦</span>
+
               <div class="loc-country">Saudi Arabia</div>
               <span class="loc-badge">KSA Office</span>
               <ul class="loc-info">
@@ -611,7 +679,7 @@
           <!-- UAE -->
           <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
             <div class="fj-loc-card">
-              <span class="loc-flag">🇦🇪</span>
+
               <div class="loc-country">UAE</div>
               <span class="loc-badge">UAE Office</span>
               <ul class="loc-info">
@@ -634,7 +702,7 @@
           <!-- China -->
           <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
             <div class="fj-loc-card">
-              <span class="loc-flag">🇨🇳</span>
+
               <div class="loc-country">China</div>
               <span class="loc-badge">China Office</span>
               <ul class="loc-info">
@@ -820,18 +888,251 @@
         });
       }
     })();
+
+    // ===== REQUEST FREE DEMO MODAL CONTROLLER =====
+    (function() {
+      var modal = document.getElementById('fjDemoModal');
+      var closeBtn = document.getElementById('fjModalCloseBtn');
+
+      window.openDemoModal = function(e) {
+        if (e) e.preventDefault();
+        if (modal) {
+          modal.classList.add('is-active');
+          document.body.style.overflow = 'hidden';
+        }
+      };
+
+      window.closeDemoModal = function() {
+        if (modal) {
+          modal.classList.remove('is-active');
+          document.body.style.overflow = '';
+          var form = document.getElementById('fjDemoForm');
+          var successAlert = document.getElementById('fjDemoSuccessAlert');
+          if (form && successAlert) {
+            form.classList.remove('d-none');
+            successAlert.classList.add('d-none');
+            form.reset();
+          }
+        }
+      };
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeDemoModal);
+      }
+
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            closeDemoModal();
+          }
+        });
+      }
+
+      // Intercept all links/buttons pointing to #demo or with class btn-ghost-green / btn-demo
+      document.addEventListener('click', function(e) {
+        var btn = e.target.closest('a[href="#demo"], a[href="#demo-form"], .btn-demo-trigger, a[href="index.html#demo"]');
+        if (btn) {
+          e.preventDefault();
+          openDemoModal();
+        }
+      });
+
+      // Handle form submission
+      window.handleDemoSubmit = function(e) {
+        e.preventDefault();
+        var submitBtn = document.getElementById('fjDemoSubmitBtn');
+        var form = document.getElementById('fjDemoForm');
+        var successAlert = document.getElementById('fjDemoSuccessAlert');
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span>Submitting Request...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+        }
+
+        setTimeout(function() {
+          if (form && successAlert) {
+            form.classList.add('d-none');
+            successAlert.classList.remove('d-none');
+          }
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>Request Free Demo</span> <i class="fa-solid fa-rocket"></i>';
+          }
+        }, 800);
+      };
+    })();
   </script>
+
+  <!-- ===== REQUEST FREE DEMO MODAL POPUP ===== -->
+  <div class="fj-modal-backdrop" id="fjDemoModal">
+    <div class="fj-modal-dialog">
+      <div class="fj-modal-content">
+        
+        <!-- Modal Header -->
+        <div class="fj-modal-header">
+          <div class="fj-modal-header-info">
+            <span class="fj-modal-badge"><i class="fa-solid fa-rocket"></i> Free Live Demo</span>
+            <h3 class="fj-modal-title">Request a Free Demo</h3>
+            <p class="fj-modal-subtitle">Fill in your details below and our ERP expert will guide you through a live product walkthrough.</p>
+          </div>
+          <button type="button" class="fj-modal-close" id="fjModalCloseBtn" aria-label="Close modal">&times;</button>
+        </div>
+
+        <!-- Modal Form Body -->
+        <div class="fj-modal-body">
+          <form id="fjDemoForm" onsubmit="handleDemoSubmit(event)">
+            
+            <div class="row g-3">
+              <!-- Full Name * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoFullName" class="fj-form-label">Full Name <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="demoFullName" name="fullName" class="fj-form-input" placeholder="e.g. John Doe" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Company Name * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoCompanyName" class="fj-form-label">Company Name <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-building input-icon"></i>
+                    <input type="text" id="demoCompanyName" name="companyName" class="fj-form-input" placeholder="e.g. Al-Fajr Enterprises" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mobile Number * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoMobileNumber" class="fj-form-label">Mobile Number <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-phone input-icon"></i>
+                    <input type="tel" id="demoMobileNumber" name="mobileNumber" class="fj-form-input" placeholder="e.g. +966 50 123 4567" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email Address * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoEmail" class="fj-form-label">Email Address <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="demoEmail" name="email" class="fj-form-input" placeholder="name@company.com" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Country * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoCountry" class="fj-form-label">Country <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-globe input-icon"></i>
+                    <select id="demoCountry" name="country" class="fj-form-select" required>
+                      <option value="" disabled selected>Select Country</option>
+                      <option value="India">India</option>
+                      <option value="Saudi Arabia">Saudi Arabia (KSA)</option>
+                      <option value="UAE">United Arab Emirates (UAE)</option>
+                      <option value="Oman">Oman</option>
+                      <option value="Qatar">Qatar</option>
+                      <option value="Kuwait">Kuwait</option>
+                      <option value="Bahrain">Bahrain</option>
+                      <option value="China">China</option>
+                      <option value="Others">Others</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Business Type * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoBusinessType" class="fj-form-label">Business Type <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-briefcase input-icon"></i>
+                    <select id="demoBusinessType" name="businessType" class="fj-form-select" required>
+                      <option value="" disabled selected>Select Business Type</option>
+                      <option value="Wholesale & Distribution">Wholesale &amp; Distribution</option>
+                      <option value="Retail & Supermarket">Retail &amp; Supermarket</option>
+                      <option value="Mobile Van Sales">Mobile Van Sales</option>
+                      <option value="Manufacturing & Production">Manufacturing &amp; Production</option>
+                      <option value="Services & IT">Services &amp; IT</option>
+                      <option value="Others">Others</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Number of Branches -->
+              <div class="col-12">
+                <div class="fj-form-group">
+                  <label for="demoBranches" class="fj-form-label">Number of Branches</label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-sitemap input-icon"></i>
+                    <select id="demoBranches" name="branches" class="fj-form-select">
+                      <option value="" selected>Select Number of Branches (Optional)</option>
+                      <option value="1 Branch">1 Single Branch</option>
+                      <option value="2 - 5 Branches">2 - 5 Branches</option>
+                      <option value="6 - 15 Branches">6 - 15 Branches</option>
+                      <option value="15+ Branches">15+ Branches</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message / Requirements -->
+              <div class="col-12">
+                <div class="fj-form-group">
+                  <label for="demoMessage" class="fj-form-label">Message / Requirements</label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-comment-dots input-icon textarea-icon"></i>
+                    <textarea id="demoMessage" name="message" class="fj-form-textarea" rows="3" placeholder="Tell us briefly about your business needs or ERP requirements..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="col-12 mt-4">
+                <button type="submit" class="fj-demo-submit-btn" id="fjDemoSubmitBtn">
+                  <span>Request Free Demo</span>
+                  <i class="fa-solid fa-rocket"></i>
+                </button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Form Success Alert -->
+          <div class="fj-demo-success-alert d-none" id="fjDemoSuccessAlert">
+            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h4>Thank You for Your Request!</h4>
+            <p>Your demo request has been successfully submitted. Our solution expert will contact you shortly to schedule your personalized live demo.</p>
+            <button type="button" class="btn-ghost-green mt-3" onclick="closeDemoModal()">Close Window</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- ===== FLOATING STICKY ACTION BUTTON (PLUS / SPEED DIAL) ===== -->
   <div class="fj-fab-container" id="fjFabContainer">
     <div class="fj-fab-options" id="fjFabOptions">
       <!-- Download Brochure -->
-      <a href="assets/imgs/fujishka/brochure.pdf" download="Fujishka-ERP-Brochure.pdf" class="fj-fab-option fj-fab-brochure" title="Download Brochure">
+      <a href="assets/imgs/fujishka/brochure.pdf" download="Fujishka-ERP-Brochure.pdf"
+        class="fj-fab-option fj-fab-brochure" title="Download Brochure">
         <span class="fj-fab-label">Download Brochure</span>
         <div class="fj-fab-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
       </a>
       <!-- Chat on WhatsApp -->
-      <a href="https://wa.me/917907773636?text=Hi%20Fujishka%2C%20I%20would%20like%20to%20know%20more%20about%20your%20ERP%20%26%20Van%20Sales%20solutions." target="_blank" rel="noopener noreferrer" class="fj-fab-option fj-fab-whatsapp" title="Chat on WhatsApp">
+      <a href="https://wa.me/917907773636?text=Hi%20Fujishka%2C%20I%20would%20like%20to%20know%20more%20about%20your%20ERP%20%26%20Van%20Sales%20solutions."
+        target="_blank" rel="noopener noreferrer" class="fj-fab-option fj-fab-whatsapp" title="Chat on WhatsApp">
         <span class="fj-fab-label">Chat on WhatsApp</span>
         <div class="fj-fab-icon"><i class="fa-brands fa-whatsapp"></i></div>
       </a>

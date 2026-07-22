@@ -94,7 +94,7 @@
 
         <!-- Header Right -->
         <div class="header-right">
-          <a href="index.html#demo" class="fj-nav-cta">
+          <a href="#demo" data-bs-toggle="modal" data-bs-target="#fjDemoModal" onclick="openDemoModal(event)" class="fj-nav-cta">
             <i class="fa-solid fa-rocket"></i>
             Request Demo
             <i class="fa-solid fa-arrow-right btn-arrow"></i>
@@ -114,15 +114,15 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- ===== PAGE HERO ===== -->
   <section class="fj-page-hero">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-inner" data-aos="fade-up">
-        <span class="page-badge"><i class="fa-solid fa-headset" style="font-size:11px;"></i> We Are Here To Help</span>
+        <span class="page-badge"><i class="fa-solid fa-headset"></i> 24/7 Global Customer Support</span>
         <h1>Get in Touch with <span class="hl">Fujishka</span></h1>
-        <p class="page-desc">Whether you need a live ERP demo, pricing quotation, customer support, or partner inquiry — our team across India, Saudi Arabia, UAE and China is ready to connect.</p>
+        <p class="page-desc">Whether you need a live ERP demo, pricing quotation, technical support, or partner inquiry — our teams across India, Saudi Arabia, UAE, and China are ready to connect.</p>
         <div class="breadcrumb-row">
           <a href="index.html">Home</a>
           <span>/</span>
@@ -132,51 +132,118 @@
     </div>
   </section>
 
-  <!-- Contact Form & Locations Section -->
+  <!-- ===== QUICK CONTACT CHANNELS STRIP ===== -->
+  <section class="contact-channels-sec">
+    <div class="container">
+      <div class="row g-4">
+        
+        <!-- Channel 1: Sales Hotline -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="500">
+          <a href="tel:+917907773636" class="channel-card">
+            <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="channel-info">
+              <h5>Sales Hotline</h5>
+              <p>+91 79077 73636</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Channel 2: WhatsApp Chat -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600">
+          <a href="https://wa.me/917907773636?text=Hi%20Fujishka%2C%20I%20would%20like%20to%20know%20more%20about%20your%20ERP%20solutions." target="_blank" class="channel-card">
+            <div class="channel-icon" style="color:#25D366;border-color:rgba(37,211,102,0.3);background:rgba(37,211,102,0.1);"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="channel-info">
+              <h5>WhatsApp Chat</h5>
+              <p>Instant Live Response</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Channel 3: Email Support -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700">
+          <a href="mailto:sales@fujishka.com" class="channel-card">
+            <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="channel-info">
+              <h5>Email Desk</h5>
+              <p>sales@fujishka.com</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Channel 4: Free Demo Modal -->
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800">
+          <a href="#demo" data-bs-toggle="modal" data-bs-target="#fjDemoModal" onclick="openDemoModal(event)" class="channel-card">
+            <div class="channel-icon" style="color:#3EB649;"><i class="fa-solid fa-rocket"></i></div>
+            <div class="channel-info">
+              <h5>Request Demo</h5>
+              <p>Free Product Walkthrough</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAIN CONTACT FORM & LOCATIONS SECTION ===== -->
   <section class="contact-sec">
     <div class="container">
       <div class="row g-5">
 
         <!-- Form Column -->
-        <div class="col-lg-6" data-aos="fade-right">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="700">
           <div class="c-form-box">
             <h3>Send Us a Message</h3>
             <p>Fill in your details below and our solution architect will get back to you within 24 hours.</p>
-            <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been received. Our team will contact you shortly.');">
+            
+            <form id="fjContactMainForm" onsubmit="event.preventDefault(); document.getElementById('contactFormAlert').classList.remove('d-none'); this.reset();">
               <input type="text" class="form-control-fj" placeholder="Your Full Name *" required />
               <input type="email" class="form-control-fj" placeholder="Business Email Address *" required />
-              <input type="tel" class="form-control-fj" placeholder="Phone Number *" required />
-              <input type="text" class="form-control-fj" placeholder="Company Name" />
-              <select class="form-control-fj">
-                <option value="">Select Interested Product / Service</option>
+              <input type="tel" class="form-control-fj" placeholder="Phone / Mobile Number *" required />
+              <input type="text" class="form-control-fj" placeholder="Company Name *" required />
+              
+              <select class="form-control-fj" required>
+                <option value="" disabled selected>Select Product / Service of Interest *</option>
                 <option value="erp">B-QUICK Cloud ERP</option>
                 <option value="vansales">Fujeeka Van Sales App</option>
-                <option value="zatca">Saudi ZATCA e-Invoicing</option>
-                <option value="partner">Partner Program</option>
-                <option value="other">Other Inquiries</option>
+                <option value="zatca">Saudi ZATCA Phase-2 e-Invoicing</option>
+                <option value="partner">Partner / Reseller Program</option>
+                <option value="other">General Technical Support</option>
               </select>
-              <textarea class="form-control-fj" rows="4" placeholder="Your Message or Specific Requirements..."></textarea>
-              <button type="submit" class="fj-nav-cta" style="width:100%;justify-content:center;padding:14px;border:none;font-size:15px;cursor:pointer;">
-                <i class="fa-solid fa-paper-plane"></i> Submit Request
+              
+              <textarea class="form-control-fj" rows="4" placeholder="Tell us briefly about your business needs or ERP requirements..."></textarea>
+              
+              <button type="submit" class="fj-demo-submit-btn" style="width:100%;margin-top:10px;">
+                <span>Submit Request</span>
+                <i class="fa-solid fa-paper-plane"></i>
               </button>
             </form>
+
+            <div class="alert alert-success mt-4 d-none" id="contactFormAlert" style="background:rgba(62,182,73,0.12);border:1px solid #3EB649;color:#0f172a;border-radius:14px;">
+              <i class="fa-solid fa-circle-check" style="color:#3EB649;margin-right:8px;"></i>
+              <strong>Thank you!</strong> Your message has been received. Our team will contact you shortly.
+            </div>
           </div>
         </div>
 
         <!-- Global Locations Column -->
-        <div class="col-lg-6" data-aos="fade-left">
-          <h3 style="font-size:26px;font-weight:700;margin-bottom:24px;color:#1a1a2e;">Global Contact Offices</h3>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="700">
+          <div style="margin-bottom:28px;">
+            <span class="section-label" style="display:inline-block;background:rgba(62,182,73,0.15);color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:10px;border:1px solid rgba(62,182,73,0.3);"><i class="fa-solid fa-earth-americas"></i> Global Presence</span>
+            <h2 style="font-size:32px;font-weight:700;color:#0f172a;margin:0;">Our Office Locations</h2>
+          </div>
 
           <div class="row g-4">
 
             <!-- India HQ -->
             <div class="col-sm-6">
               <div class="c-info-card">
-                <h4>🇮🇳 India (HQ)</h4>
+                <h4>🇮🇳 India (Global HQ)</h4>
                 <ul>
-                  <li><i class="fa-solid fa-location-dot"></i> 2nd Floor, Neospace Bldg, KINFRA Techno Industrial Park, Calicut</li>
-                  <li><i class="fa-solid fa-phone"></i> +91 79077 73636<br>+91 99957 96818</li>
-                  <li><i class="fa-solid fa-envelope"></i> sales@fujishka.com</li>
+                  <li><i class="fa-solid fa-location-dot"></i> 2nd Floor, Neospace Bldg, KINFRA Techno Industrial Park, Calicut, Kerala</li>
+                  <li><i class="fa-solid fa-phone"></i> <a href="tel:+917907773636">+91 79077 73636</a><br><a href="tel:+919995796818">+91 99957 96818</a></li>
+                  <li><i class="fa-solid fa-envelope"></i> <a href="mailto:sales@fujishka.com">sales@fujishka.com</a></li>
+                  <li><i class="fa-regular fa-clock"></i> Mon - Sat: 9:00 AM - 6:30 PM IST</li>
                 </ul>
               </div>
             </div>
@@ -186,9 +253,10 @@
               <div class="c-info-card">
                 <h4>🇸🇦 Saudi Arabia</h4>
                 <ul>
-                  <li><i class="fa-solid fa-location-dot"></i> Al Amir Muhammed Bin Abdul Azeez St., Al Aziziya, Jeddah</li>
-                  <li><i class="fa-solid fa-phone"></i> +966 0556647610<br>+966 509857933</li>
-                  <li><i class="fa-solid fa-envelope"></i> info@equibilitysa.com</li>
+                  <li><i class="fa-solid fa-location-dot"></i> Al Amir Muhammed Bin Abdul Azeez St., Al Aziziya, Jeddah, KSA</li>
+                  <li><i class="fa-solid fa-phone"></i> <a href="tel:+9660556647610">+966 0556647610</a><br><a href="tel:+966509857933">+966 509857933</a></li>
+                  <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info@equibilitysa.com">info@equibilitysa.com</a></li>
+                  <li><i class="fa-regular fa-clock"></i> Sat - Thu: 9:00 AM - 6:00 PM AST</li>
                 </ul>
               </div>
             </div>
@@ -198,9 +266,10 @@
               <div class="c-info-card">
                 <h4>🇦🇪 UAE</h4>
                 <ul>
-                  <li><i class="fa-solid fa-location-dot"></i> Al Souq Al Kabeer, Bur Dubai, Dubai, UAE</li>
-                  <li><i class="fa-solid fa-phone"></i> +971 0526617172</li>
-                  <li><i class="fa-solid fa-envelope"></i> sales@fujishka.com</li>
+                  <li><i class="fa-solid fa-location-dot"></i> Al Souq Al Kabeer, Bur Dubai, Dubai, United Arab Emirates</li>
+                  <li><i class="fa-solid fa-phone"></i> <a href="tel:+9710526617172">+971 0526617172</a></li>
+                  <li><i class="fa-solid fa-envelope"></i> <a href="mailto:sales@fujishka.com">sales@fujishka.com</a></li>
+                  <li><i class="fa-regular fa-clock"></i> Mon - Sat: 9:00 AM - 6:00 PM GST</li>
                 </ul>
               </div>
             </div>
@@ -211,8 +280,9 @@
                 <h4>🇨🇳 China</h4>
                 <ul>
                   <li><i class="fa-solid fa-location-dot"></i> 908-910, F9 KB Bldg, No.8 Shipai West Rd, Tianhe, Guangzhou</li>
-                  <li><i class="fa-solid fa-phone"></i> 0086 13539934747</li>
-                  <li><i class="fa-solid fa-envelope"></i> sales@fujishka.com</li>
+                  <li><i class="fa-solid fa-phone"></i> <a href="tel:+8613539934747">+86 13539934747</a></li>
+                  <li><i class="fa-solid fa-envelope"></i> <a href="mailto:sales@fujishka.com">sales@fujishka.com</a></li>
+                  <li><i class="fa-regular fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM CST</li>
                 </ul>
               </div>
             </div>
@@ -224,7 +294,30 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ===== INTERACTIVE MAP SWITCHER SECTION ===== -->
+  <section class="contact-maps-sec">
+    <div class="container">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <span class="section-label" style="display:inline-block;background:rgba(62,182,73,0.15);color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:10px;border:1px solid rgba(62,182,73,0.3);"><i class="fa-solid fa-map-location-dot"></i> Interactive Map</span>
+        <h2 style="font-size:32px;font-weight:700;color:#ffffff;margin-bottom:24px;">Find Us On The Map</h2>
+        
+        <!-- Map Tabs -->
+        <div class="d-flex justify-content-center gap-3 flex-wrap mb-4">
+          <button type="button" class="map-tab-btn active" onclick="switchMap('india', this)">🇮🇳 Calicut (HQ)</button>
+          <button type="button" class="map-tab-btn" onclick="switchMap('ksa', this)">🇸🇦 Jeddah (KSA)</button>
+          <button type="button" class="map-tab-btn" onclick="switchMap('uae', this)">🇦🇪 Dubai (UAE)</button>
+          <button type="button" class="map-tab-btn" onclick="switchMap('china', this)">🇨🇳 Guangzhou (China)</button>
+        </div>
+      </div>
+
+      <!-- Map Frame Container -->
+      <div class="map-iframe-wrap" data-aos="zoom-in" data-aos-duration="700">
+        <iframe id="fjGlobalMapIframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.882772591605!2d75.894372!3d11.196347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65a2f55555555%3A0x123456789abcdef!2sKINFRA%20Techno%20Industrial%20Park%2C%20Kakkanchery!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
   <footer class="fj-footer">
     <div class="container">
       <div class="row g-5">
@@ -262,9 +355,262 @@
     </div>
   </footer>
 
+  <!-- ===== BOOTSTRAP REQUEST FREE DEMO MODAL POPUP ===== -->
+  <div class="modal fade fj-bs-demo-modal" id="fjDemoModal" tabindex="-1" aria-labelledby="fjDemoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="fj-modal-header-info">
+            <span class="fj-modal-badge"><i class="fa-solid fa-rocket"></i> Free Live Demo</span>
+            <h3 class="modal-title" id="fjDemoModalLabel">Request a Free Live Demo</h3>
+            <p class="modal-subtitle">Fill in your details below and our ERP expert will guide you through a live product walkthrough.</p>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Modal Form Body -->
+        <div class="modal-body">
+          <form id="fjDemoForm" onsubmit="handleDemoSubmit(event)">
+            
+            <div class="row g-3">
+              <!-- Full Name * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoFullName" class="fj-form-label">Full Name <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="demoFullName" name="fullName" class="fj-form-input" placeholder="e.g. John Doe" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Company Name * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoCompanyName" class="fj-form-label">Company Name <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-building input-icon"></i>
+                    <input type="text" id="demoCompanyName" name="companyName" class="fj-form-input" placeholder="e.g. Al-Fajr Enterprises" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mobile Number * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoMobileNumber" class="fj-form-label">Mobile Number <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-phone input-icon"></i>
+                    <input type="tel" id="demoMobileNumber" name="mobileNumber" class="fj-form-input" placeholder="e.g. +966 50 123 4567" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email Address * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoEmail" class="fj-form-label">Email Address <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="demoEmail" name="email" class="fj-form-input" placeholder="name@company.com" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Country * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoCountry" class="fj-form-label">Country <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-globe input-icon"></i>
+                    <select id="demoCountry" name="country" class="fj-form-select" required>
+                      <option value="" disabled selected>Select Country</option>
+                      <option value="India">India</option>
+                      <option value="Saudi Arabia">Saudi Arabia (KSA)</option>
+                      <option value="UAE">United Arab Emirates (UAE)</option>
+                      <option value="Oman">Oman</option>
+                      <option value="Qatar">Qatar</option>
+                      <option value="Kuwait">Kuwait</option>
+                      <option value="Bahrain">Bahrain</option>
+                      <option value="China">China</option>
+                      <option value="Others">Others</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Business Type * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoBusinessType" class="fj-form-label">Business Type <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-briefcase input-icon"></i>
+                    <select id="demoBusinessType" name="businessType" class="fj-form-select" required>
+                      <option value="" disabled selected>Select Business Type</option>
+                      <option value="Wholesale & Distribution">Wholesale &amp; Distribution</option>
+                      <option value="Retail & Supermarket">Retail &amp; Supermarket</option>
+                      <option value="Mobile Van Sales">Mobile Van Sales</option>
+                      <option value="Manufacturing & Production">Manufacturing &amp; Production</option>
+                      <option value="Services & IT">Services &amp; IT</option>
+                      <option value="Others">Others</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Number of Branches -->
+              <div class="col-12">
+                <div class="fj-form-group">
+                  <label for="demoBranches" class="fj-form-label">Number of Branches</label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-sitemap input-icon"></i>
+                    <select id="demoBranches" name="branches" class="fj-form-select">
+                      <option value="" selected>Select Number of Branches (Optional)</option>
+                      <option value="1 Branch">1 Single Branch</option>
+                      <option value="2 - 5 Branches">2 - 5 Branches</option>
+                      <option value="6 - 15 Branches">6 - 15 Branches</option>
+                      <option value="15+ Branches">15+ Branches</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message / Requirements -->
+              <div class="col-12">
+                <div class="fj-form-group">
+                  <label for="demoMessage" class="fj-form-label">Message / Requirements</label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-comment-dots input-icon textarea-icon"></i>
+                    <textarea id="demoMessage" name="message" class="fj-form-textarea" rows="3" placeholder="Tell us briefly about your business needs or ERP requirements..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="col-12 mt-4">
+                <button type="submit" class="fj-demo-submit-btn" id="fjDemoSubmitBtn">
+                  <span>Request Free Demo</span>
+                  <i class="fa-solid fa-rocket"></i>
+                </button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Form Success Alert -->
+          <div class="fj-demo-success-alert d-none" id="fjDemoSuccessAlert">
+            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h4>Thank You for Your Request!</h4>
+            <p>Your demo request has been successfully submitted. Our solution expert will contact you shortly to schedule your personalized live demo.</p>
+            <button type="button" class="btn-ghost-green mt-3" data-bs-dismiss="modal">Close Window</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FLOATING STICKY ACTION BUTTON (PLUS / SPEED DIAL) ===== -->
+  <div class="fj-fab-container" id="fjFabContainer">
+    <div class="fj-fab-options" id="fjFabOptions">
+      <!-- Download Brochure -->
+      <a href="assets/imgs/fujishka/brochure.pdf" download="Fujishka-ERP-Brochure.pdf"
+        class="fj-fab-option fj-fab-brochure" title="Download Brochure">
+        <span class="fj-fab-label">Download Brochure</span>
+        <div class="fj-fab-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
+      </a>
+      <!-- Chat on WhatsApp -->
+      <a href="https://wa.me/917907773636?text=Hi%20Fujishka%2C%20I%20would%20like%20to%20know%20more%20about%20your%20ERP%20%26%20Van%20Sales%20solutions."
+        target="_blank" rel="noopener noreferrer" class="fj-fab-option fj-fab-whatsapp" title="Chat on WhatsApp">
+        <span class="fj-fab-label">Chat on WhatsApp</span>
+        <div class="fj-fab-icon"><i class="fa-brands fa-whatsapp"></i></div>
+      </a>
+    </div>
+    <button type="button" class="fj-fab-main-btn" id="fjFabMainBtn" aria-label="Toggle Quick Actions">
+      <i class="fa-solid fa-plus fj-fab-plus-icon"></i>
+    </button>
+  </div>
+
+  <!-- Scripts -->
   <script src="assets/vandor/jquery/jquery.js"></script>
   <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="assets/vandor/animation/aos.js"></script>
-  <script>if (typeof AOS !== 'undefined') { AOS.init({ duration: 700, once: true }); }</script>
+  <script>
+    if (typeof AOS !== 'undefined') {
+      AOS.init({ duration: 700, once: true });
+    }
+
+    // Interactive Map Switcher
+    function switchMap(loc, btn) {
+      document.querySelectorAll('.map-tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      if (btn) btn.classList.add('active');
+      
+      var mapIframe = document.getElementById('fjGlobalMapIframe');
+      if (!mapIframe) return;
+
+      var maps = {
+        india: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.882772591605!2d75.894372!3d11.196347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65a2f55555555%3A0x123456789abcdef!2sKINFRA%20Techno%20Industrial%20Park%2C%20Kakkanchery!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
+        ksa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3711.23456789!2d39.172345!3d21.543210!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d0123456789%3A0x987654321fedcba!2sAl%20Aziziya%2C%20Jeddah%2C%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1700000000000!5m2!1sen!2ssa',
+        uae: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.12345678!2d55.298765!3d25.265432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43456789abc%3A0xdef1234567890abc!2sBur%20Dubai%2C%20Dubai%2C%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae',
+        china: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.98765432!2d113.345678!3d23.134567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403f123456789ab%3A0xcba987654321fed!2sShipai%20West%20Rd%2C%20Tianhe%2C%20Guangzhou%2C%20China!5e0!3m2!1sen!2scn!4v1700000000000!5m2!1sen!2scn'
+      };
+
+      if (maps[loc]) {
+        mapIframe.src = maps[loc];
+      }
+    }
+
+    // Modal & FAB Controllers
+    (function () {
+      var fabContainer = document.getElementById('fjFabContainer');
+      var fabMainBtn = document.getElementById('fjFabMainBtn');
+      if (fabContainer && fabMainBtn) {
+        fabMainBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          fabContainer.classList.toggle('is-open');
+        });
+        document.addEventListener('click', function (e) {
+          if (!fabContainer.contains(e.target)) {
+            fabContainer.classList.remove('is-open');
+          }
+        });
+      }
+
+      window.openDemoModal = function(e) {
+        if (e) e.preventDefault();
+        var modalEl = document.getElementById('fjDemoModal');
+        if (modalEl && typeof bootstrap !== 'undefined') {
+          var bsModal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+          bsModal.show();
+        }
+      };
+
+      window.handleDemoSubmit = function(e) {
+        e.preventDefault();
+        var submitBtn = document.getElementById('fjDemoSubmitBtn');
+        var form = document.getElementById('fjDemoForm');
+        var successAlert = document.getElementById('fjDemoSuccessAlert');
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span>Submitting Request...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+        }
+
+        setTimeout(function() {
+          if (form && successAlert) {
+            form.classList.add('d-none');
+            successAlert.classList.remove('d-none');
+          }
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>Request Free Demo</span> <i class="fa-solid fa-rocket"></i>';
+          }
+        }, 800);
+      };
+    })();
+  </script>
 </body>
 </html>

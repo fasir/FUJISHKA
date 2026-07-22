@@ -38,24 +38,6 @@
 </head>
 
 <body>
-  <!-- Page Loader -->
-  <div class="loader-wrap bg-black">
-    <!-- <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-      <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-    </svg> -->
-    <div class="loader-wrap-heading">
-      <div class="load-text">
-        <span>F</span>
-        <span>U</span>
-        <span>J</span>
-        <span>I</span>
-        <span>S</span>
-        <span>H</span>
-        <span>K</span>
-        <span>A</span>
-      </div>
-    </div>
-  </div>
 
   <!-- Scroll to top -->
 
@@ -84,7 +66,7 @@
         </div>
         <div class="mobile-menu d-xl-none fix"></div>
         <div class="offset-button">
-          <a href="#contact" class="rr-btn">
+          <a href="#demo" onclick="openDemoModal(event)" class="rr-btn">
             <span class="btn-wrap">
               <span class="text-one">Request Demo</span>
               <span class="text-two">Request Demo</span>
@@ -121,7 +103,7 @@
         <!-- Logo -->
         <div class="header__logo fj-logo-wrap">
           <a href="index.html">
-            <img src="assets/imgs/image.png" alt="Fujishka â€“ Tech For Success"
+            <img src="assets/imgs/image.png" alt="Fujishka – Tech For Success"
               onerror="this.parentNode.innerHTML='<div class=fj-logo-fallback><span class=fj-logo-symbol>&amp;</span><div class=fj-logo-text><span class=brand-name>FUJISHKA</span><span class=brand-tagline>Tech For Success</span></div></div>';" />
           </a>
         </div>
@@ -163,7 +145,8 @@
         <!-- Header Right -->
         <div class="header-right">
 
-          <a href="#demo" class="fj-nav-cta">
+          <a href="#demo" data-bs-toggle="modal" data-bs-target="#fjDemoModal" onclick="openDemoModal(event)"
+            class="fj-nav-cta">
             <i class="fa-solid fa-rocket"></i>
             Request Demo
             <i class="fa-solid fa-arrow-right btn-arrow"></i>
@@ -229,32 +212,34 @@
                   <!-- Badge -->
                   <span class="hero-subtitle-badge"
                     style="display:inline-block; font-size: 13px; font-weight: 700; color: #53b748; margin-bottom: 15px; border-bottom: 2px solid #53b748; padding-bottom: 4px; text-transform: uppercase; letter-spacing: 1.5px;">
-                    Top #1 Cloud ERP &amp; Van Sales
+                    Smart ERP for Modern Businesses
                   </span>
 
                   <!-- Heading -->
                   <h1
                     style="font-size: clamp(34px, 4.5vw, 54px); font-weight: 600; color: #ffffff; line-height: 1.15; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">
-                    Smarter Cloud ERP <br>&amp; Van Sales Software
+                    Transform Your Business with Smarter ERP
                   </h1>
 
                   <!-- Description -->
                   <p class="hero-desc"
                     style="font-size: 16px; line-height: 1.7; color: rgba(255, 255, 255, 0.85); margin-bottom: 35px; max-width: 520px;">
-                    A complete ERP solution designed to increase efficiency, reduce cost, and accelerate growth.
-                    Founded in 2010, we empower businesses with intelligent solutions across India and the GCC.
+                    Manage Sales, Inventory, Accounting, Manufacturing, HR, Van Sales, and Business Analytics from one
+                    intelligent cloud platform. Built to help businesses grow faster across India and the GCC.
                   </p>
 
                   <!-- CTA Buttons -->
                   <div class="hero-cta" style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="#products" class="fj-btn-explore"
-                      style="display: inline-flex; align-items: center; justify-content: center; background: #53b748; color: #fff; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 15px 30px; border-radius: 4px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(154, 217, 0, 0.3);">
-                      Explore Solutions <i class="fa-solid fa-chevron-right"
+                    <a href="#" class="fj-btn-explore"
+                      style="display: inline-flex; align-items: center; justify-content: center; background: #53b748; color: #fff; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 15px 30px; border-radius: 4px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(154, 217, 0, 0.3);"
+                      data-bs-toggle="modal" data-bs-target="#fjDemoModal" onclick="openDemoModal(event)">
+                      Request Free Demo <i class="fa-solid fa-chevron-right"
                         style="margin-left: 10px; font-size: 11px;"></i>
                     </a>
                     <a href="#demo" class="fj-btn-contact"
                       style="display: inline-flex; align-items: center; justify-content: center; background: transparent; color: #ffffff; border: 1.5px solid rgba(255, 255, 255, 0.3); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 14px 30px; border-radius: 4px; text-decoration: none; transition: all 0.3s ease;">
-                      Contact Us <i class="fa-solid fa-chevron-right" style="margin-left: 10px; font-size: 11px;"></i>
+                      Explore Features <i class="fa-solid fa-chevron-right"
+                        style="margin-left: 10px; font-size: 11px;"></i>
                     </a>
                   </div>
 
@@ -304,7 +289,7 @@
 
                     <!-- Green speech bubble badge -->
                     <div class="hero-grow-badge">
-                      Help You To<br>Grow Your<br>Business
+                      Grow Your Business
                     </div>
 
                     <!-- AI floating badge 1 -->
@@ -380,7 +365,7 @@
                 <!-- PANEL 1: FUJISKA-ERP -->
                 <div class="fj-hscroll-panel is-active">
                   <div class="fj-product-showcase">
-                    <div class="row g-4 align-items-center">
+                    <div class="row g-4 g-md-5 align-items-center">
                       <div class="col-lg-6">
                         <span class="showcase-label"><i class="fa-solid fa-cloud"></i> FUJISKA-ERP — Deep Dive</span>
                         <h3>Complete Business Control, Anywhere</h3>
@@ -422,7 +407,7 @@
                       </div>
                       <div class="col-lg-6">
                         <div class="fj-showcase-img-wrap">
-                          <img src="assets/imgs/fujishka/product_erp_ai.png" alt="Fujishka ERP Features" />
+                          <img src="assets/imgs/1.png" alt="Fujishka ERP Features" />
                         </div>
                       </div>
                     </div>
@@ -864,124 +849,292 @@
         <section class="fj-services" id="services">
           <div class="container">
 
-            <!-- Section Header â€” centered -->
+            <!-- Section Header — centered -->
             <div class="section-header" data-aos="fade-up" data-aos-duration="600">
               <span class="section-label"><i class="fa-solid fa-screwdriver-wrench"></i> Our Services</span>
-              <h2 class="section-title">Comprehensive Tech Services<br>for Your Business</h2>
-              <p class="section-desc">From ERP implementation to ongoing support, Fujishka provides end-to-end
+              <h2 class="section-title">Comprehensive Tech Services<br>for Your Enterprise</h2>
+              <p class="section-desc">From ERP implementation to 24/7 technical support, Fujishka provides end-to-end
                 technology services tailored to your industry needs.</p>
             </div>
+
             <div class="row g-4">
+              <!-- Service 1: Cloud ERP Implementation -->
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="500">
                 <div class="fj-service-card">
-                  <i class="fa-solid fa-cloud-arrow-up icon"></i>
+                  <div class="fj-service-header">
+                    <div class="fj-service-icon-wrap">
+                      <i class="fa-solid fa-cloud-arrow-up icon"></i>
+                    </div>
+                    <span class="fj-service-num">Service _ 01</span>
+                  </div>
                   <h3>Cloud ERP Implementation</h3>
-                  <p>Full-cycle ERP deployment, data migration, configuration, and go-live support for your business
-                    operations.</p>
-                  <span class="fj-service-num">Service _ 01</span>
+                  <p>Full-cycle ERP deployment, legacy data migration, system configuration, and go-live support.</p>
+
+                  <ul class="fj-service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Complete data migration &amp; master setup</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Multi-branch chart of accounts setup</li>
+                    <li><i class="fa-solid fa-circle-check"></i> On-site &amp; remote user onboarding</li>
+                  </ul>
+
+                  <div class="fj-service-footer">
+                    <a href="services.html" class="fj-service-link">
+                      <span>Explore Service</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
+
+              <!-- Service 2: Van Sales App Deployment -->
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="600">
                 <div class="fj-service-card">
-                  <i class="fa-solid fa-mobile-screen icon"></i>
+                  <div class="fj-service-header">
+                    <div class="fj-service-icon-wrap">
+                      <i class="fa-solid fa-truck-ramp-box icon"></i>
+                    </div>
+                    <span class="fj-service-num">Service _ 02</span>
+                  </div>
                   <h3>Van Sales App Deployment</h3>
-                  <p>Complete setup and training for Fujeeka Van Sales app including GPS routing, offline mode, and
-                    integration with ERP.</p>
-                  <span class="fj-service-num">Service _ 02</span>
+                  <p>Turnkey rollout for Fujeeka Van Sales app with GPS route tracking and offline mobile billing.</p>
+
+                  <ul class="fj-service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Bluetooth thermal printer setup &amp; pairing</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Driver route planning &amp; stock loading</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Live van inventory &amp; cash audit sync</li>
+                  </ul>
+
+                  <div class="fj-service-footer">
+                    <a href="van-sales.html" class="fj-service-link">
+                      <span>Explore Service</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
+
+              <!-- Service 3: ERP Customization -->
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="700">
                 <div class="fj-service-card">
-                  <i class="fa-solid fa-gears icon"></i>
-                  <h3>ERP Customization</h3>
-                  <p>Custom module development, workflow automation, and integrations tailored to your specific business
-                    requirements.</p>
-                  <span class="fj-service-num">Service _ 03</span>
+                  <div class="fj-service-header">
+                    <div class="fj-service-icon-wrap">
+                      <i class="fa-solid fa-gears icon"></i>
+                    </div>
+                    <span class="fj-service-num">Service _ 03</span>
+                  </div>
+                  <h3>ERP Customization &amp; API</h3>
+                  <p>Custom module development, workflow automation, and third-party API integrations tailored to your
+                    business.</p>
+
+                  <ul class="fj-service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Custom workflow &amp; approval hierarchies</li>
+                    <li><i class="fa-solid fa-circle-check"></i> WhatsApp &amp; SMS gateway integrations</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Custom print format &amp; invoice design</li>
+                  </ul>
+
+                  <div class="fj-service-footer">
+                    <a href="services.html" class="fj-service-link">
+                      <span>Explore Service</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
+
+              <!-- Service 4: 24/7 Technical Support -->
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="600">
                 <div class="fj-service-card">
-                  <i class="fa-solid fa-headset icon"></i>
-                  <h3>24/7 Technical Support</h3>
-                  <p>Dedicated customer support team available round the clock to ensure your system runs smoothly
-                    without interruptions.</p>
-                  <span class="fj-service-num">Service _ 04</span>
+                  <div class="fj-service-header">
+                    <div class="fj-service-icon-wrap">
+                      <i class="fa-solid fa-headset icon"></i>
+                    </div>
+                    <span class="fj-service-num">Service _ 04</span>
+                  </div>
+                  <h3>24/7 Priority Support</h3>
+                  <p>Dedicated helpdesk team available round-the-clock to ensure uninterrupted business operation.</p>
+
+                  <ul class="fj-service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Instant WhatsApp &amp; phone helpline</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Guaranteed SLA response times</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Regular automated cloud backup audits</li>
+                  </ul>
+
+                  <div class="fj-service-footer">
+                    <a href="contact.html" class="fj-service-link">
+                      <span>Explore Service</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
+
+              <!-- Service 5: Business Analytics & Reports -->
+              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="800">
+                <div class="fj-service-card">
+                  <div class="fj-service-header">
+                    <div class="fj-service-icon-wrap">
+                      <i class="fa-solid fa-chart-line icon"></i>
+                    </div>
+                    <span class="fj-service-num">Service _ 05</span>
+                  </div>
+                  <h3>Business Analytics &amp; Reports</h3>
+                  <p>Advanced BI dashboards, financial reporting, and ZATCA / VAT compliance statement generation.</p>
+
+                  <ul class="fj-service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Executive KPI performance dashboards</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Automated daily sales &amp; profit reports</li>
+                    <li><i class="fa-solid fa-circle-check"></i> ZATCA e-Invoicing tax audit reports</li>
+                  </ul>
+
+                  <div class="fj-service-footer">
+                    <a href="b-quick-erp.html" class="fj-service-link">
+                      <span>Explore Service</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Service 6: Partnership Program -->
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="900">
                 <div class="fj-service-card">
-                  <i class="fa-solid fa-chart-bar icon"></i>
-                  <h3>Business Analytics & Reports</h3>
-                  <p>Advanced dashboards, KPI reporting, and data analytics tools to help you make informed business
-                    decisions.</p>
-                  <span class="fj-service-num">Service _ 05</span>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000">
-                <div class="fj-service-card">
-                  <i class="fa-solid fa-handshake icon"></i>
-                  <h3>Partnership Program</h3>
-                  <p>Become a Fujishka partner and expand your business by reselling and implementing our ERP solutions
-                    in your region.</p>
-                  <span class="fj-service-num">Service _ 06</span>
+                  <div class="fj-service-header">
+                    <div class="fj-service-icon-wrap">
+                      <i class="fa-solid fa-handshake icon"></i>
+                    </div>
+                    <span class="fj-service-num">Service _ 06</span>
+                  </div>
+                  <h3>Partner &amp; Reseller Program</h3>
+                  <p>Expand your technology business by reselling, implementing, and supporting Fujishka solutions in
+                    your region.</p>
+
+                  <ul class="fj-service-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Attractive recurring margin splits</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Technical training &amp; marketing collateral</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Co-branded sales support &amp; leads</li>
+                  </ul>
+
+                  <div class="fj-service-footer">
+                    <a href="partner.html" class="fj-service-link">
+                      <span>Explore Service</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </section>
 
-        <!-- ===== WHY CHOOSE US ===== -->
+        <!-- ===== ABOUT US & WHY CHOOSE US ===== -->
         <section class="fj-why" id="why-choose-us">
           <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
-              <span class="section-label"
-                style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">What
-                Sets Us Apart</span>
-              <h2 class="section-title"
-                style="font-size:clamp(28px,4vw,44px);font-weight:600;color:#2d2d2d;margin-bottom:0;">What Sets Us Apart
-              </h2>
-            </div>
+            <div class="row align-items-center g-5">
 
-
-            <!-- About Team Highlights -->
-            <div class="row mt-5 align-items-center g-5">
-              <div class="col-lg-5" data-aos="fade-right" data-aos-duration="600">
+              <!-- Left Column: Team Visual & Interactive Badges -->
+              <div class="col-lg-5" data-aos="fade-right" data-aos-duration="700">
                 <div class="fj-why-about-img-wrap">
-                  <img src="assets/imgs/fujishka/team.png" alt="Fujishka Team" style="width:100%; display:block;" />
+                  <div class="img-frame">
+                    <img src="assets/imgs/fujishka/team.png" alt="Fujishka Solutions Team" />
+
+                    <!-- Badge 1: Experience -->
+                    <div class="badge-experience">
+                      <span class="num">15+</span>
+                      <span class="txt">Years of<br>Excellence</span>
+                    </div>
+
+                    <!-- Badge 2: Trust -->
+                    <div class="badge-trust">
+                      <i class="fa-solid fa-circle-check"></i>
+                      <span>1,000+ Active Enterprises</span>
+                    </div>
+
+                    <!-- Badge 3: Compliance Tag -->
+                    <!-- <div class="badge-compliance">
+                      <i class="fa-solid fa-file-shield"></i>
+                      <span>ZATCA Phase-2 Ready</span>
+                    </div> -->
+                  </div>
                 </div>
               </div>
-              <div class="col-lg-7" data-aos="fade-left" data-aos-duration="600">
-                <span class="section-label"
-                  style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">ABOUT
-                  FUJISHKA</span>
-                <h2
-                  style="font-size:clamp(24px,3vw,36px);font-weight:600;color:#1a1a2e;margin-bottom:16px;line-height:1.25;">
-                  Built on Experience. Driven by Innovation.</h2>
-                <p style="color:#666;font-size:15.5px;line-height:1.75;margin-bottom:28px;">Founded in 2010,
-                  <strong>Fujishka Solutions</strong> has been empowering businesses with intelligent ERP solutions that
-                  simplify operations and accelerate growth. With over 15 years of industry expertise, 1,000+ successful
-                  implementations, and a strong presence across India and the GCC, we deliver technology that connects
-                  every aspect of your businessâ€”enabling smarter decisions, greater efficiency, and sustainable
-                  success.
-                </p>
 
-                <div class="fj-why-metric-grid" data-aos="fade-up" data-aos-delay="100">
-                  <div class="fj-why-metric-item">
-                    <div class="val">15+ Years</div>
-                    <div class="lbl">Industry Experience</div>
+              <!-- Right Column: Content & 2x2 Feature Pillars -->
+              <div class="col-lg-7" data-aos="fade-left" data-aos-duration="700">
+                <div class="fj-why-content">
+                  <span class="section-label"><i class="fa-solid fa-shield-halved"></i> About Fujishka Solutions</span>
+                  <h2 class="why-subheading">Transforming Enterprises Through <span class="hl">Smart ERP
+                      Technology</span></h2>
+                  <p class="why-lead">
+                    Founded in 2010 in Calicut, India, <strong>Fujishka Solutions</strong> has grown into a trusted
+                    technology leader across India, Saudi Arabia, UAE, and the GCC region. We engineer high-performance
+                    Cloud ERP and Van Sales systems that streamline operations, automate tax compliance, and drive
+                    sustainable growth.
+                  </p>
+
+                  <!-- 2x2 Feature Pillars Grid -->
+                  <div class="row g-3 fj-why-pillars-grid mb-4">
+                    <div class="col-sm-6">
+                      <div class="fj-pillar-mini">
+                        <div class="p-icon"><i class="fa-solid fa-award"></i></div>
+                        <div>
+                          <h4>15+ Years Excellence</h4>
+                          <p>A proven track record of cloud software innovation since 2010.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="fj-pillar-mini">
+                        <div class="p-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                        <div>
+                          <h4>ZATCA &amp; VAT Ready</h4>
+                          <p>Native KSA Phase-2 e-Invoicing &amp; UAE VAT multi-currency ledger.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="fj-pillar-mini">
+                        <div class="p-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                        <div>
+                          <h4>Offline Van Sales App</h4>
+                          <p>Field billing, Bluetooth printing &amp; live GPS route tracking.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="fj-pillar-mini">
+                        <div class="p-icon"><i class="fa-solid fa-brain"></i></div>
+                        <div>
+                          <h4>AI-Powered FujiBot</h4>
+                          <p>24/7 conversational AI for automated inventory &amp; reporting.</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="fj-why-metric-item">
-                    <div class="val">1,000+</div>
-                    <div class="lbl">Clients Trusted Businesses</div>
+
+                  <!-- Metric Grid -->
+                  <div class="fj-why-metric-grid">
+                    <div class="fj-why-metric-item">
+                      <div class="val">15+</div>
+                      <div class="lbl">Years Experience</div>
+                    </div>
+                    <div class="fj-why-metric-item">
+                      <div class="val">1,000+</div>
+                      <div class="lbl">Happy Clients</div>
+                    </div>
+                    <div class="fj-why-metric-item">
+                      <div class="val">4+</div>
+                      <div class="lbl">Global Hubs</div>
+                    </div>
                   </div>
-                  <div class="fj-why-metric-item">
-                    <div class="val">7 Regions</div>
-                    <div class="lbl">India &amp; GCC Presence</div>
+
+                  <!-- Action Buttons -->
+                  <div class="why-cta-row">
+                    <a href="about-us.html" class="fj-nav-cta" style="display:inline-flex;">
+                      Learn About Us <i class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i>
+                    </a>
+                    <a href="#" class="btn-ghost-green" data-bs-toggle="modal" data-bs-target="#fjDemoModal"
+                      onclick="openDemoModal(event)">
+                      Request Free Demo <i class="fa-solid fa-rocket" style="margin-left:6px;"></i>
+                    </a>
                   </div>
+
                 </div>
-
-                <a href="#" class="btn-fj">Learn About Us <i class="fa-solid fa-arrow-right"></i></a>
               </div>
+
             </div>
           </div>
         </section>
@@ -1122,7 +1275,7 @@
                 <div class="fujibot-avatar-wrap">
                   <div class="fujibot-avatar-glow"></div>
                   <div class="fujibot-avatar-ring"></div>
-                  <img src="assets/imgs/ai-robot.png" alt="FujiBot AI Chat Robot" class="fujibot-avatar-img" />
+                  <img src="assets/imgs/ai-robot.png" alt="FujiBot AI Mascot" class="fujibot-avatar-img" />
                 </div>
               </div>
 
@@ -1133,53 +1286,24 @@
                   <!-- Chat Header -->
                   <div class="fujibot-chat-header">
                     <div class="fujibot-chat-header-avatar">
-                      <i class="fa-solid fa-robot"></i>
+                      <img src="assets/imgs/ai-robot.png" alt="FujiBot" />
                     </div>
                     <div class="fujibot-chat-header-info">
-                      <h4>FujiBot</h4>
-                      <span>Always online, ready to help</span>
+                      <h4>FujiBot AI Assistant</h4>
+                      <span><span class="live-dot"></span> Online &amp; Ready</span>
                     </div>
                   </div>
 
                   <!-- Chat Body -->
-                  <div class="fujibot-chat-body">
-                    <!-- Msg 1 (Bot) -->
-                    <div class="fujibot-msg-row">
-                      <div class="fujibot-msg-avatar">
-                        <i class="fa-solid fa-robot"></i>
-                      </div>
-                      <div class="fujibot-msg-bubble">
-                        Hi! ðŸ‘‹ I'm FujiBot. Ask me any report or sales query â€” I'm here to help!
-                      </div>
-                    </div>
-
-                    <!-- Msg 2 (User) -->
-                    <div class="fujibot-msg-row msg-sent">
-                      <div class="fujibot-msg-avatar" style="background:rgba(83,183,72,0.15); color:#53b748;">
-                        <i class="fa-solid fa-user"></i>
-                      </div>
-                      <div class="fujibot-msg-bubble">
-                        What is the total sales of Kakkanchery branch today?
-                      </div>
-                    </div>
-
-                    <!-- Msg 3 (Bot) -->
-                    <div class="fujibot-msg-row">
-                      <div class="fujibot-msg-avatar">
-                        <i class="fa-solid fa-robot"></i>
-                      </div>
-                      <div class="fujibot-msg-bubble">
-                        Branch Kakkanchery: Today's sales = <strong style="color:#53b748;">â‚¹2,45,630</strong><br>
-                        ðŸ“ˆ Up 12% compared to yesterday!
-                      </div>
-                    </div>
+                  <div class="fujibot-chat-body" id="fujibotChatBody">
+                    <!-- Dynamic chatting messages inserted here via JS -->
                   </div>
 
                   <!-- Chat Footer / Input -->
                   <div class="fujibot-chat-footer">
                     <div class="fujibot-chat-input-wrap">
-                      <input type="text" placeholder="Ask a question..." disabled />
-                      <button type="button" aria-label="Send message">
+                      <input type="text" id="fujibotSimInput" placeholder="Ask FujiBot a question..." readonly />
+                      <button type="button" aria-label="Send message" id="fujibotSimSend">
                         <i class="fa-solid fa-paper-plane"></i>
                       </button>
                     </div>
@@ -1193,439 +1317,162 @@
         </section>
         <!-- ===== CLIENTS / LOGOS ===== -->
         <section class="fj-clients-section" id="clients">
+          <div class="text-center mb-4" data-aos="fade-up" data-aos-duration="600">
+            <span class="section-label"><i class="fa-solid fa-handshake"></i> Trusted Partnerships</span>
+            <h2 class="section-title" style="font-size: clamp(24px, 3.5vw, 36px);">Trusted by <span class="hl">1,000+
+                Enterprises</span></h2>
+          </div>
 
-          <!-- Infinite scroll ticker â€” no container cap so logos bleed edge-to-edge -->
+          <!-- Infinite scroll ticker -->
           <div class="fj-clients-ticker-wrap" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
 
-            <!-- Row 1: Left to Right -->
+            <!-- Row 1: Left to Right (Logos 1 to 14) -->
             <div class="fj-clients-ticker ticker-ltr">
               <div class="fj-ticker-track">
-
-                <!-- Client 1: Vertex -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 2.5L19.5 8 12 12.25 4.5 8 12 4.5zM4.5 9.75L12 14v8.25L4.5 17.25v-7.5z"
-                      fill="var(--fujishka-green)" />
-                    <path d="M19.5 9.75v7.5l-7.5 5V14l7.5-4.25z" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">VERTEX</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/1.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/2.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/3.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/4.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/5.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/6.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/7.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/8.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/9.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/10.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/11.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/12.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/13.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/14.png" alt="Fujishka Client Logo" />
                 </div>
 
-                <!-- Client 2: Novus -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L22 12L12 22L2 12L12 2zm0 4.24L6.24 12 12 17.76 17.76 12 12 6.24z"
-                      fill="var(--fujishka-green)" />
-                    <rect x="10" y="10" width="4" height="4" rx="1" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">NOVUS</span>
+                <!-- Duplicate for seamless loop -->
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/1.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 3: Apex -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L1 21h22L12 2zm0 4.8L18.8 18H5.2L12 6.8z" fill="var(--fujishka-green)" />
-                    <path d="M12 10.5L8.5 16h7L12 10.5z" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">APEX</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/2.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 4: Solas -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L14.8 17.3c-.83.45-1.79.7-2.8.7zm5.3-4.8L9.2 7.1c.83-.45 1.79-.7 2.8-.7 3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8z"
-                      fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">SOLAS</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/3.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 5: Pulse -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 13h3.5l2-5 3 10 2-7 1.5 2H21" stroke="var(--fujishka-green)" stroke-width="3"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="21" cy="13" r="2" fill="#1a1a2e" />
-                    <circle cx="3" cy="13" r="2" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">PULSE</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/4.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 6: Acme -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 22h20L12 2zM12 6.5l6.5 11.5h-13L12 6.5z" fill="#1a1a2e" />
-                    <circle cx="12" cy="13" r="3" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">ACME</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/5.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 7: Aura -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="var(--fujishka-green)" stroke-width="2.5" />
-                    <circle cx="12" cy="12" r="6" fill="#1a1a2e" />
-                    <circle cx="12" cy="12" r="3" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">AURA</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/6.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 8: Kora -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm10-8c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8z"
-                      fill="#1a1a2e" />
-                    <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6V6z" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">KORA</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/7.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 9: Zenith -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 22h8l2-4 2 4h8L12 2zm0 6l5.5 11h-11L12 8z" fill="var(--fujishka-green)" />
-                    <polygon points="12,11 9,17 15,17" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">ZENITH</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/8.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 10: Vector -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 3h18v18H3V3zm2 2v14h14V5H5z" fill="#1a1a2e" />
-                    <path d="M8 8h8v8H8V8z" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">VECTOR</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/9.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- === Duplicate for seamless loop === -->
-
-                <!-- Client 1: Vertex -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 2.5L19.5 8 12 12.25 4.5 8 12 4.5zM4.5 9.75L12 14v8.25L4.5 17.25v-7.5z"
-                      fill="var(--fujishka-green)" />
-                    <path d="M19.5 9.75v7.5l-7.5 5V14l7.5-4.25z" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">VERTEX</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/10.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 2: Novus -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L22 12L12 22L2 12L12 2zm0 4.24L6.24 12 12 17.76 17.76 12 12 6.24z"
-                      fill="var(--fujishka-green)" />
-                    <rect x="10" y="10" width="4" height="4" rx="1" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">NOVUS</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/11.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 3: Apex -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L1 21h22L12 2zm0 4.8L18.8 18H5.2L12 6.8z" fill="var(--fujishka-green)" />
-                    <path d="M12 10.5L8.5 16h7L12 10.5z" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">APEX</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/12.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 4: Solas -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L14.8 17.3c-.83.45-1.79.7-2.8.7zm5.3-4.8L9.2 7.1c.83-.45 1.79-.7 2.8-.7 3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8z"
-                      fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">SOLAS</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/13.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 5: Pulse -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 13h3.5l2-5 3 10 2-7 1.5 2H21" stroke="var(--fujishka-green)" stroke-width="3"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="21" cy="13" r="2" fill="#1a1a2e" />
-                    <circle cx="3" cy="13" r="2" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">PULSE</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/14.png" alt="Fujishka Client Logo" />
                 </div>
+              </div>
+            </div>
 
-                <!-- Client 6: Acme -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 22h20L12 2zM12 6.5l6.5 11.5h-13L12 6.5z" fill="#1a1a2e" />
-                    <circle cx="12" cy="13" r="3" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">ACME</span>
-                </div>
-
-                <!-- Client 7: Aura -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="var(--fujishka-green)" stroke-width="2.5" />
-                    <circle cx="12" cy="12" r="6" fill="#1a1a2e" />
-                    <circle cx="12" cy="12" r="3" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">AURA</span>
-                </div>
-
-                <!-- Client 8: Kora -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm10-8c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8z"
-                      fill="#1a1a2e" />
-                    <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6V6z" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">KORA</span>
-                </div>
-
-                <!-- Client 9: Zenith -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 22h8l2-4 2 4h8L12 2zm0 6l5.5 11h-11L12 8z" fill="var(--fujishka-green)" />
-                    <polygon points="12,11 9,17 15,17" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">ZENITH</span>
-                </div>
-
-                <!-- Client 10: Vector -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 3h18v18H3V3zm2 2v14h14V5H5z" fill="#1a1a2e" />
-                    <path d="M8 8h8v8H8V8z" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">VECTOR</span>
-                </div>
-
-              </div><!-- /.fj-ticker-track -->
-            </div><!-- /.fj-clients-ticker -->
-
-            <!-- Row 2: Right to Left -->
-            <div class="fj-clients-ticker ticker-rtl" style="margin-top: 15px;">
+            <!-- Row 2: Right to Left (Logos 15 to 27) -->
+            <div class="fj-clients-ticker ticker-rtl" style="margin-top: 18px;">
               <div class="fj-ticker-track">
-
-                <!-- Client 10: Vector -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 3h18v18H3V3zm2 2v14h14V5H5z" fill="#1a1a2e" />
-                    <path d="M8 8h8v8H8V8z" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">VECTOR</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/15.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/16.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/17.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/18.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/19.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/20.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/21.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/22.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/23.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/24.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/25.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/26.png" alt="Fujishka Client Logo" />
+                </div>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/27.png" alt="Fujishka Client Logo" />
                 </div>
 
-                <!-- Client 9: Zenith -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 22h8l2-4 2 4h8L12 2zm0 6l5.5 11h-11L12 8z" fill="var(--fujishka-green)" />
-                    <polygon points="12,11 9,17 15,17" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">ZENITH</span>
+                <!-- Duplicate for seamless loop -->
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/15.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 8: Kora -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm10-8c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8z"
-                      fill="#1a1a2e" />
-                    <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6V6z" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">KORA</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/16.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 7: Aura -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="var(--fujishka-green)" stroke-width="2.5" />
-                    <circle cx="12" cy="12" r="6" fill="#1a1a2e" />
-                    <circle cx="12" cy="12" r="3" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">AURA</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/17.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 6: Acme -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 22h20L12 2zM12 6.5l6.5 11.5h-13L12 6.5z" fill="#1a1a2e" />
-                    <circle cx="12" cy="13" r="3" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">ACME</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/18.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 5: Pulse -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 13h3.5l2-5 3 10 2-7 1.5 2H21" stroke="var(--fujishka-green)" stroke-width="3"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="21" cy="13" r="2" fill="#1a1a2e" />
-                    <circle cx="3" cy="13" r="2" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">PULSE</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/19.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 4: Solas -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L14.8 17.3c-.83.45-1.79.7-2.8.7zm5.3-4.8L9.2 7.1c.83-.45 1.79-.7 2.8-.7 3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8z"
-                      fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">SOLAS</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/20.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 3: Apex -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L1 21h22L12 2zm0 4.8L18.8 18H5.2L12 6.8z" fill="var(--fujishka-green)" />
-                    <path d="M12 10.5L8.5 16h7L12 10.5z" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">APEX</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/21.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 2: Novus -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L22 12L12 22L2 12L12 2zm0 4.24L6.24 12 12 17.76 17.76 12 12 6.24z"
-                      fill="var(--fujishka-green)" />
-                    <rect x="10" y="10" width="4" height="4" rx="1" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">NOVUS</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/22.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 1: Vertex -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 2.5L19.5 8 12 12.25 4.5 8 12 4.5zM4.5 9.75L12 14v8.25L4.5 17.25v-7.5z"
-                      fill="var(--fujishka-green)" />
-                    <path d="M19.5 9.75v7.5l-7.5 5V14l7.5-4.25z" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">VERTEX</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/23.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- === Duplicate for seamless loop === -->
-
-                <!-- Client 10: Vector -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 3h18v18H3V3zm2 2v14h14V5H5z" fill="#1a1a2e" />
-                    <path d="M8 8h8v8H8V8z" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">VECTOR</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/24.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 9: Zenith -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 22h8l2-4 2 4h8L12 2zm0 6l5.5 11h-11L12 8z" fill="var(--fujishka-green)" />
-                    <polygon points="12,11 9,17 15,17" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">ZENITH</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/25.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 8: Kora -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm10-8c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8z"
-                      fill="#1a1a2e" />
-                    <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6V6z" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">KORA</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/26.png" alt="Fujishka Client Logo" />
                 </div>
-
-                <!-- Client 7: Aura -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="var(--fujishka-green)" stroke-width="2.5" />
-                    <circle cx="12" cy="12" r="6" fill="#1a1a2e" />
-                    <circle cx="12" cy="12" r="3" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">AURA</span>
+                <div class="fj-client-logo-card"><img src="assets/imgs/clients/27.png" alt="Fujishka Client Logo" />
                 </div>
+              </div>
+            </div>
 
-                <!-- Client 6: Acme -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 22h20L12 2zM12 6.5l6.5 11.5h-13L12 6.5z" fill="#1a1a2e" />
-                    <circle cx="12" cy="13" r="3" fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">ACME</span>
-                </div>
-
-                <!-- Client 5: Pulse -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 13h3.5l2-5 3 10 2-7 1.5 2H21" stroke="var(--fujishka-green)" stroke-width="3"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="21" cy="13" r="2" fill="#1a1a2e" />
-                    <circle cx="3" cy="13" r="2" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">PULSE</span>
-                </div>
-
-                <!-- Client 4: Solas -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L14.8 17.3c-.83.45-1.79.7-2.8.7zm5.3-4.8L9.2 7.1c.83-.45 1.79-.7 2.8-.7 3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8z"
-                      fill="var(--fujishka-green)" />
-                  </svg>
-                  <span class="brand-logo-name">SOLAS</span>
-                </div>
-
-                <!-- Client 3: Apex -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L1 21h22L12 2zm0 4.8L18.8 18H5.2L12 6.8z" fill="var(--fujishka-green)" />
-                    <path d="M12 10.5L8.5 16h7L12 10.5z" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">APEX</span>
-                </div>
-
-                <!-- Client 2: Novus -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L22 12L12 22L2 12L12 2zm0 4.24L6.24 12 12 17.76 17.76 12 12 6.24z"
-                      fill="var(--fujishka-green)" />
-                    <rect x="10" y="10" width="4" height="4" rx="1" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">NOVUS</span>
-                </div>
-
-                <!-- Client 1: Vertex -->
-                <div class="fj-client-logo-card">
-                  <svg class="brand-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 2.5L19.5 8 12 12.25 4.5 8 12 4.5zM4.5 9.75L12 14v8.25L4.5 17.25v-7.5z"
-                      fill="var(--fujishka-green)" />
-                    <path d="M19.5 9.75v7.5l-7.5 5V14l7.5-4.25z" fill="#1a1a2e" />
-                  </svg>
-                  <span class="brand-logo-name">VERTEX</span>
-                </div>
-
-              </div><!-- /.fj-ticker-track -->
-            </div><!-- /.fj-clients-ticker -->
-          </div><!-- /.fj-clients-ticker-wrap -->
+          </div>
         </section>
         <!-- ===== TESTIMONIALS ===== -->
         <section class="fj-testimonials" data-aos="fade-up" data-aos-duration="700">
           <div class="container">
             <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">
               <span class="section-label"
-                style="display:inline-block;background:#e8f7ea;color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;">Testimonials</span>
+                style="display:inline-block;background:rgba(62,182,73,0.15);color:#3EB649;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:12px;border:1px solid rgba(62,182,73,0.3);"><i
+                  class="fa-solid fa-star"></i> Testimonials</span>
               <h2 class="section-title"
                 style="font-size:clamp(28px,4vw,44px);font-weight:600;color:#ffffff;margin-bottom:0;">What Our Clients
-                Say About Fujishka</h2>
+                Say About <span class="hl">Fujishka</span></h2>
             </div>
             <div class="row g-4">
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="500">
                 <div class="fj-testi-card">
-                  <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+                  <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
                   <p>"FUJISKA-ERP transformed our distribution business. We now have complete visibility over our 8
                     branches in Saudi Arabia. The support team is exceptional!"</p>
                   <div class="author">
@@ -1650,7 +1497,13 @@
                   </a>
 
                   <div class="video-content-wrap">
-                    <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+                    <div class="stars">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
                     <p
                       style="font-size: 14.5px; line-height: 1.6; margin-bottom: 20px; font-weight: 500; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
                       "Watch how we boosted delivery efficiency by 40% with Fujeeka Van Sales!"</p>
@@ -1666,7 +1519,13 @@
               </div>
               <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="700">
                 <div class="fj-testi-card">
-                  <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+                  <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
                   <p>"Fujishka's ERP implementation was smooth and fast. Within 2 weeks we were fully operational. Their
                     team understood our business needs perfectly."</p>
                   <div class="author">
@@ -1695,15 +1554,14 @@
               <!-- Location 1: India -->
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600">
                 <div class="fj-location-card">
-                  <div>
-
-                    <h3>India</h3>
-                    <span class="loc-tag"><span class="loc-status-dot"></span> Headquarters</span>
+                  <div class="loc-card-body">
+                    <h3><span class="loc-flag">🇮🇳</span> India</h3>
+                    <span class="loc-tag hq-tag"><span class="loc-status-dot"></span> Global HQ</span>
                     <ul class="loc-details">
                       <li>
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>2nd Floor, Neospace Building, KINFRA Techno Industrial Park, Kakkanchery, Kerala,
-                          India</span>
+                        <span>2nd Floor, Neospace Bldg, KINFRA Techno Industrial Park, Kakkanchery, Calicut,
+                          Kerala</span>
                       </li>
                       <li>
                         <i class="fa-solid fa-phone"></i>
@@ -1716,7 +1574,7 @@
                     </ul>
                   </div>
                   <a href="https://maps.google.com/?q=Neospace+Kakkanchery+Kinfra" target="_blank" class="loc-map-btn">
-                    <i class="fa-solid fa-map-location-dot"></i> View on Map
+                    <span>View on Map</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   </a>
                 </div>
               </div>
@@ -1724,10 +1582,9 @@
               <!-- Location 2: Saudi Arabia -->
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="700">
                 <div class="fj-location-card">
-                  <div>
-
-                    <h3>Saudi Arabia</h3>
-                    <span class="loc-tag"><span class="loc-status-dot"></span> Jeddah Branch</span>
+                  <div class="loc-card-body">
+                    <h3><span class="loc-flag">🇸🇦</span> Saudi Arabia</h3>
+                    <span class="loc-tag ksa-tag"><span class="loc-status-dot"></span> Jeddah Regional Hub</span>
                     <ul class="loc-details">
                       <li>
                         <i class="fa-solid fa-location-dot"></i>
@@ -1745,22 +1602,21 @@
                   </div>
                   <a href="https://maps.google.com/?q=Al+Amir+Muhammed+Bin+Abdul+Azeez+St+Al+Aziziya+Jeddah"
                     target="_blank" class="loc-map-btn">
-                    <i class="fa-solid fa-map-location-dot"></i> View on Map
+                    <span>View on Map</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   </a>
                 </div>
               </div>
 
               <!-- Location 3: UAE -->
-              <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="600">
+              <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="800">
                 <div class="fj-location-card">
-                  <div>
-
-                    <h3>UAE</h3>
-                    <span class="loc-tag"><span class="loc-status-dot"></span> Dubai Office</span>
+                  <div class="loc-card-body">
+                    <h3><span class="loc-flag">🇦🇪</span> UAE</h3>
+                    <span class="loc-tag uae-tag"><span class="loc-status-dot"></span> Dubai Branch</span>
                     <ul class="loc-details">
                       <li>
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>S-33, Al Bayat Center, Al Nahda Street, Al Souq Al Kabeer, Bur Dubai, UAE</span>
+                        <span>S-33, Al Bayat Center, Al Nahda St, Al Souq Al Kabeer, Bur Dubai, UAE</span>
                       </li>
                       <li>
                         <i class="fa-solid fa-phone"></i>
@@ -1774,7 +1630,7 @@
                   </div>
                   <a href="https://maps.google.com/?q=Al+Bayat+Center+Al+Nahda+Street+Bur+Dubai" target="_blank"
                     class="loc-map-btn">
-                    <i class="fa-solid fa-map-location-dot"></i> View on Map
+                    <span>View on Map</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   </a>
                 </div>
               </div>
@@ -1782,14 +1638,13 @@
               <!-- Location 4: China -->
               <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="900">
                 <div class="fj-location-card">
-                  <div>
-
-                    <h3>China</h3>
-                    <span class="loc-tag"><span class="loc-status-dot"></span> Guangzhou Office</span>
+                  <div class="loc-card-body">
+                    <h3><span class="loc-flag">🇨🇳</span> China</h3>
+                    <span class="loc-tag china-tag"><span class="loc-status-dot"></span> Guangzhou Office</span>
                     <ul class="loc-details">
                       <li>
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>908-910, F9 KB Building, No.8 Shipai West Road, Tianhe District, Guangzhou, China</span>
+                        <span>908-910, F9 KB Bldg, No.8 Shipai West Rd, Tianhe, Guangzhou, China</span>
                       </li>
                       <li>
                         <i class="fa-solid fa-phone"></i>
@@ -1802,7 +1657,7 @@
                     </ul>
                   </div>
                   <a href="https://maps.google.com/?q=KB+Building+Guangzhou" target="_blank" class="loc-map-btn">
-                    <i class="fa-solid fa-map-location-dot"></i> View on Map
+                    <span>View on Map</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   </a>
                 </div>
               </div>
@@ -2272,6 +2127,116 @@
       });
     })();
 
+    // ===== FUJIBOT LIVE CHATTING ANIMATION =====
+    (function () {
+      var chatBody = document.getElementById('fujibotChatBody');
+      var simInput = document.getElementById('fujibotSimInput');
+      if (!chatBody) return;
+
+      var conversations = [
+        {
+          user: "What is the total sales across all branches today?",
+          bot: "Branch Kakkanchery & GCC Total Today: <strong style='color:#3EB649;'>SAR 48,920</strong><br>📈 Up 14% vs yesterday! 1,240 invoices generated."
+        },
+        {
+          user: "Is ZATCA Phase-2 e-Invoicing synced for Saudi branch?",
+          bot: "100% Synced! All 352 e-Invoices clearance approved by ZATCA portal in real-time. 🛡️"
+        },
+        {
+          user: "Check low stock alerts for Van Sales mobile apps.",
+          bot: "3 Van Sales drivers requested re-order: Items #102, #204 & #405 auto-alerted! 🚛"
+        }
+      ];
+
+      var stepIndex = 0;
+
+      function createBotMsg(text) {
+        var row = document.createElement('div');
+        row.className = 'fujibot-msg-row';
+        row.innerHTML = '<div class="fujibot-msg-avatar"><i class="fa-solid fa-robot"></i></div><div class="fujibot-msg-bubble">' + text + '</div>';
+        return row;
+      }
+
+      function createUserMsg(text) {
+        var row = document.createElement('div');
+        row.className = 'fujibot-msg-row msg-sent';
+        row.innerHTML = '<div class="fujibot-msg-avatar" style="background:rgba(62,182,73,0.2);color:#3EB649;"><i class="fa-solid fa-user"></i></div><div class="fujibot-msg-bubble">' + text + '</div>';
+        return row;
+      }
+
+      function createTypingIndicator() {
+        var row = document.createElement('div');
+        row.className = 'fujibot-msg-row';
+        row.id = 'fujibotTypingRow';
+        row.innerHTML = '<div class="fujibot-msg-avatar"><i class="fa-solid fa-robot"></i></div><div class="fujibot-msg-bubble fujibot-typing-dots"><span></span><span></span><span></span></div>';
+        return row;
+      }
+
+      function initChat() {
+        chatBody.innerHTML = '';
+        var welcomeMsg = createBotMsg("Hi! 👋 I'm <strong>FujiBot</strong>. Ask me any report or ERP query — I'm here to help!");
+        chatBody.appendChild(welcomeMsg);
+        setTimeout(startNextStep, 2000);
+      }
+
+      function typeTextInInput(text, callback) {
+        if (!simInput) { callback(); return; }
+        simInput.value = '';
+        var charIndex = 0;
+        var timer = setInterval(function () {
+          if (charIndex < text.length) {
+            simInput.value += text.charAt(charIndex);
+            charIndex++;
+          } else {
+            clearInterval(timer);
+            setTimeout(callback, 500);
+          }
+        }, 35);
+      }
+
+      function startNextStep() {
+        if (stepIndex >= conversations.length) {
+          stepIndex = 0;
+          setTimeout(initChat, 4000);
+          return;
+        }
+
+        var current = conversations[stepIndex];
+        stepIndex++;
+
+        // 1. Simulate typing in input
+        typeTextInInput(current.user, function () {
+          // 2. Clear input & append User message
+          simInput.value = '';
+          var userRow = createUserMsg(current.user);
+          chatBody.appendChild(userRow);
+          chatBody.scrollTop = chatBody.scrollHeight;
+
+          // 3. Show typing indicator after 500ms
+          setTimeout(function () {
+            var typingRow = createTypingIndicator();
+            chatBody.appendChild(typingRow);
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            // 4. Reveal Bot response after 1.4s
+            setTimeout(function () {
+              var existingTyping = document.getElementById('fujibotTypingRow');
+              if (existingTyping) existingTyping.remove();
+
+              var botRow = createBotMsg(current.bot);
+              chatBody.appendChild(botRow);
+              chatBody.scrollTop = chatBody.scrollHeight;
+
+              // 5. Proceed to next step after 3.2s
+              setTimeout(startNextStep, 3200);
+            }, 1400);
+          }, 500);
+        });
+      }
+
+      initChat();
+    })();
+
     // ===== AOS (Animate On Scroll) Init =====
     if (typeof AOS !== 'undefined') {
       AOS.init({
@@ -2284,22 +2249,238 @@
     }
 
     // ===== Floating Sticky Action Button (FAB) Init =====
-    (function () {
+    window.toggleFabMenu = function (e) {
+      if (e) e.stopPropagation();
       var fabContainer = document.getElementById('fjFabContainer');
-      var fabMainBtn = document.getElementById('fjFabMainBtn');
-      if (fabContainer && fabMainBtn) {
-        fabMainBtn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          fabContainer.classList.toggle('is-open');
-        });
-        document.addEventListener('click', function (e) {
-          if (!fabContainer.contains(e.target)) {
-            fabContainer.classList.remove('is-open');
+      if (fabContainer) {
+        fabContainer.classList.toggle('is-open');
+      }
+    };
+
+    document.addEventListener('click', function (e) {
+      var fabContainer = document.getElementById('fjFabContainer');
+      if (fabContainer && fabContainer.classList.contains('is-open') && !fabContainer.contains(e.target)) {
+        fabContainer.classList.remove('is-open');
+      }
+    });
+
+    // ===== BOOTSTRAP REQUEST FREE DEMO MODAL CONTROLLER =====
+    (function () {
+      // Helper function to programmatically open Bootstrap modal
+      window.openDemoModal = function (e) {
+        if (e) e.preventDefault();
+        var modalEl = document.getElementById('fjDemoModal');
+        if (modalEl && typeof bootstrap !== 'undefined') {
+          var bsModal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+          bsModal.show();
+        }
+      };
+
+      // Reset form on modal hide
+      var modalEl = document.getElementById('fjDemoModal');
+      if (modalEl) {
+        modalEl.addEventListener('hidden.bs.modal', function () {
+          var form = document.getElementById('fjDemoForm');
+          var successAlert = document.getElementById('fjDemoSuccessAlert');
+          if (form && successAlert) {
+            form.classList.remove('d-none');
+            successAlert.classList.add('d-none');
+            form.reset();
           }
         });
       }
+
+      // Handle form submission
+      window.handleDemoSubmit = function (e) {
+        e.preventDefault();
+        var submitBtn = document.getElementById('fjDemoSubmitBtn');
+        var form = document.getElementById('fjDemoForm');
+        var successAlert = document.getElementById('fjDemoSuccessAlert');
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span>Submitting Request...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+        }
+
+        setTimeout(function () {
+          if (form && successAlert) {
+            form.classList.add('d-none');
+            successAlert.classList.remove('d-none');
+          }
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>Request Free Demo</span> <i class="fa-solid fa-rocket"></i>';
+          }
+        }, 800);
+      };
     })();
   </script>
+
+  <!-- ===== BOOTSTRAP REQUEST FREE DEMO MODAL POPUP ===== -->
+  <div class="modal fade fj-bs-demo-modal" id="fjDemoModal" tabindex="-1" aria-labelledby="fjDemoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="fj-modal-header-info">
+            <span class="fj-modal-badge"><i class="fa-solid fa-rocket"></i> Free Live Demo</span>
+            <h3 class="modal-title" id="fjDemoModalLabel">Request a Free Live Demo</h3>
+            <p class="modal-subtitle">Fill in your details below and our ERP expert will guide you through a live
+              product walkthrough.</p>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Modal Form Body -->
+        <div class="modal-body">
+          <form id="fjDemoForm" onsubmit="handleDemoSubmit(event)">
+
+            <div class="row g-3">
+              <!-- Full Name * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoFullName" class="fj-form-label">Full Name <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" id="demoFullName" name="fullName" class="fj-form-input"
+                      placeholder="e.g. John Doe" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Company Name * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoCompanyName" class="fj-form-label">Company Name <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-building input-icon"></i>
+                    <input type="text" id="demoCompanyName" name="companyName" class="fj-form-input"
+                      placeholder="e.g. Al-Fajr Enterprises" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mobile Number * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoMobileNumber" class="fj-form-label">Mobile Number <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-phone input-icon"></i>
+                    <input type="tel" id="demoMobileNumber" name="mobileNumber" class="fj-form-input"
+                      placeholder="e.g. +966 50 123 4567" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email Address * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoEmail" class="fj-form-label">Email Address <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-envelope input-icon"></i>
+                    <input type="email" id="demoEmail" name="email" class="fj-form-input" placeholder="name@company.com"
+                      required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Country * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoCountry" class="fj-form-label">Country <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-globe input-icon"></i>
+                    <select id="demoCountry" name="country" class="fj-form-select" required>
+                      <option value="" disabled selected>Select Country</option>
+                      <option value="India">India</option>
+                      <option value="Saudi Arabia">Saudi Arabia (KSA)</option>
+                      <option value="UAE">United Arab Emirates (UAE)</option>
+                      <option value="Oman">Oman</option>
+                      <option value="Qatar">Qatar</option>
+                      <option value="Kuwait">Kuwait</option>
+                      <option value="Bahrain">Bahrain</option>
+                      <option value="China">China</option>
+                      <option value="Others">Others</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Business Type * -->
+              <div class="col-md-6">
+                <div class="fj-form-group">
+                  <label for="demoBusinessType" class="fj-form-label">Business Type <span class="req">*</span></label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-briefcase input-icon"></i>
+                    <select id="demoBusinessType" name="businessType" class="fj-form-select" required>
+                      <option value="" disabled selected>Select Business Type</option>
+                      <option value="Wholesale & Distribution">Wholesale &amp; Distribution</option>
+                      <option value="Retail & Supermarket">Retail &amp; Supermarket</option>
+                      <option value="Mobile Van Sales">Mobile Van Sales</option>
+                      <option value="Manufacturing & Production">Manufacturing &amp; Production</option>
+                      <option value="Services & IT">Services &amp; IT</option>
+                      <option value="Others">Others</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Number of Branches -->
+              <div class="col-12">
+                <div class="fj-form-group">
+                  <label for="demoBranches" class="fj-form-label">Number of Branches</label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-sitemap input-icon"></i>
+                    <select id="demoBranches" name="branches" class="fj-form-select">
+                      <option value="" selected>Select Number of Branches (Optional)</option>
+                      <option value="1 Branch">1 Single Branch</option>
+                      <option value="2 - 5 Branches">2 - 5 Branches</option>
+                      <option value="6 - 15 Branches">6 - 15 Branches</option>
+                      <option value="15+ Branches">15+ Branches</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message / Requirements -->
+              <div class="col-12">
+                <div class="fj-form-group">
+                  <label for="demoMessage" class="fj-form-label">Message / Requirements</label>
+                  <div class="fj-input-icon-wrap">
+                    <i class="fa-solid fa-comment-dots input-icon textarea-icon"></i>
+                    <textarea id="demoMessage" name="message" class="fj-form-textarea" rows="3"
+                      placeholder="Tell us briefly about your business needs or ERP requirements..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="col-12 mt-4">
+                <button type="submit" class="fj-demo-submit-btn" id="fjDemoSubmitBtn">
+                  <span>Request Free Demo</span>
+                  <i class="fa-solid fa-rocket"></i>
+                </button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Form Success Alert -->
+          <div class="fj-demo-success-alert d-none" id="fjDemoSuccessAlert">
+            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h4>Thank You for Your Request!</h4>
+            <p>Your demo request has been successfully submitted. Our solution expert will contact you shortly to
+              schedule your personalized live demo.</p>
+            <button type="button" class="btn-ghost-green mt-3" data-bs-dismiss="modal">Close Window</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- ===== FLOATING STICKY ACTION BUTTON (PLUS / SPEED DIAL) ===== -->
   <div class="fj-fab-container" id="fjFabContainer">
@@ -2317,7 +2498,8 @@
         <div class="fj-fab-icon"><i class="fa-brands fa-whatsapp"></i></div>
       </a>
     </div>
-    <button type="button" class="fj-fab-main-btn" id="fjFabMainBtn" aria-label="Toggle Quick Actions">
+    <button type="button" class="fj-fab-main-btn" id="fjFabMainBtn" onclick="toggleFabMenu(event)"
+      aria-label="Toggle Quick Actions">
       <i class="fa-solid fa-plus fj-fab-plus-icon"></i>
     </button>
   </div>
