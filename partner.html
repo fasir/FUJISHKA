@@ -18,6 +18,7 @@
   <!-- Dependencies CSS Files -->
   <link rel="stylesheet" href="assets/vandor/bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/vandor/fontawesome/fontawesome-pro.min.css" />
+  <link rel="stylesheet" href="assets/vandor/menu/meanmenu.min.css" />
   <link rel="stylesheet" href="assets/vandor/animation/aos.css">
 
   <!-- Google Fonts -->
@@ -31,6 +32,59 @@
 </head>
 
 <body>
+
+  <!-- Side Toggle (Mobile) -->
+  <aside class="fix">
+    <div class="side-info">
+      <div class="side-info-content">
+        <div class="offset-widget offset-header">
+          <div class="offset-logo">
+            <a href="index.html">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span class="fj-logo-symbol">&amp;</span>
+                <div class="fj-logo-text">
+                  <span class="brand-name"
+                    style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:#2d2d2d;">FUJISHKA</span>
+                  <span class="brand-tagline" style="font-size:10px;color:#3EB649;font-weight:600;">Tech For
+                    Success</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <button id="side-info-close" class="side-info-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="mobile-menu d-xl-none fix"></div>
+        <div class="offset-button">
+          <a href="index.html#demo" class="rr-btn">
+            <span class="btn-wrap">
+              <span class="text-one">Request Demo</span>
+              <span class="text-two">Request Demo</span>
+            </span>
+          </a>
+        </div>
+        <div class="offset-widget-box">
+          <h2 class="title">Contact Us</h2>
+          <div class="contact-meta">
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text"><a href="tel:+917907773636">(IND) +91 79077 73636</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text"><a href="tel:+9660556647610">(KSA) +966 0556647610</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text"><a href="mailto:sales@fujishka.com">sales@fujishka.com</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="offcanvas-overlay"></div>
 
   <!-- ===== TOP BAR ===== -->
   <div class="fj-topbar">
@@ -82,8 +136,8 @@
                 <a href="#">Countries <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
                 <ul class="dp-menu">
                   <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
+                  <li><a href="uae-erp.html"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
                   <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>India</a></li>
-                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
                 </ul>
               </li>
               <li><a href="blogs.html">Blogs</a></li>
@@ -237,6 +291,8 @@
 
   <script src="assets/vandor/jquery/jquery.js"></script>
   <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vandor/menu/jquery.meanmenu.min.js"></script>
+  <script src="assets/vandor/common-js/common.js"></script>
   <script src="assets/vandor/animation/aos.js"></script>
   <script>if (typeof AOS !== 'undefined') { AOS.init({ duration: 700, once: true }); }</script>
 </body>

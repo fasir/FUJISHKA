@@ -1162,7 +1162,7 @@ h6 {
   border-radius: 16px;
   padding: 16px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   height: 100%;
   transition: all 0.3s ease;
@@ -7266,4 +7266,742 @@ select.form-control-fj {
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+}
+
+/* ==========================================================================
+   FUJISHKA MASTER MOBILE & TABLET RESPONSIVE ENGINE (ENHANCED DESIGN & LAYOUT)
+   ========================================================================== */
+
+/* --- Touch & Viewport Anti-Overflow Safety --- */
+html,
+body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- 1. LARGE TABLETS & SMALL LAPTOPS (max-width: 1199px) --- */
+@media (max-width: 1199px) {
+  .fj-navbar .header-area-1__inner {
+    /* padding: 8px 0; */
+  }
+
+  .fj-hero {
+    padding: 90px 0 50px;
+    min-height: auto;
+  }
+
+  .fj-hero .hero-inner {
+    padding-top: 10px;
+  }
+
+  .hero-circle-container {
+    width: 400px;
+    height: 400px;
+  }
+
+  .hero-circle-mask {
+    width: 350px;
+    height: 350px;
+  }
+
+  .fj-presence,
+  .fj-services,
+  .fj-capabilities {
+    padding: 70px 0;
+  }
+}
+
+/* --- 2. TABLETS (max-width: 991px) --- */
+@media (max-width: 991px) {
+
+  /* Topbar — Hidden on Mobile & Tablet */
+  .fj-topbar {
+    display: none !important;
+  }
+
+  /* Navbar */
+  .fj-navbar {
+    top: 0 !important;
+    padding: 6px 0;
+  }
+
+  .fj-navbar .header-area-1__inner {
+    gap: 12px;
+  }
+
+  .fj-logo-wrap img {
+    height: 36px;
+  }
+
+  .fj-nav-cta {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  /* Hero Section */
+  .fj-hero {
+    padding: 105px 0 60px;
+    text-align: center;
+  }
+
+  .fj-hero .hero-desc {
+    margin: 0 auto 28px;
+  }
+
+  .fj-hero .hero-cta {
+    justify-content: center;
+    margin-bottom: 35px;
+  }
+
+  .hero-circle-container {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    margin: 30px auto 0 !important;
+  }
+
+  .hero-circle-mask {
+    width: 88% !important;
+    height: 88% !important;
+    max-width: 310px !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .hero-hand-arrow {
+    display: none !important;
+  }
+
+  .hero-ai-badge-2 {
+    right: 0px !important;
+    top: 10px !important;
+    transform: scale(0.88);
+  }
+
+  .hero-grow-badge {
+    left: 0px !important;
+    bottom: -10px !important;
+    width: 130px !important;
+    height: 130px !important;
+    padding: 16px !important;
+    font-size: 14px !important;
+  }
+
+  /* Products Horizontal Scroll Panel Mobile Mode */
+  .fj-products .section-header {
+    padding: 50px 0 25px;
+  }
+
+  .fj-hscroll-outer {
+    height: auto !important;
+  }
+
+  .fj-hscroll-sticky {
+    height: auto !important;
+  }
+
+  .fj-hscroll-track {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 10px 15px 30px !important;
+    gap: 16px !important;
+  }
+
+  .fj-hscroll-panel {
+    flex: 0 0 92% !important;
+    width: 92% !important;
+    min-width: 92% !important;
+    scroll-snap-align: center !important;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(62, 182, 73, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    padding: 24px 20px !important;
+    margin-right: 0 !important;
+  }
+
+  .fj-product-showcase {
+    padding: 0 !important;
+  }
+
+  .fj-product-showcase h3 {
+    font-size: 22px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .fj-product-showcase .showcase-desc {
+    font-size: 14px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .fj-showcase-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .fj-showcase-item {
+    background: rgba(62, 182, 73, 0.05);
+    border: 1px solid rgba(62, 182, 73, 0.15);
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .fj-showcase-img-wrap {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .fj-showcase-img-wrap img {
+    max-height: 260px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 14px;
+  }
+
+  /* Grid Layouts for Services, Location Cards & Capabilities */
+  .fj-services,
+  .fj-presence,
+  .fj-capabilities {
+    padding: 60px 0;
+  }
+
+  .fj-service-card,
+  .fj-location-card,
+  .fj-capability-card {
+    padding: 24px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Offcanvas Mobile Drawer Styling */
+  .side-info {
+    width: 320px;
+    background: #091629;
+    color: #ffffff;
+    padding: 25px 20px;
+    z-index: 99999;
+  }
+
+  .side-info-close {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .side-info .mobile-menu {
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+
+  .mean-container .mean-nav {
+    background: transparent;
+  }
+
+  .mean-container .mean-nav ul li a {
+    color: #e2e8f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 10px;
+  }
+
+  .mean-container .mean-nav ul li a.mean-expand {
+    background: rgba(62, 182, 73, 0.15);
+    border: none;
+    color: #3EB649;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 6px;
+    top: 6px;
+  }
+
+  .mean-container .mean-nav ul li a:hover,
+  .mean-container .mean-nav ul li a.active {
+    color: #3EB649;
+  }
+}
+
+/* --- 3. MOBILE DEVICES (max-width: 767px) --- */
+@media (max-width: 767px) {
+
+  /* Topbar */
+  .fj-topbar .contact-links {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .fj-topbar .contact-links a {
+    font-size: 11.5px;
+  }
+
+  /* Headings & Fluid Typography */
+  h1,
+  .h1 {
+    font-size: clamp(26px, 7.5vw, 36px) !important;
+    line-height: 1.2 !important;
+  }
+
+  h2,
+  .h2 {
+    font-size: clamp(22px, 6vw, 28px) !important;
+    line-height: 1.25 !important;
+  }
+
+  h3,
+  .h3 {
+    font-size: clamp(18px, 5vw, 22px) !important;
+    line-height: 1.3 !important;
+  }
+
+  .section-label {
+    font-size: 10.5px;
+    padding: 4px 12px;
+  }
+
+  /* Hero Section Mobile */
+  .fj-hero {
+    padding: 95px 0 50px;
+  }
+
+  .hero-subtitle-badge {
+    font-size: 11px !important;
+  }
+
+  .hero-desc {
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px !important;
+  }
+
+  .hero-cta a,
+  .fj-btn-explore,
+  .fj-btn-contact {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 13px 20px !important;
+    font-size: 13.5px !important;
+  }
+
+  .hero-circle-container {
+    max-width: 290px !important;
+  }
+
+  .hero-circle-mask {
+    max-width: 250px !important;
+  }
+
+  .hero-ai-badge {
+    padding: 7px 10px;
+    gap: 7px;
+  }
+
+  .hero-ai-badge .badge-icon-wrap {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .hero-ai-badge .badge-text strong {
+    font-size: 11.5px;
+  }
+
+  .hero-ai-badge .badge-text span {
+    font-size: 9.5px;
+  }
+
+  .hero-grow-badge {
+    width: 100px !important;
+    height: 100px !important;
+    font-size: 11.5px !important;
+    padding: 10px !important;
+  }
+
+  /* Products horizontal scroll single slide full width */
+  .fj-hscroll-panel {
+    flex: 0 0 96% !important;
+    width: 96% !important;
+    min-width: 96% !important;
+    padding: 20px 16px !important;
+  }
+
+  .fj-showcase-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .fj-showcase-item {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .fj-showcase-item .si-icon {
+    font-size: 14px;
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Ticker Logos */
+  .fj-clients-section {
+    padding: 40px 0 30px;
+  }
+
+  .fj-client-logo-card {
+    width: 140px;
+    height: 56px;
+    padding: 8px 14px;
+  }
+
+  .brand-logo-name {
+    font-size: 13.5px;
+  }
+
+  /* Location cards & Services cards stack */
+  .fj-location-card,
+  .fj-service-card {
+    padding: 20px 16px;
+  }
+
+  .loc-details li {
+    font-size: 12.5px;
+  }
+
+  .loc-map-btn {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  /* Modal Form Mobile Enhancements */
+  .fj-bs-demo-modal .modal-dialog {
+    margin: 10px;
+    max-width: calc(100% - 20px);
+  }
+
+  .fj-bs-demo-modal .modal-header {
+    padding: 18px 18px 12px;
+  }
+
+  .fj-bs-demo-modal .modal-body {
+    padding: 18px;
+  }
+
+  .fj-form-input,
+  .fj-form-select,
+  .fj-form-textarea {
+    font-size: 16px !important;
+    /* Prevents auto-zoom on iOS */
+    padding: 10px 14px 10px 42px !important;
+  }
+
+  .fj-demo-submit-btn {
+    height: 48px;
+    font-size: 15px;
+  }
+
+  /* Floating Speed Dial (FAB) Mobile */
+  .fj-fab-container {
+    bottom: 20px;
+    right: 18px;
+  }
+
+  .fj-fab-main-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+  }
+
+  .fj-fab-options {
+    bottom: 64px;
+  }
+
+  .fj-fab-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .fj-fab-label {
+    font-size: 11.5px;
+    padding: 5px 12px;
+  }
+}
+
+/* --- 4. SMALL MOBILE DEVICES (max-width: 480px) --- */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .fj-showcase-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fj-hscroll-panel {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  .fj-nav-cta {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+
+  .hero-grow-badge {
+    display: none !important;
+  }
+}
+
+/* --- 5. INNER PAGES MOBILE & TABLET ENHANCEMENTS --- */
+@media (max-width: 991px) {
+  .fj-why-about-img-wrap {
+    margin-bottom: 30px;
+  }
+
+  .fj-why-about-img-wrap .badge-experience {
+    padding: 10px 14px;
+    border-radius: 14px;
+  }
+
+  .fj-why-about-img-wrap .badge-experience .num {
+    font-size: 22px;
+  }
+
+  .fj-why-about-img-wrap .badge-experience .txt {
+    font-size: 10px;
+  }
+
+  .fj-why-about-img-wrap .badge-trust {
+    padding: 8px 14px;
+    font-size: 11.5px;
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .fj-why-about-img-wrap .badge-compliance {
+    padding: 6px 12px;
+    font-size: 10.5px;
+    top: 12px;
+    left: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .fj-why-pillars-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .fj-pillar-mini {
+    padding: 14px;
+  }
+}
+
+/* ==========================================================================
+   PREMIUM LAYOUT & DESIGN AESTHETIC ENHANCEMENTS
+   ========================================================================== */
+
+/* --- High-End Page Heroes --- */
+.fj-page-hero {
+  position: relative;
+  background: linear-gradient(135deg, #050f1f 0%, #0c1b33 50%, #071529 100%) !important;
+  padding: 120px 0 80px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.fj-page-hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(62, 182, 73, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.fj-page-hero h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(32px, 4.5vw, 54px) !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  line-height: 1.15 !important;
+  margin-bottom: 18px !important;
+}
+
+.fj-page-hero .hl {
+  background: linear-gradient(135deg, #3EB649 0%, #00b894 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.fj-page-hero p {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 620px;
+}
+
+/* --- Premium Cards Elevation & Micro-Interactions --- */
+.ksa-card,
+.feat-card,
+.fj-service-card,
+.fj-location-card,
+.fj-capability-card {
+  background: #ffffff;
+  border: 1px solid rgba(62, 182, 73, 0.18) !important;
+  border-radius: 22px !important;
+  padding: 30px 24px;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.ksa-card::before,
+.feat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, #3EB649, #00b894);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ksa-card:hover,
+.feat-card:hover,
+.fj-service-card:hover,
+.fj-location-card:hover,
+.fj-capability-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: #3EB649 !important;
+  box-shadow: 0 20px 45px rgba(62, 182, 73, 0.16) !important;
+}
+
+.ksa-card:hover::before,
+.feat-card:hover::before {
+  opacity: 1;
+}
+
+.k-icon,
+.f-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(62, 182, 73, 0.1);
+  border: 1px solid rgba(62, 182, 73, 0.25);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #3EB649;
+  margin-bottom: 20px;
+  transition: all 0.35s ease;
+}
+
+.ksa-card:hover .k-icon,
+.feat-card:hover .f-icon {
+  background: linear-gradient(135deg, #3EB649 0%, #00b894 100%);
+  color: #ffffff;
+  transform: scale(1.08) rotate(4deg);
+  box-shadow: 0 8px 20px rgba(62, 182, 73, 0.35);
+}
+
+/* --- High-End Product Showcase Cards --- */
+.fj-product-showcase {
+  background: linear-gradient(135deg, #ffffff 0%, #f6fbf7 100%) !important;
+  border: 1px solid rgba(62, 182, 73, 0.22) !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06), 0 2px 8px rgba(62, 182, 73, 0.08) !important;
+  border-radius: 28px !important;
+}
+
+.fj-showcase-item {
+  border-radius: 16px !important;
+  border: 1px solid rgba(62, 182, 73, 0.2) !important;
+  background: #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.fj-showcase-item:hover {
+  border-color: #3EB649 !important;
+  box-shadow: 0 8px 20px rgba(62, 182, 73, 0.16) !important;
+  transform: translateY(-3px) !important;
+}
+
+.fj-showcase-img-wrap {
+  border-radius: 22px !important;
+  border: 1.5px solid rgba(62, 182, 73, 0.22) !important;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+.fj-showcase-img-wrap img {
+  transition: transform 0.5s ease;
+}
+
+.fj-showcase-img-wrap:hover img {
+  transform: scale(1.03);
+}
+
+/* --- Glossy Buttons & Arrow Shifts --- */
+.fj-nav-cta,
+.fj-btn-explore,
+.fj-btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.fj-nav-cta:hover,
+.fj-btn-explore:hover,
+.fj-btn-primary:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 10px 28px rgba(62, 182, 73, 0.45) !important;
+}
+
+.fj-nav-cta i.btn-arrow,
+.fj-btn-explore i,
+.fj-btn-primary i {
+  transition: transform 0.3s ease;
+}
+
+.fj-nav-cta:hover i.btn-arrow,
+.fj-btn-explore:hover i,
+.fj-btn-primary:hover i {
+  transform: translateX(5px);
 }

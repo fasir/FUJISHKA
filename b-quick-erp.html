@@ -19,12 +19,15 @@
   <link rel="stylesheet" href="assets/vandor/bootstrap/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/vandor/fontawesome/fontawesome-pro.min.css" />
   <link rel="stylesheet" href="assets/vandor/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/vandor/menu/meanmenu.min.css" />
   <link rel="stylesheet" href="assets/vandor/animation/aos.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -32,6 +35,59 @@
 </head>
 
 <body>
+
+  <!-- Side Toggle (Mobile) -->
+  <aside class="fix">
+    <div class="side-info">
+      <div class="side-info-content">
+        <div class="offset-widget offset-header">
+          <div class="offset-logo">
+            <a href="index.html">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span class="fj-logo-symbol">&amp;</span>
+                <div class="fj-logo-text">
+                  <span class="brand-name"
+                    style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:#2d2d2d;">FUJISHKA</span>
+                  <span class="brand-tagline" style="font-size:10px;color:#3EB649;font-weight:600;">Tech For
+                    Success</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <button id="side-info-close" class="side-info-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="mobile-menu d-xl-none fix"></div>
+        <div class="offset-button">
+          <a href="index.html#demo" class="rr-btn">
+            <span class="btn-wrap">
+              <span class="text-one">Request Demo</span>
+              <span class="text-two">Request Demo</span>
+            </span>
+          </a>
+        </div>
+        <div class="offset-widget-box">
+          <h2 class="title">Contact Us</h2>
+          <div class="contact-meta">
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text"><a href="tel:+917907773636">(IND) +91 79077 73636</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text"><a href="tel:+9660556647610">(KSA) +966 0556647610</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text"><a href="mailto:sales@fujishka.com">sales@fujishka.com</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="offcanvas-overlay"></div>
 
   <!-- ===== TOP BAR ===== -->
   <div class="fj-topbar">
@@ -71,10 +127,13 @@
               <li><a href="index.html">Home</a></li>
               <li><a href="about-us.html">About Us</a></li>
               <li class="menu-item-has-children">
-                <a href="#" class="active">Products <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <a href="#" class="active">Products <i class="fa-solid fa-chevron-down"
+                    style="font-size:10px;opacity:.6;"></i></a>
                 <ul class="dp-menu">
-                  <li><a href="b-quick-erp.html" class="active"><i class="fa-solid fa-cloud" style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
-                  <li><a href="van-sales.html"><i class="fa-solid fa-truck" style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
+                  <li><a href="b-quick-erp.html" class="active"><i class="fa-solid fa-cloud"
+                        style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
+                  <li><a href="van-sales.html"><i class="fa-solid fa-truck"
+                        style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
                 </ul>
               </li>
               <li><a href="services.html">Services</a></li>
@@ -82,9 +141,12 @@
               <li class="menu-item-has-children">
                 <a href="#">Countries <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
                 <ul class="dp-menu">
-                  <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
-                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>India</a></li>
-                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
+                  <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
+                  <li><a href="uae-erp.html"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>India</a></li>
                 </ul>
               </li>
               <li><a href="blogs.html">Blogs</a></li>
@@ -120,17 +182,26 @@
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-6" data-aos="fade-right">
-          <span style="background:rgba(62,182,73,0.15);color:#6ee77f;border:1px solid rgba(62,182,73,0.3);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:5px 14px;border-radius:20px;display:inline-block;margin-bottom:16px;">Next-Gen Business Software</span>
-          <h1>B-QUICK <span class="hl">Cloud ERP</span></h1>
-          <p>Streamline your entire enterprise with B-QUICK ERP — intelligent financial management, real-time inventory tracking, purchasing, automated billing, and multi-branch control in one secure platform.</p>
+          <span
+            style="background:rgba(62,182,73,0.15);color:#6ee77f;border:1px solid rgba(62,182,73,0.3);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:5px 14px;border-radius:20px;display:inline-block;margin-bottom:16px;">Next-Gen
+            Business Software</span>
+          <h1 class="text-white mb-3">B-QUICK <span class="hl">Cloud ERP</span></h1>
+          <p class="mb-3">Streamline your entire enterprise with B-QUICK ERP — intelligent financial management,
+            real-time inventory
+            tracking, purchasing, automated billing, and multi-branch control in one secure platform.</p>
           <div class="d-flex gap-3 flex-wrap">
-            <a href="index.html#demo" class="fj-nav-cta" style="padding:14px 30px;font-size:15px;"><i class="fa-solid fa-rocket"></i> Request Free Demo</a>
-            <a href="contact.html" style="display:inline-flex;align-items:center;padding:13px 28px;border:1.5px solid rgba(255,255,255,0.3);color:#fff;border-radius:50px;text-decoration:none;font-weight:600;font-size:15px;">Contact Sales</a>
+            <a href="index.html#demo" class="fj-nav-cta" style="padding:14px 30px;font-size:15px;"><i
+                class="fa-solid fa-rocket"></i> Request Free Demo</a>
+            <a href="contact.html"
+              style="display:inline-flex;align-items:center;padding:13px 28px;border:1.5px solid rgba(255,255,255,0.3);color:#fff;border-radius:50px;text-decoration:none;font-weight:600;font-size:15px;">Contact
+              Sales</a>
           </div>
         </div>
         <div class="col-lg-6" data-aos="fade-left">
-          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(62,182,73,0.2);border-radius:24px;padding:16px;box-shadow:0 30px 60px rgba(0,0,0,0.4);">
-            <img src="assets/imgs/fujishka/product_erp_ai.png" alt="B-QUICK ERP Dashboard" style="width:100%;border-radius:18px;display:block;" />
+          <div
+            style="background:rgba(255,255,255,0.04);border:1px solid rgba(62,182,73,0.2);border-radius:24px;padding:16px;box-shadow:0 30px 60px rgba(0,0,0,0.4);">
+            <img src="assets/imgs/fujishka/product_erp_ai.png" alt="B-QUICK ERP Dashboard"
+              style="width:100%;border-radius:18px;display:block;" />
           </div>
         </div>
       </div>
@@ -141,8 +212,11 @@
   <section class="fj-features-sec">
     <div class="container">
       <div class="text-center mb-5" data-aos="fade-up">
-        <span style="background:rgba(62,182,73,0.1);color:#3EB649;font-size:11.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:20px;display:inline-block;margin-bottom:12px;">Core Capabilities</span>
-        <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:700;color:#1a1a2e;">Everything Your Enterprise Needs</h2>
+        <span
+          style="background:rgba(62,182,73,0.1);color:#3EB649;font-size:11.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:20px;display:inline-block;margin-bottom:12px;">Core
+          Capabilities</span>
+        <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:700;color:#1a1a2e;">Everything Your Enterprise Needs
+        </h2>
       </div>
 
       <div class="row g-4">
@@ -151,7 +225,8 @@
           <div class="feat-card">
             <div class="f-icon"><i class="fa-solid fa-coins"></i></div>
             <h3>Financial Accounting</h3>
-            <p>Real-time general ledger, accounts payable/receivable, automated bank reconciliation, trial balance, and compliant tax reports.</p>
+            <p>Real-time general ledger, accounts payable/receivable, automated bank reconciliation, trial balance, and
+              compliant tax reports.</p>
           </div>
         </div>
 
@@ -159,7 +234,8 @@
           <div class="feat-card">
             <div class="f-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
             <h3>Inventory &amp; Stock Control</h3>
-            <p>Multi-location stock visibility, batch tracking, expiry date alerts, automated reorder points, and warehouse transfers.</p>
+            <p>Multi-location stock visibility, batch tracking, expiry date alerts, automated reorder points, and
+              warehouse transfers.</p>
           </div>
         </div>
 
@@ -167,7 +243,8 @@
           <div class="feat-card">
             <div class="f-icon"><i class="fa-solid fa-file-invoice"></i></div>
             <h3>Sales &amp; Quotations</h3>
-            <p>Generate professional estimates, convert orders to invoices in 1 click, track customer balances and overdue payments.</p>
+            <p>Generate professional estimates, convert orders to invoices in 1 click, track customer balances and
+              overdue payments.</p>
           </div>
         </div>
 
@@ -175,7 +252,8 @@
           <div class="feat-card">
             <div class="f-icon"><i class="fa-solid fa-qrcode"></i></div>
             <h3>ZATCA e-Invoicing Phase 2</h3>
-            <p>Fully compliant with Saudi Arabia ZATCA e-invoicing regulation including QR code generation, XML integration, and API sync.</p>
+            <p>Fully compliant with Saudi Arabia ZATCA e-invoicing regulation including QR code generation, XML
+              integration, and API sync.</p>
           </div>
         </div>
 
@@ -183,7 +261,8 @@
           <div class="feat-card">
             <div class="f-icon"><i class="fa-solid fa-id-card"></i></div>
             <h3>HR &amp; Payroll Management</h3>
-            <p>Employee directory, attendance logs, leave request workflows, automated salary processing, and WPS file generation.</p>
+            <p>Employee directory, attendance logs, leave request workflows, automated salary processing, and WPS file
+              generation.</p>
           </div>
         </div>
 
@@ -191,7 +270,8 @@
           <div class="feat-card">
             <div class="f-icon"><i class="fa-solid fa-globe"></i></div>
             <h3>Multi-Branch &amp; Currency</h3>
-            <p>Manage multiple branches, stores, or regional offices centrally with real-time consolidated financial reporting.</p>
+            <p>Manage multiple branches, stores, or regional offices centrally with real-time consolidated financial
+              reporting.</p>
           </div>
         </div>
 
@@ -200,11 +280,16 @@
   </section>
 
   <!-- CTA -->
-  <section style="padding:80px 0;background:linear-gradient(135deg,#3EB649 0%,#27a33a 100%);color:#fff;text-align:center;">
+  <section
+    style="padding:80px 0;background:linear-gradient(135deg,#3EB649 0%,#27a33a 100%);color:#fff;text-align:center;">
     <div class="container">
-      <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:700;margin-bottom:14px;">Ready to Upgrade to B-QUICK ERP?</h2>
-      <p style="font-size:16.5px;color:rgba(255,255,255,0.85);max-width:540px;margin:0 auto 28px;">Experience the power of a modern cloud ERP. Request a live demo configured for your industry.</p>
-      <a href="contact.html" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#3EB649;padding:14px 34px;border-radius:50px;font-weight:700;text-decoration:none;box-shadow:0 6px 24px rgba(0,0,0,0.15);"><i class="fa-solid fa-paper-plane"></i> Contact Sales</a>
+      <h2 style="font-size:clamp(28px,3.5vw,42px);font-weight:700;margin-bottom:14px;">Ready to Upgrade to B-QUICK ERP?
+      </h2>
+      <p style="font-size:16.5px;color:rgba(255,255,255,0.85);max-width:540px;margin:0 auto 28px;">Experience the power
+        of a modern cloud ERP. Request a live demo configured for your industry.</p>
+      <a href="contact.html"
+        style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#3EB649;padding:14px 34px;border-radius:50px;font-weight:700;text-decoration:none;box-shadow:0 6px 24px rgba(0,0,0,0.15);"><i
+          class="fa-solid fa-paper-plane"></i> Contact Sales</a>
     </div>
   </section>
 
@@ -214,7 +299,8 @@
       <div class="row g-5">
         <div class="col-lg-4">
           <img src="assets/imgs/image.png" height="40" alt="Fujishka" style="margin-bottom:20px;" />
-          <p>Fujishka delivers powerful Cloud ERP and Van Sales software solutions to businesses across India, Saudi Arabia, UAE, and the GCC region.</p>
+          <p>Fujishka delivers powerful Cloud ERP and Van Sales software solutions to businesses across India, Saudi
+            Arabia, UAE, and the GCC region.</p>
         </div>
         <div class="col-sm-6 col-lg-2">
           <h5>Quick Links</h5>
@@ -247,7 +333,10 @@
 
   <script src="assets/vandor/jquery/jquery.js"></script>
   <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vandor/menu/jquery.meanmenu.min.js"></script>
+  <script src="assets/vandor/common-js/common.js"></script>
   <script src="assets/vandor/animation/aos.js"></script>
   <script>if (typeof AOS !== 'undefined') { AOS.init({ duration: 700, once: true }); }</script>
 </body>
+
 </html>

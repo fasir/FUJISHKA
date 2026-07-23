@@ -717,7 +717,7 @@ h6 {
   font-weight: 500;
   font-size: 18px;
   line-height: 1;
-  color: var(--black);
+  color: #fff;
   text-transform: capitalize;
   border-top: 1px solid rgba(0, 0, 0, 0.145);
   display: flex;
@@ -3026,7 +3026,7 @@ section {
 
 .header-area-1 .header-right .side-toggle .bar-icon span {
   height: 1px;
-  background: var(--green);
+  background: #000;
 }
 
 @media only screen and (max-width: 1399px) {
