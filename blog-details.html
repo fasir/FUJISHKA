@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Complete Guide to ZATCA Phase 2 (Fatoora) Integration for KSA Businesses | Learn about XML e-invoicing, cryptographic stamps, UUIDs, and automated B-QUICK ERP compliance." />
+  <meta name="keywords"
+    content="ZATCA Phase 2 Guide, KSA E-Invoicing Integration, Fatoora Phase 2 Saudi Arabia, Cryptographic Stamp ERP, B-QUICK ERP ZATCA, Saudi Arabia Tax Compliance" />
+
+  <title>Complete Guide to ZATCA Phase 2 Integration for KSA Businesses | Fujishka Blog</title>
+
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png" />
+
+  <!-- Dependencies CSS Files -->
+  <link rel="stylesheet" href="assets/vandor/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/vandor/fontawesome/fontawesome-pro.min.css" />
+  <link rel="stylesheet" href="assets/vandor/menu/meanmenu.min.css" />
+  <link rel="stylesheet" href="assets/vandor/animation/aos.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/fujishka-custom.css" />
+</head>
+
+<body>
+
+  <!-- Side Toggle (Mobile Offcanvas) -->
+  <aside class="fix">
+    <div class="side-info">
+      <div class="side-info-content">
+        <div class="offset-widget offset-header">
+          <div class="offset-logo">
+            <a href="index.html">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <span class="fj-logo-symbol">&amp;</span>
+                <div class="fj-logo-text">
+                  <span class="brand-name"
+                    style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:#2d2d2d;">FUJISHKA</span>
+                  <span class="brand-tagline" style="font-size:10px;color:#3EB649;font-weight:600;">Tech For Success</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <button id="side-info-close" class="side-info-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="mobile-menu d-xl-none fix"></div>
+        <div class="offset-button">
+          <a href="index.html#demo" class="rr-btn">
+            <span class="btn-wrap">
+              <span class="text-one">Request Demo</span>
+              <span class="text-two">Request Demo</span>
+            </span>
+          </a>
+        </div>
+        <div class="offset-widget-box">
+          <h2 class="title">Contact Us</h2>
+          <div class="contact-meta">
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text"><a href="tel:+917907773636">(IND) +91 79077 73636</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text"><a href="tel:+9660556647610">(KSA) +966 0556647610</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text"><a href="mailto:sales@fujishka.com">sales@fujishka.com</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="offcanvas-overlay"></div>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="fj-topbar">
+    <div class="container">
+      <div class="fj-topbar-inner">
+        <div class="contact-links">
+          <a href="tel:+917907773636"><i class="fa-solid fa-phone"></i> (IND) +91 79077 73636</a>
+          <a href="tel:+9660556647610"><i class="fa-solid fa-phone"></i> (KSA) +966 0556647610 &nbsp;<span style="opacity:.5;font-size:11px;">ERP</span></a>
+          <a href="tel:+966509857933"><i class="fa-solid fa-phone"></i> (KSA) +966 509857933 &nbsp;<span style="opacity:.5;font-size:11px;">Accessories</span></a>
+        </div>
+        <div class="topbar-right">
+          <a href="index.html" class="lang-btn">عربي <i class="fa-solid fa-globe"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="fj-navbar header-area-1" id="fj-main-header">
+    <div class="container">
+      <div class="header-area-1__inner">
+
+        <!-- Logo -->
+        <div class="header__logo fj-logo-wrap">
+          <a href="index.html">
+            <img src="assets/imgs/image.png" alt="Fujishka – Tech For Success"
+              onerror="this.parentNode.innerHTML='<div class=fj-logo-fallback><span class=fj-logo-symbol>&amp;</span><div class=fj-logo-text><span class=brand-name>FUJISHKA</span><span class=brand-tagline>Tech For Success</span></div></div>';" />
+          </a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <div class="header__nav d-none d-xl-block">
+          <nav class="main-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Products <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="b-quick-erp.html"><i class="fa-solid fa-cloud" style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
+                  <li><a href="van-sales.html"><i class="fa-solid fa-truck" style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
+                </ul>
+              </li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="partner.html">Partner</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Countries <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
+                  <li><a href="uae-erp.html"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag" style="color:#3EB649;margin-right:8px;"></i>India</a></li>
+                </ul>
+              </li>
+              <li><a href="blogs.html" class="active">Blogs</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Header Right CTA -->
+        <div class="header-right">
+          <a href="index.html#demo" class="fj-nav-cta">
+            <i class="fa-solid fa-rocket"></i>
+            Request Demo
+            <i class="fa-solid fa-arrow-right btn-arrow"></i>
+          </a>
+          <!-- Mobile toggle -->
+          <div class="header__navicon d-xl-none">
+            <div class="side-toggle">
+              <a class="bar-icon" href="javascript:void(0)">
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BLOG HERO BANNER ===== -->
+  <section class="fj-blog-detail-hero">
+    <div class="container">
+      <!-- Breadcrumb Nav -->
+      <div class="breadcrumb-nav" data-aos="fade-down">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <a href="blogs.html">Blogs &amp; Insights</a>
+        <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <a href="#">KSA Compliance</a>
+        <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+        <span>ZATCA Phase 2 Guide</span>
+      </div>
+
+      <!-- Category Pill Badge -->
+      <div data-aos="fade-up">
+        <span class="blog-cat-badge">
+          <i class="fa-solid fa-shield-check"></i> KSA Compliance &amp; E-Invoicing
+        </span>
+      </div>
+
+      <!-- Article Title & Subtitle -->
+      <h1 data-aos="fade-up" data-aos-delay="100">
+        Complete Guide to ZATCA Phase 2 (Fatoora) Integration for KSA Businesses
+      </h1>
+      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="150">
+        A comprehensive breakdown for Saudi enterprises, distributors, and SMEs on UBL 2.1 XML generation, ECDSA cryptographic stamps, real-time clearance APIs, and seamless B-QUICK ERP automation.
+      </p>
+
+      <!-- Metadata Bar -->
+      <div class="blog-meta-bar" data-aos="fade-up" data-aos-delay="200">
+        <div class="author-meta-info">
+          <img src="assets/imgs/inner/blog-details/author.jpg" alt="Eng. Abdullah Al-Mansoor" onerror="this.src='assets/imgs/inner/blog-details/author-2.jpg';" />
+          <div>
+            <span class="author-name">Eng. Abdullah Al-Mansoor</span>
+            <span class="author-role">Senior ERP &amp; ZATCA Compliance Architect</span>
+          </div>
+        </div>
+
+        <div class="article-stats">
+          <span><i class="fa-regular fa-calendar" style="color:#3EB649;"></i> July 24, 2026</span>
+          <span><i class="fa-regular fa-clock" style="color:#3EB649;"></i> 8 Min Read</span>
+          <span><i class="fa-regular fa-eye" style="color:#3EB649;"></i> 2,450 Views</span>
+        </div>
+
+        <div class="hero-share-btns">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://fujishka.com/blog-details.html" target="_blank" class="share-pill-btn" title="Share on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://twitter.com/intent/tweet?url=https://fujishka.com/blog-details.html" target="_blank" class="share-pill-btn" title="Share on X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://api.whatsapp.com/send?text=ZATCA%20Phase%202%20Guide:%20https://fujishka.com/blog-details.html" target="_blank" class="share-pill-btn" title="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <button type="button" onclick="copyArticleLink()" class="share-pill-btn" title="Copy Article Link"><i class="fa-regular fa-link"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED MEDIA BANNER ===== -->
+  <div class="container blog-featured-media-sec">
+    <div class="featured-media-wrap" data-aos="zoom-in" data-aos-delay="100">
+      <img src="assets/imgs/fujishka/cap-real-accounts.png" alt="ZATCA Phase 2 Fatoora Integration Banner" onerror="this.src='assets/imgs/inner/blog-details/blog-detais-1.jpg';" />
+      <div class="media-tag-overlay">
+        <span><i class="fa-solid fa-lock" style="color:#6ee77f;"></i> Fatoora Portal API Ready</span>
+        <span><i class="fa-solid fa-certificate" style="color:#6ee77f;"></i> ECDSA Cryptographic Stamp</span>
+        <span><i class="fa-solid fa-bolt" style="color:#6ee77f;"></i> Instant Clearance</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN CONTENT & SIDEBAR SECTION ===== -->
+  <section class="blog-details-sec">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- ===== MAIN ARTICLE COLUMN (COL-LG-8) ===== -->
+        <div class="col-lg-8">
+          <article class="blog-detail-content">
+
+            <!-- Lead Intro Paragraph -->
+            <p class="lead-text" data-aos="fade-up">
+              As Saudi Arabia accelerates its Vision 2030 digital economy initiatives, the Zakat, Tax and Customs Authority (ZATCA) has enforced Phase 2 (the Integration Phase) of E-Invoicing (Fatoora). For business leaders, accountants, and IT directors across the Kingdom, compliance is no longer just about generating a PDF—it requires direct API synchronization with ZATCA’s portal in real-time.
+            </p>
+
+            <!-- Sticky Table of Contents -->
+            <div class="toc-box" data-aos="fade-up">
+              <div class="toc-title">
+                <i class="fa-solid fa-list-ol"></i> Table of Contents
+              </div>
+              <ul class="toc-list">
+                <li><a href="#section-1"><i class="fa-solid fa-chevron-right"></i> 1. Overview of ZATCA Phase 2 (Integration Phase)</a></li>
+                <li><a href="#section-2"><i class="fa-solid fa-chevron-right"></i> 2. Phase 1 vs. Phase 2: Key Differences</a></li>
+                <li><a href="#section-3"><i class="fa-solid fa-chevron-right"></i> 3. Technical Requirements &amp; Cryptographic Signature</a></li>
+                <li><a href="#section-4"><i class="fa-solid fa-chevron-right"></i> 4. 4-Step ZATCA Integration Roadmap</a></li>
+                <li><a href="#section-5"><i class="fa-solid fa-chevron-right"></i> 5. How B-QUICK ERP Automates Compliance</a></li>
+                <li><a href="#section-6"><i class="fa-solid fa-chevron-right"></i> 6. Frequently Asked Questions (FAQ)</a></li>
+              </ul>
+            </div>
+
+            <!-- Key Takeaways Callout Box -->
+            <div class="key-takeaway-box" data-aos="fade-up">
+              <div class="key-takeaway-header">
+                <div class="icon-wrap">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h4>Key Takeaways for Saudi Businesses</h4>
+              </div>
+              <ul class="key-takeaway-list">
+                <li><strong>Clearance Mandate for B2B:</strong> Standard B2B invoices must be cleared by ZATCA before being issued to the buyer.</li>
+                <li><strong>Reporting Mandate for B2C:</strong> Simplified B2C tax invoices must be submitted to ZATCA within 24 hours of issuance.</li>
+                <li><strong>Cryptographic Digital Stamp:</strong> Invoices must contain a unique ECDSA cryptographic signature generated via a Cryptographic Stamp Identifier (CSID).</li>
+                <li><strong>UBL 2.1 Standard:</strong> Invoices must be structured strictly in Universal Business Language (UBL 2.1) XML format with embedded QR codes.</li>
+              </ul>
+            </div>
+
+            <!-- SECTION 1 -->
+            <h2 id="section-1" data-aos="fade-up">1. Overview of ZATCA Phase 2 (Integration Phase)</h2>
+            <p data-aos="fade-up">
+              Phase 1 (the Generation Phase), effective since December 2021, required taxpayers to generate and store tax invoices using compliant electronic solutions without editing or deleting records.
+            </p>
+            <p data-aos="fade-up">
+              <strong>Phase 2 (the Integration Phase)</strong> elevates regulatory control by requiring taxpayers' billing systems and ERP platforms to integrate directly via RESTful APIs with ZATCA’s centralized <em>Fatoora Portal</em>. Phase 2 rollout is executed in wave-based enforcement criteria tied to revenue thresholds.
+            </p>
+            <p data-aos="fade-up">
+              Under Phase 2 rules, e-invoices are categorized into two primary technical flows:
+            </p>
+            <ul style="padding-left:24px;margin-bottom:24px;line-height:1.8;" data-aos="fade-up">
+              <li><strong style="color:#0f172a;">Standard Tax Invoices (B2B / B2G):</strong> Real-time <em>Clearance</em> model. The ERP sends XML payload to ZATCA API, receives validation and a cryptographic stamp, and attaches it to the final invoice before delivery.</li>
+              <li><strong style="color:#0f172a;">Simplified Tax Invoices (B2C):</strong> <em>Reporting</em> model. The ERP or POS issues the invoice immediately with a local cryptographic stamp and transmits it to ZATCA within 24 hours.</li>
+            </ul>
+
+            <!-- SECTION 2 -->
+            <h2 id="section-2" data-aos="fade-up">2. Phase 1 vs. Phase 2: Key Differences</h2>
+            <p data-aos="fade-up">
+              Understanding the technological transition between Phase 1 and Phase 2 is crucial to avoiding non-compliance penalties:
+            </p>
+
+            <div class="comparison-table-wrapper" data-aos="fade-up">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Feature / Requirement</th>
+                    <th>Phase 1 (Generation)</th>
+                    <th>Phase 2 (Integration)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Portal Connection</strong></td>
+                    <td><span class="badge-phase1">Not Required (Standalone)</span></td>
+                    <td><span class="badge-phase2"><i class="fa-solid fa-check-double"></i> Mandatory API Integration</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>File Standard</strong></td>
+                    <td>PDF / Digital Format</td>
+                    <td><span class="badge-phase2">Structured UBL 2.1 XML + PDF/A-3</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Security Stamps</strong></td>
+                    <td>Basic QR Code</td>
+                    <td><span class="badge-phase2">ECDSA Cryptographic CSID Signature</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>B2B Transaction Flow</strong></td>
+                    <td>Issue directly to buyer</td>
+                    <td><span class="badge-phase2">ZATCA Clearance Required First</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>UUID Generation</strong></td>
+                    <td>Optional / Standard ID</td>
+                    <td><span class="badge-phase2">Mandatory RFC 4122 Version 4 UUID</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Hash Chaining</strong></td>
+                    <td>Not Enforced</td>
+                    <td><span class="badge-phase2">SHA-256 Previous Invoice Hash Chain</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- SECTION 3 -->
+            <h2 id="section-3" data-aos="fade-up">3. Technical Requirements &amp; Cryptographic Signature</h2>
+            <p data-aos="fade-up">
+              To pass ZATCA Phase 2 validation, your ERP software must compile invoices into XML structures compliant with ISO/IEC 19845 (UBL 2.1). Each document requires:
+            </p>
+            <ol style="padding-left:24px;margin-bottom:24px;line-height:1.8;" data-aos="fade-up">
+              <li><strong>UUID (Universally Unique Identifier):</strong> 128-bit RFC 4122 Version 4 identifier assigned per invoice.</li>
+              <li><strong>Previous Invoice Hash (PIH):</strong> SHA-256 cryptographic link connecting the current invoice to the preceding document to prevent tampering or insertion of backdated entries.</li>
+              <li><strong>Invoice Counter Value (ICV):</strong> Sequential integer counter incremented with every single document.</li>
+              <li><strong>Cryptographic Digital Stamp:</strong> Generated using the public-private keypair obtained during CSID onboarding.</li>
+            </ol>
+
+            <!-- Code Snippet Box -->
+            <div class="code-snippet-box" data-aos="fade-up">
+              <div class="code-header">
+                <div class="window-dots">
+                  <span class="red"></span>
+                  <span class="yellow"></span>
+                  <span class="green"></span>
+                </div>
+                <span class="lang-title">UBL 2.1 XML ZATCA Header Snippet</span>
+                <button type="button" class="copy-code-btn" onclick="copyXmlCode(this)">
+                  <i class="fa-regular fa-copy"></i> Copy Snippet
+                </button>
+              </div>
+              <pre><code><span class="xml-tag">&lt;Invoice</span> <span class="xml-attr">xmlns</span>=<span class="xml-val">"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"</span><span class="xml-tag">&gt;</span>
+  <span class="xml-tag">&lt;cbc:ProfileID&gt;</span>reporting:1.0<span class="xml-tag">&lt;/cbc:ProfileID&gt;</span>
+  <span class="xml-tag">&lt;cbc:ID&gt;</span>INV-2026-00489<span class="xml-tag">&lt;/cbc:ID&gt;</span>
+  <span class="xml-tag">&lt;cbc:UUID&gt;</span>9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d<span class="xml-tag">&lt;/cbc:UUID&gt;</span>
+  <span class="xml-tag">&lt;cbc:IssueDate&gt;</span>2026-07-24<span class="xml-tag">&lt;/cbc:IssueDate&gt;</span>
+  <span class="xml-tag">&lt;cbc:IssueTime&gt;</span>14:30:00<span class="xml-tag">&lt;/cbc:IssueTime&gt;</span>
+  <span class="xml-tag">&lt;cbc:InvoiceTypeCode</span> <span class="xml-attr">name</span>=<span class="xml-val">"0100000"</span><span class="xml-tag">&gt;</span>388<span class="xml-tag">&lt;/cbc:InvoiceTypeCode&gt;</span>
+  <span class="xml-tag">&lt;cac:AdditionalDocumentReference&gt;</span>
+    <span class="xml-tag">&lt;cbc:ID&gt;</span>ICV<span class="xml-tag">&lt;/cbc:ID&gt;</span>
+    <span class="xml-tag">&lt;cbc:UUID&gt;</span>489<span class="xml-tag">&lt;/cbc:UUID&gt;</span>
+  <span class="xml-tag">&lt;/cac:AdditionalDocumentReference&gt;</span>
+<span class="xml-tag">&lt;/Invoice&gt;</span></code></pre>
+            </div>
+
+            <!-- SECTION 4 -->
+            <h2 id="section-4" data-aos="fade-up">4. 4-Step ZATCA Integration Roadmap</h2>
+            <p data-aos="fade-up">
+              Fujishka streamlines Phase 2 deployment into a structured 4-step execution path:
+            </p>
+
+            <div class="step-roadmap" data-aos="fade-up">
+              <div class="step-card">
+                <div class="step-number">01</div>
+                <h5>OTP Onboarding</h5>
+                <p>Generate one-time onboarding password from ZATCA Fatoora portal for each unit/branch.</p>
+              </div>
+
+              <div class="step-card">
+                <div class="step-number">02</div>
+                <h5>CSID Certificate</h5>
+                <p>Issue Private Key and request Compliance CSID certificate via automated API handshake.</p>
+              </div>
+
+              <div class="step-card">
+                <div class="step-number">03</div>
+                <h5>Compliance Checks</h5>
+                <p>Execute synthetic invoice validation tests across all invoice subtypes (B2B, B2C, Credit Notes).</p>
+              </div>
+
+              <div class="step-card">
+                <div class="step-number">04</div>
+                <h5>Production Clearance</h5>
+                <p>Activate Production CSID certificate for live automated clearance and reporting.</p>
+              </div>
+            </div>
+
+            <!-- Pullquote -->
+            <div class="blog-quote" data-aos="fade-up">
+              <i class="fa-solid fa-quote-left quote-icon"></i>
+              <p>
+                "Automating ZATCA Phase 2 compliance isn't just a regulatory obligation—it's a massive leap forward in digital transaction speed, fraud prevention, and real-time cash flow visibility for GCC enterprises."
+              </p>
+              <div class="quote-author">— Eng. Abdullah Al-Mansoor, Fujishka ERP Specialist</div>
+            </div>
+
+            <!-- SECTION 5 -->
+            <h2 id="section-5" data-aos="fade-up">5. How B-QUICK ERP Automates Compliance</h2>
+            <p data-aos="fade-up">
+              Fujishka’s flagship product, <strong>B-QUICK ERP</strong>, provides a turn-key solution built specifically for businesses operating in Saudi Arabia, UAE, and the wider GCC region:
+            </p>
+            <ul style="padding-left:24px;margin-bottom:30px;line-height:1.8;" data-aos="fade-up">
+              <li><strong style="color:#3EB649;">Native Bilingual Invoicing:</strong> Standard dual Arabic/English invoice template engine with automatic VAT calculation (15% KSA / 5% UAE).</li>
+              <li><strong style="color:#3EB649;">Automated Clearance Queues:</strong> Sub-second API clearance engine with built-in retry mechanisms and offline buffer handling.</li>
+              <li><strong style="color:#3EB649;">Van Sales Mobile Sync:</strong> Drivers on sales routes produce compliant thermal receipt QR codes instantly on handheld Bluetooth printers with background cloud sync.</li>
+              <li><strong style="color:#3EB649;">Tamper-Proof Audit Trail:</strong> Complete cryptographic hash chaining securing accounts receivable and general ledger entries.</li>
+            </ul>
+
+            <!-- SECTION 6 (FAQ Accordion) -->
+            <h2 id="section-6" data-aos="fade-up">6. Frequently Asked Questions (FAQ)</h2>
+
+            <div class="accordion blog-faq-accordion" id="zatcaFaqAccordion" data-aos="fade-up">
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faqHead1">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                    What happens if the ZATCA portal experiences temporary downtime?
+                  </button>
+                </h3>
+                <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHead1" data-bs-parent="#zatcaFaqAccordion">
+                  <div class="accordion-body">
+                    B-QUICK ERP includes a fault-tolerant offline queue manager. If ZATCA portal APIs are unreachable, simplified B2C transactions continue seamlessly, while B2B clearance requests are queued with encrypted timestamps and transmitted automatically as soon as connectivity resumes, keeping your business compliant with regulations.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faqHead2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                    Are mobile van sales invoices subject to Phase 2 requirements?
+                  </button>
+                </h3>
+                <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHead2" data-bs-parent="#zatcaFaqAccordion">
+                  <div class="accordion-body">
+                    Yes. Direct store delivery (DSD) and mobile van sales transactions are subject to Phase 2 rules. Fujeeka Van Sales mobile app generates compliant Phase 2 QR codes and simplified XML invoices directly from mobile devices, guaranteeing 100% compliance for field sales teams.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faqHead3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                    Can Fujishka integrate ZATCA Phase 2 with our existing software?
+                  </button>
+                </h3>
+                <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHead3" data-bs-parent="#zatcaFaqAccordion">
+                  <div class="accordion-body">
+                    Absolutely. In addition to our full B-QUICK ERP suite, Fujishka offers a standalone <em>ZATCA Middleware API Connector</em> that connects your legacy accounting or custom POS software to ZATCA Fatoora portal with minimal code modifications.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Article Footer Bar (Tags & Bottom Share) -->
+            <div class="article-tags-share" data-aos="fade-up">
+              <div class="article-tags">
+                <span style="font-size:14px;font-weight:700;color:#0f172a;margin-right:6px;"><i class="fa-solid fa-tags" style="color:#3EB649;"></i> Tags:</span>
+                <a href="#" class="tag-badge">#ZATCA</a>
+                <a href="#" class="tag-badge">#Phase2</a>
+                <a href="#" class="tag-badge">#EInvoicing</a>
+                <a href="#" class="tag-badge">#SaudiArabia</a>
+                <a href="#" class="tag-badge">#BQuickERP</a>
+                <a href="#" class="tag-badge">#Fintech</a>
+              </div>
+
+              <div class="bottom-share-btns">
+                <span class="share-label">Share Article:</span>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://fujishka.com/blog-details.html" target="_blank" class="share-pill-btn" style="background:#0077b5;" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://twitter.com/intent/tweet?url=https://fujishka.com/blog-details.html" target="_blank" class="share-pill-btn" style="background:#000000;" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://api.whatsapp.com/send?text=ZATCA%20Phase%202%20Guide:%20https://fujishka.com/blog-details.html" target="_blank" class="share-pill-btn" style="background:#25D366;" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <button type="button" onclick="copyArticleLink()" class="share-pill-btn" style="background:#3EB649;" title="Copy Link"><i class="fa-regular fa-copy"></i></button>
+              </div>
+            </div>
+
+            <!-- Author Bio Box -->
+            <div class="author-bio-card" data-aos="fade-up">
+              <img src="assets/imgs/inner/blog-details/author.jpg" alt="Eng. Abdullah Al-Mansoor" class="author-bio-avatar" onerror="this.src='assets/imgs/inner/blog-details/author-2.jpg';" />
+              <div class="author-bio-content">
+                <h4>Eng. Abdullah Al-Mansoor</h4>
+                <span class="role">Senior ERP &amp; ZATCA Integration Specialist</span>
+                <p>
+                  Eng. Abdullah specializes in enterprise resource planning architectures, GCC tax compliance engines, and cloud software integration. Over the past 8 years, he has guided over 150+ Saudi enterprises through smooth ZATCA Phase 1 &amp; Phase 2 implementations.
+                </p>
+                <div class="author-socials">
+                  <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="mailto:sales@fujishka.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Post Navigation (Prev / Next) -->
+            <div class="post-navigation" data-aos="fade-up">
+              <a href="blogs.html" class="post-nav-item">
+                <span class="nav-label"><i class="fa-solid fa-arrow-left"></i> Previous Article</span>
+                <h5>How Mobile Billing Boosts Direct Store Delivery Efficiency by 40%</h5>
+              </a>
+              <a href="blogs.html" class="post-nav-item next">
+                <span class="nav-label">Next Article <i class="fa-solid fa-arrow-right"></i></span>
+                <h5>Why Small &amp; Medium Enterprises Are Switching to Cloud ERP in 2026</h5>
+              </a>
+            </div>
+
+          </article>
+        </div>
+
+        <!-- ===== SIDEBAR COLUMN (COL-LG-4) ===== -->
+        <div class="col-lg-4">
+          <aside class="blog-sidebar">
+
+            <!-- Search Widget -->
+            <div class="sidebar-widget" data-aos="fade-up">
+              <h4 class="widget-title">Search Articles</h4>
+              <form class="search-widget-form" onsubmit="event.preventDefault(); alert('Searching Fujishka Blog...');">
+                <input type="text" placeholder="Search ZATCA, ERP, Van Sales..." required />
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+              </form>
+            </div>
+
+            <!-- Categories Widget -->
+            <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="100">
+              <h4 class="widget-title">Categories</h4>
+              <ul class="widget-categories">
+                <li class="active">
+                  <a href="#">KSA &amp; ZATCA Compliance <span class="count">14</span></a>
+                </li>
+                <li>
+                  <a href="#">Cloud ERP Transformations <span class="count">22</span></a>
+                </li>
+                <li>
+                  <a href="#">Van Sales &amp; Distribution <span class="count">18</span></a>
+                </li>
+                <li>
+                  <a href="#">UAE &amp; GCC Tax Updates <span class="count">9</span></a>
+                </li>
+                <li>
+                  <a href="#">Enterprise Automation <span class="count">15</span></a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Download E-Book CTA Widget -->
+            <div class="download-cta-widget" data-aos="fade-up" data-aos-delay="150">
+              <div class="icon-circle">
+                <i class="fa-solid fa-file-pdf"></i>
+              </div>
+              <h4>ZATCA Phase 2 Compliance Checklist</h4>
+              <p>Download our free 12-page PDF technical checklist for KSA CFOs &amp; IT Heads.</p>
+              <button type="button" class="btn-download" onclick="alert('Downloading ZATCA Phase 2 Compliance Checklist PDF...');">
+                <i class="fa-solid fa-download"></i> Download Free PDF
+              </button>
+            </div>
+
+            <!-- Trending Articles Widget -->
+            <div class="sidebar-widget" data-aos="fade-up" data-aos-delay="200" style="margin-top:30px;">
+              <h4 class="widget-title">Trending Articles</h4>
+              <div class="trending-posts-list">
+                <a href="blog-details.html" class="trending-post-item">
+                  <div class="trending-post-img">
+                    <img src="assets/imgs/fujishka/van-sales.png" alt="Van Sales Billing" />
+                  </div>
+                  <div class="trending-post-info">
+                    <h6>How Mobile Billing Boosts Direct Store Delivery by 40%</h6>
+                    <span class="date"><i class="fa-regular fa-calendar"></i> June 18, 2026</span>
+                  </div>
+                </a>
+
+                <a href="blog-details.html" class="trending-post-item">
+                  <div class="trending-post-img">
+                    <img src="assets/imgs/fujishka/product_erp_ai.png" alt="Cloud ERP Trends" />
+                  </div>
+                  <div class="trending-post-info">
+                    <h6>Why SMEs Are Switching to Cloud ERP in 2026</h6>
+                    <span class="date"><i class="fa-regular fa-calendar"></i> May 29, 2026</span>
+                  </div>
+                </a>
+
+                <a href="blog-details.html" class="trending-post-item">
+                  <div class="trending-post-img">
+                    <img src="assets/imgs/fujishka/cap-vansales.png" alt="Multi-Branch ERP" />
+                  </div>
+                  <div class="trending-post-info">
+                    <h6>Cross-Border ERP Best Practices for KSA &amp; UAE Multi-Branch</h6>
+                    <span class="date"><i class="fa-regular fa-calendar"></i> April 12, 2026</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Sticky Demo Request Widget -->
+            <div class="sticky-demo-widget" data-aos="fade-up" data-aos-delay="250">
+              <span style="background:#3EB649;color:#fff;font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:12px;text-transform:uppercase;letter-spacing:1px;">Free ERP Audit</span>
+              <h4 style="margin-top:10px;">Ready for ZATCA Phase 2?</h4>
+              <p>Experience zero-disruption integration with Fujishka's B-QUICK ERP. Book a personalized demo today.</p>
+              <a href="contact.html" class="fj-nav-cta" style="width:100%;justify-content:center;display:flex;">
+                <i class="fa-solid fa-calendar-check"></i> Book Free Demo
+              </a>
+            </div>
+
+          </aside>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RELATED ARTICLES SECTION ===== -->
+  <section class="blog-sec" style="background:#f8fafc;padding:80px 0;border-top:1px solid #e2e8f0;">
+    <div class="container">
+      <div class="row align-items-center mb-5" data-aos="fade-up">
+        <div class="col-md-8">
+          <span style="color:#3EB649;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;">Keep Reading</span>
+          <h2 style="font-family:'Outfit',sans-serif;font-size:32px;font-weight:700;color:#0f172a;margin-top:4px;">Related Articles &amp; Insights</h2>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <a href="blogs.html" class="fj-btn-explore" style="color:#3EB649;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;">
+            View All Articles <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+          <div class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="assets/imgs/fujishka/van-sales.png" alt="Van Sales Mobile Billing" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-meta">Van Sales &bull; June 2026</span>
+              <h3>How Mobile Billing Boosts Direct Store Delivery Efficiency by 40%</h3>
+              <p>Discover how Bluetooth thermal printing, offline billing, and real-time inventory sync eliminate driver errors.</p>
+              <a href="blog-details.html" class="read-more">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="assets/imgs/fujishka/product_erp_ai.png" alt="Cloud ERP vs Legacy" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-meta">Cloud ERP &bull; May 2026</span>
+              <h3>Why Small &amp; Medium Enterprises Are Switching to Cloud ERP in 2026</h3>
+              <p>A deep dive into how cloud-based ERP solutions lower IT maintenance costs and secure business data across branches.</p>
+              <a href="blog-details.html" class="read-more">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="blog-card">
+            <div class="blog-img-wrap">
+              <img src="assets/imgs/fujishka/cap-wide-inventory.png" alt="Inventory ERP" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-meta">Inventory &bull; April 2026</span>
+              <h3>Mastering Multi-Location Warehouse Synchronization in GCC</h3>
+              <p>Learn how real-time barcode scanning and automated reorder points prevent stockouts and overstock costs.</p>
+              <a href="blog-details.html" class="read-more">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="fj-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <img src="assets/imgs/image.png" height="40" alt="Fujishka" style="margin-bottom:20px;" />
+          <p>Fujishka delivers powerful Cloud ERP and Van Sales software solutions to businesses across India, Saudi Arabia, UAE, and the GCC region.</p>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="partner.html">Partner Program</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Products</h5>
+          <ul>
+            <li><a href="b-quick-erp.html">B-QUICK ERP</a></li>
+            <li><a href="van-sales.html">Fujeeka Van Sales</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5>Contact</h5>
+          <p><i class="fa-solid fa-phone" style="color:#3EB649;"></i> (IND) +91 79077 73636</p>
+          <p><i class="fa-solid fa-envelope" style="color:#3EB649;"></i> sales@fujishka.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p>&copy; 2026 Fujishka Technologies Pvt. Ltd. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="copyToast" class="fj-toast-copied">
+    <i class="fa-solid fa-circle-check" style="color:#3EB649;"></i> Article link copied to clipboard!
+  </div>
+
+  <!-- Dependencies Scripts -->
+  <script src="assets/vandor/jquery/jquery.js"></script>
+  <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vandor/menu/jquery.meanmenu.min.js"></script>
+  <script src="assets/vandor/common-js/common.js"></script>
+  <script src="assets/vandor/animation/aos.js"></script>
+
+  <script>
+    if (typeof AOS !== 'undefined') {
+      AOS.init({ duration: 700, once: true });
+    }
+
+    function copyArticleLink() {
+      navigator.clipboard.writeText(window.location.href);
+      const toast = document.getElementById('copyToast');
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 3000);
+    }
+
+    function copyXmlCode(btn) {
+      const code = btn.closest('.code-snippet-box').querySelector('code').innerText;
+      navigator.clipboard.writeText(code);
+      const origText = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-check" style="color:#6ee77f;"></i> Copied!';
+      setTimeout(() => { btn.innerHTML = origText; }, 2000);
+    }
+  </script>
+</body>
+</html>
