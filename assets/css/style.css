@@ -2935,7 +2935,7 @@ section {
   align-items: center;
   border-radius: 208px;
   background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(24px);
+  /* backdrop-filter: blur(24px); */
   /* justify-content: space-between;
   margin-top: 30px; */
 }
