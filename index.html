@@ -193,9 +193,13 @@
 
         <!-- ===== HERO SECTION ===== -->
         <section class="fj-hero" data-aos="fade-up">
-          <!-- Background layers -->
-          <div class="hero-bg"></div>
-          <div class="hero-overlay"></div>
+          <!-- Background Video & Layers -->
+          <div class="hero-video-wrap">
+            <video class="hero-bg-video" autoplay loop muted playsinline poster="assets/imgs/fujishka/hero-bg.png">
+              <source src="assets/imgs/hero.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!-- <div class="hero-overlay"></div> -->
           <div class="hero-grid"></div>
           <!-- Floating orbs -->
           <div class="orb orb-1"></div>
@@ -263,7 +267,7 @@
 
                 <!-- â”€â”€ RIGHT COLUMN â”€â”€ -->
                 <div class="col-lg-6" data-aos="fade-left" data-aos-duration="600">
-                  <div class="hero-circle-container">
+                  <div class="hero-circle-container d-md-none">
 
                     <!-- Glow backdrop -->
                     <div class="hero-circle-glow"></div>
@@ -333,6 +337,36 @@
             <div class="section-header" data-aos="fade-up" data-aos-duration="600">
               <span class="section-label"><i class="fa-solid fa-cube"></i> Our Products</span>
               <h2 class="section-title">Smart Software for Smart Business</h2>
+            </div>
+
+            <!-- Product Category Navigation Tabs -->
+            <div class="fj-product-tabs-wrapper" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+              <div class="fj-product-nav-tabs" id="fj-product-nav-tabs">
+                <button type="button" class="fj-product-tab-btn is-active" data-panel="0">
+                  <i class="fa-solid fa-cloud"></i>
+                  <span>Cloud ERP</span>
+                </button>
+                <button type="button" class="fj-product-tab-btn" data-panel="1">
+                  <i class="fa-solid fa-sitemap"></i>
+                  <span>Multi-Branch</span>
+                </button>
+                <button type="button" class="fj-product-tab-btn" data-panel="2">
+                  <i class="fa-solid fa-truck-moving"></i>
+                  <span>Van Sales</span>
+                </button>
+                <button type="button" class="fj-product-tab-btn" data-panel="3">
+                  <i class="fa-solid fa-cash-register"></i>
+                  <span>Hybrid POS</span>
+                </button>
+                <button type="button" class="fj-product-tab-btn" data-panel="4">
+                  <i class="fa-solid fa-utensils"></i>
+                  <span>Restaurant POS</span>
+                </button>
+                <button type="button" class="fj-product-tab-btn" data-panel="5">
+                  <i class="fa-solid fa-industry"></i>
+                  <span>Production</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -687,26 +721,26 @@
                   </div>
                 </div>
 
-              </div><!-- /fj-hscroll-track -->
+                <!-- Swipe Hint & Indicators (Mobile & Tablet) -->
+                <div class="fj-hscroll-bottom-controls">
+                  <div class="fj-hscroll-swipe-hint">
+                    <i class="fa-solid fa-hand-pointer"></i>
+                    <span>Swipe to explore products</span>
+                  </div>
+                  <div class="fj-hscroll-dots" id="fj-hscroll-dots">
+                    <button type="button" class="fj-hscroll-dot is-active" data-panel="0"
+                      aria-label="Product 1"></button>
+                    <button type="button" class="fj-hscroll-dot" data-panel="1" aria-label="Product 2"></button>
+                    <button type="button" class="fj-hscroll-dot" data-panel="2" aria-label="Product 3"></button>
+                    <button type="button" class="fj-hscroll-dot" data-panel="3" aria-label="Product 4"></button>
+                    <button type="button" class="fj-hscroll-dot" data-panel="4" aria-label="Product 5"></button>
+                    <button type="button" class="fj-hscroll-dot" data-panel="5" aria-label="Product 6"></button>
+                  </div>
+                </div>
 
-              <!-- Scroll Hint -->
-              <!-- <div class="fj-hscroll-hint" id="fj-hscroll-hint">
-                <span>Scroll to explore</span>
-                <i class="fa-solid fa-chevron-down"></i>
-              </div> -->
+              </div><!-- /fj-hscroll-sticky -->
 
-              <!-- Dot Indicators -->
-              <!-- <div class="fj-hscroll-indicator" id="fj-hscroll-indicator">
-                <div class="fj-hscroll-dot is-active" data-panel="0"></div>
-                <div class="fj-hscroll-dot" data-panel="1"></div>
-                <div class="fj-hscroll-dot" data-panel="2"></div>
-                <div class="fj-hscroll-dot" data-panel="3"></div>
-                <div class="fj-hscroll-dot" data-panel="4"></div>
-              </div> -->
-
-            </div><!-- /fj-hscroll-sticky -->
-
-          </div><!-- /fj-hscroll-outer -->
+            </div><!-- /fj-hscroll-outer -->
         </section>
 
 
@@ -1545,7 +1579,8 @@
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
                     </div>
-                    <p>"B-QUICK ERP transformed our distribution business. We now have complete real-time visibility over
+                    <p>"B-QUICK ERP transformed our distribution business. We now have complete real-time visibility
+                      over
                       our 8 branches in Saudi Arabia with instant ZATCA Phase 2 compliance!"</p>
                     <div class="author">
                       <div class="avatar">AM</div>
@@ -1602,7 +1637,8 @@
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
                     </div>
-                    <p>"Fujishka's ERP implementation was smooth and fast. Within 2 weeks we were fully operational in Dubai.
+                    <p>"Fujishka's ERP implementation was smooth and fast. Within 2 weeks we were fully operational in
+                      Dubai.
                       Their support team understood our business needs perfectly."</p>
                     <div class="author">
                       <div class="avatar">SA</div>
@@ -1624,7 +1660,8 @@
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
                     </div>
-                    <p>"Managing multi-store retail inventory used to be a daily bottleneck. With Fujishka Cloud ERP, stock
+                    <p>"Managing multi-store retail inventory used to be a daily bottleneck. With Fujishka Cloud ERP,
+                      stock
                       sync between warehouses and stores is instantaneous!"</p>
                     <div class="author">
                       <div class="avatar" style="background:#059669;color:#fff;">FZ</div>
@@ -1646,7 +1683,8 @@
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
                     </div>
-                    <p>"Fujeeka Van Sales mobile app solved our route tracking and Bluetooth receipt printing issues. Cash
+                    <p>"Fujeeka Van Sales mobile app solved our route tracking and Bluetooth receipt printing issues.
+                      Cash
                       reconciliation at end-of-day is now automated and error-free."</p>
                     <div class="author">
                       <div class="avatar" style="background:#d97706;color:#fff;">VS</div>
@@ -1668,7 +1706,8 @@
                       <i class="fa-solid fa-star"></i>
                       <i class="fa-solid fa-star"></i>
                     </div>
-                    <p>"The bilingual Arabic/English invoice generation and automated tax filing reports saved our finance
+                    <p>"The bilingual Arabic/English invoice generation and automated tax filing reports saved our
+                      finance
                       department hundreds of manual hours every month."</p>
                     <div class="author">
                       <div class="avatar" style="background:#2563eb;color:#fff;">FH</div>
@@ -2097,7 +2136,7 @@
       });
       bg.style.transition = 'transform 0.6s cubic-bezier(.25,.46,.45,.94)';
     })();
-    // ===== Horizontal Scroll Products Section — GSAP ScrollTrigger Pinning =====
+    // ===== Horizontal Scroll Products Section — GSAP ScrollTrigger & Mobile Nav =====
     (function () {
       var outer = document.getElementById('fj-hscroll-outer');
       var track = document.getElementById('fj-hscroll-track');
@@ -2105,6 +2144,7 @@
       var hint = document.getElementById('fj-hscroll-hint');
       var panels = document.querySelectorAll('.fj-hscroll-panel');
       var dots = document.querySelectorAll('.fj-hscroll-dot');
+      var tabBtns = document.querySelectorAll('.fj-product-tab-btn');
       var nameIcon = document.getElementById('fj-hscroll-name-icon');
       var nameText = document.getElementById('fj-hscroll-name-text');
       var nameCounter = document.getElementById('fj-hscroll-name-counter');
@@ -2113,6 +2153,7 @@
 
       var panelCount = panels.length;
       var currentActiveIndex = 0;
+      var activeTween = null;
 
       var panelMeta = [
         { icon: 'fa-solid fa-cloud', name: 'Fujishka Cloud ERP' },
@@ -2126,6 +2167,16 @@
       function updateActiveUI(index) {
         panels.forEach(function (p, i) { p.classList.toggle('is-active', i === index); });
         dots.forEach(function (d, i) { d.classList.toggle('is-active', i === index); });
+        tabBtns.forEach(function (t, i) {
+          var isActive = (i === index);
+          t.classList.toggle('is-active', isActive);
+          if (isActive && t.parentElement) {
+            t.parentElement.scrollTo({
+              left: t.offsetLeft - t.parentElement.offsetWidth / 2 + t.offsetWidth / 2,
+              behavior: 'smooth'
+            });
+          }
+        });
 
         var meta = panelMeta[index];
         if (meta) {
@@ -2139,6 +2190,25 @@
         }
       }
 
+      function navigateToPanel(idx) {
+        if (isNaN(idx) || idx < 0 || idx >= panelCount) return;
+        if (window.innerWidth >= 992 && activeTween && activeTween.scrollTrigger) {
+          var targetProgress = idx / (panelCount - 1);
+          var st = activeTween.scrollTrigger;
+          if (st) {
+            var targetScroll = st.start + targetProgress * (st.end - st.start);
+            window.scrollTo({
+              top: targetScroll,
+              behavior: 'smooth'
+            });
+          }
+        } else if (panels[idx]) {
+          panels[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+        currentActiveIndex = idx;
+        updateActiveUI(idx);
+      }
+
       function initScrollTrigger() {
         if (window.innerWidth >= 992 && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
           gsap.registerPlugin(ScrollTrigger);
@@ -2147,7 +2217,7 @@
             return track.scrollWidth - window.innerWidth;
           }
 
-          var tween = gsap.to(track, {
+          activeTween = gsap.to(track, {
             x: function () { return -getScrollAmount(); },
             ease: "none",
             scrollTrigger: {
@@ -2172,23 +2242,6 @@
             }
           });
 
-          dots.forEach(function (dot) {
-            dot.addEventListener('click', function () {
-              var idx = parseInt(this.getAttribute('data-panel'), 10);
-              if (!isNaN(idx)) {
-                var targetProgress = idx / (panelCount - 1);
-                var st = tween.scrollTrigger;
-                if (st) {
-                  var targetScroll = st.start + targetProgress * (st.end - st.start);
-                  window.scrollTo({
-                    top: targetScroll,
-                    behavior: 'smooth'
-                  });
-                }
-              }
-            });
-          });
-
           window.addEventListener('load', function () {
             ScrollTrigger.refresh();
           });
@@ -2204,16 +2257,22 @@
               updateActiveUI(index);
             }
           }, { passive: true });
-
-          dots.forEach(function (dot) {
-            dot.addEventListener('click', function () {
-              var idx = parseInt(this.getAttribute('data-panel'), 10);
-              if (!isNaN(idx) && panels[idx]) {
-                panels[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-              }
-            });
-          });
         }
+
+        // Attach click events to both tabs and dots
+        dots.forEach(function (dot) {
+          dot.addEventListener('click', function () {
+            var idx = parseInt(this.getAttribute('data-panel'), 10);
+            navigateToPanel(idx);
+          });
+        });
+
+        tabBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var idx = parseInt(this.getAttribute('data-panel'), 10);
+            navigateToPanel(idx);
+          });
+        });
       }
 
       initScrollTrigger();
