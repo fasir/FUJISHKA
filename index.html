@@ -2216,8 +2216,15 @@
               behavior: 'smooth'
             });
           }
-        } else if (panels[idx]) {
-          panels[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        } else if (panels[idx] && track) {
+          var panel = panels[idx];
+          var trackLeft = track.getBoundingClientRect().left;
+          var panelLeft = panel.getBoundingClientRect().left;
+          var targetScrollLeft = track.scrollLeft + (panelLeft - trackLeft) - (track.clientWidth - panel.clientWidth) / 2;
+          track.scrollTo({
+            left: targetScrollLeft,
+            behavior: 'smooth'
+          });
         }
         currentActiveIndex = idx;
         updateActiveUI(idx);
@@ -2275,14 +2282,16 @@
 
         // Attach click events to both tabs and dots
         dots.forEach(function (dot) {
-          dot.addEventListener('click', function () {
+          dot.addEventListener('click', function (e) {
+            e.preventDefault();
             var idx = parseInt(this.getAttribute('data-panel'), 10);
             navigateToPanel(idx);
           });
         });
 
         tabBtns.forEach(function (btn) {
-          btn.addEventListener('click', function () {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
             var idx = parseInt(this.getAttribute('data-panel'), 10);
             navigateToPanel(idx);
           });
