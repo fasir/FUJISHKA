@@ -66,12 +66,12 @@
         </div>
         <div class="mobile-menu d-xl-none fix"></div>
         <div class="offset-button">
-          <a href="#demo" onclick="openDemoModal(event)" class="rr-btn">
+          <!-- <a href="#demo" onclick="openDemoModal(event)" class="rr-btn">
             <span class="btn-wrap">
               <span class="text-one">Request Demo</span>
               <span class="text-two">Request Demo</span>
             </span>
-          </a>
+          </a> -->
         </div>
         <div class="offset-widget-box">
           <h2 class="title">Contact Us</h2>
@@ -137,6 +137,7 @@
                 </ul>
               </li>
               <li><a href="blogs.html">Blogs</a></li>
+              <li><a href="faq.html">FAQ</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
@@ -266,21 +267,21 @@
                 </div>
 
                 <!-- â”€â”€ RIGHT COLUMN â”€â”€ -->
-                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="600">
+                <!-- <div class="col-lg-6" data-aos="fade-left" data-aos-duration="600">
                   <div class="hero-circle-container d-md-none">
 
-                    <!-- Glow backdrop -->
+                 
                     <div class="hero-circle-glow"></div>
 
-                    <!-- Spinning dashed ring -->
+                  
                     <div class="hero-circle-ring"></div>
 
-                    <!-- Circular masked image -->
+                   
                     <div class="hero-circle-mask">
                       <img src="assets/imgs/hero.png" alt="Fujishka AI Business ERP Visual" />
                     </div>
 
-                    <!-- Handdrawn white arrow -->
+                  
                     <div class="hero-hand-arrow">
                       <svg viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg"
                         style="width: 100%; height: auto;">
@@ -291,21 +292,12 @@
                       </svg>
                     </div>
 
-                    <!-- Green speech bubble badge -->
+                  
                     <div class="hero-grow-badge">
                       Grow Your Business
                     </div>
 
-                    <!-- AI floating badge 1 -->
-                    <!-- <div class="hero-ai-badge hero-ai-badge-1">
-                      <div class="badge-icon-wrap"><i class="fa-solid fa-robot"></i></div>
-                      <div class="badge-text">
-                        <strong>FujiBot AI</strong>
-                        <span>Always Online</span>
-                      </div>
-                    </div> -->
-
-                    <!-- AI floating badge 2 -->
+                   
                     <div class="hero-ai-badge hero-ai-badge-2">
                       <div class="badge-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
                       <div class="badge-text">
@@ -315,7 +307,7 @@
                     </div>
 
                   </div>
-                </div>
+                </div> -->
 
               </div>
             </div>
@@ -332,6 +324,8 @@
 
         <!-- ===== PRODUCTS â€” Horizontal Scroll Section ===== -->
         <section class="fj-products" id="products">
+          <!-- Dot Grid Overlay -->
+          <div class="fj-products-grid-overlay"></div>
           <div class="container">
             <!-- Section Header â€” centered -->
             <div class="section-header" data-aos="fade-up" data-aos-duration="600">
@@ -340,7 +334,7 @@
             </div>
 
             <!-- Product Category Navigation Tabs -->
-            <div class="fj-product-tabs-wrapper" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            <div class="fj-product-tabs-wrapper " data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
               <div class="fj-product-nav-tabs" id="fj-product-nav-tabs">
                 <button type="button" class="fj-product-tab-btn is-active" data-panel="0">
                   <i class="fa-solid fa-cloud"></i>
@@ -370,8 +364,31 @@
             </div>
           </div>
 
+          <!-- Progress Bar & Counter -->
+          <div class="container">
+            <div class="fj-products-progress-bar">
+              <div class="fj-products-progress-fill" id="fj-products-progress-fill"></div>
+            </div>
+            <!-- <div class="fj-products-counter">
+              <span class="counter-current" id="fj-products-counter-current">01</span>
+              <span class="counter-separator">/</span>
+              <span id="fj-products-counter-total">06</span>
+            </div> -->
+          </div>
+
           <!-- Horizontal Scroll Outer (height set by JS) -->
           <div class="fj-hscroll-outer" id="fj-hscroll-outer">
+
+            <!-- Navigation Arrows (Desktop) -->
+            <div class="fj-products-nav-arrows" id="fj-products-nav-arrows">
+              <button type="button" class="fj-products-nav-arrow is-disabled" id="fj-products-arrow-prev"
+                aria-label="Previous Product">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button type="button" class="fj-products-nav-arrow" id="fj-products-arrow-next" aria-label="Next Product">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
 
             <!-- Sticky Viewport -->
             <div class="fj-hscroll-sticky">
@@ -400,7 +417,12 @@
                 <div class="fj-hscroll-panel is-active">
                   <div class="fj-product-showcase">
                     <div class="row g-4 g-md-5 align-items-center">
-                      <div class="col-lg-6">
+                      <div class="col-lg-5">
+                        <div class="fj-showcase-img-wrap">
+                          <img src="assets/imgs/1.png" alt="Fujishka Cloud ERP" />
+                        </div>
+                      </div>
+                      <div class="col-lg-7">
                         <span class="showcase-label"><i class="fa-solid fa-cloud"></i> Fujishka Cloud ERP</span>
                         <h3>One Platform. Complete Business Control.</h3>
                         <p class="showcase-desc">Manage sales, inventory, purchasing, finance, HR, production, and
@@ -446,11 +468,7 @@
                         <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Explore ERP <i
                             class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
                       </div>
-                      <div class="col-lg-6">
-                        <div class="fj-showcase-img-wrap">
-                          <img src="assets/imgs/1.png" alt="Fujishka Cloud ERP" />
-                        </div>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -459,7 +477,12 @@
                 <div class="fj-hscroll-panel">
                   <div class="fj-product-showcase">
                     <div class="row g-4 g-md-5 align-items-center">
-                      <div class="col-lg-6">
+                      <div class="col-lg-5">
+                        <div class="fj-showcase-img-wrap">
+                          <img src="assets/imgs/Multi-Branch.jpg" alt="Multi-Branch Management" />
+                        </div>
+                      </div>
+                      <div class="col-lg-7">
                         <span class="showcase-label"><i class="fa-solid fa-sitemap"></i> Multi-Branch Management</span>
                         <h3>Manage Every Branch from One Dashboard</h3>
                         <p class="showcase-desc">Monitor inventory, sales, staff, and financial performance across
@@ -499,11 +522,7 @@
                         <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Explore Multi-Branch <i
                             class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
                       </div>
-                      <div class="col-lg-6">
-                        <div class="fj-showcase-img-wrap">
-                          <img src="assets/imgs/Multi-Branch.jpg" alt="Multi-Branch Management" />
-                        </div>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -567,6 +586,11 @@
                   <div class="fj-product-showcase">
                     <div class="row g-4 g-md-5 align-items-center">
                       <div class="col-lg-6">
+                        <div class="fj-showcase-img-wrap">
+                          <img src="assets/imgs/Hybrid-POS.jpg" alt="Hybrid POS" />
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
                         <span class="showcase-label"><i class="fa-solid fa-cash-register"></i> Hybrid POS</span>
                         <h3>Works Online &amp; Offline</h3>
                         <p class="showcase-desc">Never stop billing. Continue operations even without internet and
@@ -606,11 +630,7 @@
                         <a href="#demo" class="fj-nav-cta" style="display:inline-flex;">Explore Hybrid POS <i
                             class="fa-solid fa-arrow-right btn-arrow" style="margin-left:8px;"></i></a>
                       </div>
-                      <div class="col-lg-6">
-                        <div class="fj-showcase-img-wrap">
-                          <img src="assets/imgs/Hybrid-POS.jpg" alt="Hybrid POS" />
-                        </div>
-                      </div>
+
                     </div>
                   </div>
                 </div>
@@ -2163,11 +2183,21 @@
       var nameText = document.getElementById('fj-hscroll-name-text');
       var nameCounter = document.getElementById('fj-hscroll-name-counter');
 
+      // New enhanced UI elements
+      var newProgressFill = document.getElementById('fj-products-progress-fill');
+      var counterCurrent = document.getElementById('fj-products-counter-current');
+      var counterTotal = document.getElementById('fj-products-counter-total');
+      var arrowPrev = document.getElementById('fj-products-arrow-prev');
+      var arrowNext = document.getElementById('fj-products-arrow-next');
+
       if (!outer || !track || panels.length === 0) return;
 
       var panelCount = panels.length;
       var currentActiveIndex = 0;
       var activeTween = null;
+
+      // Set total counter
+      if (counterTotal) counterTotal.textContent = panelCount < 10 ? '0' + panelCount : panelCount;
 
       var panelMeta = [
         { icon: 'fa-solid fa-cloud', name: 'Fujishka Cloud ERP' },
@@ -2201,6 +2231,25 @@
 
         if (hint) {
           hint.classList.toggle('is-hidden', index > 0);
+        }
+
+        // Update enhanced progress bar
+        if (newProgressFill) {
+          var progressPercent = panelCount > 1 ? (index / (panelCount - 1)) * 100 : 100;
+          newProgressFill.style.width = progressPercent + '%';
+        }
+
+        // Update enhanced counter
+        if (counterCurrent) {
+          counterCurrent.textContent = (index + 1) < 10 ? '0' + (index + 1) : (index + 1);
+        }
+
+        // Update arrow states
+        if (arrowPrev) {
+          arrowPrev.classList.toggle('is-disabled', index === 0);
+        }
+        if (arrowNext) {
+          arrowNext.classList.toggle('is-disabled', index === panelCount - 1);
         }
       }
 
@@ -2253,6 +2302,10 @@
                 if (progressFill) {
                   progressFill.style.width = (progress * 100) + '%';
                 }
+                // Update enhanced progress bar continuously
+                if (newProgressFill) {
+                  newProgressFill.style.width = (progress * 100) + '%';
+                }
                 var index = Math.round(progress * (panelCount - 1));
                 index = Math.max(0, Math.min(panelCount - 1, index));
                 if (index !== currentActiveIndex) {
@@ -2296,6 +2349,24 @@
             navigateToPanel(idx);
           });
         });
+
+        // Arrow navigation
+        if (arrowPrev) {
+          arrowPrev.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (currentActiveIndex > 0) {
+              navigateToPanel(currentActiveIndex - 1);
+            }
+          });
+        }
+        if (arrowNext) {
+          arrowNext.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (currentActiveIndex < panelCount - 1) {
+              navigateToPanel(currentActiveIndex + 1);
+            }
+          });
+        }
       }
 
       initScrollTrigger();

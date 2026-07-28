@@ -196,32 +196,35 @@
     }
 
     /* === Side Info  Js (index 06) === */
-    $(".side-info-close,.offcanvas-overlay").on("click", function () {
-        $(".side-info").removeClass("info-open");
-        $(".offcanvas-overlay").removeClass("overlay-open");
-    });
-    $(".side-toggle").on("click", function () {
-        $(".side-info").addClass("info-open");
-        $(".offcanvas-overlay").addClass("overlay-open");
-    });
-
-    $(window).scroll(function () {
-        if ($("body").scrollTop() > 0 || $("html").scrollTop() > 0) {
+    $(document).ready(function () {
+        $(document).on("click", ".side-info-close, .offcanvas-overlay", function (e) {
+            e.preventDefault();
             $(".side-info").removeClass("info-open");
             $(".offcanvas-overlay").removeClass("overlay-open");
-        }
-    });
+        });
+        $(document).on("click", ".side-toggle", function (e) {
+            e.preventDefault();
+            $(".side-info").toggleClass("info-open");
+            $(".offcanvas-overlay").toggleClass("overlay-open");
+        });
+        $(document).on("click", ".mobile-menu a:not(.mean-expand)", function () {
+            $(".side-info").removeClass("info-open");
+            $(".offcanvas-overlay").removeClass("overlay-open");
+        });
 
-    /* === Mean menu activation  Js (index 07) === */
-    $('.main-menu').meanmenu({
-        meanScreenWidth: "1199",
-        meanMenuContainer: '.mobile-menu',
-        meanMenuCloseSize: '28px',
-    });
-    $('.main-menu-all').meanmenu({
-        meanScreenWidth: "5000",
-        meanMenuContainer: '.mobile-menu',
-        meanMenuCloseSize: '28px',
+        /* === Mean menu activation  Js (index 07) === */
+        if ($.fn.meanmenu) {
+            $('.main-menu').meanmenu({
+                meanScreenWidth: "1199",
+                meanMenuContainer: '.mobile-menu',
+                meanMenuCloseSize: '28px',
+            });
+            $('.main-menu-all').meanmenu({
+                meanScreenWidth: "5000",
+                meanMenuContainer: '.mobile-menu',
+                meanMenuCloseSize: '28px',
+            });
+        }
     });
 
     /* === Magnific Video popup Js (index 08) === */

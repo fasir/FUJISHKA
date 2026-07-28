@@ -909,15 +909,16 @@ h6 {
 /* ===================== PRODUCTS SECTION — HORIZONTAL SCROLL ===================== */
 .fj-products {
   position: relative;
-  background: linear-gradient(180deg, #f8fbff 0%, #fff 60%);
+  background: linear-gradient(135deg, rgb(234 248 236 / 69%) 0%, rgba(232, 247, 234, 0.88) 50%, rgb(234 249 236) 100%) !important;
 }
 
 .fj-products .section-header {
   text-align: center;
   margin-bottom: 0;
-  padding: 80px 0 40px;
+  padding: 40px 0 0px;
 }
 
+/* 
 .fj-products .section-label {
   display: inline-flex;
   align-items: center;
@@ -932,7 +933,7 @@ h6 {
   border-radius: 20px;
   border: 1px solid rgba(62, 182, 73, 0.25);
   margin-bottom: 14px;
-}
+} */
 
 .fj-products .section-title {
   font-size: clamp(26px, 4vw, 42px);
@@ -1205,10 +1206,10 @@ h6 {
     /* padding: 28px 36px !important; */
   }
 
-  .fj-product-showcase h3 {
+  /* .fj-product-showcase h3 {
     font-size: 24px !important;
     margin-bottom: 6px !important;
-  }
+  } */
 
   .fj-product-showcase .showcase-desc {
     font-size: 14px !important;
@@ -1276,7 +1277,7 @@ h6 {
 }
 
 .fj-product-showcase h3 {
-  font-size: clamp(24px, 3.2vw, 36px);
+  font-size: 40px;
   font-weight: 700;
   color: #1a1a2e;
   margin-bottom: 12px;
@@ -4526,8 +4527,9 @@ select.form-control-fj {
 
 /* Logo styling (alias) */
 .fj-logo-wrap img {
-  height: 40px;
+  height: 100%;
   width: auto;
+  max-width: 175px;
 }
 
 .fj-logo-text {
@@ -7491,9 +7493,9 @@ svg {
     gap: 12px;
   }
 
-  .fj-logo-wrap img {
+  /* .fj-logo-wrap img {
     height: auto;
-  }
+  } */
 
   .fj-nav-cta {
     padding: 8px 16px;
@@ -8214,7 +8216,7 @@ svg {
   background: linear-gradient(135deg, #ffffff 0%, #f6fbf7 100%) !important;
   border: 1px solid rgba(62, 182, 73, 0.22) !important;
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06), 0 2px 8px rgba(62, 182, 73, 0.08) !important;
-  border-radius: 28px !important;
+  border-radius: 0px !important;
 }
 
 .fj-showcase-item {
@@ -10028,4 +10030,926 @@ svg {
   background: rgba(62, 182, 73, 0.12);
   color: #3EB649;
   margin-right: 10px;
+}
+
+/* ==========================================================================
+   ENHANCED PRODUCT SECTION — PREMIUM SCROLLING EXPERIENCE
+   ========================================================================== */
+
+/* --- Section Background & Atmosphere --- */
+.fj-products {
+  /* background: #fff !important; */
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.fj-products::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -150px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(62, 182, 73, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: products-orb-1 15s ease-in-out infinite alternate;
+}
+
+.fj-products::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 184, 148, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: products-orb-2 18s ease-in-out infinite alternate;
+}
+
+@keyframes products-orb-1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-40px, 30px) scale(1.15);
+  }
+
+  100% {
+    transform: translate(20px, -20px) scale(0.95);
+  }
+}
+
+@keyframes products-orb-2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* Subtle dot grid pattern overlay */
+.fj-products-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(62, 182, 73, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 10%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 10%, transparent 80%);
+}
+
+/* --- Section Header Dark Mode --- */
+.fj-products .section-header {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* .fj-products .section-label {
+  background: rgba(62, 182, 73, 0.1) !important;
+  border: 1px solid rgba(62, 182, 73, 0.3) !important;
+  color: #4ade80 !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+} */
+
+.fj-products .section-title {
+  color: var(--fj-dark) !important;
+  text-shadow: 0 2px 20px rgba(62, 182, 73, 0.1);
+}
+
+/* --- Desktop Tab Navigation — HIDDEN on desktop, visible on mobile/tablet only --- */
+@media (min-width: 992px) {
+  .fj-product-tabs-wrapper {
+    display: none !important;
+  }
+}
+
+/* --- Horizontal Scroll Viewport (Dark Mode) --- */
+.fj-hscroll-sticky {
+  background: transparent !important;
+}
+
+.fj-hscroll-name-bar {
+  background: rgba(6, 14, 26, 0.8) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(62, 182, 73, 0.1) !important;
+}
+
+.fj-hscroll-name-label {
+  color: #4ade80 !important;
+}
+
+.fj-hscroll-name-counter {
+  color: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* --- Progress Bar Enhancement --- */
+.fj-products-progress-bar {
+  position: relative;
+  z-index: 12;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 0 auto;
+  max-width: 600px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.fj-products-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #3EB649, #00b894, #3EB649);
+  background-size: 200% 100%;
+  border-radius: 3px;
+  transition: width 0.4s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 0 10px rgba(62, 182, 73, 0.4);
+  animation: progress-shimmer 3s linear infinite;
+}
+
+@keyframes progress-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* --- Panel Counter Badge --- */
+.fj-products-counter {
+  position: relative;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.fj-products-counter .counter-current {
+  color: #4ade80;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.fj-products-counter .counter-separator {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 14px;
+}
+
+/* --- Navigation Arrows (Desktop) --- */
+.fj-products-nav-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  pointer-events: none;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.fj-products-nav-arrow {
+  pointer-events: auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(62, 182, 73, 0.25);
+  background: rgba(6, 14, 26, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.fj-products-nav-arrow:hover {
+  background: rgba(62, 182, 73, 0.15);
+  border-color: rgba(62, 182, 73, 0.5);
+  color: #ffffff;
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px rgba(62, 182, 73, 0.2);
+}
+
+.fj-products-nav-arrow:active {
+  transform: scale(0.95);
+}
+
+.fj-products-nav-arrow.is-disabled {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .fj-products-nav-arrows {
+    display: none !important;
+  }
+
+  .fj-products-progress-bar {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+/* --- Enhanced Showcase Card (Dark/Glassmorphism) --- */
+.fj-product-showcase {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(62, 182, 73, 0.12) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  border-radius: 0px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.fj-product-showcase::before {
+  background: radial-gradient(circle, rgba(62, 182, 73, 0.06) 0%, transparent 70%) !important;
+}
+
+/* Animated gradient border glow on active panel */
+.fj-hscroll-panel.is-active .fj-product-showcase {
+  border-color: rgba(62, 182, 73, 0.25) !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35), 0 0 40px rgba(62, 182, 73, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Text colors for dark background */
+.fj-product-showcase .showcase-label {
+  background: rgba(62, 182, 73, 0.1) !important;
+  border: 1px solid rgba(62, 182, 73, 0.3) !important;
+  color: #4ade80 !important;
+}
+
+.fj-product-showcase h3 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+.fj-product-showcase .showcase-desc {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+/* --- Feature Items (Dark Glass) --- */
+.fj-showcase-item {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.35s cubic-bezier(.4, 0, .2, 1) !important;
+}
+
+.fj-showcase-item:hover {
+  background: rgba(62, 182, 73, 0.08) !important;
+  border-color: rgba(62, 182, 73, 0.3) !important;
+  box-shadow: 0 8px 24px rgba(62, 182, 73, 0.1) !important;
+  transform: translateY(-3px) !important;
+}
+
+.fj-showcase-item .si-icon {
+  background: rgba(62, 182, 73, 0.12) !important;
+  border: 1px solid rgba(62, 182, 73, 0.2);
+  color: #4ade80 !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.fj-showcase-item:hover .si-icon {
+  background: linear-gradient(135deg, #3EB649, #2d9e3a) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(62, 182, 73, 0.35) !important;
+  border-color: transparent !important;
+}
+
+.fj-showcase-item strong {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.fj-showcase-item span {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* --- Image Wrap Enhancement --- */
+.fj-showcase-img-wrap {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3) !important;
+  position: relative;
+  overflow: hidden !important;
+}
+
+.fj-showcase-img-wrap::after {
+  border: 1.5px solid rgba(62, 182, 73, 0.15) !important;
+  border-radius: 22px !important;
+}
+
+.fj-showcase-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(6, 14, 26, 0.5) 100%);
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 22px;
+}
+
+.fj-showcase-img-wrap img {
+  transition: transform 0.6s cubic-bezier(.4, 0, .2, 1) !important;
+}
+
+.fj-showcase-img-wrap:hover img {
+  transform: scale(1.05) !important;
+}
+
+/* --- CTA Button in Dark Mode --- */
+.fj-product-showcase .fj-nav-cta {
+  background: linear-gradient(135deg, #3EB649 0%, #2d9e3a 100%) !important;
+  box-shadow: 0 4px 20px rgba(62, 182, 73, 0.3) !important;
+  border: none !important;
+  transition: all 0.35s ease !important;
+}
+
+.fj-product-showcase .fj-nav-cta:hover {
+  box-shadow: 0 8px 32px rgba(62, 182, 73, 0.5) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+/* --- Panel entrance animation --- */
+.fj-hscroll-panel .fj-product-showcase .showcase-label,
+.fj-hscroll-panel .fj-product-showcase h3,
+.fj-hscroll-panel .fj-product-showcase .showcase-desc,
+.fj-hscroll-panel .fj-product-showcase .fj-showcase-grid,
+.fj-hscroll-panel .fj-product-showcase .fj-nav-cta,
+.fj-hscroll-panel .fj-showcase-img-wrap {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fj-hscroll-panel.is-active .fj-product-showcase .showcase-label {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.05s;
+}
+
+.fj-hscroll-panel.is-active .fj-product-showcase h3 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.fj-hscroll-panel.is-active .fj-product-showcase .showcase-desc {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.fj-hscroll-panel.is-active .fj-product-showcase .fj-showcase-grid {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.fj-hscroll-panel.is-active .fj-product-showcase .fj-nav-cta {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.25s;
+}
+
+.fj-hscroll-panel.is-active .fj-showcase-img-wrap {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+/* --- Bottom Controls Dark Mode --- */
+.fj-hscroll-bottom-controls {
+  position: relative;
+  z-index: 12;
+}
+
+.fj-hscroll-swipe-hint {
+  background: rgba(62, 182, 73, 0.08) !important;
+  border: 1px solid rgba(62, 182, 73, 0.2) !important;
+  color: #4ade80 !important;
+}
+
+.fj-hscroll-dot {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  transition: all 0.35s cubic-bezier(.4, 0, .2, 1) !important;
+}
+
+.fj-hscroll-dot:hover {
+  background: rgba(62, 182, 73, 0.3) !important;
+}
+
+.fj-hscroll-dot.is-active {
+  background: linear-gradient(90deg, #3EB649, #00b894) !important;
+  border-color: transparent !important;
+  box-shadow: 0 2px 12px rgba(62, 182, 73, 0.4) !important;
+}
+
+/* --- Mobile panels dark mode --- */
+@media (max-width: 991px) {
+  .fj-hscroll-panel {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(62, 182, 73, 0.12) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .fj-product-showcase {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .fj-product-tabs-wrapper {
+    position: relative;
+    z-index: 12;
+  }
+
+  .fj-product-nav-tabs {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(62, 182, 73, 0.12) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
+
+  .fj-product-tab-btn {
+    color: var(--fj-green-dark) !important;
+  }
+
+  .fj-product-tab-btn i {
+    color: rgba(62, 182, 73, 0.6) !important;
+  }
+
+  .fj-product-tab-btn.is-active {
+    background: linear-gradient(135deg, #3EB649, #2d9e3a) !important;
+    color: #fff !important;
+  }
+
+  .fj-product-tab-btn.is-active i {
+    color: #fff !important;
+  }
+
+  /* Show all panel content on mobile (no entrance anim) */
+  .fj-hscroll-panel .fj-product-showcase .showcase-label,
+  .fj-hscroll-panel .fj-product-showcase h3,
+  .fj-hscroll-panel .fj-product-showcase .showcase-desc,
+  .fj-hscroll-panel .fj-product-showcase .fj-showcase-grid,
+  .fj-hscroll-panel .fj-product-showcase .fj-nav-cta,
+  .fj-hscroll-panel .fj-showcase-img-wrap {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   PER-PANEL UNIQUE BACKGROUND COLORS — Fujishka Brand Theme Alignment
+   Alternating Pattern: First LIGHT, then DARK (Repeated: Light → Dark → Light → Dark → Light → Dark)
+   ========================================================================== */
+
+/* ── Panel 1: Cloud ERP — GLASSY LIGHT Mint-White Gradient ── */
+.fj-hscroll-panel:nth-child(1) .fj-product-showcase {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(232, 247, 234, 0.88) 50%, rgba(240, 253, 244, 0.95) 100%) !important;
+  border: none !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 20px 50px rgba(62, 182, 73, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-product-showcase::before {
+  background: radial-gradient(circle, rgba(62, 182, 73, 0.08) 0%, transparent 70%) !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-product-showcase h3 {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-product-showcase .showcase-desc {
+  color: #4b5563 !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-product-showcase .showcase-label {
+  background: rgba(62, 182, 73, 0.1) !important;
+  border-color: rgba(62, 182, 73, 0.25) !important;
+  color: #27a33a !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-showcase-item {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(62, 182, 73, 0.18) !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-showcase-item:hover {
+  background: #ffffff !important;
+  border-color: #3EB649 !important;
+  box-shadow: 0 8px 24px rgba(62, 182, 73, 0.15) !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-showcase-item strong {
+  color: #111827 !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-showcase-item .si-icon {
+  background: rgba(62, 182, 73, 0.1) !important;
+  border-color: rgba(62, 182, 73, 0.2) !important;
+  color: #3EB649 !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-showcase-item:hover .si-icon {
+  background: linear-gradient(135deg, #3EB649, #27a33a) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-showcase-img-wrap {
+  background: #ffffff !important;
+  border-color: rgba(62, 182, 73, 0.18) !important;
+  box-shadow: 0 16px 40px rgba(62, 182, 73, 0.1) !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-showcase-img-wrap::before {
+  background: linear-gradient(180deg, transparent 70%, rgba(232, 247, 234, 0.4) 100%) !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-showcase-img-wrap::after {
+  border-color: rgba(62, 182, 73, 0.18) !important;
+}
+
+.fj-hscroll-panel:nth-child(1) .fj-product-showcase .fj-nav-cta {
+  background: linear-gradient(135deg, #3EB649, #27a33a) !important;
+  box-shadow: 0 4px 20px rgba(62, 182, 73, 0.3) !important;
+}
+
+/* ── Panel 2: Multi-Branch — DARK Brand Forest & Emerald ── */
+.fj-hscroll-panel:nth-child(2) .fj-product-showcase {
+  background: linear-gradient(135deg, rgba(12, 36, 22, 0.96) 0%, rgba(6, 26, 16, 0.98) 100%) !important;
+  border-color: rgba(62, 182, 73, 0.25) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(62, 182, 73, 0.08) !important;
+}
+
+.fj-hscroll-panel:nth-child(2) .fj-product-showcase::before {
+  background: radial-gradient(circle, rgba(62, 182, 73, 0.12) 0%, transparent 70%) !important;
+}
+
+.fj-hscroll-panel:nth-child(2) .fj-product-showcase h3 {
+  color: #ffffff !important;
+}
+
+.fj-hscroll-panel:nth-child(2) .fj-product-showcase .showcase-desc {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.fj-hscroll-panel:nth-child(2) .fj-product-showcase .showcase-label {
+  background: rgba(62, 182, 73, 0.12) !important;
+  border-color: rgba(62, 182, 73, 0.3) !important;
+  color: #53b748 !important;
+}
+
+.fj-hscroll-panel:nth-child(2) .fj-showcase-item {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(62, 182, 73, 0.2) !important;
+}
+
+.fj-hscroll-panel:nth-child(2) .fj-showcase-item strong {
+  color: #ffffff !important;
+}
+
+.fj-hscroll-panel:nth-child(2) .fj-showcase-item .si-icon {
+  background: rgba(62, 182, 73, 0.12) !important;
+  border-color: rgba(62, 182, 73, 0.2) !important;
+  color: #53b748 !important;
+}
+
+.fj-hscroll-panel:nth-child(2) .fj-showcase-item:hover .si-icon {
+  background: linear-gradient(135deg, #3EB649, #27a33a) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.fj-hscroll-panel:nth-child(2) .fj-product-showcase .fj-nav-cta {
+  background: linear-gradient(135deg, #3EB649 0%, #27a33a 100%) !important;
+  box-shadow: 0 4px 20px rgba(62, 182, 73, 0.35) !important;
+}
+
+/* ── Panel 3: Van Sales — GLASSY LIGHT Emerald-Green Gradient ── */
+.fj-hscroll-panel:nth-child(3) .fj-product-showcase {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(226, 248, 230, 0.88) 50%, rgba(238, 252, 240, 0.96) 100%) !important;
+  border-color: rgba(62, 182, 73, 0.25) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 20px 50px rgba(62, 182, 73, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-product-showcase::before {
+  background: radial-gradient(circle, rgba(62, 182, 73, 0.08) 0%, transparent 70%) !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-product-showcase h3 {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-product-showcase .showcase-desc {
+  color: #4b5563 !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-product-showcase .showcase-label {
+  background: rgba(62, 182, 73, 0.1) !important;
+  border-color: rgba(62, 182, 73, 0.25) !important;
+  color: #27a33a !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-showcase-item {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(62, 182, 73, 0.18) !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-showcase-item:hover {
+  background: #ffffff !important;
+  border-color: #3EB649 !important;
+  box-shadow: 0 8px 24px rgba(62, 182, 73, 0.15) !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-showcase-item strong {
+  color: #111827 !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-showcase-item .si-icon {
+  background: rgba(62, 182, 73, 0.1) !important;
+  border-color: rgba(62, 182, 73, 0.2) !important;
+  color: #3EB649 !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-showcase-item:hover .si-icon {
+  background: linear-gradient(135deg, #3EB649, #27a33a) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-showcase-img-wrap {
+  background: #ffffff !important;
+  border-color: rgba(62, 182, 73, 0.18) !important;
+  box-shadow: 0 16px 40px rgba(62, 182, 73, 0.1) !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-showcase-img-wrap::before {
+  background: linear-gradient(180deg, transparent 70%, rgba(226, 248, 230, 0.4) 100%) !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-showcase-img-wrap::after {
+  border-color: rgba(62, 182, 73, 0.18) !important;
+}
+
+.fj-hscroll-panel:nth-child(3) .fj-product-showcase .fj-nav-cta {
+  background: linear-gradient(135deg, #3EB649, #27a33a) !important;
+  box-shadow: 0 4px 20px rgba(62, 182, 73, 0.3) !important;
+}
+
+/* ── Panel 4: Hybrid POS — DARK Brand Teal & Navy ── */
+.fj-hscroll-panel:nth-child(4) .fj-product-showcase {
+  background: linear-gradient(135deg, rgba(5, 24, 30, 0.96) 0%, rgba(3, 18, 24, 0.98) 100%) !important;
+  border-color: rgba(0, 184, 148, 0.25) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 184, 148, 0.08) !important;
+}
+
+.fj-hscroll-panel:nth-child(4) .fj-product-showcase::before {
+  background: radial-gradient(circle, rgba(0, 184, 148, 0.1) 0%, transparent 70%) !important;
+}
+
+.fj-hscroll-panel:nth-child(4) .fj-product-showcase h3 {
+  color: #ffffff !important;
+}
+
+.fj-hscroll-panel:nth-child(4) .fj-product-showcase .showcase-desc {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.fj-hscroll-panel:nth-child(4) .fj-product-showcase .showcase-label {
+  background: rgba(0, 184, 148, 0.12) !important;
+  border-color: rgba(0, 184, 148, 0.3) !important;
+  color: #00b894 !important;
+}
+
+.fj-hscroll-panel:nth-child(4) .fj-showcase-item {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(0, 184, 148, 0.2) !important;
+}
+
+.fj-hscroll-panel:nth-child(4) .fj-showcase-item strong {
+  color: #ffffff !important;
+}
+
+.fj-hscroll-panel:nth-child(4) .fj-showcase-item .si-icon {
+  background: rgba(0, 184, 148, 0.12) !important;
+  border-color: rgba(0, 184, 148, 0.2) !important;
+  color: #00b894 !important;
+}
+
+.fj-hscroll-panel:nth-child(4) .fj-showcase-item:hover .si-icon {
+  background: linear-gradient(135deg, #00b894, #00997b) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.fj-hscroll-panel:nth-child(4) .fj-product-showcase .fj-nav-cta {
+  background: linear-gradient(135deg, #00b894, #008f73) !important;
+  box-shadow: 0 4px 20px rgba(0, 184, 148, 0.35) !important;
+}
+
+/* ── Panel 5: Restaurant POS — GLASSY LIGHT Soft Sage & Pearl Glass ── */
+.fj-hscroll-panel:nth-child(5) .fj-product-showcase {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(232, 246, 236, 0.88) 50%, rgba(241, 252, 243, 0.96) 100%) !important;
+  border-color: rgba(62, 182, 73, 0.22) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 20px 50px rgba(62, 182, 73, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-product-showcase::before {
+  background: radial-gradient(circle, rgba(62, 182, 73, 0.08) 0%, transparent 70%) !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-product-showcase h3 {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-product-showcase .showcase-desc {
+  color: #4b5563 !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-product-showcase .showcase-label {
+  background: rgba(62, 182, 73, 0.1) !important;
+  border-color: rgba(62, 182, 73, 0.25) !important;
+  color: #27a33a !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-showcase-item {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(62, 182, 73, 0.18) !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-showcase-item:hover {
+  background: #ffffff !important;
+  border-color: #3EB649 !important;
+  box-shadow: 0 8px 24px rgba(62, 182, 73, 0.15) !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-showcase-item strong {
+  color: #111827 !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-showcase-item .si-icon {
+  background: rgba(62, 182, 73, 0.1) !important;
+  border-color: rgba(62, 182, 73, 0.2) !important;
+  color: #3EB649 !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-showcase-item:hover .si-icon {
+  background: linear-gradient(135deg, #3EB649, #27a33a) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-showcase-img-wrap {
+  background: #ffffff !important;
+  border-color: rgba(62, 182, 73, 0.18) !important;
+  box-shadow: 0 16px 40px rgba(62, 182, 73, 0.1) !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-showcase-img-wrap::before {
+  background: linear-gradient(180deg, transparent 70%, rgba(232, 246, 236, 0.4) 100%) !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-showcase-img-wrap::after {
+  border-color: rgba(62, 182, 73, 0.18) !important;
+}
+
+.fj-hscroll-panel:nth-child(5) .fj-product-showcase .fj-nav-cta {
+  background: linear-gradient(135deg, #3EB649, #27a33a) !important;
+  box-shadow: 0 4px 20px rgba(62, 182, 73, 0.3) !important;
+}
+
+/* ── Panel 6: Production — DARK Brand Emerald & Deep Navy ── */
+.fj-hscroll-panel:nth-child(6) .fj-product-showcase {
+  background: linear-gradient(135deg, rgba(8, 28, 20, 0.96) 0%, rgba(5, 18, 24, 0.98) 100%) !important;
+  border-color: rgba(62, 182, 73, 0.25) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(62, 182, 73, 0.08) !important;
+}
+
+.fj-hscroll-panel:nth-child(6) .fj-product-showcase::before {
+  background: radial-gradient(circle, rgba(62, 182, 73, 0.1) 0%, transparent 70%) !important;
+}
+
+.fj-hscroll-panel:nth-child(6) .fj-product-showcase h3 {
+  color: #ffffff !important;
+}
+
+.fj-hscroll-panel:nth-child(6) .fj-product-showcase .showcase-desc {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.fj-hscroll-panel:nth-child(6) .fj-product-showcase .showcase-label {
+  background: rgba(62, 182, 73, 0.12) !important;
+  border-color: rgba(62, 182, 73, 0.3) !important;
+  color: #4ade80 !important;
+}
+
+.fj-hscroll-panel:nth-child(6) .fj-showcase-item {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(62, 182, 73, 0.2) !important;
+}
+
+.fj-hscroll-panel:nth-child(6) .fj-showcase-item strong {
+  color: #ffffff !important;
+}
+
+.fj-hscroll-panel:nth-child(6) .fj-showcase-item .si-icon {
+  background: rgba(62, 182, 73, 0.12) !important;
+  border-color: rgba(62, 182, 73, 0.2) !important;
+  color: #4ade80 !important;
+}
+
+.fj-hscroll-panel:nth-child(6) .fj-showcase-item:hover .si-icon {
+  background: linear-gradient(135deg, #3EB649, #27a33a) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+
+.fj-hscroll-panel:nth-child(6) .fj-product-showcase .fj-nav-cta {
+  background: linear-gradient(135deg, #3EB649, #27a33a) !important;
+  box-shadow: 0 4px 20px rgba(62, 182, 73, 0.35) !important;
+}
+
+/* --- Mobile panel unique backgrounds (Fujishka Brand Theme - Light First) --- */
+@media (max-width: 991px) {
+
+  /* Glassy Light Panels */
+  .fj-hscroll-panel:nth-child(1) {
+    border-color: rgba(62, 182, 73, 0.22) !important;
+    background: rgba(240, 253, 244, 0.94) !important;
+  }
+
+  .fj-hscroll-panel:nth-child(3) {
+    border-color: rgba(62, 182, 73, 0.22) !important;
+    background: rgba(235, 250, 238, 0.94) !important;
+  }
+
+  .fj-hscroll-panel:nth-child(5) {
+    border-color: rgba(62, 182, 73, 0.22) !important;
+    background: rgba(238, 252, 240, 0.94) !important;
+  }
+
+  /* Dark Brand Panels */
+  .fj-hscroll-panel:nth-child(2) {
+    border-color: rgba(62, 182, 73, 0.2) !important;
+    background: rgba(12, 36, 22, 0.75) !important;
+  }
+
+  .fj-hscroll-panel:nth-child(4) {
+    border-color: rgba(0, 184, 148, 0.2) !important;
+    background: rgba(5, 24, 30, 0.75) !important;
+  }
+
+  .fj-hscroll-panel:nth-child(6) {
+    border-color: rgba(62, 182, 73, 0.2) !important;
+    background: rgba(8, 28, 20, 0.75) !important;
+  }
 }

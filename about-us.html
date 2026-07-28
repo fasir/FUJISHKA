@@ -63,12 +63,12 @@
         </div>
         <div class="mobile-menu d-xl-none fix"></div>
         <div class="offset-button">
-          <a href="index.html#demo" class="rr-btn">
+          <!-- <a href="#demo" onclick="openDemoModal(event)" class="rr-btn">
             <span class="btn-wrap">
               <span class="text-one">Request Demo</span>
               <span class="text-two">Request Demo</span>
             </span>
-          </a>
+          </a> -->
         </div>
         <div class="offset-widget-box">
           <h2 class="title">Contact Us</h2>
@@ -92,63 +92,76 @@
   </aside>
   <div class="offcanvas-overlay"></div>
 
-  <!-- Back to Top -->
-  <div class="progress-wrap">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
-    </svg>
-  </div>
+  <header class="fj-navbar header-area-1" id="fj-main-header">
+    <div class="container">
+      <div class="header-area-1__inner">
 
-  <!-- Side Toggle (Mobile) -->
-  <aside class="fix">
-    <div class="side-info">
-      <div class="side-info-content">
-        <div class="offset-widget offset-header">
-          <div class="offset-logo">
-            <a href="index.html">
-              <div style="display:flex;align-items:center;gap:6px;">
-                <span class="fj-logo-symbol">&</span>
-                <div class="fj-logo-text">
-                  <span class="brand-name"
-                    style="font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:#2d2d2d;">FUJISHKA</span>
-                  <span class="brand-tagline" style="font-size:10px;color:#3EB649;font-weight:600;">Tech For
-                    Success</span>
-                </div>
-              </div>
-            </a>
-          </div>
-          <button id="side-info-close" class="side-info-close"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="mobile-menu d-xl-none fix"></div>
-        <div class="offset-button">
-          <a href="index.html#demo" class="rr-btn">
-            <span class="btn-wrap">
-              <span class="text-one">Request Demo</span>
-              <span class="text-two">Request Demo</span>
-            </span>
+        <!-- Logo -->
+        <div class="header__logo fj-logo-wrap">
+          <a href="index.html">
+            <img src="assets/imgs/image.png" alt="Fujishka – Tech For Success"
+              onerror="this.parentNode.innerHTML='<div class=fj-logo-fallback><span class=fj-logo-symbol>&amp;</span><div class=fj-logo-text><span class=brand-name>FUJISHKA</span><span class=brand-tagline>Tech For Success</span></div></div>';" />
           </a>
         </div>
-        <div class="offset-widget-box">
-          <h2 class="title">Contact Us</h2>
-          <div class="contact-meta">
-            <div class="contact-item">
-              <span class="icon"><i class="fa-solid fa-phone"></i></span>
-              <span class="text"><a href="tel:+917907773636">(IND) +91 79077 73636</a></span>
-            </div>
-            <div class="contact-item">
-              <span class="icon"><i class="fa-solid fa-phone"></i></span>
-              <span class="text"><a href="tel:+9660556647610">(KSA) +966 0556647610</a></span>
-            </div>
-            <div class="contact-item">
-              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-              <span class="text"><a href="mailto:sales@fujishka.com">sales@fujishka.com</a></span>
+
+        <!-- Desktop Nav -->
+        <div class="header__nav d-none d-xl-block">
+          <nav class="main-menu">
+            <ul>
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Products <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="b-quick-erp.html"><i class="fa-solid fa-cloud"
+                        style="color:#3EB649;margin-right:8px;"></i>B-QUICK ERP</a></li>
+                  <li><a href="van-sales.html"><i class="fa-solid fa-truck"
+                        style="color:#3EB649;margin-right:8px;"></i>Fujeeka Van Sales</a></li>
+                </ul>
+              </li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="partner.html">Partner</a></li>
+              <li class="menu-item-has-children">
+                <a href="#">Countries <i class="fa-solid fa-chevron-down" style="font-size:10px;opacity:.6;"></i></a>
+                <ul class="dp-menu">
+                  <li><a href="saudi-arabia-erp.html"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>Saudi Arabia</a></li>
+                  <li><a href="uae-erp.html"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>UAE</a></li>
+                  <li><a href="index.html#locations"><i class="fa-solid fa-flag"
+                        style="color:#3EB649;margin-right:8px;"></i>India</a></li>
+                </ul>
+              </li>
+              <li><a href="blogs.html">Blogs</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Header Right -->
+        <div class="header-right">
+
+          <a href="#demo" data-bs-toggle="modal" data-bs-target="#fjDemoModal" onclick="openDemoModal(event)"
+            class="fj-nav-cta">
+            <i class="fa-solid fa-rocket"></i>
+            Request Demo
+            <i class="fa-solid fa-arrow-right btn-arrow"></i>
+          </a>
+          <!-- Mobile toggle -->
+          <div class="header__navicon d-xl-none">
+            <div class="side-toggle">
+              <a class="bar-icon" href="javascript:void(0)">
+                <span></span>
+                <span></span>
+              </a>
             </div>
           </div>
         </div>
+
       </div>
     </div>
-  </aside>
-  <div class="offcanvas-overlay"></div>
+  </header>
 
   <!-- ===== TOP BAR ===== -->
   <div class="fj-topbar">
@@ -210,6 +223,7 @@
                 </ul>
               </li>
               <li><a href="blogs.html">Blogs</a></li>
+              <li><a href="faq.html">FAQ</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
@@ -907,20 +921,6 @@
     </div>
   </footer>
 
-  <!-- Dependencies JS Files -->
-  <script src="assets/vandor/jquery/jquery.js"></script>
-  <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="assets/vandor/popup/jquery.magnific-popup.min.js"></script>
-  <script src="assets/vandor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vandor/gsap/gsap.min.js"></script>
-  <script src="assets/vandor/gsap/ScrollTrigger.min.js"></script>
-  <script src="assets/vandor/odometer/odometer.min.js"></script>
-  <script src="assets/vandor/menu/jquery.meanmenu.min.js"></script>
-  <script src="assets/vandor/backtop/backToTop.js"></script>
-  <script src="assets/vandor/animation/aos.js"></script>
-  <script src="assets/vandor/common-js/common.js"></script>
-  <script src="assets/js/main.js"></script>
-
   <script>
     // Navbar scroll effect
     (function () {
@@ -1223,9 +1223,16 @@
   <!-- Dependencies JS Files -->
   <script src="assets/vandor/jquery/jquery.js"></script>
   <script src="assets/vandor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vandor/popup/jquery.magnific-popup.min.js"></script>
+  <script src="assets/vandor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vandor/gsap/gsap.min.js"></script>
+  <script src="assets/vandor/gsap/ScrollTrigger.min.js"></script>
+  <script src="assets/vandor/odometer/odometer.min.js"></script>
   <script src="assets/vandor/menu/jquery.meanmenu.min.js"></script>
-  <script src="assets/vandor/common-js/common.js"></script>
+  <script src="assets/vandor/backtop/backToTop.js"></script>
   <script src="assets/vandor/animation/aos.js"></script>
+  <script src="assets/vandor/common-js/common.js"></script>
+  <script src="assets/js/main.js"></script>
   <script>if (typeof AOS !== 'undefined') { AOS.init({ duration: 700, once: true }); }</script>
 </body>
 
