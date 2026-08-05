@@ -402,7 +402,7 @@ h6 {
 .fj-hero .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5, 15, 31, 0.55) 0%, rgba(5, 15, 31, 0.85) 100%),
+  background: linear-gradient(180deg, rgba(5, 15, 31, 0.411) 0%, rgba(5, 15, 31, 0.85) 100%),
     radial-gradient(ellipse 80% 60% at 70% 40%, rgba(62, 182, 73, 0.12) 0%, transparent 70%);
   z-index: 1;
   pointer-events: none;
@@ -4916,7 +4916,7 @@ select.form-control-fj {
 .fj-page-hero .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(8, 18, 32, 0.4);
+  background: rgb(0 0 0 / 47%);
 }
 
 .fj-page-hero .hero-grid {
@@ -11001,3 +11001,103 @@ svg {
 .fj-hscroll-panel .fj-product-showcase::before {
   display: none !important;
 }
+
+/* ===================== ENHANCED SAUDI HERO SECTION ===================== */
+.fj-saudi-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 170px 0 120px;
+  background: #050f1f;
+}
+
+.fj-saudi-hero .hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fj-saudi-hero .orb-1 {
+  width: 420px;
+  height: 420px;
+  background: rgba(62, 182, 73, 0.22);
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fj-saudi-hero .orb-2 {
+  width: 320px;
+  height: 320px;
+  background: rgba(0, 184, 148, 0.16);
+  bottom: -80px;
+  right: 8%;
+}
+
+.hero-feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(62, 182, 73, 0.25);
+  border-radius: 20px;
+  padding: 22px 18px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+
+.hero-feature-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(62, 182, 73, 0.6);
+  box-shadow: 0 16px 40px rgba(62, 182, 73, 0.25);
+}
+
+.hero-feature-card .icon-box {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(62, 182, 73, 0.25) 0%, rgba(62, 182, 73, 0.08) 100%);
+  border: 1px solid rgba(62, 182, 73, 0.35);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6ee77f;
+  font-size: 20px;
+  margin: 0 auto 14px;
+  transition: all 0.3s ease;
+}
+
+.hero-feature-card:hover .icon-box {
+  background: linear-gradient(135deg, #3EB649 0%, #27a33a 100%);
+  color: #ffffff;
+  border-color: transparent;
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(62, 182, 73, 0.4);
+}
+
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #3EB649;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(62, 182, 73, 0.7);
+  animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(62, 182, 73, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(62, 182, 73, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(62, 182, 73, 0);
+  }
+}

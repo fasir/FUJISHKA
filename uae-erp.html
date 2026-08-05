@@ -178,80 +178,109 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="fj-page-hero">
-    <div class="hero-bg"></div>
-    <div class="container position-relative z-2">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6" data-aos="fade-right">
-          <span class="hero-subtitle-badge"
-            style="background:rgba(62,182,73,0.15);color:#6ee77f;border:1px solid rgba(62,182,73,0.3);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:6px 16px;border-radius:20px;display:inline-block;margin-bottom:18px;">
-            🇦🇪 United Arab Emirates
-          </span>
+  <section class="fj-page-hero fj-saudi-hero" style="position:relative;overflow:hidden;padding:170px 0 120px;">
+    <!-- Background Image -->
+    <div class="hero-bg"
+      style="position:absolute;inset:0;background:url('assets/imgs/uae.jpg') center/cover no-repeat;opacity:0.65;z-index:0;">
+    </div>
+    <!-- Radial Overlay & Dynamic Glow Orbs -->
+    <div class="hero-overlay"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+
+    <div class="container position-relative z-3" style="z-index: 999;">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-10 col-xl-9" data-aos="fade-up">
+
+          <!-- Subtitle Badge -->
+          <div class="d-flex justify-content-center mb-3">
+            <span class="hero-subtitle-badge"
+              style="background:rgba(62,182,73,0.15);color:#6ee77f;border:1px solid rgba(62,182,73,0.4);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:9px 24px;border-radius:30px;display:inline-flex;align-items:center;gap:10px;box-shadow:0 0 25px rgba(62,182,73,0.2);backdrop-filter:blur(10px);">
+              <span class="live-pulse-dot"></span>
+              <span style="font-size:16px;">🇦🇪</span> United Arab Emirates &bull; FTA VAT Compliant
+            </span>
+          </div>
+
+          <!-- Main Heading -->
           <h1
-            style="font-size:clamp(32px,4vw,52px);font-weight:700;color:#ffffff;line-height:1.15;margin-bottom:20px;font-family:'Outfit',sans-serif;">
-            Best Cloud ERP &amp; Van Sales Software in <span class="hl">UAE</span>
+            style="font-size:clamp(38px, 5.5vw, 66px);font-weight:800;color:#ffffff;line-height:1.12;margin-bottom:24px;font-family:'Outfit',sans-serif;letter-spacing:-0.5px;text-shadow:0 4px 30px rgba(0,0,0,0.7);">
+            Best Cloud ERP &amp; Van Sales Software in <span class="hl"
+              style="background:linear-gradient(135deg,#53b748 0%,#27a33a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">UAE</span>
           </h1>
-          <p style="font-size:16.5px;line-height:1.75;color:rgba(255,255,255,0.85);margin-bottom:30px;">
+
+          <!-- Subtitle Description -->
+          <p
+            style="font-size:18.5px;line-height:1.8;color:rgba(255,255,255,0.92);margin:0 auto 40px;max-width:840px;font-weight:400;text-shadow:0 2px 12px rgba(0,0,0,0.5);">
             Transform your business with Fujishka Solutions — top-notch cloud &amp; hybrid ERP and Van Sales software in
-            UAE. Drive operational growth across Dubai, Abu Dhabi, and Sharjah with FTA VAT-compliant billing and
-            multi-branch control.
+            UAE. Drive operational growth across Dubai, Abu Dhabi, and Sharjah with FTA VAT-compliant billing,
+            multi-branch control, and mobile Van Sales.
           </p>
-          <div class="hero-cta d-flex gap-3 flex-wrap align-items-center mb-4">
-            <a href="index.html#demo" class="fj-btn-primary" style="padding:14px 32px;font-size:15px;">
+
+          <!-- CTA Buttons -->
+          <div class="hero-cta d-flex gap-3 justify-content-center flex-wrap align-items-center mb-5">
+            <a href="index.html#demo" class="fj-btn-primary"
+              style="padding:16px 38px;font-size:16px;font-weight:700;border-radius:50px;box-shadow:0 8px 25px rgba(62,182,73,0.45);transition:all 0.3s ease;">
               <i class="fa-solid fa-rocket"></i> Request Free Demo <i class="fa-solid fa-arrow-right btn-arrow"
-                style="margin-left:6px;"></i>
+                style="margin-left:8px;"></i>
             </a>
             <a href="contact.html" class="fj-btn-contact"
-              style="display:inline-flex;align-items:center;padding:13px 28px;border:1.5px solid rgba(255,255,255,0.3);color:#fff;border-radius:50px;text-decoration:none;font-weight:600;font-size:15px;">
-              <i class="fa-solid fa-building-flag" style="margin-right:8px;color:#3EB649;"></i> Talk to Dubai Office
+              style="display:inline-flex;align-items:center;padding:15px 34px;border:1.5px solid rgba(255,255,255,0.35);background:rgba(255,255,255,0.07);color:#fff;border-radius:50px;text-decoration:none;font-weight:600;font-size:16px;backdrop-filter:blur(12px);transition:all 0.3s ease;">
+              <i class="fa-solid fa-building-flag" style="margin-right:10px;color:#3EB649;"></i> Talk to Dubai Office
             </a>
           </div>
-          <!-- Quick Trust Badges -->
-          <div class="d-flex gap-3 flex-wrap align-items-center" style="font-size:13px;color:rgba(255,255,255,0.7);">
-            <span><i class="fa-solid fa-circle-check" style="color:#3EB649;margin-right:6px;"></i>FTA VAT
-              Compliant</span>
-            <span><i class="fa-solid fa-circle-check" style="color:#3EB649;margin-right:6px;"></i>Android Van
-              Sales</span>
-            <span><i class="fa-solid fa-circle-check" style="color:#3EB649;margin-right:6px;"></i>Hybrid Online &amp;
-              Offline</span>
-          </div>
-        </div>
 
-        <!-- UAE Hero Image Graphic -->
-        <div class="col-lg-6" data-aos="fade-left">
-          <div class="position-relative hero-ksa-graphic-wrap"
-            style="padding:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(62,182,73,0.3);border-radius:28px;box-shadow:0 30px 60px rgba(0,0,0,0.5);">
-            <div style="border-radius:20px;overflow:hidden;position:relative;">
-              <img src="assets/imgs/cou/UAE.png" alt="UAE Cloud ERP Software Fujishka"
-                style="width:100%;height:auto;display:block;border-radius:20px;" />
-            </div>
-            <!-- UAE VAT Overlay Badge -->
-            <div class="hero-ai-badge"
-              style="position:absolute;top:-15px;right:20px;background:rgba(9,22,41,0.92);border:1px solid rgba(62,182,73,0.4);border-radius:14px;padding:10px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,0.4);backdrop-filter:blur(10px);">
-              <div class="badge-icon-wrap"
-                style="width:34px;height:34px;background:rgba(62,182,73,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#3EB649;font-size:16px;">
-                <i class="fa-solid fa-percent"></i>
-              </div>
-              <div class="badge-text">
-                <strong style="color:#fff;font-size:13px;display:block;">FTA VAT Ready</strong>
-                <span style="color:rgba(255,255,255,0.6);font-size:11px;">5% UAE VAT Tax Invoicing</span>
+          <!-- Feature Cards Strip -->
+          <div class="row g-3 justify-content-center mt-2">
+            <div class="col-6 col-md-3">
+              <div class="hero-feature-card">
+                <div class="icon-box">
+                  <i class="fa-solid fa-percent"></i>
+                </div>
+                <strong
+                  style="color:#fff;font-size:14.5px;display:block;margin-bottom:3px;font-family:'Outfit',sans-serif;">FTA
+                  VAT Ready</strong>
+                <span style="color:rgba(255,255,255,0.7);font-size:12.5px;">5% UAE VAT Invoicing</span>
               </div>
             </div>
-            <!-- UAE Office Overlay Badge -->
-            <div class="hero-ai-badge"
-              style="position:absolute;bottom:-15px;left:20px;background:rgba(9,22,41,0.92);border:1px solid rgba(62,182,73,0.4);border-radius:14px;padding:10px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,0.4);backdrop-filter:blur(10px);">
-              <div class="badge-icon-wrap"
-                style="width:34px;height:34px;background:rgba(62,182,73,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#3EB649;font-size:16px;">
-                <i class="fa-solid fa-building"></i>
+
+            <div class="col-6 col-md-3">
+              <div class="hero-feature-card">
+                <div class="icon-box">
+                  <i class="fa-solid fa-truck-moving"></i>
+                </div>
+                <strong
+                  style="color:#fff;font-size:14.5px;display:block;margin-bottom:3px;font-family:'Outfit',sans-serif;">Van
+                  Sales Mobile</strong>
+                <span style="color:rgba(255,255,255,0.7);font-size:12.5px;">Bluetooth &amp; Thermal Print</span>
               </div>
-              <div class="badge-text">
-                <strong style="color:#fff;font-size:13px;display:block;">Bur Dubai Branch Support</strong>
-                <span style="color:rgba(255,255,255,0.6);font-size:11px;">On-ground local technical team</span>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="hero-feature-card">
+                <div class="icon-box">
+                  <i class="fa-solid fa-cloud-bolt"></i>
+                </div>
+                <strong
+                  style="color:#fff;font-size:14.5px;display:block;margin-bottom:3px;font-family:'Outfit',sans-serif;">Hybrid
+                  Cloud</strong>
+                <span style="color:rgba(255,255,255,0.7);font-size:12.5px;">Works Online &amp; Offline</span>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="hero-feature-card">
+                <div class="icon-box">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <strong
+                  style="color:#fff;font-size:14.5px;display:block;margin-bottom:3px;font-family:'Outfit',sans-serif;">Dubai
+                  Support</strong>
+                <span style="color:rgba(255,255,255,0.7);font-size:12.5px;">Bur Dubai Branch Team</span>
               </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
   </section>
@@ -526,8 +555,9 @@
                 (Arabic)</a></li>
             <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> Saudi Arabia ERP</a>
             </li>
-          
-                <li><a href="faq.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> FAQ</a></li></ul>
+
+            <li><a href="faq.html"><i class="fa-solid fa-chevron-right" style="font-size:10px;"></i> FAQ</a></li>
+          </ul>
         </div>
         <!-- Contact -->
         <div class="col-lg-4">
